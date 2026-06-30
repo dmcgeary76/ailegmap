@@ -1,0 +1,50 @@
+flowchart TD
+  LS[("LegiScan API
+(all sessions)")]
+  SEA["SEA guidance sites
+(planned)"]:::future
+
+  subgraph SYNC["Backend sync · legiscan_sync.py"]
+    Q["Full-text query:
+AI term AND education term"]
+    SCORE["Relevance scorer
+HIGH / MEDIUM / LOW"]
+    STAT["getBill status
+Introduced → Passed"]
+  end
+
+  subgraph DB["PostgreSQL"]
+    SL[("state_legislation")]
+    BRQ[("bill_review_queue
+auto + manual decision")]
+    AUD[("legislation_updates
+audit trail")]
+  end
+
+  subgraph API["FastAPI"]
+    AS["/api/states"]
+    AR["/api/bills/review"]
+  end
+
+  subgraph FE["React + Vite UI"]
+    MAP["US Map
+(color-coded by status)"]
+    MOD["State Modal"]
+    RQ["Review Queue tab"]
+  end
+
+  REV(["Reviewer (you)"]):::human
+
+  LS --> Q --> SCORE --> STAT
+  STAT --> SL
+  STAT --> BRQ
+  SCORE -. low confidence .-> BRQ
+  SYNC --> AUD
+  BRQ --> AR --> RQ --> REV
+  REV -- "include / exclude" --> AR
+  SL --> AS --> MAP --> MOD
+  BRQ --> AS
+  SEA -. planned .-> BRQ
+
+  classDef future stroke-dasharray:5 5,fill:#f5f5f5,color:#777;
+  classDef human fill:#ede9fe,stroke:#7c3aed,color:#4c1d95;
