@@ -1,0 +1,157 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2,
+.dashboard-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat {
+  text-align: center;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+.section-toggle {
+  width: 100%;
+  padding: 12px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.section-toggle:hover {
+  background: #eeeeee;
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.filter-btn {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-btn:hover {
+  background: #f5f5f5;
+}
+
+.filter-btn.stance-prohibit,
+.filter-btn.stance-restrict,
+.filter-btn.stance-regulate,
+.filter-btn.stance-support,
+.filter-btn.stance-mandate,
+.filter-btn.stance-absent {
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+.count {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-left: auto;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-color.prohibit {
+  background-color: var(--color-prohibit);
+}
+
+.legend-color.restrict {
+  background-color: var(--color-restrict);
+}
+
+.legend-color.regulate {
+  background-color: var(--color-regulate);
+}
+
+.legend-color.support {
+  background-color: var(--color-support);
+}
+
+.legend-color.mandate {
+  background-color: var(--color-mandate);
+}
+
+.legend-color.absent {
+  background-color: var(--color-absent);
+}
+
+@media (max-width: 768px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+}

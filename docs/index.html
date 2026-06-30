@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>K-12 AI Legislative Map — Project Overview</title>
+<style>
+  :root {
+    --bg: #0f1226;
+    --panel: #1a1f3a;
+    --panel2: #222748;
+    --ink: #e8eaf6;
+    --muted: #a3a8c9;
+    --accent: #7c8cff;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --blue: #60a5fa;
+    --red: #f87171;
+    --border: #2c3358;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+  header.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3.5rem 1.25rem 3rem;
+    text-align: center;
+  }
+  header.hero h1 { margin: 0 0 .5rem; font-size: 2.4rem; }
+  header.hero p { margin: 0 auto; max-width: 640px; font-size: 1.1rem; opacity: .95; }
+  .tagchips { margin-top: 1.25rem; display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+  .tagchip { background: rgba(255,255,255,.18); border-radius: 999px; padding: .25rem .8rem; font-size: .82rem; font-weight: 600; }
+
+  section { margin-top: 2.5rem; }
+  h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: .4rem; }
+  h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.4rem; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+  .muted { color: var(--muted); }
+  code { background: var(--panel2); padding: .12rem .4rem; border-radius: 5px; font-size: .88em; }
+  pre { background: var(--panel2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: .5rem; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--border); font-size: .92rem; }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+
+  .pill { display: inline-block; padding: .1rem .55rem; border-radius: 999px; font-size: .76rem; font-weight: 700; }
+  .p-passed { background: rgba(52,211,153,.16); color: var(--green); }
+  .p-debated { background: rgba(251,191,36,.16); color: var(--amber); }
+  .p-intro { background: rgba(96,165,250,.16); color: var(--blue); }
+  .p-failed { background: rgba(248,113,113,.16); color: var(--red); }
+
+  /* Changelog */
+  .timeline { border-left: 2px solid var(--border); margin-left: .4rem; padding-left: 1.2rem; }
+  .entry { position: relative; margin-bottom: 1.6rem; }
+  .entry::before {
+    content: ""; position: absolute; left: -1.55rem; top: .45rem;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--accent);
+  }
+  .entry time { font-weight: 700; color: var(--accent); font-size: .95rem; }
+  .entry ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+  .entry li { margin-bottom: .25rem; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; text-align: center; }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <h1>K-12 AI Legislative Map</h1>
+    <p>An interactive reference for tracking how U.S. states legislate the use of artificial intelligence in K-12 public classrooms.</p>
+    <div class="tagchips">
+      <span class="tagchip">50 states + territories</span>
+      <span class="tagchip">LegiScan-sourced</span>
+      <span class="tagchip">Relevance-filtered</span>
+      <span class="tagchip">Human-curated</span>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <section>
+      <h2>What this is &amp; why</h2>
+      <div class="card">
+        <p>AI is entering K-12 classrooms faster than policy can keep up, and the legislative picture is fragmented across 50 states plus territories — some prohibiting use, some mandating AI literacy, many silent. This project assembles that picture in one place: <strong>click a state to see the legislation governing AI in its K-12 public classrooms</strong>, color-coded by where each bill sits in the process and by the state's overall regulatory stance.</p>
+        <p class="muted">The goal is a trustworthy, continually-refreshed map — not a dump of every bill that mentions "artificial intelligence," but the ones that genuinely shape classroom practice, vetted by a human before they appear.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data sources</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>LegiScan API</h3>
+          <p class="muted">Primary source for bill text, status, and history across all 50 states and territories. The sync searches every session (not just the current one), so passed and historical legislation is included.</p>
+        </div>
+        <div class="card">
+          <h3>State education agency guidance</h3>
+          <p class="muted">Many states act through department guidance rather than statute. 12 jurisdictions are researched manually today; an automated guidance scraper is planned so guidance-only states aren't shown as empty.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How relevance is decided</h2>
+      <div class="card">
+        <p>A bill must reference both an <strong>AI concept</strong> and a <strong>K-12 education concept</strong> in its text to be considered. Each candidate is then scored for confidence from its title:</p>
+        <table>
+          <thead><tr><th>Title contains</th><th>Confidence</th><th>On map by default</th></tr></thead>
+          <tbody>
+            <tr><td>AI term <em>and</em> education term</td><td>HIGH</td><td>Yes</td></tr>
+            <tr><td>Education term (AI in the body)</td><td>MEDIUM</td><td>Yes</td></tr>
+            <tr><td>AI only / higher-ed only / budget / ceremonial</td><td>LOW</td><td>No — held for review</td></tr>
+          </tbody>
+        </table>
+        <p class="muted" style="margin-top:.8rem">Bills like AI procurement, deepfake/CSAM crime, and elections legislation are deliberately routed to the review queue rather than shown automatically. A human can include or exclude any bill, and that decision survives every future sync.</p>
+        <p style="margin-top:.8rem">Status color-coding:
+          <span class="pill p-intro">Introduced</span>
+          <span class="pill p-debated">Debated</span>
+          <span class="pill p-passed">Passed</span>
+          <span class="pill p-failed">Failed / Vetoed</span>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Using the tool</h2>
+      <div class="card">
+        <h3>Run locally</h3>
+        <pre><code>cp .env.example backend/.env   # add your LEGISCAN_API_KEY
+
+# Backend
+cd backend &amp;&amp; python -m venv venv &amp;&amp; source venv/bin/activate
+pip install -r requirements.txt
+python -m app.migrations.001_add_sync_tracking upgrade
+python -m app.migrations.002_add_bill_review_queue upgrade
+uvicorn app.main:app --reload --port 8000
+
+# Frontend
+cd frontend &amp;&amp; npm install &amp;&amp; npm run dev</code></pre>
+        <h3 style="margin-top:1rem">Sync &amp; curate</h3>
+        <pre><code># Preview ranked bills for a state (no DB writes)
+python -m app.sync.legiscan_sync --preview --state CA
+
+# Live sync, then curate in the Review Queue tab
+python -m app.sync.legiscan_sync --state CA
+python -m app.sync.legiscan_sync --all</code></pre>
+        <p class="muted">Full details in the <a href="https://github.com/">repository README</a> and <code>docs/SYNC_IMPLEMENTATION.md</code>.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Changelog</h2>
+      <p class="muted">Mirrors <code>CHANGELOG.md</code>. Newest first.</p>
+      <div class="timeline">
+
+        <div class="entry">
+          <time>2026-06-30</time>
+          <strong>— Relevance overhaul, review queue, curation UI &amp; docs</strong>
+          <ul>
+            <li><strong>LegiScan sync:</strong> all-session coverage (passed + historical bills), an AI-AND-education relevance query, HIGH/MEDIUM/LOW confidence scoring, and real per-bill status via <code>getBill</code>.</li>
+            <li><strong>Filtering fixes:</strong> excludes AI procurement, deepfake/CSAM, higher-ed-only, budget, and ceremonial bills; word-boundary matching; dedup keyed on unique bill ID across recycled session numbers.</li>
+            <li><strong>Review queue:</strong> new <code>bill_review_queue</code> table + REST API; every bill gets an overridable include/exclude decision that persists across syncs.</li>
+            <li><strong>UI:</strong> new Review Queue tab — per-state triage with filters, status chips, and bulk actions; low-confidence bills surface first.</li>
+            <li><strong>Repo:</strong> refreshed README, this project page, changelog, and <code>.gitignore</code> (keeps the API key out of version control).</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <time>Earlier</time>
+          <strong>— Foundation</strong>
+          <ul>
+            <li>FastAPI + React + PostgreSQL scaffolding; interactive US map with clickable states and a detail modal.</li>
+            <li>Initial LegiScan sync and field-level audit trail.</li>
+            <li>Manual research of state education agency AI guidance for 12 jurisdictions.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      K-12 AI Legislative Map · internal reference tool · page generated from <code>docs/index.html</code>
+    </footer>
+  </div>
+</body>
+</html>

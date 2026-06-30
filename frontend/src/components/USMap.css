@@ -1,0 +1,168 @@
+.us-map-container {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.map-header {
+  text-align: center;
+}
+
+.map-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.map-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* SVG Map */
+.us-map-svg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* States */
+.state circle {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.state circle:hover {
+  filter: brightness(1.1);
+  stroke-width: 3 !important;
+}
+
+.state.hovered circle {
+  stroke: white;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+}
+
+.state-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Territories */
+.territories {
+  pointer-events: auto;
+}
+
+.territory-box {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.territory-box:not([opacity="0.6"]):hover {
+  filter: brightness(1.1);
+  stroke-width: 3 !important;
+}
+
+.territory-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  fill: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.territory-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  fill: #6b7280;
+}
+
+.territory-connector {
+  stroke-dasharray: 2, 2;
+  opacity: 0.5;
+}
+
+/* Tooltip */
+.tooltip-group {
+  pointer-events: none;
+}
+
+.tooltip-bg {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tooltip-state {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  fill: #1f2937;
+}
+
+.tooltip-stance {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  fill: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tooltip-bills {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+  fill: #6b7280;
+}
+
+/* Legend */
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .us-map-container {
+    padding: 12px;
+  }
+
+  .map-legend {
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .legend-item {
+    font-size: 12px;
+  }
+}
