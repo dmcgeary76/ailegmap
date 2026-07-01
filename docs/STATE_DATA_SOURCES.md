@@ -395,35 +395,37 @@ For each state, identify:
 - **Notes**: Has comprehensive guidance with 9 core objectives (AI literacy, digital citizenship, privacy protection, personalized learning, responsible AI use). Guidance-driven approach aligned with mainland states. Follows US education policy generally.
 
 ### **GU - Guam**
-- **Legislation**: None found
+- **Legislation**: None found (still no K-12-specific policy as of 2026-07-01)
 - **Legislature URL**: guamlegislature.org
 - **Education Dept**: guam.gov/content/guam-department-education
-- **Status**: ❌ NEEDS CONTACT (Territories batch)
-- **Regulatory Stance**: ABSENT
+- **Status**: ⚠️ PARTIAL CONTEXT FOUND, STILL NEEDS CONTACT (re-researched 2026-07-01)
+- **Regulatory Stance**: ABSENT (for K-12 specifically)
 - **Maturity**: NASCENT
-- **Notes**: No public K-12 AI legislation or guidance found. Needs direct outreach to Guam Department of Education to determine current stance (tracking federal guidance, developing local frameworks, or wait-and-see).
+- **Notes**: No K-12-specific AI policy exists yet, but broader context has emerged since the original research pass: Guam established an AI Regulatory Task Force (2025) to study AI's impact on government, economy, and daily life, with a University of Guam-led subcommittee explicitly working to align with federal AI priorities including child protection and workforce readiness — education is on its radar but not yet codified. Separately, GovGuam's Office of Technology (OTECH) issued a government-wide AI Use Policy for line agencies (OTECH-POL2025-001, January 2025), which is administrative/IT-security focused, not education-specific, but would technically apply to the Dept of Education as a line agency. Direct outreach to Guam DOE is still the right next step to get a K-12-specific answer.
+- **Sources**: [Guam establishes AI Regulatory Task Force](https://islandtimes.org/guam-establishes-artificial-intelligence-regulatory-task-force/), [Early progress for AI task force](https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html), [OTECH AI Use Policy PDF](https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf)
 
 ### **VI - US Virgin Islands**
-- **Legislation**: None found
+- **Legislation**: None found (still no formal AI policy as of 2026-07-01)
 - **Legislature URL**: legvi.org (Legislature of the Virgin Islands)
 - **Education Dept**: vide.vi (Virgin Islands Department of Education)
-- **Status**: ❌ NEEDS CONTACT (Territories batch)
+- **Status**: ❌ NEEDS CONTACT (re-researched 2026-07-01, no change)
 - **Regulatory Stance**: ABSENT
 - **Maturity**: NASCENT
-- **Notes**: No public K-12 AI legislation or guidance found. Needs direct outreach to VIDE to determine current stance. May follow federal guidance or developing local approach.
+- **Notes**: No public K-12 AI legislation or department guidance found. Governor Albert Bryan Jr. has publicly called for a broad education-system overhaul in response to AI-driven changes in the future of work, but this is political commentary, not a VIDE policy. Needs direct outreach to VIDE to determine current stance.
+- **Sources**: [Bryan Calls for Education Overhaul as AI Redefines the Future of Work](http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work)
 
 ---
 
 ## Research Status Summary
 
 - **✅ Fully Researched**: AK, AR, CA, CO, HI, LA, MA, NM, OK, RI, TX, PR (12)
-- **✅ Partially Researched**: AL, ID, MD, NJ, OH (5)
-- **❌ Needs Research/Contact**: GU, VI, + 34 states
+- **✅ Partially Researched**: AL, ID, MD, NJ, OH, GU (6)
+- **❌ Needs Research/Contact**: VI, + 34 states
 
 **Batch Progress:**
 - Phase 1 Pilot: CA, HI, MA, RI, TX (5 states)
 - South-Central: AR, CO, LA, NM, OK (5 states)
-- Territories: PR (1 territory, 2 pending contact)
+- Territories: PR fully researched; GU re-researched 2026-07-01 (partial context, outreach still needed); VI re-researched 2026-07-01 (no change, outreach still needed)
 - Total Researched: 12 of 53 jurisdictions (23%)
 - **Total Jurisdictions**: 50 states + 3 territories = 53
 
