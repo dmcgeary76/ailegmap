@@ -22,6 +22,14 @@ Timestamps are in the project's local time.
 - Added `load_territories.sh` to seed PR's already-researched guidance framework (SUPPORT / IN_PROGRESS) and explicit ABSENT records with research notes for GU/VI, so they render with real context on the map instead of empty, unexplained boxes.
 - Drafted outreach emails to Guam DOE and VIDE (`docs/territory_outreach_emails.md`) to get a direct K-12-specific answer from each department.
 
+### Review queue usability
+- Added "All states/territories" to the Review Queue's state filter so the whole dataset can be viewed at once instead of state-by-state.
+- Added a one-click "Needs review only" toggle (surfaces the existing Pending filter, which was previously buried in a dropdown) to cut through the review backlog without losing anything — Included/Excluded bills stay in the data, just out of the way.
+- Deliberately did **not** add a way to delete/remove bills from the queue: `_upsert_review_items` re-creates any bill LegiScan still returns on every sync, so a deleted row would just come back as a fresh Pending item and silently erase a prior Exclude decision. Filtering, not deleting, is the right lever here.
+
+### getSearch pagination fix
+- LegiScan's `getSearch` caps at 50 results per page; the sync never requested page 2, so six states were silently missing bills beyond page 1 — CA (50 of 89), NJ (50 of 81), HI (50 of 74), MD (50 of 73), NY (50 of 70), and IL (50 of 57), roughly 144 bills across those six that never reached the scorer or the review queue. `search_bills()` now pages through results until the index's reported count is satisfied or a page comes back short.
+
 ---
 
 ## 2026-06-30

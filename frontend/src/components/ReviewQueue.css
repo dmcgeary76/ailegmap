@@ -47,6 +47,24 @@
   background: #f3f4f6;
 }
 
+.rq-needs-review {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rq-needs-review:hover {
+  background: #fee2e2;
+}
+.rq-needs-review.active {
+  background: #991b1b;
+  border-color: #991b1b;
+  color: #fff;
+}
+
 /* Stats bar */
 .rq-stats {
   display: flex;

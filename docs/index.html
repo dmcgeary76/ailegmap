@@ -171,6 +171,8 @@ python -m app.sync.legiscan_sync --all</code></pre>
             <li><strong>Fixed cascading sync failures:</strong> one bad insert used to poison the whole run; the sync now rolls back and isolates failures per state.</li>
             <li><strong>Fixed a "sticky primary" bug:</strong> a state's headline bill could never be replaced by a stronger later match. Added confidence/stage tracking so re-syncs promote the best current bill — retroactively fixed CA, TX, RI, and others.</li>
             <li><strong>Territories:</strong> confirmed LegiScan doesn't cover PR/GU/VI at all; re-researched GU (new: an AI Regulatory Task Force + a general GovGuam AI policy, still no K-12-specific answer) and VI (unchanged); added a seed script for PR's guidance and explicit ABSENT records for GU/VI so they show real context instead of empty boxes; drafted outreach emails to both departments.</li>
+            <li><strong>Review queue usability:</strong> added an "All states/territories" view and a one-click "Needs review only" toggle. Deliberately skipped adding bill deletion — the sync would just recreate a deleted bill on the next run and erase any prior Exclude decision, so filtering beats removing.</li>
+            <li><strong>Pagination fix:</strong> LegiScan's getSearch caps at 50 results per page; six states (CA, NJ, HI, MD, NY, IL) were silently missing bills past page 1 — roughly 144 bills that never reached the review queue. The sync now pages through every result.</li>
           </ul>
         </div>
 

@@ -51,6 +51,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 # LegiScan API configuration
 LEGISCAN_BASE = "https://api.legiscan.com"
+PAGE_SIZE = 50  # getSearch's fixed page size (confirmed in LegiScan API docs)
 
 # ---------------------------------------------------------------------------
 # Relevance vocabulary
@@ -345,52 +346,85 @@ class LegiScanSync:
     # ---- network ---------------------------------------------------------
 
     def search_bills(self, state: str) -> List[Dict]:
-        """Search LegiScan for K-12 AI bills in a state (all sessions)."""
+        """Search LegiScan for K-12 AI bills in a state (all sessions).
+
+        getSearch returns at most PAGE_SIZE (50) results per call, even when
+        `summary.count` reports far more hits in the index -- CA/NJ/HI/MD/NY/IL
+        all silently lost bills past page 1 before this loop existed (up to 39
+        missed for CA alone). Keep requesting subsequent pages until we've
+        collected everything the index reports, or a page comes back short.
+        """
         if not self.api_key:
             print(f"  ❌ LegiScan API key not set")
             print(f"     Set LEGISCAN_API_KEY in backend/.env or export LEGISCAN_API_KEY=your_key")
             self.stats["errors"] += 1
             return []
 
-        try:
-            params = {
-                "key": self.api_key,
-                "op": "getSearch",
-                "state": state,
-                "query": SEARCH_QUERY,
-                "year": self.years,  # 1 = all sessions (captures passed/historical)
-            }
+        bills: List[Dict] = []
+        total_count = 0
+        page = 1
+        max_pages = 20  # safety cap; a single state's index shouldn't need this many
 
-            print(f"  🔍 Searching {state}...", end=" ", flush=True)
-            response = requests.get(LEGISCAN_BASE, params=params, timeout=20)
-            response.raise_for_status()
-            data = response.json()
+        while page <= max_pages:
+            try:
+                params = {
+                    "key": self.api_key,
+                    "op": "getSearch",
+                    "state": state,
+                    "query": SEARCH_QUERY,
+                    "year": self.years,  # 1 = all sessions (captures passed/historical)
+                    "page": page,
+                }
 
-            if data.get("status") == "OK":
+                if page == 1:
+                    print(f"  🔍 Searching {state}...", end=" ", flush=True)
+                response = requests.get(LEGISCAN_BASE, params=params, timeout=20)
+                response.raise_for_status()
+                data = response.json()
+
+                if data.get("status") != "OK":
+                    alert = data.get("alert", {}).get("message", "")
+                    print(f"❌ API error: {data.get('status')} {alert}")
+                    self.stats["errors"] += 1
+                    return bills  # keep whatever prior pages succeeded
+
                 searchresult = data.get("searchresult", {})
                 summary = searchresult.get("summary", {})
                 total_count = summary.get("count", 0)
 
-                bills = [
+                page_bills = [
                     bill for key, bill in searchresult.items()
                     if key != "summary" and isinstance(bill, dict)
                 ]
-                print(f"✅ ({len(bills)} returned, {total_count} total in index)")
-                return bills
-            else:
-                alert = data.get("alert", {}).get("message", "")
-                print(f"❌ API error: {data.get('status')} {alert}")
-                self.stats["errors"] += 1
-                return []
+                if not page_bills:
+                    break
 
-        except requests.RequestException as e:
-            print(f"❌ Request failed: {e}")
-            self.stats["errors"] += 1
-            return []
-        except json.JSONDecodeError:
-            print(f"❌ Invalid JSON response")
-            self.stats["errors"] += 1
-            return []
+                bills.extend(page_bills)
+
+                # Stop once we have everything the index reports, or the page
+                # came back short of PAGE_SIZE (LegiScan's own signal there's
+                # no next page) -- whichever happens first.
+                if len(bills) >= total_count or len(page_bills) < PAGE_SIZE:
+                    break
+
+                page += 1
+                time.sleep(0.4)  # rate limiting between pages, same as elsewhere
+
+            except requests.RequestException as e:
+                print(f"❌ Request failed: {e}")
+                self.stats["errors"] += 1
+                return bills
+            except json.JSONDecodeError:
+                print(f"❌ Invalid JSON response")
+                self.stats["errors"] += 1
+                return bills
+
+        pages_fetched = min(page, max_pages)
+        if pages_fetched > 1:
+            print(f"✅ ({len(bills)} returned across {pages_fetched} pages, {total_count} total in index)")
+        else:
+            print(f"✅ ({len(bills)} returned, {total_count} total in index)")
+        return bills
 
     def fetch_bill_status(self, bill_id) -> Optional[Tuple[str, str, str]]:
         """getBill lookup for authoritative status. Returns (label, stage, date)."""

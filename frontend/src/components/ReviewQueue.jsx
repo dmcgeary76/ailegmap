@@ -48,15 +48,19 @@ function ReviewQueue() {
     setLoading(true)
     setError(null)
     try {
-      const params = new URLSearchParams({ state_code: stateCode, limit: '1000' })
+      const params = new URLSearchParams({ limit: '1000' })
+      // stateCode === '' means "All states/territories" -- omit the filter
+      // entirely rather than sending an empty state_code param.
+      if (stateCode) params.append('state_code', stateCode)
       if (confidence) params.append('confidence', confidence)
       if (decision) params.append('decision', decision)
       if (flagReason) params.append('flag_reason', flagReason)
       if (onMap) params.append('included', onMap)
 
+      const statsParams = stateCode ? `?state_code=${stateCode}` : ''
       const [itemsRes, statsRes] = await Promise.all([
         axios.get(`${API_URL}/api/bills/review?${params}`),
-        axios.get(`${API_URL}/api/bills/review/stats?state_code=${stateCode}`),
+        axios.get(`${API_URL}/api/bills/review/stats${statsParams}`),
       ])
       const sorted = [...itemsRes.data].sort(
         (a, b) =>
@@ -135,7 +139,10 @@ function ReviewQueue() {
         <div className="rq-control">
           <label>State</label>
           <select value={stateCode} onChange={(e) => setStateCode(e.target.value)}>
-            {stateOptions.length === 0 && <option value={stateCode}>{stateCode}</option>}
+            <option value="">All states/territories</option>
+            {stateOptions.length === 0 && stateCode && (
+              <option value={stateCode}>{stateCode}</option>
+            )}
             {stateOptions.map((s) => (
               <option key={s.code} value={s.code}>
                 {s.name} ({s.code})
@@ -182,6 +189,14 @@ function ReviewQueue() {
             <option value="false">Off map</option>
           </select>
         </div>
+
+        <button
+          className={`rq-needs-review${decision === 'PENDING' ? ' active' : ''}`}
+          onClick={() => setDecision(decision === 'PENDING' ? '' : 'PENDING')}
+          title="Show only bills you haven't decided on yet -- everything already Included or Excluded stays out of the way"
+        >
+          {decision === 'PENDING' ? '✓ Needs review only' : 'Needs review only'}
+        </button>
 
         <button className="rq-refresh" onClick={fetchData} disabled={loading}>
           ↻ Refresh
