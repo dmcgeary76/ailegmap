@@ -163,6 +163,17 @@ python -m app.sync.legiscan_sync --all</code></pre>
       <div class="timeline">
 
         <div class="entry">
+          <time>2026-07-01</time>
+          <strong>— First full 50-state sync &amp; reliability fixes</strong>
+          <ul>
+            <li><strong>Full sync:</strong> ran the LegiScan sync across all 50 states + 3 territories for the first time — 963 bills found, 194 promoted to the map, 769 held for review. Confirmed LegiScan has no territory coverage at all (GU/PR/VI need the separate manual guidance path).</li>
+            <li><strong>Fixed a truncation crash:</strong> some real bill titles exceeded the old <code>VARCHAR(255)</code> limit; widened <code>bill_title</code> to <code>TEXT</code>.</li>
+            <li><strong>Fixed cascading sync failures:</strong> one bad insert used to poison the whole run; the sync now rolls back and isolates failures per state.</li>
+            <li><strong>Fixed a "sticky primary" bug:</strong> a state's headline bill could never be replaced by a stronger later match. Added confidence/stage tracking so re-syncs promote the best current bill — retroactively fixed CA, TX, RI, and others.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
           <time>2026-06-30</time>
           <strong>— Relevance overhaul, review queue, curation UI &amp; docs</strong>
           <ul>

@@ -5,6 +5,19 @@ Timestamps are in the project's local time.
 
 ---
 
+## 2026-07-01
+
+### First full 50-state live sync
+- Ran `legiscan_sync.py --all` across all 50 states + 3 territories for the first time. 963 bills found, 194 promoted to HIGH/MEDIUM confidence and shown on the map, 769 held in the review queue.
+- Confirmed LegiScan's API does not cover Guam, Puerto Rico, or the US Virgin Islands at all (not a bug — their `getSearch` has no territory support). Territory data will need to come from the separate manual SEA-guidance path, not the bill sync.
+
+### Sync reliability fixes
+- **Truncation crash:** `bill_title` was `VARCHAR(255)`/`VARCHAR(500)` and rejected real LegiScan titles that ran longer (e.g. Kansas HB2537's full statutory title), throwing `StringDataRightTruncation`. Widened to `TEXT` on `state_legislation` and `bill_review_queue`.
+- **Cascading failures:** `sync_all()` never called `db.rollback()` after a state errored, so one bad insert poisoned the SQLAlchemy session and every subsequent state in that run failed too (one real bug reported as 35). Added a rollback in the error handler so failures stay isolated per state.
+- **Sticky primary bug:** a state's headline bill, once set, could never be replaced by a stronger match found on a later sync — e.g. California stayed pinned to an old placeholder bill instead of the actual passed `SB1288`. Added `bill_legiscan_id`, `match_confidence`, and `bill_stage` columns to `state_legislation` (migration `003_widen_titles_and_primary_metadata.py`) so re-syncs can compare and promote the better bill. Retroactively healed CA (`SB1288`, Passed, HIGH), TX (`HB2400`, Introduced, HIGH), RI (`H8345`, Passed, MEDIUM), and other previously-populated states.
+
+---
+
 ## 2026-06-30
 
 ### LegiScan sync — relevance, status, and history

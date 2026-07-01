@@ -600,6 +600,9 @@ class LegiScanSync:
                 bill_title=primary_payload["bill_title"] if primary_payload else None,
                 bill_status=primary_payload["bill_status"] if primary_payload else "Absent",
                 bill_url=primary_payload["bill_url"] if primary_payload else None,
+                bill_legiscan_id=primary_payload["legiscan_bill_id"] if primary_payload else None,
+                match_confidence=primary_payload["match_confidence"] if primary_payload else None,
+                bill_stage=primary_payload["bill_stage"] if primary_payload else None,
                 additional_bills=[self._bill_payload(b) for b in extras],
                 guidance_exists=False,
                 regulatory_stance="ABSENT",
@@ -628,14 +631,82 @@ class LegiScanSync:
         existing_extra = state_record.additional_bills or []
         known = {b.get("legiscan_bill_id") for b in existing_extra if b.get("legiscan_bill_id")}
 
+        def _rank(confidence, stage):
+            # Same ordering rank_bills() uses to pick a primary within one run,
+            # applied here across runs so a stronger bill can replace a weaker
+            # stored one instead of freezing in place forever. Legacy rows with
+            # no stored confidence/stage rank at the bottom (0, 0), so the first
+            # real HIGH/MEDIUM match found after this migration will promote.
+            return (_confidence_rank(confidence), 1 if stage == "passed" else 0)
+
         changed = False
-        if primary_payload and primary_payload["legiscan_bill_id"] not in known:
-            if not state_record.bill_number:
+        if primary_payload:
+            # NOTE: deliberately NOT gated on `primary_payload["legiscan_bill_id"]
+            # not in known` here. A bill that deserves to be primary may already
+            # be sitting in additional_bills from before this promotion logic
+            # existed (or from a run where it wasn't yet strong enough) -- being
+            # "known" must not permanently block it from ever being promoted.
+            # `known` is only used below to avoid *duplicate* entries in extras.
+            same_bill = (
+                state_record.bill_legiscan_id is not None
+                and state_record.bill_legiscan_id == primary_payload["legiscan_bill_id"]
+            )
+            stronger = _rank(primary_payload["match_confidence"], primary_payload["bill_stage"]) > \
+                _rank(state_record.match_confidence, state_record.bill_stage)
+
+            if same_bill:
+                # Same bill re-surfacing (e.g. status advanced from Introduced to
+                # Passed) -- refresh its fields in place, don't touch extras.
+                if (state_record.bill_status != primary_payload["bill_status"]
+                        or state_record.bill_title != primary_payload["bill_title"]):
+                    old_status = state_record.bill_status
+                    state_record.bill_title = primary_payload["bill_title"]
+                    state_record.bill_status = primary_payload["bill_status"]
+                    state_record.bill_url = primary_payload["bill_url"]
+                    state_record.match_confidence = primary_payload["match_confidence"]
+                    state_record.bill_stage = primary_payload["bill_stage"]
+                    changed = True
+                    self.db.add(LegislationUpdate(
+                        state_legislation_id=state_record.id,
+                        field_changed="bill_status",
+                        old_value=str(old_status),
+                        new_value=primary_payload["bill_status"],
+                        changed_by="legiscan_sync",
+                        change_reason="Status refresh on existing primary bill",
+                    ))
+            elif not state_record.bill_number or stronger:
+                # Promote. If this bill is already sitting in additional_bills
+                # (e.g. from before this promotion logic existed), pull it out
+                # first so it doesn't end up listed as both primary and extra.
+                if primary_payload["legiscan_bill_id"] in known:
+                    existing_extra = [
+                        b for b in existing_extra
+                        if b.get("legiscan_bill_id") != primary_payload["legiscan_bill_id"]
+                    ]
+
+                # Demote the current primary (if any) into additional_bills so
+                # it isn't lost, then adopt the new one.
+                if state_record.bill_number and state_record.bill_legiscan_id and \
+                        state_record.bill_legiscan_id not in known:
+                    existing_extra.append({
+                        "bill_number": state_record.bill_number,
+                        "bill_title": state_record.bill_title,
+                        "bill_status": state_record.bill_status,
+                        "bill_url": state_record.bill_url,
+                        "legiscan_bill_id": state_record.bill_legiscan_id,
+                        "match_confidence": state_record.match_confidence,
+                        "bill_stage": state_record.bill_stage,
+                    })
+                    known.add(state_record.bill_legiscan_id)
+
                 old = state_record.bill_number
                 state_record.bill_number = primary_payload["bill_number"]
                 state_record.bill_title = primary_payload["bill_title"]
                 state_record.bill_status = primary_payload["bill_status"]
                 state_record.bill_url = primary_payload["bill_url"]
+                state_record.bill_legiscan_id = primary_payload["legiscan_bill_id"]
+                state_record.match_confidence = primary_payload["match_confidence"]
+                state_record.bill_stage = primary_payload["bill_stage"]
                 changed = True
                 self.db.add(LegislationUpdate(
                     state_legislation_id=state_record.id,
@@ -643,7 +714,9 @@ class LegiScanSync:
                     old_value=str(old),
                     new_value=primary_payload["bill_number"],
                     changed_by="legiscan_sync",
-                    change_reason=f"Set primary bill ({primary_payload['match_confidence']} confidence)",
+                    change_reason=f"Promoted stronger primary bill "
+                                  f"({primary_payload['match_confidence']} confidence, "
+                                  f"{primary_payload['bill_stage']})",
                 ))
                 known.add(primary_payload["legiscan_bill_id"])
             else:
@@ -687,6 +760,10 @@ class LegiScanSync:
             except Exception as e:
                 print(f"❌ Error syncing {state}: {e}")
                 self.stats["errors"] += 1
+                if self.db is not None:
+                    # Without this, a single failed flush poisons the session --
+                    # every subsequent state's commit fails too (cascading errors).
+                    self.db.rollback()
         self._print_summary()
 
     def sync_one(self, state: str):

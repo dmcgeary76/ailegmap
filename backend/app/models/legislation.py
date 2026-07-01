@@ -42,11 +42,18 @@ class StateLegislation(Base):
 
     # Legislation
     bill_number = Column(String(50))
-    bill_title = Column(String(255))
+    bill_title = Column(Text)  # some LegiScan titles exceed 255 chars (e.g. long statutory descriptions)
     bill_url = Column(Text)
     bill_status = Column(String(50))  # Passed, In Committee, Proposed, Pending, Absent
     bill_status_details = Column(Text)
     bill_status_as_of = Column(DateTime)
+
+    # Primary-bill sync metadata (added so re-syncs can tell whether a newly found
+    # bill is a *stronger* match than the current primary, instead of a bill number
+    # freezing in place forever once first set). NULL for legacy/manually-seeded rows.
+    bill_legiscan_id = Column(Integer)
+    match_confidence = Column(String(10))   # HIGH | MEDIUM | LOW
+    bill_stage = Column(String(20))         # introduced | debated | passed | failed
 
     # Additional legislation fields (JSON for flexibility)
     additional_bills = Column(JSON, default=[])  # For states with multiple bills
@@ -142,7 +149,7 @@ class BillReviewItem(Base):
 
     # Bill metadata (refreshed each sync)
     bill_number = Column(String(50))
-    bill_title = Column(String(500))
+    bill_title = Column(Text)  # some LegiScan titles exceed 255/500 chars
     bill_url = Column(Text)
     bill_text_url = Column(Text)
     bill_status = Column(String(50))         # human label, e.g. "Passed"
