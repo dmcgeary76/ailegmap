@@ -5,6 +5,14 @@ Timestamps are in the project's local time.
 
 ---
 
+## 2026-07-02
+
+### Architecture diagram on the project page
+- Added a "System architecture" section to `docs/index.html` rendering the LegiScan → sync → PostgreSQL → FastAPI → React data flow as a live Mermaid diagram, matching `docs/architecture.mermaid`.
+- Diagram is embedded as Mermaid source (via CDN, rendered client-side) rather than a static image, so `docs/architecture.mermaid` stays the single source of truth — edit one file, both the diagram source and the rendered page update together.
+
+---
+
 ## 2026-07-01
 
 ### First full 50-state live sync
