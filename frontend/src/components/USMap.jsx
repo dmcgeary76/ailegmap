@@ -107,7 +107,7 @@ export default function USMap({ states, layer, onStateClick }) {
         <p>
           {layer === 'stance'
             ? 'Manual classification of each state\'s guidance and policy. Gray = nobody has researched it yet.'
-            : 'Strongest stage among the bills a reviewer has included. Gray = no included bills.'}
+            : 'Strongest stage among the bills a reviewer has included; resolutions never count. Gray = no included bills.'}
           {' '}Small squares mark states where districts or cities have acted on their own.
         </p>
       </div>
@@ -176,7 +176,9 @@ export default function USMap({ states, layer, onStateClick }) {
               {layer === 'stance' ? STANCE_LABELS[stanceKey(hover)] : STAGE_LABELS[hover.legislation_stage || 'none']}
             </div>
             <div className="tt-line">
-              {hover.headline_bill ? `${hover.headline_bill.bill_number} · ${hover.headline_bill.bill_status}` : 'No headline bill'}
+              {hover.headline_bill
+                ? `${hover.headline_bill.bill_number} · ${hover.headline_bill.bill_status}${hover.headline_bill.is_resolution ? ' (resolution)' : ''}`
+                : 'No headline bill'}
             </div>
             <div className="tt-muted">
               {hover.bill_counts.included} included · {hover.bill_counts.pending} pending · {hover.bill_counts.held} held

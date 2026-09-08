@@ -16,9 +16,10 @@ CONFIDENCE_RANK = {"HIGH": 3, "MEDIUM": 2, "LOW": 1}
 
 
 def headline_sort_key(b: Bill):
-    """Best headline candidate first: confidence, then passed, then LegiScan
-    relevance, then most recent action. Same ordering the sync uses to rank."""
+    """Best headline candidate first: a real bill before a resolution, then
+    confidence, then passed, then LegiScan relevance, then most recent action."""
     return (
+        0 if b.is_resolution else 1,
         CONFIDENCE_RANK.get(b.match_confidence, 0),
         1 if b.bill_stage == "passed" else 0,
         b.relevance_score or 0,
@@ -36,10 +37,14 @@ def headline_bill(bills: Iterable[Bill]) -> Optional[Bill]:
 
 
 def legislation_stage(bills: Iterable[Bill]) -> Optional[str]:
-    """Strongest stage among included bills, or None when nothing is included."""
+    """Strongest stage among included *bills*, or None when nothing is included.
+
+    Resolutions are skipped: an adopted "urging the department to..." never
+    becomes law, and the layer is labeled "Passed into law". They still show
+    in the state's bill list with a resolution chip."""
     best = None
     for b in bills:
-        if not b.effective_included or not b.bill_stage:
+        if not b.effective_included or not b.bill_stage or b.is_resolution:
             continue
         if best is None or STAGE_RANK.get(b.bill_stage, 0) > STAGE_RANK.get(best, 0):
             best = b.bill_stage
@@ -50,10 +55,11 @@ def review_counts(bills: Iterable[Bill]) -> Dict[str, int]:
     bills = list(bills)
     by_decision = Counter(b.decision for b in bills)
     inc = [b for b in bills if b.effective_included]
-    by_stage = Counter(b.bill_stage for b in inc if b.bill_stage)
+    by_stage = Counter(b.bill_stage for b in inc if b.bill_stage and not b.is_resolution)
     return {
         "total": len(bills),
         "included": len(inc),
+        "resolutions": sum(1 for b in inc if b.is_resolution),
         "pending": by_decision.get("PENDING", 0),
         "manually_included": by_decision.get("INCLUDED", 0),
         "manually_excluded": by_decision.get("EXCLUDED", 0),

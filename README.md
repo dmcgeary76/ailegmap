@@ -127,7 +127,16 @@ The sync requires an AI term **and** an education term in the bill text (via a L
 
 MEDIUM used to auto-include. It stopped on 2026-09-04 after an audit found that 0 of 126 MEDIUM bills had an AI term in the title — they were digital-citizenship, cyberbullying and computer-science-curriculum bills that mention AI once in a definitions section, and they were setting the map color for 21 states. The rule lives in one place, `AUTO_INCLUDE_CONFIDENCE` in `app/models/legislation.py`. The scorer only sees titles; the real fix (scoring AI-term density in the bill *text* via `getBillText`) is on the roadmap.
 
-A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and survives future syncs. After changing the vocabulary or gates, `python -m app.sync.legiscan_sync --all --rescore` re-classifies stored rows without any API calls. See [`docs/SYNC_IMPLEMENTATION.md`](docs/SYNC_IMPLEMENTATION.md) for details.
+A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and survives future syncs.
+Decisions live in **`backend/data/decisions.csv`** (tracked in git), keyed by LegiScan bill id: the review
+UI writes the file after every decision, and `python -m app.seed` replays it onto the database, so the
+SQLite file is a cache and a fresh clone + sync reproduces the curated map. Edit the CSV by hand if you
+prefer — it is the source of truth.
+
+**Resolutions never color the map.** HR / SR / HCR / SJR / memorials / Maine "Resolves" (detected from
+the bill number, see `is_resolution()` in `models/legislation.py`) stay in a state's bill list with a
+*resolution* chip, but an adopted "urging the department to…" is not a law, so `legislation_stage`
+skips them and they are never the headline bill when a real bill exists. After changing the vocabulary or gates, `python -m app.sync.legiscan_sync --all --rescore` re-classifies stored rows without any API calls. See [`docs/SYNC_IMPLEMENTATION.md`](docs/SYNC_IMPLEMENTATION.md) for details.
 
 ## Project structure
 
@@ -150,7 +159,7 @@ A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and 
 ## Data schema
 
 See [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md). Core entities:
-- `bills` — every LegiScan result with auto-classification and the reviewer's include/exclude decision
+- `bills` — every LegiScan result with auto-classification and the reviewer's include/exclude decision (mirrored to `backend/data/decisions.csv`)
 - `state_profiles` — hand-researched guidance and stance
 - `local_actions` — hand-curated district/city/county actions (`backend/data/local_actions/README.md` documents the fields)
 

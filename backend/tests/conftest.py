@@ -12,6 +12,13 @@ from sqlalchemy.pool import StaticPool
 from app.database import Base
 
 
+@pytest.fixture(autouse=True)
+def _decisions_in_tmp(tmp_path, monkeypatch):
+    """Never let a test write the real data/decisions.csv."""
+    from app import decisions
+    monkeypatch.setattr(decisions, "DECISIONS_PATH", tmp_path / "decisions.csv")
+
+
 @pytest.fixture
 def engine():
     eng = create_engine("sqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool)

@@ -45,7 +45,7 @@ def test_headline_and_stage_follow_decisions(db, raw_ca):
     assert {b.bill_number for b in derive.included_bills(bills)} == {"AB1064", "AB1979"}
     counts = derive.review_counts(bills)
     assert counts == {"total": 4, "included": 2, "pending": 2, "manually_included": 1,
-                      "manually_excluded": 1, "held": 2,
+                      "manually_excluded": 1, "held": 2, "resolutions": 0,
                       "by_stage": {"passed": 0, "debated": 0, "introduced": 1, "failed": 1}}
 
 

@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-08T16:12:55.489777Z",
+ "generated_at": "2026-09-08T16:42:00.750888Z",
  "last_sync": null,
  "summary": {
   "jurisdictions": 54,
-  "states_with_included_bills": 25,
+  "states_with_included_bills": 21,
   "states_by_legislation_stage": {
-   "passed": 8,
+   "passed": 3,
    "debated": 5,
-   "introduced": 10,
+   "introduced": 11,
    "failed": 2,
-   "none": 29
+   "none": 33
   },
   "states_researched": 9,
   "states_with_guidance": 6,
@@ -23,9 +23,9 @@
   },
   "bills": {
    "total": 1197,
-   "included": 78,
-   "pending": 1180,
-   "excluded": 14
+   "included": 64,
+   "pending": 1105,
+   "excluded": 28
   },
   "local_actions": {
    "total": 3,
@@ -50,6 +50,7 @@
    "bill_counts": {
     "total": 13,
     "included": 0,
+    "resolutions": 0,
     "pending": 13,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -94,6 +95,7 @@
    "bill_counts": {
     "total": 5,
     "included": 0,
+    "resolutions": 0,
     "pending": 5,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -133,10 +135,12 @@
    "regulatory_stance": "SUPPORT",
    "maturity": "IN_PROGRESS",
    "key_focus_areas": [],
-   "unique_context": "Remote/rural state with cultural responsiveness focus",
+   "unique_context": "Remote/rural state with a cultural-responsiveness focus; guidance-driven rather than legislation-driven.",
    "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.188652"
+   "sources": [
+    "https://education.alaska.gov/artificial-intelligence/"
+   ],
+   "last_updated": "2026-09-08T16:41:59.782328"
   },
   {
    "state_code": "AZ",
@@ -146,8 +150,9 @@
    "bill_counts": {
     "total": 15,
     "included": 2,
-    "pending": 15,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 13,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 13,
     "by_stage": {
@@ -169,8 +174,9 @@
     "last_action": "Assigned to House RULES Committee",
     "last_action_date": "2026-06-13",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -185,8 +191,9 @@
      "last_action": "Assigned to House RULES Committee",
      "last_action_date": "2026-06-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 428,
@@ -200,8 +207,9 @@
      "last_action": "Governor Vetoed",
      "last_action_date": "2026-06-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -235,6 +243,7 @@
    "bill_counts": {
     "total": 6,
     "included": 0,
+    "resolutions": 0,
     "pending": 6,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -279,8 +288,9 @@
    "bill_counts": {
     "total": 114,
     "included": 5,
-    "pending": 103,
-    "manually_included": 3,
+    "resolutions": 0,
+    "pending": 101,
+    "manually_included": 5,
     "manually_excluded": 8,
     "held": 109,
     "by_stage": {
@@ -303,7 +313,8 @@
     "last_action_date": "2024-09-28",
     "match_confidence": "HIGH",
     "decision": "INCLUDED",
-    "effective_included": true
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -319,7 +330,8 @@
      "last_action_date": "2024-09-28",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
-     "effective_included": true
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 512,
@@ -333,8 +345,9 @@
      "last_action": "Chaptered by Secretary of State - Chapter 927, Statutes of 2024.",
      "last_action_date": "2024-09-29",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 451,
@@ -349,7 +362,8 @@
      "last_action_date": "2026-01-22",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
-     "effective_included": true
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 513,
@@ -363,8 +377,9 @@
      "last_action": "In committee: Held under submission.",
      "last_action_date": "2024-05-16",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 817,
@@ -379,7 +394,8 @@
      "last_action_date": "2024-04-24",
      "match_confidence": "LOW",
      "decision": "INCLUDED",
-     "effective_included": true
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -440,7 +456,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-04T19:21:18.414984"
+   "last_updated": "2026-09-08T16:41:59.783155"
   },
   {
    "state_code": "CO",
@@ -450,6 +466,7 @@
    "bill_counts": {
     "total": 15,
     "included": 0,
+    "resolutions": 0,
     "pending": 15,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -493,15 +510,16 @@
    "legislation_stage": "introduced",
    "bill_counts": {
     "total": 16,
-    "included": 2,
-    "pending": 16,
-    "manually_included": 0,
-    "manually_excluded": 0,
-    "held": 14,
+    "included": 1,
+    "resolutions": 0,
+    "pending": 14,
+    "manually_included": 1,
+    "manually_excluded": 1,
+    "held": 15,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 2,
+     "introduced": 1,
      "failed": 0
     }
    },
@@ -517,8 +535,9 @@
     "last_action": "Referred to Joint Committee on Education",
     "last_action_date": "2025-01-22",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -533,23 +552,9 @@
      "last_action": "Referred to Joint Committee on Education",
      "last_action_date": "2025-01-22",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 496,
-     "legiscan_bill_id": 1179388,
-     "bill_number": "HB06889",
-     "bill_title": "An Act Providing Educational Subsidies For Students Studying Artificial Intelligence, Virtual Reality, Autonomous Vehicles Or Quantum Computing.",
-     "bill_url": "https://legiscan.com/CT/bill/HB06889/2019",
-     "bill_text_url": "https://legiscan.com/CT/text/HB06889/2019",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Public Hearing 02/21",
-     "last_action_date": "2019-02-15",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -583,8 +588,9 @@
    "bill_counts": {
     "total": 4,
     "included": 1,
-    "pending": 4,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 3,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 3,
     "by_stage": {
@@ -606,8 +612,9 @@
     "last_action": "Passed By House. Votes: 36 YES 4 NO 1 ABSENT",
     "last_action_date": "2026-06-30",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -622,8 +629,9 @@
      "last_action": "Passed By House. Votes: 36 YES 4 NO 1 ABSENT",
      "last_action_date": "2026-06-30",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -657,6 +665,7 @@
    "bill_counts": {
     "total": 32,
     "included": 0,
+    "resolutions": 0,
     "pending": 32,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -701,6 +710,7 @@
    "bill_counts": {
     "total": 23,
     "included": 0,
+    "resolutions": 0,
     "pending": 23,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -741,67 +751,39 @@
    "state_code": "HI",
    "state_name": "Hawaii",
    "research_status": "RESEARCHED",
-   "legislation_stage": "passed",
+   "legislation_stage": "introduced",
    "bill_counts": {
     "total": 90,
     "included": 4,
-    "pending": 90,
-    "manually_included": 0,
+    "resolutions": 2,
+    "pending": 86,
+    "manually_included": 4,
     "manually_excluded": 0,
     "held": 86,
     "by_stage": {
-     "passed": 1,
-     "debated": 1,
+     "passed": 0,
+     "debated": 0,
      "introduced": 2,
      "failed": 0
     }
    },
    "headline_bill": {
-    "id": 582,
-    "legiscan_bill_id": 2133428,
-    "bill_number": "HR40",
-    "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
-    "bill_url": "https://legiscan.com/HI/bill/HR40/2026",
-    "bill_text_url": "https://legiscan.com/HI/text/HR40/2026",
-    "bill_status": "Passed",
-    "bill_stage": "passed",
-    "last_action": "Resolution adopted in final form.",
-    "last_action_date": "2026-04-02",
+    "id": 584,
+    "legiscan_bill_id": 2092749,
+    "bill_number": "HB1887",
+    "bill_title": "Relating To Artificial Intelligence Literacy Education.",
+    "bill_url": "https://legiscan.com/HI/bill/HB1887/2026",
+    "bill_text_url": "https://legiscan.com/HI/text/HB1887/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "The committee(s) on EDN recommend(s) that the measure be deferred.",
+    "last_action_date": "2026-02-03",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
-    {
-     "id": 582,
-     "legiscan_bill_id": 2133428,
-     "bill_number": "HR40",
-     "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
-     "bill_url": "https://legiscan.com/HI/bill/HR40/2026",
-     "bill_text_url": "https://legiscan.com/HI/text/HR40/2026",
-     "bill_status": "Passed",
-     "bill_stage": "passed",
-     "last_action": "Resolution adopted in final form.",
-     "last_action_date": "2026-04-02",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 583,
-     "legiscan_bill_id": 2133332,
-     "bill_number": "HCR44",
-     "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
-     "bill_url": "https://legiscan.com/HI/bill/HCR44/2026",
-     "bill_text_url": "https://legiscan.com/HI/text/HCR44/2026",
-     "bill_status": "Engrossed",
-     "bill_stage": "debated",
-     "last_action": "Referred to EDU/LBT.",
-     "last_action_date": "2026-04-10",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
     {
      "id": 584,
      "legiscan_bill_id": 2092749,
@@ -814,8 +796,9 @@
      "last_action": "The committee(s) on EDN recommend(s) that the measure be deferred.",
      "last_action_date": "2026-02-03",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 75,
@@ -829,8 +812,41 @@
      "last_action": "Referred to EDU/LBT, WAM.",
      "last_action_date": "2026-01-26",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 582,
+     "legiscan_bill_id": 2133428,
+     "bill_number": "HR40",
+     "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
+     "bill_url": "https://legiscan.com/HI/bill/HR40/2026",
+     "bill_text_url": "https://legiscan.com/HI/text/HR40/2026",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Resolution adopted in final form.",
+     "last_action_date": "2026-04-02",
+     "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
+    },
+    {
+     "id": 583,
+     "legiscan_bill_id": 2133332,
+     "bill_number": "HCR44",
+     "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
+     "bill_url": "https://legiscan.com/HI/bill/HCR44/2026",
+     "bill_text_url": "https://legiscan.com/HI/text/HCR44/2026",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred to EDU/LBT.",
+     "last_action_date": "2026-04-10",
+     "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
     }
    ],
    "local_signal": {
@@ -856,10 +872,12 @@
    "regulatory_stance": "MANDATE",
    "maturity": "MATURE",
    "key_focus_areas": [],
-   "unique_context": "Island state with cultural curriculum integration",
+   "unique_context": "Island state with cultural curriculum integration; AI literacy graduation requirement from 2028.",
    "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.196857"
+   "sources": [
+    "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
+   ],
+   "last_updated": "2026-09-08T16:41:59.784333"
   },
   {
    "state_code": "ID",
@@ -869,8 +887,9 @@
    "bill_counts": {
     "total": 4,
     "included": 1,
-    "pending": 4,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 3,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 3,
     "by_stage": {
@@ -892,8 +911,9 @@
     "last_action": "Session Law Chapter 71 Effective: 07/01/2026",
     "last_action_date": "2026-03-19",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -908,8 +928,9 @@
      "last_action": "Session Law Chapter 71 Effective: 07/01/2026",
      "last_action_date": "2026-03-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -943,8 +964,9 @@
    "bill_counts": {
     "total": 70,
     "included": 1,
-    "pending": 70,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 69,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 69,
     "by_stage": {
@@ -966,8 +988,9 @@
     "last_action": "Added as Co-Sponsor Sen. Mary Edly-Allen",
     "last_action_date": "2026-06-30",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -982,8 +1005,9 @@
      "last_action": "Added as Co-Sponsor Sen. Mary Edly-Allen",
      "last_action_date": "2026-06-30",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -1017,6 +1041,7 @@
    "bill_counts": {
     "total": 9,
     "included": 0,
+    "resolutions": 0,
     "pending": 9,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1061,8 +1086,9 @@
    "bill_counts": {
     "total": 12,
     "included": 2,
-    "pending": 12,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 10,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 10,
     "by_stage": {
@@ -1084,8 +1110,9 @@
     "last_action": "Introduced, placed on calendar. H.J. 305.",
     "last_action_date": "2026-02-16",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -1100,8 +1127,9 @@
      "last_action": "Introduced, placed on calendar. H.J. 305.",
      "last_action_date": "2026-02-16",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 407,
@@ -1115,8 +1143,9 @@
      "last_action": "Introduced, referred to Education. H.J. 150.",
      "last_action_date": "2026-01-26",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -1150,6 +1179,7 @@
    "bill_counts": {
     "total": 7,
     "included": 0,
+    "resolutions": 0,
     "pending": 7,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1194,6 +1224,7 @@
    "bill_counts": {
     "total": 10,
     "included": 0,
+    "resolutions": 0,
     "pending": 10,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1234,52 +1265,39 @@
    "state_code": "LA",
    "state_name": "Louisiana",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "passed",
+   "legislation_stage": "introduced",
    "bill_counts": {
     "total": 17,
     "included": 2,
-    "pending": 17,
-    "manually_included": 0,
+    "resolutions": 1,
+    "pending": 15,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 15,
     "by_stage": {
-     "passed": 1,
+     "passed": 0,
      "debated": 0,
      "introduced": 1,
      "failed": 0
     }
    },
    "headline_bill": {
-    "id": 417,
-    "legiscan_bill_id": 2148374,
-    "bill_number": "HR249",
-    "bill_title": "Requests the State Board of Elementary and Secondary Education to incorporate artificial intelligence into content standards",
-    "bill_url": "https://legiscan.com/LA/bill/HR249/2026",
-    "bill_text_url": "https://legiscan.com/LA/text/HR249/2026",
-    "bill_status": "Passed",
-    "bill_stage": "passed",
-    "last_action": "Taken by the Clerk of the House and presented to the Secretary of State in accordance with the Rules of the House.",
-    "last_action_date": "2026-05-28",
+    "id": 665,
+    "legiscan_bill_id": 2139727,
+    "bill_number": "HB1149",
+    "bill_title": "Requires each public school to incorporate instruction on artificial intelligence into an existing course of study for each student in grades six through twelve (OR NO IMPACT See Note)",
+    "bill_url": "https://legiscan.com/LA/bill/HB1149/2026",
+    "bill_text_url": "https://legiscan.com/LA/text/HB1149/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Read by title, under the rules, referred to the Committee on Education.",
+    "last_action_date": "2026-04-01",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
-    {
-     "id": 417,
-     "legiscan_bill_id": 2148374,
-     "bill_number": "HR249",
-     "bill_title": "Requests the State Board of Elementary and Secondary Education to incorporate artificial intelligence into content standards",
-     "bill_url": "https://legiscan.com/LA/bill/HR249/2026",
-     "bill_text_url": "https://legiscan.com/LA/text/HR249/2026",
-     "bill_status": "Passed",
-     "bill_stage": "passed",
-     "last_action": "Taken by the Clerk of the House and presented to the Secretary of State in accordance with the Rules of the House.",
-     "last_action_date": "2026-05-28",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
     {
      "id": 665,
      "legiscan_bill_id": 2139727,
@@ -1292,8 +1310,25 @@
      "last_action": "Read by title, under the rules, referred to the Committee on Education.",
      "last_action_date": "2026-04-01",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 417,
+     "legiscan_bill_id": 2148374,
+     "bill_number": "HR249",
+     "bill_title": "Requests the State Board of Elementary and Secondary Education to incorporate artificial intelligence into content standards",
+     "bill_url": "https://legiscan.com/LA/bill/HR249/2026",
+     "bill_text_url": "https://legiscan.com/LA/text/HR249/2026",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Taken by the Clerk of the House and presented to the Secretary of State in accordance with the Rules of the House.",
+     "last_action_date": "2026-05-28",
+     "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
     }
    ],
    "local_signal": {
@@ -1323,52 +1358,39 @@
    "state_code": "ME",
    "state_name": "Maine",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "passed",
+   "legislation_stage": null,
    "bill_counts": {
     "total": 9,
-    "included": 2,
-    "pending": 9,
-    "manually_included": 0,
-    "manually_excluded": 0,
-    "held": 7,
+    "included": 1,
+    "resolutions": 1,
+    "pending": 7,
+    "manually_included": 1,
+    "manually_excluded": 1,
+    "held": 8,
     "by_stage": {
-     "passed": 1,
+     "passed": 0,
      "debated": 0,
      "introduced": 0,
-     "failed": 1
+     "failed": 0
     }
    },
    "headline_bill": {
-    "id": 671,
-    "legiscan_bill_id": 1903898,
-    "bill_number": "LD109",
-    "bill_title": "Resolve, Directing the Maine Arts Commission to Study Federal and National Efforts to Protect Artists from Copyright Infringement by Artificial Intelligence Companies and Users and to Monitor Educational Use",
-    "bill_url": "https://legiscan.com/ME/bill/LD109/2025",
-    "bill_text_url": "https://legiscan.com/ME/text/LD109/2025",
-    "bill_status": "Passed",
-    "bill_stage": "passed",
-    "last_action": "HELD BY THE GOVERNOR.",
-    "last_action_date": "2025-07-08",
+    "id": 443,
+    "legiscan_bill_id": 1977885,
+    "bill_number": "LD643",
+    "bill_title": "Resolve, to Study the Effects of Artificial Intelligence, Cellular Telephones and Social Media on Public Education",
+    "bill_url": "https://legiscan.com/ME/bill/LD643/2025",
+    "bill_text_url": "https://legiscan.com/ME/text/LD643/2025",
+    "bill_status": "Failed / Dead",
+    "bill_stage": "failed",
+    "last_action": "Pursuant to Joint Rule 310.3 Placed in Legislative Files (DEAD)",
+    "last_action_date": "2025-05-13",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": true
    },
    "bills": [
-    {
-     "id": 671,
-     "legiscan_bill_id": 1903898,
-     "bill_number": "LD109",
-     "bill_title": "Resolve, Directing the Maine Arts Commission to Study Federal and National Efforts to Protect Artists from Copyright Infringement by Artificial Intelligence Companies and Users and to Monitor Educational Use",
-     "bill_url": "https://legiscan.com/ME/bill/LD109/2025",
-     "bill_text_url": "https://legiscan.com/ME/text/LD109/2025",
-     "bill_status": "Passed",
-     "bill_stage": "passed",
-     "last_action": "HELD BY THE GOVERNOR.",
-     "last_action_date": "2025-07-08",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
     {
      "id": 443,
      "legiscan_bill_id": 1977885,
@@ -1381,8 +1403,9 @@
      "last_action": "Pursuant to Joint Rule 310.3 Placed in Legislative Files (DEAD)",
      "last_action_date": "2025-05-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
     }
    ],
    "local_signal": {
@@ -1416,8 +1439,9 @@
    "bill_counts": {
     "total": 80,
     "included": 7,
-    "pending": 80,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 73,
+    "manually_included": 7,
     "manually_excluded": 0,
     "held": 73,
     "by_stage": {
@@ -1439,8 +1463,9 @@
     "last_action": "Approved by the Governor - Chapter 634",
     "last_action_date": "2026-05-26",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -1455,8 +1480,9 @@
      "last_action": "Approved by the Governor - Chapter 634",
      "last_action_date": "2026-05-26",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 457,
@@ -1470,8 +1496,9 @@
      "last_action": "Referred Rules",
      "last_action_date": "2026-04-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 97,
@@ -1485,8 +1512,9 @@
      "last_action": "Referred Education, Energy, and the Environment",
      "last_action_date": "2025-03-17",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 458,
@@ -1500,8 +1528,9 @@
      "last_action": "Hearing 3/07 at 9:00 a.m.",
      "last_action_date": "2025-03-04",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 459,
@@ -1515,8 +1544,9 @@
      "last_action": "Hearing 2/27 at 1:00 p.m.",
      "last_action_date": "2026-02-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 25,
@@ -1530,8 +1560,9 @@
      "last_action": "Hearing 2/21 at 9:30 a.m.",
      "last_action_date": "2025-02-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 26,
@@ -1545,8 +1576,9 @@
      "last_action": "Hearing 2/24 at 11:00 a.m.",
      "last_action_date": "2025-02-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -1580,6 +1612,7 @@
    "bill_counts": {
     "total": 15,
     "included": 0,
+    "resolutions": 0,
     "pending": 15,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1619,8 +1652,10 @@
    "key_focus_areas": [],
    "unique_context": null,
    "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.189614"
+   "sources": [
+    "https://www.doe.mass.edu/edtech/ai/default.html"
+   ],
+   "last_updated": "2026-09-08T16:41:59.784849"
   },
   {
    "state_code": "MI",
@@ -1630,6 +1665,7 @@
    "bill_counts": {
     "total": 8,
     "included": 0,
+    "resolutions": 0,
     "pending": 8,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1674,6 +1710,7 @@
    "bill_counts": {
     "total": 37,
     "included": 0,
+    "resolutions": 0,
     "pending": 37,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1718,8 +1755,9 @@
    "bill_counts": {
     "total": 35,
     "included": 3,
-    "pending": 35,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 32,
+    "manually_included": 3,
     "manually_excluded": 0,
     "held": 32,
     "by_stage": {
@@ -1741,8 +1779,9 @@
     "last_action": "Died In Committee",
     "last_action_date": "2025-03-04",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -1757,8 +1796,9 @@
      "last_action": "Died In Committee",
      "last_action_date": "2025-03-04",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 181,
@@ -1772,8 +1812,9 @@
      "last_action": "Died On Calendar",
      "last_action_date": "2024-04-10",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 691,
@@ -1787,8 +1828,9 @@
      "last_action": "Died In Committee",
      "last_action_date": "2026-02-03",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -1822,6 +1864,7 @@
    "bill_counts": {
     "total": 18,
     "included": 0,
+    "resolutions": 0,
     "pending": 18,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1866,6 +1909,7 @@
    "bill_counts": {
     "total": 4,
     "included": 0,
+    "resolutions": 0,
     "pending": 4,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1910,6 +1954,7 @@
    "bill_counts": {
     "total": 4,
     "included": 0,
+    "resolutions": 0,
     "pending": 4,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1954,6 +1999,7 @@
    "bill_counts": {
     "total": 12,
     "included": 0,
+    "resolutions": 0,
     "pending": 12,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -1998,6 +2044,7 @@
    "bill_counts": {
     "total": 3,
     "included": 0,
+    "resolutions": 0,
     "pending": 3,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -2041,15 +2088,16 @@
    "legislation_stage": "debated",
    "bill_counts": {
     "total": 92,
-    "included": 12,
-    "pending": 92,
-    "manually_included": 0,
-    "manually_excluded": 0,
-    "held": 80,
+    "included": 9,
+    "resolutions": 0,
+    "pending": 80,
+    "manually_included": 9,
+    "manually_excluded": 3,
+    "held": 83,
     "by_stage": {
      "passed": 0,
      "debated": 1,
-     "introduced": 11,
+     "introduced": 8,
      "failed": 0
     }
    },
@@ -2065,8 +2113,9 @@
     "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
     "last_action_date": "2026-02-19",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -2081,8 +2130,9 @@
      "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
      "last_action_date": "2026-02-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 18,
@@ -2096,8 +2146,9 @@
      "last_action": "Introduced in the Senate, Referred to Senate Education Committee",
      "last_action_date": "2026-01-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 19,
@@ -2111,8 +2162,9 @@
      "last_action": "Introduced in the Senate, Referred to Senate Education Committee",
      "last_action_date": "2024-11-18",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 20,
@@ -2126,38 +2178,9 @@
      "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
      "last_action_date": "2024-10-21",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 31,
-     "legiscan_bill_id": 2097277,
-     "bill_number": "A2616",
-     "bill_title": "Requires OIT to develop NJ generative artificial intelligence program and implement artificial intelligence education courses with county governments; appropriates $1.5 million.",
-     "bill_url": "https://legiscan.com/NJ/bill/A2616/2026",
-     "bill_text_url": "https://legiscan.com/NJ/text/A2616/2026",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
-     "last_action_date": "2026-01-13",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 32,
-     "legiscan_bill_id": 1887101,
-     "bill_number": "A4821",
-     "bill_title": "Requires OIT to develop NJ generative artificial intelligence program and implement artificial intelligence education courses with county governments; appropriates $1.5 million.",
-     "bill_url": "https://legiscan.com/NJ/bill/A4821/2024",
-     "bill_text_url": "https://legiscan.com/NJ/text/A4821/2024",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
-     "last_action_date": "2024-09-19",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 33,
@@ -2171,8 +2194,9 @@
      "last_action": "Introduced in the Senate, Referred to Senate Education Committee",
      "last_action_date": "2026-06-15",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 39,
@@ -2186,8 +2210,9 @@
      "last_action": "Introduced, Referred to Assembly Education Committee",
      "last_action_date": "2026-06-01",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 62,
@@ -2201,8 +2226,9 @@
      "last_action": "Introduced in the Senate, Referred to Senate Education Committee",
      "last_action_date": "2026-03-12",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 63,
@@ -2216,8 +2242,9 @@
      "last_action": "Received in the Senate, Referred to Senate Education Committee",
      "last_action_date": "2026-03-02",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 64,
@@ -2231,23 +2258,9 @@
      "last_action": "Reported out of Assembly Comm. with Amendments, 2nd Reading",
      "last_action_date": "2025-12-18",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 308,
-     "legiscan_bill_id": 1889758,
-     "bill_number": "A5034",
-     "bill_title": "Establishes public awareness campaign and educational workshops concerning artificial intelligence.",
-     "bill_url": "https://legiscan.com/NJ/bill/A5034/2024",
-     "bill_text_url": "https://legiscan.com/NJ/text/A5034/2024",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
-     "last_action_date": "2024-11-14",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -2281,6 +2294,7 @@
    "bill_counts": {
     "total": 20,
     "included": 0,
+    "resolutions": 0,
     "pending": 20,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -2321,52 +2335,39 @@
    "state_code": "NY",
    "state_name": "New York",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "passed",
+   "legislation_stage": "debated",
    "bill_counts": {
     "total": 88,
-    "included": 13,
-    "pending": 84,
-    "manually_included": 0,
-    "manually_excluded": 4,
-    "held": 75,
+    "included": 7,
+    "resolutions": 0,
+    "pending": 71,
+    "manually_included": 7,
+    "manually_excluded": 10,
+    "held": 81,
     "by_stage": {
-     "passed": 1,
+     "passed": 0,
      "debated": 1,
-     "introduced": 11,
+     "introduced": 6,
      "failed": 0
     }
    },
    "headline_bill": {
-    "id": 598,
-    "legiscan_bill_id": 2068608,
-    "bill_number": "S08831",
-    "bill_title": "Provides for the use of automated employment decision-making tools and artificial intelligence systems by a county, city, town, village, school district, board of cooperative educational services, county vocational education and extension board, district corporation, the state university of New York, the city university of New York, or community college; amends the effectiveness thereof.",
-    "bill_url": "https://legiscan.com/NY/bill/S08831/2025",
-    "bill_text_url": "https://legiscan.com/NY/text/S08831/2025",
-    "bill_status": "Passed",
-    "bill_stage": "passed",
-    "last_action": "SIGNED CHAP.86",
-    "last_action_date": "2026-02-13",
+    "id": 749,
+    "legiscan_bill_id": 2010242,
+    "bill_number": "A07029",
+    "bill_title": "Directs the commissioner of education to make recommendations to the board of regents regarding the incorporation of instruction in artificial intelligence system literacy into the school curriculum at the elementary, junior high and senior high levels; directs the board of regents to adopt guidelines if the curriculum is adopted.",
+    "bill_url": "https://legiscan.com/NY/bill/A07029/2025",
+    "bill_text_url": "https://legiscan.com/NY/text/A07029/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "referred to education",
+    "last_action_date": "2026-01-07",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
-    {
-     "id": 598,
-     "legiscan_bill_id": 2068608,
-     "bill_number": "S08831",
-     "bill_title": "Provides for the use of automated employment decision-making tools and artificial intelligence systems by a county, city, town, village, school district, board of cooperative educational services, county vocational education and extension board, district corporation, the state university of New York, the city university of New York, or community college; amends the effectiveness thereof.",
-     "bill_url": "https://legiscan.com/NY/bill/S08831/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/S08831/2025",
-     "bill_status": "Passed",
-     "bill_stage": "passed",
-     "last_action": "SIGNED CHAP.86",
-     "last_action_date": "2026-02-13",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
     {
      "id": 749,
      "legiscan_bill_id": 2010242,
@@ -2379,8 +2380,9 @@
      "last_action": "referred to education",
      "last_action_date": "2026-01-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 759,
@@ -2394,8 +2396,9 @@
      "last_action": "REFERRED TO EDUCATION",
      "last_action_date": "2026-01-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 760,
@@ -2409,8 +2412,9 @@
      "last_action": "REFERRED TO EDUCATION",
      "last_action_date": "2026-04-30",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 599,
@@ -2424,23 +2428,9 @@
      "last_action": "referred to education",
      "last_action_date": "2026-01-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 600,
-     "legiscan_bill_id": 2067545,
-     "bill_number": "A09487",
-     "bill_title": "Provides for the use of automated employment decision-making tools and artificial intelligence systems by a county, city, town, village, school district, board of cooperative educational services, county vocational education and extension board, district corporation, the state university of New York, the city university of New York, or community college; amends the effectiveness thereof.",
-     "bill_url": "https://legiscan.com/NY/bill/A09487/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A09487/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "substituted by s8831",
-     "last_action_date": "2026-01-21",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 601,
@@ -2454,8 +2444,9 @@
      "last_action": "referred to education",
      "last_action_date": "2026-01-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 602,
@@ -2469,8 +2460,9 @@
      "last_action": "referred to education",
      "last_action_date": "2026-01-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 603,
@@ -2484,68 +2476,9 @@
      "last_action": "referred to education",
      "last_action_date": "2026-05-28",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 699,
-     "legiscan_bill_id": 2042397,
-     "bill_number": "S08484",
-     "bill_title": "Regulates the use of artificial intelligence in the provision of therapy or psychotherapy services by prohibiting the use of artificial intelligence to assist in providing supplementary support where the session is recorded or transcribed unless the patient is informed of the specific purpose of such use and consents of such use; establishes penalties for violations of such provisions; excludes religious counseling, peer-support, and self-help materials and educational resources from such provisions.",
-     "bill_url": "https://legiscan.com/NY/bill/S08484/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/S08484/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "COMMITTED TO RULES",
-     "last_action_date": "2026-06-05",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 700,
-     "legiscan_bill_id": 2045075,
-     "bill_number": "A09106",
-     "bill_title": "Regulates the use of artificial intelligence in the provision of therapy or psychotherapy services by prohibiting the use of artificial intelligence to assist in providing supplementary support where the session is recorded or transcribed unless the patient is informed of the specific purpose of such use and consents of such use; establishes penalties for violations of such provisions; excludes religious counseling, peer-support, and self-help materials and educational resources from such provisions.",
-     "bill_url": "https://legiscan.com/NY/bill/A09106/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A09106/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to higher education",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 701,
-     "legiscan_bill_id": 1954914,
-     "bill_number": "A04550",
-     "bill_title": "Requires the department of labor to study the long-term impact of artificial intelligence on the state workforce including but not limited to job performance, productivity, training, education requirements, privacy and security; prohibits any state entity from using artificial intelligence in any way that would result in the displacement of any currently employed worker or loss of position, including partial displacement such as a reduction in the hours of non-overtime work, wages or employment benefits, or results in the impairment of existing collective bargaining agreements.",
-     "bill_url": "https://legiscan.com/NY/bill/A04550/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A04550/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to ways and means",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    },
-    {
-     "id": 702,
-     "legiscan_bill_id": 1773906,
-     "bill_number": "A07838",
-     "bill_title": "Requires the department of labor to study the long-term impact of artificial intelligence on the state workforce including but not limited to on job performance, productivity, training, education requirements, privacy and security; prohibits any state entity from using artificial intelligence in any way that would displace any natural person from their employment with such state entity until the department's final report is received.",
-     "bill_url": "https://legiscan.com/NY/bill/A07838/2023",
-     "bill_text_url": "https://legiscan.com/NY/text/A07838/2023",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to labor",
-     "last_action_date": "2024-01-03",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -2608,8 +2541,9 @@
    "bill_counts": {
     "total": 24,
     "included": 3,
-    "pending": 24,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 21,
+    "manually_included": 3,
     "manually_excluded": 0,
     "held": 21,
     "by_stage": {
@@ -2631,8 +2565,9 @@
     "last_action": "Ref To Com On Rules and Operations of the Senate",
     "last_action_date": "2026-04-29",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -2647,8 +2582,9 @@
      "last_action": "Ref To Com On Rules and Operations of the Senate",
      "last_action_date": "2026-04-29",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 265,
@@ -2662,8 +2598,9 @@
      "last_action": "Re-ref Com On Appropriations/Base Budget",
      "last_action_date": "2026-04-23",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 1001,
@@ -2677,8 +2614,9 @@
      "last_action": "Ref To Com On Rules and Operations of the Senate",
      "last_action_date": "2025-03-26",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -2712,6 +2650,7 @@
    "bill_counts": {
     "total": 5,
     "included": 0,
+    "resolutions": 0,
     "pending": 5,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -2756,6 +2695,7 @@
    "bill_counts": {
     "total": 7,
     "included": 0,
+    "resolutions": 0,
     "pending": 7,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -2800,8 +2740,9 @@
    "bill_counts": {
     "total": 22,
     "included": 2,
-    "pending": 22,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 20,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 20,
     "by_stage": {
@@ -2823,8 +2764,9 @@
     "last_action": "Placed on General Order",
     "last_action_date": "2026-04-21",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -2839,8 +2781,9 @@
      "last_action": "Placed on General Order",
      "last_action_date": "2026-04-21",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 304,
@@ -2854,8 +2797,9 @@
      "last_action": "Recommendation to the full committee; Do Pass, amended by committee substitute Appropriations and Budget Education Subcommittee",
      "last_action_date": "2024-02-26",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -2889,6 +2833,7 @@
    "bill_counts": {
     "total": 6,
     "included": 0,
+    "resolutions": 0,
     "pending": 6,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -2929,53 +2874,24 @@
    "state_code": "PA",
    "state_name": "Pennsylvania",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "debated",
+   "legislation_stage": null,
    "bill_counts": {
     "total": 24,
-    "included": 1,
-    "pending": 24,
+    "included": 0,
+    "resolutions": 0,
+    "pending": 23,
     "manually_included": 0,
-    "manually_excluded": 0,
-    "held": 23,
+    "manually_excluded": 1,
+    "held": 24,
     "by_stage": {
      "passed": 0,
-     "debated": 1,
+     "debated": 0,
      "introduced": 0,
      "failed": 0
     }
    },
-   "headline_bill": {
-    "id": 815,
-    "legiscan_bill_id": 2137415,
-    "bill_number": "HB2314",
-    "bill_title": "Providing for a public education campaign focused on educating the public about artificial intelligence and improving AI consumer literacy.",
-    "bill_url": "https://legiscan.com/PA/bill/HB2314/2025",
-    "bill_text_url": "https://legiscan.com/PA/text/HB2314/2025",
-    "bill_status": "Engrossed",
-    "bill_stage": "debated",
-    "last_action": "Referred to Communications & Technology",
-    "last_action_date": "2026-06-05",
-    "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
-   },
-   "bills": [
-    {
-     "id": 815,
-     "legiscan_bill_id": 2137415,
-     "bill_number": "HB2314",
-     "bill_title": "Providing for a public education campaign focused on educating the public about artificial intelligence and improving AI consumer literacy.",
-     "bill_url": "https://legiscan.com/PA/bill/HB2314/2025",
-     "bill_text_url": "https://legiscan.com/PA/text/HB2314/2025",
-     "bill_status": "Engrossed",
-     "bill_stage": "debated",
-     "last_action": "Referred to Communications & Technology",
-     "last_action_date": "2026-06-05",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    }
-   ],
+   "headline_bill": null,
+   "bills": [],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3007,6 +2923,7 @@
    "bill_counts": {
     "total": 31,
     "included": 0,
+    "resolutions": 0,
     "pending": 31,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -3044,8 +2961,10 @@
    "key_focus_areas": [],
    "unique_context": null,
    "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.189178"
+   "sources": [
+    "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
+   ],
+   "last_updated": "2026-09-08T16:41:59.785896"
   },
   {
    "state_code": "SC",
@@ -3055,8 +2974,9 @@
    "bill_counts": {
     "total": 6,
     "included": 1,
-    "pending": 6,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 5,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 5,
     "by_stage": {
@@ -3078,8 +2998,9 @@
     "last_action": "Referred to Committee on Education and Public Works",
     "last_action_date": "2026-02-24",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -3094,8 +3015,9 @@
      "last_action": "Referred to Committee on Education and Public Works",
      "last_action_date": "2026-02-24",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3129,6 +3051,7 @@
    "bill_counts": {
     "total": 6,
     "included": 0,
+    "resolutions": 0,
     "pending": 6,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -3173,6 +3096,7 @@
    "bill_counts": {
     "total": 25,
     "included": 0,
+    "resolutions": 0,
     "pending": 25,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -3217,8 +3141,9 @@
    "bill_counts": {
     "total": 31,
     "included": 6,
-    "pending": 29,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 23,
+    "manually_included": 6,
     "manually_excluded": 2,
     "held": 25,
     "by_stage": {
@@ -3240,8 +3165,9 @@
     "last_action": "Referred to Public Education",
     "last_action_date": "2025-03-14",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -3256,8 +3182,9 @@
      "last_action": "Referred to Public Education",
      "last_action_date": "2025-03-14",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 235,
@@ -3271,8 +3198,9 @@
      "last_action": "Referred to Education K-16",
      "last_action_date": "2025-02-03",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 1104,
@@ -3286,8 +3214,9 @@
      "last_action": "Referred to Public Education",
      "last_action_date": "2025-04-02",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 30,
@@ -3301,8 +3230,9 @@
      "last_action": "Filed",
      "last_action_date": "2025-08-15",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 88,
@@ -3316,8 +3246,9 @@
      "last_action": "Filed",
      "last_action_date": "2025-07-22",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 90,
@@ -3331,8 +3262,9 @@
      "last_action": "Referred to Public Education",
      "last_action_date": "2025-04-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3383,7 +3315,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-04T19:21:18.417474"
+   "last_updated": "2026-09-08T16:41:59.786462"
   },
   {
    "state_code": "UT",
@@ -3393,8 +3325,9 @@
    "bill_counts": {
     "total": 35,
     "included": 1,
-    "pending": 35,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 34,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 34,
     "by_stage": {
@@ -3416,8 +3349,9 @@
     "last_action": "House/ filed in House file for bills not passed",
     "last_action_date": "2025-03-07",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -3432,8 +3366,9 @@
      "last_action": "House/ filed in House file for bills not passed",
      "last_action_date": "2025-03-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3467,8 +3402,9 @@
    "bill_counts": {
     "total": 18,
     "included": 2,
-    "pending": 18,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 16,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 16,
     "by_stage": {
@@ -3490,8 +3426,9 @@
     "last_action": "Read First Time and Referred to the Committee on Education",
     "last_action_date": "2020-02-07",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -3506,8 +3443,9 @@
      "last_action": "Read First Time and Referred to the Committee on Education",
      "last_action_date": "2020-02-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 278,
@@ -3521,8 +3459,9 @@
      "last_action": "Read first time and referred to the Committee on Government Operations and Military Affairs",
      "last_action_date": "2024-02-27",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3556,8 +3495,9 @@
    "bill_counts": {
     "total": 24,
     "included": 1,
-    "pending": 24,
-    "manually_included": 0,
+    "resolutions": 0,
+    "pending": 23,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 23,
     "by_stage": {
@@ -3579,8 +3519,9 @@
     "last_action": "Stricken at request of Patron in Finance and Appropriations (15-Y 0-N)",
     "last_action_date": "2024-02-07",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -3595,8 +3536,9 @@
      "last_action": "Stricken at request of Patron in Finance and Appropriations (15-Y 0-N)",
      "last_action_date": "2024-02-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3626,53 +3568,24 @@
    "state_code": "WA",
    "state_name": "Washington",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "introduced",
+   "legislation_stage": null,
    "bill_counts": {
     "total": 20,
-    "included": 1,
-    "pending": 20,
+    "included": 0,
+    "resolutions": 0,
+    "pending": 19,
     "manually_included": 0,
-    "manually_excluded": 0,
-    "held": 19,
+    "manually_excluded": 1,
+    "held": 20,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 1,
+     "introduced": 0,
      "failed": 0
     }
    },
-   "headline_bill": {
-    "id": 1172,
-    "legiscan_bill_id": 2071706,
-    "bill_number": "SB6082",
-    "bill_title": "Safeguarding student financial aid from fraud.",
-    "bill_url": "https://legiscan.com/WA/bill/SB6082/2025",
-    "bill_text_url": "https://legiscan.com/WA/text/SB6082/2025",
-    "bill_status": "Introduced",
-    "bill_stage": "introduced",
-    "last_action": "Senate Rules \"X\" file.",
-    "last_action_date": "2026-02-26",
-    "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
-   },
-   "bills": [
-    {
-     "id": 1172,
-     "legiscan_bill_id": 2071706,
-     "bill_number": "SB6082",
-     "bill_title": "Safeguarding student financial aid from fraud.",
-     "bill_url": "https://legiscan.com/WA/bill/SB6082/2025",
-     "bill_text_url": "https://legiscan.com/WA/text/SB6082/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Senate Rules \"X\" file.",
-     "last_action_date": "2026-02-26",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    }
-   ],
+   "headline_bill": null,
+   "bills": [],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3704,14 +3617,15 @@
    "bill_counts": {
     "total": 16,
     "included": 2,
-    "pending": 16,
-    "manually_included": 0,
+    "resolutions": 1,
+    "pending": 14,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 14,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 2,
+     "introduced": 1,
      "failed": 0
     }
    },
@@ -3727,8 +3641,9 @@
     "last_action": "To House Education",
     "last_action_date": "2026-02-05",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
    },
    "bills": [
     {
@@ -3743,8 +3658,9 @@
      "last_action": "To House Education",
      "last_action_date": "2026-02-05",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     },
     {
      "id": 1184,
@@ -3758,8 +3674,9 @@
      "last_action": "To House Rules",
      "last_action_date": "2025-03-18",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
     }
    ],
    "local_signal": {
@@ -3793,6 +3710,7 @@
    "bill_counts": {
     "total": 8,
     "included": 0,
+    "resolutions": 0,
     "pending": 8,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -3833,53 +3751,24 @@
    "state_code": "WY",
    "state_name": "Wyoming",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "passed",
+   "legislation_stage": null,
    "bill_counts": {
     "total": 2,
-    "included": 1,
-    "pending": 2,
+    "included": 0,
+    "resolutions": 0,
+    "pending": 1,
     "manually_included": 0,
-    "manually_excluded": 0,
-    "held": 1,
+    "manually_excluded": 1,
+    "held": 2,
     "by_stage": {
-     "passed": 1,
+     "passed": 0,
      "debated": 0,
      "introduced": 0,
      "failed": 0
     }
    },
-   "headline_bill": {
-    "id": 320,
-    "legiscan_bill_id": 2109993,
-    "bill_number": "HB0102",
-    "bill_title": "Protecting kids from deepfakes and exploitative images.",
-    "bill_url": "https://legiscan.com/WY/bill/HB0102/2026",
-    "bill_text_url": "https://legiscan.com/WY/text/HB0102/2026",
-    "bill_status": "Passed",
-    "bill_stage": "passed",
-    "last_action": "Assigned Chapter Number 91",
-    "last_action_date": "2026-03-07",
-    "match_confidence": "HIGH",
-    "decision": "PENDING",
-    "effective_included": true
-   },
-   "bills": [
-    {
-     "id": 320,
-     "legiscan_bill_id": 2109993,
-     "bill_number": "HB0102",
-     "bill_title": "Protecting kids from deepfakes and exploitative images.",
-     "bill_url": "https://legiscan.com/WY/bill/HB0102/2026",
-     "bill_text_url": "https://legiscan.com/WY/text/HB0102/2026",
-     "bill_status": "Passed",
-     "bill_stage": "passed",
-     "last_action": "Assigned Chapter Number 91",
-     "last_action_date": "2026-03-07",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true
-    }
-   ],
+   "headline_bill": null,
+   "bills": [],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3911,6 +3800,7 @@
    "bill_counts": {
     "total": 0,
     "included": 0,
+    "resolutions": 0,
     "pending": 0,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -3955,6 +3845,7 @@
    "bill_counts": {
     "total": 0,
     "included": 0,
+    "resolutions": 0,
     "pending": 0,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -3993,7 +3884,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-03T13:03:11.195548"
+   "last_updated": "2026-09-08T16:41:59.783749"
   },
   {
    "state_code": "PR",
@@ -4003,6 +3894,7 @@
    "bill_counts": {
     "total": 0,
     "included": 0,
+    "resolutions": 0,
     "pending": 0,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -4041,9 +3933,11 @@
    "maturity": "IN_PROGRESS",
    "key_focus_areas": [],
    "unique_context": "Comprehensive guidance framework with 9 core objectives from the Department of Education, not formal legislation. Guidance-driven approach aligned with mainland states; follows US education policy generally.",
-   "notes": "Fully researched 2026-06-30 (see docs/STATE_DATA_SOURCES.md). LegiScan does not cover PR, so this record will never be touched by legiscan_sync.py -- update manually if the guidance changes.",
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.195008"
+   "notes": "Fully researched 2026-06-30 (see docs/STATE_DATA_SOURCES.md). LegiScan does not cover PR, so this profile is maintained by hand.",
+   "sources": [
+    "https://de.pr.gov"
+   ],
+   "last_updated": "2026-09-08T16:41:59.785383"
   },
   {
    "state_code": "VI",
@@ -4053,6 +3947,7 @@
    "bill_counts": {
     "total": 0,
     "included": 0,
+    "resolutions": 0,
     "pending": 0,
     "manually_included": 0,
     "manually_excluded": 0,
@@ -4089,7 +3984,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-03T13:03:11.195894"
+   "last_updated": "2026-09-08T16:41:59.786958"
   }
  ]
 }

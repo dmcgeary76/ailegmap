@@ -5,12 +5,14 @@
 
 * data/profiles/<ST>.json       -> state_profiles (fields merged onto the row)
 * data/local_actions/<ST>.json  -> local_actions  (file replaces the state's rows)
+* data/decisions.csv            -> bills.decision (review calls replayed by LegiScan id)
 """
 import json
 import sys
 from datetime import datetime
 from pathlib import Path
 
+from app import decisions
 from app.database import SessionLocal, init_db, BACKEND_DIR
 from app.models.legislation import (
     StateProfile, LocalAction, JURISDICTIONS,
@@ -19,6 +21,7 @@ from app.models.legislation import (
 
 PROFILE_DIR = BACKEND_DIR / "data" / "profiles"
 LOCAL_ACTION_DIR = BACKEND_DIR / "data" / "local_actions"
+DECISIONS_PATH = decisions.DECISIONS_PATH
 LOCAL_ACTION_FIELDS = {
     "jurisdiction", "jurisdiction_type", "action_type", "direction", "applies_to", "grade_band",
     "authority", "lifecycle", "effective_from", "effective_until", "enrollment", "summary",
@@ -116,10 +119,13 @@ def main():
         n = load_profiles(db, codes)
         print()
         m = load_local_actions(db, codes)
+        print()
+        d = decisions.apply(db)
     finally:
         db.close()
     print(f"\nLoaded {n} profile(s) from {PROFILE_DIR}")
     print(f"Loaded {m} local action(s) from {LOCAL_ACTION_DIR}")
+    print(f"Replayed {DECISIONS_PATH.name}: {d} bill decision(s) changed")
 
 
 if __name__ == "__main__":

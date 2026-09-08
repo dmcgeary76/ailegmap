@@ -15,6 +15,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
+from app import decisions
 from app.database import get_db
 from app.models.legislation import Bill, AUTO_INCLUDE_CONFIDENCE
 from app.schemas.legislation import BillOut
@@ -128,6 +129,7 @@ def set_decision(bill_id: int, request: DecisionRequest, db: Session = Depends(g
     bill.reviewed_at = datetime.utcnow()
     db.commit()
     db.refresh(bill)
+    _persist_decisions(db)
     return bill
 
 
@@ -142,4 +144,14 @@ def set_bulk_decision(request: BulkDecisionRequest, db: Session = Depends(get_db
         b.reviewed_by = request.reviewed_by
         b.reviewed_at = now
     db.commit()
+    _persist_decisions(db)
     return {"status": "success", "updated": len(bills), "decision": decision}
+
+
+def _persist_decisions(db: Session) -> None:
+    """Mirror every decision to data/decisions.csv so it lives in git, not
+    only in the local SQLite file. Never let a disk problem fail the request."""
+    try:
+        decisions.dump(db)
+    except OSError as e:  # pragma: no cover
+        print(f"warning: could not write {decisions.DECISIONS_PATH}: {e}")

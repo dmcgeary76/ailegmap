@@ -23,6 +23,7 @@ Two kinds of data live here and they are deliberately kept apart:
 """
 from datetime import datetime
 import enum
+import re
 
 from sqlalchemy import (
     Column, String, Text, DateTime, Boolean, Integer, JSON,
@@ -69,6 +70,23 @@ class ResearchStatus(str, enum.Enum):
 # Map color-coding derives from the strongest stage among a state's included
 # bills. Higher = stronger.
 STAGE_RANK = {"passed": 4, "debated": 3, "introduced": 2, "failed": 1}
+
+# Resolutions (HR, SR, HCR, SJR, AJR, memorials, Maine "Resolves"...) never
+# become law, so an adopted one must not paint a state "Passed into law".
+# They stay on the map as bills a reader should see, but derive.py skips them
+# when computing a state's stage. LegiScan's bill_type isn't stored (yet), so
+# this reads the bill number and, for Maine, the title.
+_RESOLUTION_NUMBER = re.compile(r"^(?:[HSAL]|HC|SC|AC|LC|HJ|SJ|AJ|LJ|HCJ|SCJ)?(?:R|M|JM|CM)\s?\d", re.I)
+_RESOLUTION_TITLE = re.compile(r"^\s*(?:resolve|(?:a\s+)?(?:concurrent|joint)?\s*resolution)\b", re.I)
+
+
+def is_resolution(bill_number: str, title: str = "") -> bool:
+    n = (bill_number or "").strip()
+    if _RESOLUTION_NUMBER.match(n):
+        return True
+    if n[:2].upper() == "LD" and _RESOLUTION_TITLE.match(title or ""):
+        return True   # Maine numbers bills and resolves alike as LD
+    return False
 
 # Which automatic confidence levels put a PENDING bill on the map without a
 # human looking at it. Only HIGH: the title names both AI and education.
@@ -189,6 +207,10 @@ class Bill(Base):
     status_changes = relationship("BillStatusChange", back_populates="bill",
                                   cascade="all, delete-orphan",
                                   order_by="BillStatusChange.changed_at.desc()")
+
+    @property
+    def is_resolution(self) -> bool:
+        return is_resolution(self.bill_number, self.bill_title)
 
     @property
     def effective_included(self) -> bool:

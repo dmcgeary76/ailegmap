@@ -23,6 +23,7 @@ class BillBrief(BaseModel):
     match_confidence: Optional[str]
     decision: str
     effective_included: bool
+    is_resolution: bool = False
 
 
 class BillOut(BillBrief):

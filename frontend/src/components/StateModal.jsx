@@ -74,6 +74,13 @@ function Body({ state }) {
 
       <div className="info-section">
         <h3>Bills on the map ({counts.included})</h3>
+        {counts.resolutions > 0 && (
+          <p className="text-muted small">
+            {counts.resolutions === counts.included
+              ? 'Only resolutions here — they are not laws, so this state is not colored by legislation status.'
+              : `${counts.resolutions} of these ${counts.resolutions === 1 ? 'is a resolution, which does' : 'are resolutions, which do'} not affect the map color.`}
+          </p>
+        )}
         {state.bills.length === 0 && (
           <p className="text-muted">
             {counts.total === 0
@@ -87,6 +94,7 @@ function Body({ state }) {
               <div className="bill-row">
                 <a href={b.bill_url} target="_blank" rel="noopener noreferrer" className="bill-number">{b.bill_number}</a>
                 <span className={`stage-chip stage-${b.bill_stage || 'none'}`}>{b.bill_status || 'Unknown'}</span>
+                {b.is_resolution && <span className="chip-muted" title="A resolution is not a law; it does not set the map color">resolution</span>}
                 {b.decision === 'INCLUDED' && <span className="chip-muted" title="Included by a reviewer">reviewed</span>}
                 {i === 0 && <span className="chip-muted">headline</span>}
               </div>
