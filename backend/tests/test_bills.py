@@ -59,7 +59,7 @@ def test_resync_preserves_decisions_and_logs_status_change(db, raw_ca):
 
     # AB1979 advances to Passed, simulating an enriched getBill result
     updated = rank_bills([dict(raw_ca[2], status=4, last_action_date="2025-01-01")])
-    updated[0]["_status_label"], updated[0]["_stage"] = "Passed", "passed"
+    updated[0]["_status_label"], updated[0]["_stage"], updated[0]["_enriched"] = "Passed", "passed", True
     s._upsert_bills("CA", updated)
     db.expire_all()
 
@@ -75,10 +75,13 @@ def test_resync_preserves_decisions_and_logs_status_change(db, raw_ca):
 def test_resync_without_enrichment_does_not_clobber_status(db, raw_ca):
     s = _sync(db)
     enriched = rank_bills(raw_ca)
-    enriched[0]["_status_label"], enriched[0]["_stage"] = "Passed", "passed"
+    enriched[0]["_status_label"], enriched[0]["_stage"], enriched[0]["_enriched"] = "Passed", "passed", True
     s._upsert_bills("CA", enriched)
-    # A --no-status run (no _status_label) must leave the fetched status alone.
-    s._upsert_bills("CA", [dict(raw_ca[0], status=None)])
+    # A --no-status run, or a bill skipped because its change_hash is unchanged,
+    # goes through rank_bills() (which sets _status_label to "Unknown") but not
+    # through _enrich(). The stored status must survive. (The old version of
+    # this test bypassed rank_bills and so never caught the real-path bug.)
+    s._upsert_bills("CA", rank_bills([dict(raw_ca[0], status=None)]))
     db.expire_all()
     assert db.query(Bill).filter_by(legiscan_bill_id=101).one().bill_stage == "passed"
 

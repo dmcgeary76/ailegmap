@@ -66,7 +66,9 @@ AI_TERMS = [
     "automated decision",
     "chatbot",
     "deepfake",
-    "ai",   # word-boundary matched below, so "AI", "(AI)", "AI:" hit but "chair" does not
+    "ai",   # matched with boundaries on BOTH sides (see _matched_terms), so "AI",
+            # "(AI)", "AI:" hit but "chair", "aid", "aim" do not. Until 2026-09-08
+            # only the left boundary was enforced and "school aid" scored HIGH.
 ]
 
 # Education vocabulary used by the title scorer. Broadened after live calibration:
@@ -114,8 +116,11 @@ HIGHER_ED_TERMS = [
 # are forced to LOW confidence regardless of keyword hits.
 NOISE_TITLE_TERMS = [
     "congratulating", "commending", "recognizing", "honoring", "commemorating",
+    "honor", "inaugural year",
     "budget act", "trailer bill", "omnibus", "maintenance of the codes",
-    "supplemental appropriation", "making appropriations", "house rules",
+    "supplemental appropriation", "making appropriations", "appropriations",
+    "necessary to implement the state",   # NY budget article VII bills
+    "house rules",
     "state capitol", " day.", " day at", "rules of procedure",
     # criminal / CSAM bills that mention AI deepfakes but are not classroom policy
     "child pornography", "criminal offense", "prosecution and punishment",
@@ -205,7 +210,10 @@ def _matched_terms(text: str, vocabulary: List[str]) -> List[str]:
     for term in vocabulary:
         t = term.strip()
         # (?<!\w) = left boundary; no right boundary so plurals/derivations match.
-        if re.search(r"(?<!\w)" + re.escape(t), low):
+        # Terms of three letters or fewer ("ai") get a right boundary too, or
+        # "ai" matches "aid", "aim" and "aircraft".
+        pattern = r"(?<!\w)" + re.escape(t) + (r"(?!\w)" if len(t) <= 3 else "")
+        if re.search(pattern, low):
             hits.append(t)
     return hits
 
@@ -406,6 +414,7 @@ class LegiScanSync:
                 continue  # nothing changed since last sync -- skip the call
             detail = self.fetch_bill(bid)
             if detail:
+                b["_enriched"] = True
                 b["_status_label"] = detail["status_label"]
                 b["_stage"] = detail["stage"]
                 b["status_date"] = detail["status_date"]
@@ -515,7 +524,12 @@ class LegiScanSync:
 
             for k, v in fields.items():
                 setattr(bill, k, v)
-            enriched = "_status_label" in b  # only trust status we actually fetched this run
+            # Only trust a status we fetched from getBill THIS run. rank_bills()
+            # always sets _status_label (to "Unknown" -- getSearch has no status),
+            # so testing for the key would overwrite a real status with Unknown
+            # for every bill whose change_hash let us skip the getBill call.
+            # That is exactly what happened to 995 bills before 2026-09-08.
+            enriched = bool(b.get("_enriched"))
             if enriched:
                 if bill.bill_stage != stage or bill.bill_status != label:
                     self.db.add(BillStatusChange(

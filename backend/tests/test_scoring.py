@@ -69,3 +69,33 @@ def test_only_high_auto_includes():
     assert Bill(match_confidence="MEDIUM", decision="INCLUDED").effective_included is True
     assert Bill(match_confidence="HIGH", decision="EXCLUDED").effective_included is False
     assert score_bill({"title": "Relating to bullying and cyberbullying in public schools."})["is_k12_ai"] is False
+
+
+def test_short_ai_term_needs_both_boundaries():
+    from app.sync.legiscan_sync import score_bill, _matched_terms
+    assert _matched_terms("Appropriations: school aid; K-12 school aid", ["ai"]) == []
+    assert _matched_terms("Safe and Responsible AI in Schools Act", ["ai"]) == ["ai"]
+    assert _matched_terms("(AI) literacy", ["ai"]) == ["ai"]
+    s = score_bill({"title": "Appropriations: school aid; appropriations for K-12 school aid; provide for.", "relevance": 20})
+    assert s["confidence"] == "LOW" and s["flags"]["noise"]
+    s = score_bill({"title": "Enacts into law major components of legislation necessary to implement the state education budget", "relevance": 20})
+    assert s["confidence"] == "LOW" and s["flags"]["noise"]
+    s = score_bill({"title": "Seckinger High School; inaugural year; innovative artificial intelligence education; honor", "relevance": 20})
+    assert s["confidence"] == "LOW" and s["flags"]["noise"]
+
+
+def test_unchanged_bill_keeps_its_status(db):
+    """A bill whose change_hash is unchanged is skipped by getBill; its stored
+    status must survive the upsert instead of being overwritten with Unknown."""
+    from app.sync.legiscan_sync import LegiScanSync, rank_bills
+    from app.models.legislation import Bill
+    raw = [{"bill_id": 555, "bill_number": "SB1734", "title": "Schools; artificial intelligence guidance",
+            "relevance": 30, "url": "u", "last_action_date": "2026-05-13", "change_hash": "same"}]
+    s = LegiScanSync(db=db, api_key="x", fetch_status=False)
+    s._upsert_bills("OK", rank_bills(raw))
+    b = db.query(Bill).filter_by(legiscan_bill_id=555).one()
+    b.bill_status, b.bill_stage = "Passed", "passed"   # as an earlier enriched run stored it
+    db.commit()
+    s._upsert_bills("OK", rank_bills(raw))             # second sync, hash unchanged, no getBill
+    db.refresh(b)
+    assert (b.bill_status, b.bill_stage) == ("Passed", "passed")
