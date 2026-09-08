@@ -20,6 +20,25 @@
         "https://districtadministration.com/article/new-york-city-schools-says-no-ai-in-k-8-for-a-year/",
         "https://www.schools.nyc.gov/about-us/policies/guidance-on-artificial-intelligence"
       ]
+    },
+    {
+      "jurisdiction": "New York City Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "MORATORIUM",
+      "direction": -2,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "chancellor / DOE network policy",
+      "lifecycle": "rescinded",
+      "effective_from": "2023-01-03",
+      "effective_until": "2023-05-18",
+      "enrollment": 900000,
+      "summary": "Blocked ChatGPT on district networks and devices in January 2023 - the first big-district ban and the one most others copied - then reversed it in May 2023 with a chancellor's statement that the district would instead help schools use it.",
+      "notes": "Kept as history (rescinded). The reversal, not the ban, set the tone for 2023-25; the 2026 PK-8 moratorium is a separate, narrower action. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.nbcnews.com/news/amp/rcna85089",
+        "https://www.chalkbeat.org/newyork/2023/5/18/23729305/nyc-schools-chatgpt-ban-lifted-artificial-intelligence/"
+      ]
     }
   ]
 }

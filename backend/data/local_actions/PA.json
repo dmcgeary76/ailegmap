@@ -1,0 +1,23 @@
+{
+  "state_code": "PA",
+  "actions": [
+    {
+      "jurisdiction": "School District of Philadelphia",
+      "jurisdiction_type": "district",
+      "action_type": "ADOPT",
+      "direction": 1,
+      "applies_to": "staff",
+      "grade_band": "K-12",
+      "authority": "district partnership with Penn GSE / Catalyst (foundation-funded, no district cost)",
+      "lifecycle": "adopted",
+      "effective_from": "2025-03-01",
+      "enrollment": 115000,
+      "summary": "Launched 'Pioneering AI in School Systems' (PASS): tiered AI training for administrators, school leaders and teachers in selected schools from March 2025, with the district stating an ambition to be a national model for AI in education.",
+      "notes": "Educator-facing; no student-facing AI deployment reported. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.chalkbeat.org/philadelphia/2024/12/10/ai-for-educators-school-leaders-coming-to-philly-schools/",
+        "https://www.the74million.org/article/philadelphia-wants-to-be-a-national-ai-in-education-model/"
+      ]
+    }
+  ]
+}

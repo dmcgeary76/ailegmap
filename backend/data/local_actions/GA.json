@@ -1,0 +1,23 @@
+{
+  "state_code": "GA",
+  "actions": [
+    {
+      "jurisdiction": "Gwinnett County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "superintendent (Calvin Watts); developed with Digital Promise and EDSAFE AI Alliance",
+      "lifecycle": "adopted",
+      "effective_from": "2024-07-23",
+      "enrollment": 180000,
+      "summary": "District-wide K-12 guidance for the ethical use of AI for all students and staff - human oversight, critical thinking, humans central to decisions - building on the AI-Ready pilot the district has run in the Seckinger cluster since 2019.",
+      "notes": "Georgia's largest district and one of the earliest district-wide AI programs in the country. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.gcpsk12.org/news-details/~board/news-releases/post/gcps-implementing-comprehensive-guidance-for-the-ethical-use-of-ai",
+        "https://www.edsurge.com/news/2025-06-09-a-district-a-diagnostic-and-a-drive-for-ai-readiness"
+      ]
+    }
+  ]
+}

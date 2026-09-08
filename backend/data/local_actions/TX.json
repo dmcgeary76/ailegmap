@@ -17,6 +17,43 @@
       "sources": [
         "https://elpasomatters.org/2026/04/13/ai-artificial-intelligence-in-el-paso-texas-schools-chatgpt-gemini-ai-literacy/"
       ]
+    },
+    {
+      "jurisdiction": "Houston Independent School District",
+      "jurisdiction_type": "district",
+      "action_type": "ADOPT",
+      "direction": 2,
+      "applies_to": "students",
+      "grade_band": "K-8",
+      "authority": "state-appointed superintendent (Mike Miles) and board of managers",
+      "lifecycle": "adopted",
+      "effective_from": "2026-08-10",
+      "enrollment": 180000,
+      "summary": "Opened nine AI-focused 'Future 2' campuses (five elementary, four middle) for 2026-27 - core subjects in AI-supported morning blocks, afternoons for 'human-centric' skills - and piloted Alpha School's AI-driven program at two elementary campuses. Families may opt out by transferring.",
+      "notes": "Miles has described a goal of up to 100 AI-focused campuses. The Alpha School pilot (Gregg and Martinez elementaries) drew separate coverage in August 2026. effective_from is the approximate first day of the 2026-27 year. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.texasstandard.org/stories/houston-isd-ai-focused-campuses-artificial-intelligence/",
+        "https://www.houstonpublicmedia.org/articles/education/2026/08/03/558564/hisd-ai-learning-alpha-school-timeback-future-2-gregg-martinez-elementary/",
+        "https://www.govtech.com/education/k-12/state-appointed-supt-envisions-100-ai-focused-campuses-for-houston-isd"
+      ]
+    },
+    {
+      "jurisdiction": "Dallas Independent School District",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "9-12",
+      "authority": "board policy regulations (EIA, FNCA) amended; superintendent-adopted handbook",
+      "lifecycle": "adopted",
+      "effective_from": "2025-06-24",
+      "enrollment": 140000,
+      "summary": "Adopted 'Artificial Intelligence in Dallas ISD: A Playbook for Responsible and Innovative Use' and folded AI expectations into the grading (EIA) and student-conduct (FNCA) regulations - AI as a learning tool, original-work expectations, AI-enabled cyberbullying addressed.",
+      "notes": "Guidelines are written for grades 9-12. Follows a March 2025 board briefing on AI integration. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.dallasisd.org/board-of-trustees/board-policy-and-procedures/policy-alerts/policy-alert-viewer/~board/dallas-isd-policy-alerts/post/recently-amended-dec-eia-fd-fnca-regulations-adopted-ai-handbook-june-24-2025",
+        "https://thehub.dallasisd.org/2025/04/10/digital-literacy-and-artificial-intelligence-integration-within-dallas-isd/"
+      ]
     }
   ]
 }

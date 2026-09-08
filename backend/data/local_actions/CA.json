@@ -19,6 +19,26 @@
         "https://www.k12dive.com/news/lausd-restricts-all-students-from-using-ai-tools/829612/",
         "https://www.edweek.org/technology/lausd-adopts-moratorium-on-student-ai-use-another-big-move-to-limit-tech-use/2026/09"
       ]
+    },
+    {
+      "jurisdiction": "Los Angeles Unified School District",
+      "jurisdiction_type": "district",
+      "action_type": "PROCUREMENT",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "board-approved contract (AllHere, $6M over five years)",
+      "lifecycle": "rescinded",
+      "effective_from": "2024-03-20",
+      "effective_until": "2024-06-30",
+      "enrollment": 400000,
+      "summary": "Launched 'Ed', a $6M AI chatbot for families and students, in March 2024; shut it down in June 2024 after the vendor AllHere collapsed, with about $3M paid. The most-covered district AI procurement failure to date.",
+      "notes": "Kept as history (lifecycle rescinded, so it never counts toward the state's leaning). Inspector-general review of data handling followed; the board nonetheless approved an AI budgeting-portal resolution on 2024-06-18. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.the74million.org/article/la-unified-faces-criticism-after-collapse-of-splashy-ai-tool-ed/",
+        "https://www.edweek.org/technology/los-angeles-unifieds-ai-meltdown-5-ways-districts-can-avoid-the-same-mistakes/2024/07",
+        "https://www.govtech.com/education/k-12/lausd-shutters-new-ai-chatbot-when-developer-goes-out-of-business"
+      ]
     }
   ]
 }

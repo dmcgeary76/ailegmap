@@ -1,0 +1,24 @@
+{
+  "state_code": "IL",
+  "actions": [
+    {
+      "jurisdiction": "Chicago Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "district administration (Office of Teaching & Learning + ITS); later listed by ISBE as a model policy",
+      "lifecycle": "adopted",
+      "effective_from": "2024-08-12",
+      "enrollment": 325000,
+      "summary": "Published an AI Guidebook: students use district-approved AI tools with teacher permission, teachers encouraged to integrate AI with age-appropriate guidance; 2024-25 a learning year, full implementation 2025-26.",
+      "notes": "Release date is approximate (coverage dated 2024-08-16 says 'last week'). Counter-current worth watching: in August 2026 Illinois Families for Public Schools asked candidates for Chicago's first fully elected school board to pledge a three-year generative-AI moratorium; about two dozen signed. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.cps.edu/strategic-initiatives/ai-guidebook/",
+        "https://www.aiforeducation.io/blog/chicago-public-schools-ai-guidance",
+        "https://www.fox32chicago.com/weather/ai-cps-chicago-public-schools.amp"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T21:12:16.802400Z",
+ "generated_at": "2026-09-08T21:17:36.667059Z",
  "last_sync": "2026-09-08T19:29:32.088207Z",
  "summary": {
   "jurisdictions": 54,
@@ -28,15 +28,15 @@
    "excluded": 38
   },
   "local_actions": {
-   "total": 3,
-   "active": 3,
-   "states": 3
+   "total": 18,
+   "active": 15,
+   "states": 10
   },
   "states_by_local_leaning": {
-   "restrictive": 2,
-   "permissive": 1,
+   "restrictive": 4,
+   "permissive": 6,
    "mixed": 0,
-   "none": 51
+   "none": 44
   },
   "last_sync": "2026-09-08T19:29:32.088207",
   "recent_status_changes": [
@@ -231,7 +231,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T21:12:16.379567"
+   "last_updated": "2026-09-08T21:17:32.994886"
   },
   {
    "state_code": "AZ",
@@ -320,14 +320,41 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "restrictive",
+    "score": -1.0,
+    "latest": "2026-05-28",
+    "headline": {
+     "jurisdiction": "Tucson Unified School District",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "grade_band": "6-12",
+     "summary": "Board deadlocked on extending the district's approved AI learning platforms from high schools to middle schools, so the expansion failed; AI use stays limited to four teacher-controlled platforms in high school."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "AZ",
+     "jurisdiction": "Tucson Unified School District",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "students",
+     "grade_band": "6-12",
+     "authority": "governing board tie vote 2026-05-28 (expansion failed)",
+     "lifecycle": "adopted",
+     "effective_from": "2026-05-28",
+     "effective_until": null,
+     "enrollment": 40000,
+     "summary": "Board deadlocked on extending the district's approved AI learning platforms from high schools to middle schools, so the expansion failed; AI use stays limited to four teacher-controlled platforms in high school.",
+     "notes": "One of Arizona's five largest districts. Board member Sadie Shaw: 'students have ample opportunity to self-educate outside of the classroom'. The existing high-school policy predates this vote; date unverified. Enrollment figure is approximate.",
+     "sources": [
+      "https://news.azpm.org/p/news-splash/2026/5/28/229925-tucson-unified-board-awards-teacher-raises-halts-ai-policy-expansion/"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -422,7 +449,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-09-08T21:12:16.379943"
+   "last_updated": "2026-09-08T21:17:32.995750"
   },
   {
    "state_code": "CA",
@@ -639,7 +666,7 @@
     }
    ],
    "local_signal": {
-    "count": 1,
+    "count": 2,
     "active": 1,
     "leaning": "restrictive",
     "score": -2.0,
@@ -673,6 +700,28 @@
       "https://www.edweek.org/technology/lausd-adopts-moratorium-on-student-ai-use-another-big-move-to-limit-tech-use/2026/09"
      ],
      "status": "active"
+    },
+    {
+     "state_code": "CA",
+     "jurisdiction": "Los Angeles Unified School District",
+     "jurisdiction_type": "district",
+     "action_type": "PROCUREMENT",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "board-approved contract (AllHere, $6M over five years)",
+     "lifecycle": "rescinded",
+     "effective_from": "2024-03-20",
+     "effective_until": "2024-06-30",
+     "enrollment": 400000,
+     "summary": "Launched 'Ed', a $6M AI chatbot for families and students, in March 2024; shut it down in June 2024 after the vendor AllHere collapsed, with about $3M paid. The most-covered district AI procurement failure to date.",
+     "notes": "Kept as history (lifecycle rescinded, so it never counts toward the state's leaning). Inspector-general review of data handling followed; the board nonetheless approved an AI budgeting-portal resolution on 2024-06-18. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.the74million.org/article/la-unified-faces-criticism-after-collapse-of-splashy-ai-tool-ed/",
+      "https://www.edweek.org/technology/los-angeles-unifieds-ai-meltdown-5-ways-districts-can-avoid-the-same-mistakes/2024/07",
+      "https://www.govtech.com/education/k-12/lausd-shutters-new-ai-chatbot-when-developer-goes-out-of-business"
+     ],
+     "status": "rescinded"
     }
    ],
    "guidance_exists": true,
@@ -696,7 +745,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-08T21:12:16.380312"
+   "last_updated": "2026-09-08T21:17:32.996338"
   },
   {
    "state_code": "CO",
@@ -758,7 +807,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-09-08T21:12:16.380627"
+   "last_updated": "2026-09-08T21:17:32.996891"
   },
   {
    "state_code": "CT",
@@ -1065,14 +1114,105 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 4,
+    "active": 4,
+    "leaning": "permissive",
+    "score": 0.72,
+    "latest": "2026-08-11",
+    "headline": {
+     "jurisdiction": "Miami-Dade County Public Schools",
+     "action_type": "ADOPT",
+     "direction": 2,
+     "grade_band": "9-12",
+     "summary": "Gave roughly 100,000 high-school students and their teachers Google Gemini for Education - the largest classroom AI deployment in the country when it was reported in May 2025 - after earlier blocking chatbots. The board then directed a tiered AI-use framework and discipline rules (August 2025)."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "FL",
+     "jurisdiction": "Miami-Dade County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "ADOPT",
+     "direction": 2,
+     "applies_to": "both",
+     "grade_band": "9-12",
+     "authority": "district administration (superintendent Jose Dotres); board directive on guidelines 2025-08-12",
+     "lifecycle": "adopted",
+     "effective_from": "2025-05-01",
+     "effective_until": null,
+     "enrollment": 330000,
+     "summary": "Gave roughly 100,000 high-school students and their teachers Google Gemini for Education - the largest classroom AI deployment in the country when it was reported in May 2025 - after earlier blocking chatbots. The board then directed a tiered AI-use framework and discipline rules (August 2025).",
+     "notes": "effective_from approximates the spring-2025 rollout reported by the New York Times (2025-05-19); Google's case study is dated 2025-08-13. The 2025-08-12 board action asked a committee to report guidelines by 2025-10-01. Enrollment is district-wide; the action covers high schools. Enrollment figure is approximate.",
+     "sources": [
+      "https://blog.google/products-and-platforms/products/education/miami-dade-county-public-schools-uses-gemini-for-education-for-100000-high-school-students-and-teachers/",
+      "https://www.wlrn.org/education/2025-08-12/miami-dade-schools-ai-artificial-intelligence-guidelines",
+      "https://news.slashdot.org/story/25/05/19/1451202/how-miami-schools-are-leading-100000-students-into-the-ai-future"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "FL",
+     "jurisdiction": "Broward County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "students",
+     "grade_band": "K-12",
+     "authority": "school board policy; superintendent Howard Hepburn's administration",
+     "lifecycle": "adopted",
+     "effective_from": "2026-08-11",
+     "effective_until": null,
+     "enrollment": 250000,
+     "summary": "For 2026-27, no district-approved student-facing AI tools in K-5; grades 6-12 get limited, teacher-directed access to Khanmigo and HMH Writable only. Copilot and MagicSchool are staff-facing.",
+     "notes": "Primary coverage was CBS Miami and Axios (2026-08-06); the cited write-up summarises them and notes an inconsistency about a limited Copilot student pilot. Verify the grade split against the district's AI hub. Enrollment figure is approximate.",
+     "sources": [
+      "https://windowsforum.com/windows-news.4/broward-county-schools-limits-student-ai-to-grades-6-12.442183/?amp=1",
+      "https://browardschools.ai/"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "FL",
+     "jurisdiction": "Hillsborough County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "school board (Policy 2130: Emerging Technologies, approved 2025-06-02)",
+     "lifecycle": "adopted",
+     "effective_from": "2025-06-02",
+     "effective_until": null,
+     "enrollment": 225000,
+     "summary": "Board approved an Emerging Technologies policy and the district released its first AI Implementation Guide - critical thinking, data protection, academic integrity and access as the stated principles - developed by a cross-divisional AI governance team.",
+     "notes": "Announced 2025-06-13. The guide does not name tools or grade bands. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.hillsboroughschools.org/article/2269960"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "FL",
+     "jurisdiction": "Orange County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "PERMIT",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "school board vote 2026-07-28",
+     "lifecycle": "adopted",
+     "effective_from": "2026-08-11",
+     "effective_until": null,
+     "enrollment": 200000,
+     "summary": "First district AI policy: 'human in the loop' - teachers set written AI expectations each year, AI is off by default for submitted work unless the teacher permits it, only district-approved (closed) tools, and AI-detection software cannot be the sole basis for discipline. Built on 20,000 survey responses.",
+     "notes": "No parent opt-out, which one board member flagged. Adopted 2026-07-28, effective with the 2026-08-11 school year. Enrollment figure is approximate.",
+     "sources": [
+      "https://mynews13.com/fl/orlando/news/2026/07/29/orange-county-passes-first-ever-ai-policy-for-classroom-instruction",
+      "https://www.clickorlando.com/news/local/2026/08/13/ai-in-central-florida-classrooms-a-district-by-district-policy-breakdown/"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -1110,14 +1250,42 @@
    "headline_bill": null,
    "bills": [],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "permissive",
+    "score": 1.0,
+    "latest": "2024-07-23",
+    "headline": {
+     "jurisdiction": "Gwinnett County Public Schools",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "District-wide K-12 guidance for the ethical use of AI for all students and staff - human oversight, critical thinking, humans central to decisions - building on the AI-Ready pilot the district has run in the Seckinger cluster since 2019."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "GA",
+     "jurisdiction": "Gwinnett County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "superintendent (Calvin Watts); developed with Digital Promise and EDSAFE AI Alliance",
+     "lifecycle": "adopted",
+     "effective_from": "2024-07-23",
+     "effective_until": null,
+     "enrollment": 180000,
+     "summary": "District-wide K-12 guidance for the ethical use of AI for all students and staff - human oversight, critical thinking, humans central to decisions - building on the AI-Ready pilot the district has run in the Seckinger cluster since 2019.",
+     "notes": "Georgia's largest district and one of the earliest district-wide AI programs in the country. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.gcpsk12.org/news-details/~board/news-releases/post/gcps-implementing-comprehensive-guidance-for-the-ethical-use-of-ai",
+      "https://www.edsurge.com/news/2025-06-09-a-district-a-diagnostic-and-a-drive-for-ai-readiness"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -1310,7 +1478,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T21:12:16.381267"
+   "last_updated": "2026-09-08T21:17:32.998009"
   },
   {
    "state_code": "ID",
@@ -1476,14 +1644,43 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "permissive",
+    "score": 1.0,
+    "latest": "2024-08-12",
+    "headline": {
+     "jurisdiction": "Chicago Public Schools",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "Published an AI Guidebook: students use district-approved AI tools with teacher permission, teachers encouraged to integrate AI with age-appropriate guidance; 2024-25 a learning year, full implementation 2025-26."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "IL",
+     "jurisdiction": "Chicago Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "district administration (Office of Teaching & Learning + ITS); later listed by ISBE as a model policy",
+     "lifecycle": "adopted",
+     "effective_from": "2024-08-12",
+     "effective_until": null,
+     "enrollment": 325000,
+     "summary": "Published an AI Guidebook: students use district-approved AI tools with teacher permission, teachers encouraged to integrate AI with age-appropriate guidance; 2024-25 a learning year, full implementation 2025-26.",
+     "notes": "Release date is approximate (coverage dated 2024-08-16 says 'last week'). Counter-current worth watching: in August 2026 Illinois Families for Public Schools asked candidates for Chicago's first fully elected school board to pledge a three-year generative-AI moratorium; about two dozen signed. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.cps.edu/strategic-initiatives/ai-guidebook/",
+      "https://www.aiforeducation.io/blog/chicago-public-schools-ai-guidance",
+      "https://www.fox32chicago.com/weather/ai-cps-chicago-public-schools.amp"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -1897,7 +2094,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-09-08T21:12:16.381895"
+   "last_updated": "2026-09-08T21:17:32.998538"
   },
   {
    "state_code": "ME",
@@ -2312,7 +2509,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-08T21:12:16.382196"
+   "last_updated": "2026-09-08T21:17:32.999170"
   },
   {
    "state_code": "MI",
@@ -3145,7 +3342,7 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-09-08T21:12:16.382466"
+   "last_updated": "2026-09-08T21:17:32.999663"
   },
   {
    "state_code": "NY",
@@ -3330,7 +3527,7 @@
     }
    ],
    "local_signal": {
-    "count": 1,
+    "count": 2,
     "active": 1,
     "leaning": "restrictive",
     "score": -2.0,
@@ -3365,6 +3562,27 @@
       "https://www.schools.nyc.gov/about-us/policies/guidance-on-artificial-intelligence"
      ],
      "status": "active"
+    },
+    {
+     "state_code": "NY",
+     "jurisdiction": "New York City Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "MORATORIUM",
+     "direction": -2,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "chancellor / DOE network policy",
+     "lifecycle": "rescinded",
+     "effective_from": "2023-01-03",
+     "effective_until": "2023-05-18",
+     "enrollment": 900000,
+     "summary": "Blocked ChatGPT on district networks and devices in January 2023 - the first big-district ban and the one most others copied - then reversed it in May 2023 with a chancellor's statement that the district would instead help schools use it.",
+     "notes": "Kept as history (rescinded). The reversal, not the ban, set the tone for 2023-25; the 2026 PK-8 moratorium is a separate, narrower action. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.nbcnews.com/news/amp/rcna85089",
+      "https://www.chalkbeat.org/newyork/2023/5/18/23729305/nyc-schools-chatgpt-ban-lifted-artificial-intelligence/"
+     ],
+     "status": "rescinded"
     }
    ],
    "guidance_exists": false,
@@ -3468,14 +3686,62 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 2,
+    "active": 1,
+    "leaning": "permissive",
+    "score": 1.0,
+    "latest": "2026-08-24",
+    "headline": {
+     "jurisdiction": "Charlotte-Mecklenburg Schools",
+     "action_type": "PERMIT",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "Board policy encouraging classroom AI with guardrails: an AI Review Committee must approve every tool, students and staff must acknowledge AI use, AI may not substitute for effort or replace human judgment, and prompts/outputs are treated as public records."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "NC",
+     "jurisdiction": "Charlotte-Mecklenburg Schools",
+     "jurisdiction_type": "district",
+     "action_type": "PERMIT",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "school board, unanimous vote 2025-10-28",
+     "lifecycle": "adopted",
+     "effective_from": "2025-10-28",
+     "effective_until": null,
+     "enrollment": 140000,
+     "summary": "Board policy encouraging classroom AI with guardrails: an AI Review Committee must approve every tool, students and staff must acknowledge AI use, AI may not substitute for effort or replace human judgment, and prompts/outputs are treated as public records.",
+     "notes": "Enrollment figure is approximate.",
+     "sources": [
+      "https://www.wfae.org/education/2025-10-28/cms-passes-new-policy-on-ai-use-in-schools",
+      "https://www.cmsk12.org/technology-services/artificial-intelligence/whats-happening-this-year"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "NC",
+     "jurisdiction": "Wake County Public School System",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "school board (draft; adoption targeted for the start of 2026-27)",
+     "lifecycle": "proposed",
+     "effective_from": "2026-08-24",
+     "effective_until": null,
+     "enrollment": 160000,
+     "summary": "Draft AI policy centred on ethics, access and 'humans at the center of learning'; students 13+ and staff may use Gemini, Canva and Adobe Express, staff-only NotebookLM, MagicSchool and Khanmigo Teacher. Board members asked for grade-band specifics before adopting.",
+     "notes": "Lifecycle proposed, so it does not count toward the state's leaning until adopted. Flip to adopted with the vote date when the board acts. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.wral.com/news/education/wake-schools-revisits-proposed-ai-policy-before-fall-launch-may-2026/"
+     ],
+     "status": "proposed"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -3720,7 +3986,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-09-08T21:12:16.382701"
+   "last_updated": "2026-09-08T21:17:33.000184"
   },
   {
    "state_code": "OR",
@@ -3854,14 +4120,42 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "permissive",
+    "score": 1.0,
+    "latest": "2025-03-01",
+    "headline": {
+     "jurisdiction": "School District of Philadelphia",
+     "action_type": "ADOPT",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "Launched 'Pioneering AI in School Systems' (PASS): tiered AI training for administrators, school leaders and teachers in selected schools from March 2025, with the district stating an ambition to be a national model for AI in education."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "PA",
+     "jurisdiction": "School District of Philadelphia",
+     "jurisdiction_type": "district",
+     "action_type": "ADOPT",
+     "direction": 1,
+     "applies_to": "staff",
+     "grade_band": "K-12",
+     "authority": "district partnership with Penn GSE / Catalyst (foundation-funded, no district cost)",
+     "lifecycle": "adopted",
+     "effective_from": "2025-03-01",
+     "effective_until": null,
+     "enrollment": 115000,
+     "summary": "Launched 'Pioneering AI in School Systems' (PASS): tiered AI training for administrators, school leaders and teachers in selected schools from March 2025, with the district stating an ambition to be a national model for AI in education.",
+     "notes": "Educator-facing; no student-facing AI deployment reported. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.chalkbeat.org/philadelphia/2024/12/10/ai-for-educators-school-leaders-coming-to-philly-schools/",
+      "https://www.the74million.org/article/philadelphia-wants-to-be-a-national-ai-in-education-model/"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -3957,7 +4251,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-08T21:12:16.383135"
+   "last_updated": "2026-09-08T21:17:33.001153"
   },
   {
    "state_code": "SC",
@@ -4341,20 +4635,63 @@
     }
    ],
    "local_signal": {
-    "count": 1,
-    "active": 1,
+    "count": 3,
+    "active": 3,
     "leaning": "permissive",
-    "score": 1.0,
-    "latest": "2026-04-13",
+    "score": 1.35,
+    "latest": "2026-08-10",
     "headline": {
-     "jurisdiction": "El Paso Independent School District",
-     "action_type": "GUIDANCE",
-     "direction": 1,
-     "grade_band": "K-12",
-     "summary": "With no Texas state guidance, El Paso ISD wrote its own AI policy and El Paso-area districts have adopted classroom tools such as PowerBuddy and MagicSchool AI alongside AI-literacy lessons."
+     "jurisdiction": "Houston Independent School District",
+     "action_type": "ADOPT",
+     "direction": 2,
+     "grade_band": "K-8",
+     "summary": "Opened nine AI-focused 'Future 2' campuses (five elementary, four middle) for 2026-27 - core subjects in AI-supported morning blocks, afternoons for 'human-centric' skills - and piloted Alpha School's AI-driven program at two elementary campuses. Families may opt out by transferring."
     }
    },
    "local_actions": [
+    {
+     "state_code": "TX",
+     "jurisdiction": "Houston Independent School District",
+     "jurisdiction_type": "district",
+     "action_type": "ADOPT",
+     "direction": 2,
+     "applies_to": "students",
+     "grade_band": "K-8",
+     "authority": "state-appointed superintendent (Mike Miles) and board of managers",
+     "lifecycle": "adopted",
+     "effective_from": "2026-08-10",
+     "effective_until": null,
+     "enrollment": 180000,
+     "summary": "Opened nine AI-focused 'Future 2' campuses (five elementary, four middle) for 2026-27 - core subjects in AI-supported morning blocks, afternoons for 'human-centric' skills - and piloted Alpha School's AI-driven program at two elementary campuses. Families may opt out by transferring.",
+     "notes": "Miles has described a goal of up to 100 AI-focused campuses. The Alpha School pilot (Gregg and Martinez elementaries) drew separate coverage in August 2026. effective_from is the approximate first day of the 2026-27 year. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.texasstandard.org/stories/houston-isd-ai-focused-campuses-artificial-intelligence/",
+      "https://www.houstonpublicmedia.org/articles/education/2026/08/03/558564/hisd-ai-learning-alpha-school-timeback-future-2-gregg-martinez-elementary/",
+      "https://www.govtech.com/education/k-12/state-appointed-supt-envisions-100-ai-focused-campuses-for-houston-isd"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "TX",
+     "jurisdiction": "Dallas Independent School District",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "9-12",
+     "authority": "board policy regulations (EIA, FNCA) amended; superintendent-adopted handbook",
+     "lifecycle": "adopted",
+     "effective_from": "2025-06-24",
+     "effective_until": null,
+     "enrollment": 140000,
+     "summary": "Adopted 'Artificial Intelligence in Dallas ISD: A Playbook for Responsible and Innovative Use' and folded AI expectations into the grading (EIA) and student-conduct (FNCA) regulations - AI as a learning tool, original-work expectations, AI-enabled cyberbullying addressed.",
+     "notes": "Guidelines are written for grades 9-12. Follows a March 2025 board briefing on AI integration. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.dallasisd.org/board-of-trustees/board-policy-and-procedures/policy-alerts/policy-alert-viewer/~board/dallas-isd-policy-alerts/post/recently-amended-dec-eia-fd-fnca-regulations-adopted-ai-handbook-june-24-2025",
+      "https://thehub.dallasisd.org/2025/04/10/digital-literacy-and-artificial-intelligence-integration-within-dallas-isd/"
+     ],
+     "status": "active"
+    },
     {
      "state_code": "TX",
      "jurisdiction": "El Paso Independent School District",
@@ -4388,7 +4725,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-08T21:12:16.383393"
+   "last_updated": "2026-09-08T21:17:33.001654"
   },
   {
    "state_code": "UT",
@@ -4711,14 +5048,42 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "restrictive",
+    "score": -1.0,
+    "latest": "2026-08-24",
+    "headline": {
+     "jurisdiction": "Fairfax County Public Schools",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "grade_band": "K-12",
+     "summary": "Elementary students may not use generative AI; secondary use continues under 'guard rails'; personal devices barred during instruction and no district tablets/laptops for preschool and kindergarten. The superintendent must inventory all generative-AI tools by 2027-01-14 and pilot a whitelist-only firewall at six schools."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "VA",
+     "jurisdiction": "Fairfax County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "students",
+     "grade_band": "K-12",
+     "authority": "school board vote 2026-07-16",
+     "lifecycle": "adopted",
+     "effective_from": "2026-08-24",
+     "effective_until": null,
+     "enrollment": 180000,
+     "summary": "Elementary students may not use generative AI; secondary use continues under 'guard rails'; personal devices barred during instruction and no district tablets/laptops for preschool and kindergarten. The superintendent must inventory all generative-AI tools by 2027-01-14 and pilot a whitelist-only firewall at six schools.",
+     "notes": "Board language: students 'should not be an ungoverned test case'. effective_from is the approximate first day of 2026-27; the board said 'going forward'. Enrollment figure is approximate.",
+     "sources": [
+      "https://www.ffxnow.com/2026/07/23/fairfax-county-school-board-approves-restrictions-on-generative-ai-digital-devices/",
+      "https://patch.com/virginia/mclean/fairfax-school-board-bans-devices-youngest-students-advances-broader-tech"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -5117,7 +5482,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-08T21:12:16.380938"
+   "last_updated": "2026-09-08T21:17:32.997418"
   },
   {
    "state_code": "PR",
@@ -5170,7 +5535,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-08T21:12:16.382882"
+   "last_updated": "2026-09-08T21:17:33.000642"
   },
   {
    "state_code": "VI",
@@ -5217,7 +5582,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-08T21:12:16.383556"
+   "last_updated": "2026-09-08T21:17:33.002167"
   }
  ]
 }

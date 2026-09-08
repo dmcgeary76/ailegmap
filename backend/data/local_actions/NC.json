@@ -1,0 +1,40 @@
+{
+  "state_code": "NC",
+  "actions": [
+    {
+      "jurisdiction": "Charlotte-Mecklenburg Schools",
+      "jurisdiction_type": "district",
+      "action_type": "PERMIT",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "school board, unanimous vote 2025-10-28",
+      "lifecycle": "adopted",
+      "effective_from": "2025-10-28",
+      "enrollment": 140000,
+      "summary": "Board policy encouraging classroom AI with guardrails: an AI Review Committee must approve every tool, students and staff must acknowledge AI use, AI may not substitute for effort or replace human judgment, and prompts/outputs are treated as public records.",
+      "notes": "Enrollment figure is approximate.",
+      "sources": [
+        "https://www.wfae.org/education/2025-10-28/cms-passes-new-policy-on-ai-use-in-schools",
+        "https://www.cmsk12.org/technology-services/artificial-intelligence/whats-happening-this-year"
+      ]
+    },
+    {
+      "jurisdiction": "Wake County Public School System",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "school board (draft; adoption targeted for the start of 2026-27)",
+      "lifecycle": "proposed",
+      "effective_from": "2026-08-24",
+      "enrollment": 160000,
+      "summary": "Draft AI policy centred on ethics, access and 'humans at the center of learning'; students 13+ and staff may use Gemini, Canva and Adobe Express, staff-only NotebookLM, MagicSchool and Khanmigo Teacher. Board members asked for grade-band specifics before adopting.",
+      "notes": "Lifecycle proposed, so it does not count toward the state's leaning until adopted. Flip to adopted with the vote date when the board acts. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.wral.com/news/education/wake-schools-revisits-proposed-ai-policy-before-fall-launch-may-2026/"
+      ]
+    }
+  ]
+}

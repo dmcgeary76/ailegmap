@@ -1,0 +1,23 @@
+{
+  "state_code": "VA",
+  "actions": [
+    {
+      "jurisdiction": "Fairfax County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "RESTRICT",
+      "direction": -1,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "school board vote 2026-07-16",
+      "lifecycle": "adopted",
+      "effective_from": "2026-08-24",
+      "enrollment": 180000,
+      "summary": "Elementary students may not use generative AI; secondary use continues under 'guard rails'; personal devices barred during instruction and no district tablets/laptops for preschool and kindergarten. The superintendent must inventory all generative-AI tools by 2027-01-14 and pilot a whitelist-only firewall at six schools.",
+      "notes": "Board language: students 'should not be an ungoverned test case'. effective_from is the approximate first day of 2026-27; the board said 'going forward'. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.ffxnow.com/2026/07/23/fairfax-county-school-board-approves-restrictions-on-generative-ai-digital-devices/",
+        "https://patch.com/virginia/mclean/fairfax-school-board-bans-devices-youngest-students-advances-broader-tech"
+      ]
+    }
+  ]
+}

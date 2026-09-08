@@ -1,0 +1,77 @@
+{
+  "state_code": "FL",
+  "actions": [
+    {
+      "jurisdiction": "Miami-Dade County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "ADOPT",
+      "direction": 2,
+      "applies_to": "both",
+      "grade_band": "9-12",
+      "authority": "district administration (superintendent Jose Dotres); board directive on guidelines 2025-08-12",
+      "lifecycle": "adopted",
+      "effective_from": "2025-05-01",
+      "enrollment": 330000,
+      "summary": "Gave roughly 100,000 high-school students and their teachers Google Gemini for Education - the largest classroom AI deployment in the country when it was reported in May 2025 - after earlier blocking chatbots. The board then directed a tiered AI-use framework and discipline rules (August 2025).",
+      "notes": "effective_from approximates the spring-2025 rollout reported by the New York Times (2025-05-19); Google's case study is dated 2025-08-13. The 2025-08-12 board action asked a committee to report guidelines by 2025-10-01. Enrollment is district-wide; the action covers high schools. Enrollment figure is approximate.",
+      "sources": [
+        "https://blog.google/products-and-platforms/products/education/miami-dade-county-public-schools-uses-gemini-for-education-for-100000-high-school-students-and-teachers/",
+        "https://www.wlrn.org/education/2025-08-12/miami-dade-schools-ai-artificial-intelligence-guidelines",
+        "https://news.slashdot.org/story/25/05/19/1451202/how-miami-schools-are-leading-100000-students-into-the-ai-future"
+      ]
+    },
+    {
+      "jurisdiction": "Broward County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "RESTRICT",
+      "direction": -1,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "school board policy; superintendent Howard Hepburn's administration",
+      "lifecycle": "adopted",
+      "effective_from": "2026-08-11",
+      "enrollment": 250000,
+      "summary": "For 2026-27, no district-approved student-facing AI tools in K-5; grades 6-12 get limited, teacher-directed access to Khanmigo and HMH Writable only. Copilot and MagicSchool are staff-facing.",
+      "notes": "Primary coverage was CBS Miami and Axios (2026-08-06); the cited write-up summarises them and notes an inconsistency about a limited Copilot student pilot. Verify the grade split against the district's AI hub. Enrollment figure is approximate.",
+      "sources": [
+        "https://windowsforum.com/windows-news.4/broward-county-schools-limits-student-ai-to-grades-6-12.442183/?amp=1",
+        "https://browardschools.ai/"
+      ]
+    },
+    {
+      "jurisdiction": "Orange County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "PERMIT",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "school board vote 2026-07-28",
+      "lifecycle": "adopted",
+      "effective_from": "2026-08-11",
+      "enrollment": 200000,
+      "summary": "First district AI policy: 'human in the loop' - teachers set written AI expectations each year, AI is off by default for submitted work unless the teacher permits it, only district-approved (closed) tools, and AI-detection software cannot be the sole basis for discipline. Built on 20,000 survey responses.",
+      "notes": "No parent opt-out, which one board member flagged. Adopted 2026-07-28, effective with the 2026-08-11 school year. Enrollment figure is approximate.",
+      "sources": [
+        "https://mynews13.com/fl/orlando/news/2026/07/29/orange-county-passes-first-ever-ai-policy-for-classroom-instruction",
+        "https://www.clickorlando.com/news/local/2026/08/13/ai-in-central-florida-classrooms-a-district-by-district-policy-breakdown/"
+      ]
+    },
+    {
+      "jurisdiction": "Hillsborough County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "school board (Policy 2130: Emerging Technologies, approved 2025-06-02)",
+      "lifecycle": "adopted",
+      "effective_from": "2025-06-02",
+      "enrollment": 225000,
+      "summary": "Board approved an Emerging Technologies policy and the district released its first AI Implementation Guide - critical thinking, data protection, academic integrity and access as the stated principles - developed by a cross-divisional AI governance team.",
+      "notes": "Announced 2025-06-13. The guide does not name tools or grade bands. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.hillsboroughschools.org/article/2269960"
+      ]
+    }
+  ]
+}
