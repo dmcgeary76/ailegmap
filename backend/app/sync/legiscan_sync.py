@@ -168,15 +168,16 @@ CONF_LOW = "LOW"
 def map_status(raw_status) -> Tuple[str, str]:
     """Map a LegiScan numeric status code to (label, stage).
 
-    Accepts int, numeric string, or an already-human label. Unknown values fall
-    back to ("Unknown", "introduced") so the map still renders something.
+    Accepts int, numeric string, or an already-human label. Unknown values map
+    to ("Unknown", None): a bill whose status we never fetched must not color
+    a state "Introduced" -- no stage, no color.
     """
     if raw_status is None:
-        return ("Unknown", "introduced")
+        return ("Unknown", None)
     # Numeric code (int or string digit)
     try:
         code = int(raw_status)
-        return STATUS_MAP.get(code, (f"Status {code}", "introduced"))
+        return STATUS_MAP.get(code, (f"Status {code}", None))
     except (TypeError, ValueError):
         pass
     # Already a string label -- normalize against known labels
@@ -324,8 +325,7 @@ class LegiScanSync:
                 self.api_key = os.environ.get("LEGISCAN_API_KEY")
         self.stats = {
             "searched": 0, "found": 0, "relevant": 0, "low_confidence": 0,
-            "new_bills": 0, "status_changes": 0, "getbill_calls": 0, "errors": 0,
-        }
+            "new_bills": 0, "status_changes": 0, "getbill_calls": 0, "errors": 0, "carryovers_linked": 0}
 
     # ---- network ---------------------------------------------------------
 
@@ -490,7 +490,7 @@ class LegiScanSync:
                 bill_url=b.get("url", ""),
                 bill_text_url=b.get("text_url", ""),
                 last_action=b.get("last_action", ""),
-                last_action_date=b.get("last_action_date", ""),
+                last_action_date=_clean_date(b.get("last_action_date")),
                 relevance_score=score["relevance"],
                 match_confidence=score["confidence"],
                 flag_reason=flag,
@@ -529,6 +529,12 @@ class LegiScanSync:
             # decision / decision_note / reviewed_* deliberately untouched
 
         self.db.commit()
+        self._link_carryovers(state)
+
+    def _link_carryovers(self, state: str):
+        n = link_carryovers(self.db, state)
+        if n:
+            self.stats["carryovers_linked"] += n
 
     # ---- runs --------------------------------------------------------------
 
@@ -576,6 +582,44 @@ class LegiScanSync:
         print("\n✅ Sync complete" if self.db is not None else "\n👀 Preview only -- nothing written")
 
 
+def link_carryovers(db, state: str) -> int:
+    """Same state, same bill number, identical title, different LegiScan id:
+    that is one bill carried into the second year of a session, not two
+    bills. Point every older copy at the newest (highest id) and carry a
+    decision forward if only the older copy had one, so a reviewer's call
+    survives the roll-over. A reused number with a different title (CA
+    AB1651 in 2022 and 2026) is left alone. Returns links made/changed."""
+    from app.models.legislation import Bill
+    rows = db.query(Bill).filter(Bill.state_code == state).all()
+    groups: Dict[tuple, List] = {}
+    for b in rows:
+        key = (b.bill_number or "", (b.bill_title or "").strip().lower())
+        groups.setdefault(key, []).append(b)
+    linked = 0
+    for key, bs in groups.items():
+        if len(bs) < 2 or not key[0]:
+            continue
+        bs.sort(key=lambda b: b.legiscan_bill_id)
+        newest = bs[-1]
+        for old in bs[:-1]:
+            if old.superseded_by != newest.legiscan_bill_id:
+                old.superseded_by = newest.legiscan_bill_id
+                linked += 1
+            if old.decision != "PENDING" and newest.decision == "PENDING":
+                newest.decision, newest.decision_note = old.decision, old.decision_note
+                newest.reviewed_by, newest.reviewed_at = old.reviewed_by, old.reviewed_at
+        if newest.superseded_by:
+            newest.superseded_by = None
+    db.commit()
+    return linked
+
+
+def _clean_date(v) -> str:
+    """LegiScan occasionally emits '0000-00-00'; store nothing rather than a fake date."""
+    v = (v or "").strip()
+    return "" if not v or v.startswith("0000") else v
+
+
 def flag_for(score: Dict) -> str:
     if score["flags"]["noise"]:
         return "noise"
@@ -594,8 +638,13 @@ def rescore(db, scope: str = "all") -> Dict[str, int]:
     q = db.query(Bill)
     if scope != "all":
         q = q.filter(Bill.state_code == scope)
-    changed = {"rescored": 0, "changed": 0}
+    changed = {"rescored": 0, "changed": 0, "unknown_stage_cleared": 0, "carryovers_linked": 0}
     for bill in q.all():
+        if bill.bill_status == "Unknown" and bill.bill_stage:
+            bill.bill_stage = None          # never fetched -> no color (see map_status)
+            changed["unknown_stage_cleared"] += 1
+        if bill.last_action_date and bill.last_action_date.startswith("0000"):
+            bill.last_action_date = ""
         score = score_bill({"title": bill.bill_title or "", "relevance": bill.relevance_score or 0})
         new = dict(match_confidence=score["confidence"], flag_reason=flag_for(score),
                    matched_ai_terms=score["title_ai_terms"], matched_edu_terms=score["title_edu_terms"])
@@ -607,6 +656,9 @@ def rescore(db, scope: str = "all") -> Dict[str, int]:
             changed["changed"] += 1
         changed["rescored"] += 1
     db.commit()
+    states = [scope] if scope != "all" else sorted({r[0] for r in db.query(Bill.state_code).distinct()})
+    for st in states:
+        changed["carryovers_linked"] += link_carryovers(db, st)
     return changed
 
 
@@ -638,7 +690,8 @@ def main():
             r = rescore(db, scope)
         finally:
             db.close()
-        print(f"\nRescored {r['rescored']} bills, {r['changed']} changed classification fields")
+        print(f"\nRescored {r['rescored']} bills, {r['changed']} changed classification fields, "
+              f"{r['unknown_stage_cleared']} unknown stages cleared, {r['carryovers_linked']} carry-over duplicates linked")
         return
 
     query = args.query or SEARCH_QUERY

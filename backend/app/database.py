@@ -52,9 +52,28 @@ Base = declarative_base()
 
 
 def init_db(bind=None):
-    """Create any missing tables. Safe to call repeatedly."""
+    """Create any missing tables and add any missing columns. Safe to call repeatedly."""
     from app import models  # noqa: F401  (register models)
-    Base.metadata.create_all(bind=bind or engine)
+    target = bind or engine
+    Base.metadata.create_all(bind=target)
+    _add_missing_columns(target)
+
+
+def _add_missing_columns(target):
+    """create_all never alters existing tables. For the handful of columns added
+    after v0.2 shipped, issue ADD COLUMN so an existing k12_ai.db keeps working."""
+    from sqlalchemy import inspect, text
+    insp = inspect(target)
+    with target.begin() as conn:
+        for table in Base.metadata.sorted_tables:
+            if not insp.has_table(table.name):
+                continue
+            have = {c["name"] for c in insp.get_columns(table.name)}
+            for col in table.columns:
+                if col.name in have:
+                    continue
+                ddl = col.type.compile(dialect=target.dialect)
+                conn.execute(text(f'ALTER TABLE {table.name} ADD COLUMN {col.name} {ddl}'))
 
 
 def get_db():

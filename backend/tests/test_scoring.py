@@ -49,7 +49,7 @@ def test_map_status_codes_and_labels():
     assert map_status(4) == ("Passed", "passed")
     assert map_status("5") == ("Vetoed", "failed")
     assert map_status("Signed by Governor")[1] == "passed"
-    assert map_status(None) == ("Unknown", "introduced")
+    assert map_status(None) == ("Unknown", None)
 
 
 def test_rank_prefers_confidence_then_passed_then_relevance():

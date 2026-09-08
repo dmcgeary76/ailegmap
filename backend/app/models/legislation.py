@@ -192,6 +192,11 @@ class Bill(Base):
     matched_ai_terms = Column(JSON, default=list)
     matched_edu_terms = Column(JSON, default=list)
 
+    # Carry-over duplicate: LegiScan gives a bill a fresh id when a two-year
+    # session rolls into its second year, so the same bill can exist twice.
+    # The older copy points at the newer one and stays off the map.
+    superseded_by = Column(Integer, index=True)   # legiscan_bill_id of the newer copy
+
     # Human decision (preserved across syncs)
     decision = Column(String(10), default="PENDING", nullable=False)  # PENDING | INCLUDED | EXCLUDED
     decision_note = Column(Text)
@@ -218,6 +223,8 @@ class Bill(Base):
         if self.decision == "INCLUDED":
             return True
         if self.decision == "EXCLUDED":
+            return False
+        if self.superseded_by:
             return False
         return self.match_confidence in AUTO_INCLUDE_CONFIDENCE
 

@@ -89,3 +89,45 @@ def test_review_api_writes_decisions_file(client, db):
     assert r.status_code == 200
     assert d.DECISIONS_PATH.exists()
     assert "WY,HB0102,77,EXCLUDED,t," in d.DECISIONS_PATH.read_text()
+
+
+def test_carryover_duplicates_are_linked_and_decision_carries(db):
+    from app.sync.legiscan_sync import link_carryovers
+    old = _bill("HI", "HB1887", "Relating To Artificial Intelligence Literacy Education.", "introduced", bid=100)
+    new = _bill("HI", "HB1887", "Relating To Artificial Intelligence Literacy Education.", "debated", bid=200)
+    other = _bill("HI", "HB1887", "A completely different bill reusing the number", "introduced", bid=300)
+    old.decision, old.reviewed_by = "EXCLUDED", "david"
+    db.add_all([old, new, other]); db.commit()
+
+    assert link_carryovers(db, "HI") == 1
+    db.refresh(old); db.refresh(new); db.refresh(other)
+    assert old.superseded_by == 200
+    assert new.superseded_by is None and other.superseded_by is None
+    assert new.decision == "EXCLUDED" and new.reviewed_by == "david"   # carried forward
+    assert not old.effective_included
+    assert link_carryovers(db, "HI") == 0                                 # idempotent
+
+    # the superseded copy is not counted on the map
+    counts = derive.review_counts([old, new, other])
+    assert counts["included"] == 1   # only `other` (HIGH, pending, not superseded)
+
+
+def test_unknown_status_has_no_stage():
+    from app.sync.legiscan_sync import map_status, _clean_date
+    assert map_status(None) == ("Unknown", None)
+    assert map_status(4)[1] == "passed"
+    assert _clean_date("0000-00-00") == ""
+    assert _clean_date("2026-05-12") == "2026-05-12"
+
+
+def test_init_db_adds_missing_columns(tmp_path):
+    import sqlite3
+    from sqlalchemy import create_engine
+    from app.database import init_db
+    path = tmp_path / "old.db"
+    con = sqlite3.connect(path)
+    con.execute("CREATE TABLE bills (id INTEGER PRIMARY KEY, state_code VARCHAR(2) NOT NULL, legiscan_bill_id INTEGER NOT NULL, decision VARCHAR(10) NOT NULL)")
+    con.commit(); con.close()
+    init_db(bind=create_engine(f"sqlite:///{path}"))
+    cols = {r[1] for r in sqlite3.connect(path).execute("PRAGMA table_info(bills)")}
+    assert "superseded_by" in cols and "bill_title" in cols

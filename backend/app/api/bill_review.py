@@ -72,12 +72,12 @@ def list_bills(
         # effective inclusion is decision-or-confidence; express it in SQL so
         # limit/offset stay correct.
         from sqlalchemy import or_, and_
+        auto = and_(Bill.decision == "PENDING", Bill.superseded_by.is_(None),
+                    Bill.match_confidence.in_(AUTO_INCLUDE_CONFIDENCE))
         if included:
-            q = q.filter(or_(Bill.decision == "INCLUDED",
-                             and_(Bill.decision == "PENDING", Bill.match_confidence.in_(AUTO_INCLUDE_CONFIDENCE))))
+            q = q.filter(or_(Bill.decision == "INCLUDED", auto))
         else:
-            q = q.filter(or_(Bill.decision == "EXCLUDED",
-                             and_(Bill.decision == "PENDING", Bill.match_confidence.notin_(AUTO_INCLUDE_CONFIDENCE))))
+            q = q.filter(Bill.decision != "INCLUDED", ~auto)
     return q.order_by(Bill.last_seen.desc(), Bill.id.desc()).offset(offset).limit(limit).all()
 
 

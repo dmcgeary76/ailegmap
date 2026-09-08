@@ -7,6 +7,13 @@ Timestamps are in the project's local time.
 
 ## 2026-09-08
 
+### Sync correctness: carry-over duplicates, honest "Unknown", bad dates
+- **Carry-over duplicates.** LegiScan issues a new bill id when a two-year session rolls into its second year, so the same bill appears twice (27 groups already in the DB, 15 of them Hawaii; identical titles). New `bills.superseded_by` column: after each state upsert, `link_carryovers()` points every older copy at the newest id, carries a reviewer's decision forward onto the new copy, and keeps the old one off the map (`effective_included` and the review API's on-map filter both respect it). A reused number with a different title (CA AB1651, 2022 vs 2026) is left alone. `--rescore` runs it too, with no network.
+- **"Unknown" no longer means "Introduced".** `map_status(None)` used to return stage `introduced`, so a bill whose status was never fetched could color a state. It now returns no stage; `--rescore` clears the stage on stored Unknown rows.
+- **`0000-00-00` dates** are stored as empty (TX HB1709 had one).
+- `init_db()` now adds missing columns to an existing SQLite file (`create_all` only creates tables), so no manual migration.
+- 3 new tests (43 total).
+
 ### Sync recall bug: the ceremonial-resolution NOT clause was hiding real statutes
 - **Found via OK SB 1734.** A signed K-12 AI statute with "artificial intelligence" in its title never reached the bills table. Bisected with the new `--query` flag: LegiScan indexes the bill (`SB1734` → rel 99; `"artificial intelligence" AND school` → #1 at rel 100); our production query returned 22 Oklahoma bills without it; the same query minus its `NOT (congratulating OR commending OR recognizing OR honoring OR commemorating)` tail returned 39 *with* it; and `"Responsible Technology in Schools" AND (those words)` returned the bill — its text uses one of them.
 - **Root cause.** The NOT clause is a full-text exclusion. It was meant to drop ceremonial resolutions, but any statute whose text says "recognizing" or "honoring" anywhere was silently excluded: 17 of 39 Oklahoma hits (44%). Assume a similar share nationally.
