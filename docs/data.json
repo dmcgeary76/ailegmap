@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-08T18:34:35.908609Z",
- "last_sync": null,
+ "generated_at": "2026-09-08T19:12:01.716996Z",
+ "last_sync": "2026-09-08T19:12:01.122204Z",
  "summary": {
   "jurisdictions": 54,
-  "states_with_included_bills": 21,
+  "states_with_included_bills": 28,
   "states_by_legislation_stage": {
-   "passed": 3,
-   "debated": 5,
-   "introduced": 11,
-   "failed": 2,
-   "none": 33
+   "passed": 8,
+   "debated": 4,
+   "introduced": 13,
+   "failed": 3,
+   "none": 26
   },
   "states_researched": 14,
   "states_with_guidance": 10,
@@ -22,9 +22,9 @@
    "ABSENT": 4
   },
   "bills": {
-   "total": 1197,
-   "included": 64,
-   "pending": 1105,
+   "total": 2205,
+   "included": 103,
+   "pending": 2113,
    "excluded": 28
   },
   "local_actions": {
@@ -38,8 +38,99 @@
    "mixed": 0,
    "none": 51
   },
-  "last_sync": null,
-  "recent_status_changes": []
+  "last_sync": "2026-09-08T19:12:01.122204",
+  "recent_status_changes": [
+   {
+    "state_code": "WY",
+    "bill_number": "HB0091",
+    "bill_title": "Ban on government social scoring with AI.",
+    "old_status": "Unknown",
+    "new_status": "Failed / Dead",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:34.582751"
+   },
+   {
+    "state_code": "WI",
+    "bill_number": "SB1097",
+    "bill_title": "Insurer claims denial practices and auditing, creating the Office of the Public Intervenor, granting rule-making authority, and making an appropriation. (FE)",
+    "old_status": "Unknown",
+    "new_status": "Failed / Dead",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:30.172544"
+   },
+   {
+    "state_code": "WI",
+    "bill_number": "AB1128",
+    "bill_title": "Insurer claims denial practices and auditing, creating the Office of the Public Intervenor, granting rule-making authority, and making an appropriation. (FE)",
+    "old_status": "Unknown",
+    "new_status": "Failed / Dead",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:30.172544"
+   },
+   {
+    "state_code": "WI",
+    "bill_number": "SB400",
+    "bill_title": "Use restrictions on state and local government electronic devices.",
+    "old_status": "Unknown",
+    "new_status": "Failed / Dead",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:30.172544"
+   },
+   {
+    "state_code": "WI",
+    "bill_number": "AB415",
+    "bill_title": "Use restrictions on state and local government electronic devices.",
+    "old_status": "Unknown",
+    "new_status": "Vetoed",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:30.172544"
+   },
+   {
+    "state_code": "WI",
+    "bill_number": "AB377",
+    "bill_title": "Establishing English as the official state language, use of artificial intelligence or other machine-assisted translation tools in lieu of appointing English language interpreters, and use of English for governmental oral and written communication and for nongovernmental purposes. (FE)",
+    "old_status": "Unknown",
+    "new_status": "Failed / Dead",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:30.172544"
+   },
+   {
+    "state_code": "WI",
+    "bill_number": "SB357",
+    "bill_title": "Establishing English as the official state language, use of artificial intelligence or other machine-assisted translation tools in lieu of appointing English language interpreters, and use of English for governmental oral and written communication and for nongovernmental purposes. (FE)",
+    "old_status": "Unknown",
+    "new_status": "Failed / Dead",
+    "new_stage": "failed",
+    "changed_at": "2026-09-08T19:11:30.172544"
+   },
+   {
+    "state_code": "WV",
+    "bill_number": "HB4400",
+    "bill_title": "All relating generally to procurement by state spending units and local fiscal bodies of technology and technical infrastructure products and services",
+    "old_status": "Unknown",
+    "new_status": "Introduced",
+    "new_stage": "introduced",
+    "changed_at": "2026-09-08T19:11:23.329906"
+   },
+   {
+    "state_code": "WV",
+    "bill_number": "HB4963",
+    "bill_title": "Prohibiting the use of deep fake technology to influence an election",
+    "old_status": "Unknown",
+    "new_status": "Engrossed",
+    "new_stage": "debated",
+    "changed_at": "2026-09-08T19:11:23.329906"
+   },
+   {
+    "state_code": "WV",
+    "bill_number": "SB632",
+    "bill_title": "Creating Atmospheric Intervention Oversight and Public Safety Act",
+    "old_status": "Unknown",
+    "new_status": "Introduced",
+    "new_stage": "introduced",
+    "changed_at": "2026-09-08T19:11:23.329906"
+   }
+  ]
  },
  "states": [
   {
@@ -48,13 +139,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 13,
+    "total": 28,
     "included": 0,
     "resolutions": 0,
-    "pending": 13,
+    "pending": 28,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 13,
+    "held": 28,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -93,13 +184,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 5,
+    "total": 9,
     "included": 0,
     "resolutions": 0,
-    "pending": 5,
+    "pending": 9,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 5,
+    "held": 9,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -140,24 +231,24 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T18:34:34.073796"
+   "last_updated": "2026-09-08T18:38:26.284844"
   },
   {
    "state_code": "AZ",
    "state_name": "Arizona",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "introduced",
+   "legislation_stage": "debated",
    "bill_counts": {
-    "total": 15,
-    "included": 2,
+    "total": 22,
+    "included": 3,
     "resolutions": 0,
-    "pending": 13,
+    "pending": 20,
     "manually_included": 2,
     "manually_excluded": 0,
-    "held": 13,
+    "held": 19,
     "by_stage": {
      "passed": 0,
-     "debated": 0,
+     "debated": 1,
      "introduced": 1,
      "failed": 1
     }
@@ -210,6 +301,22 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
+    },
+    {
+     "id": 1234,
+     "legiscan_bill_id": 2080458,
+     "bill_number": "HB2409",
+     "bill_title": "Artificial intelligence; statewide education program",
+     "bill_url": "https://legiscan.com/AZ/bill/HB2409/2026",
+     "bill_text_url": "https://legiscan.com/AZ/text/HB2409/2026",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Senate consent calendar",
+     "last_action_date": "2026-03-09",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -241,13 +348,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 6,
+    "total": 8,
     "included": 0,
     "resolutions": 0,
-    "pending": 6,
+    "pending": 8,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 6,
+    "held": 8,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -283,7 +390,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-09-08T18:34:34.074913"
+   "last_updated": "2026-09-08T18:38:26.285289"
   },
   {
    "state_code": "CA",
@@ -291,17 +398,17 @@
    "research_status": "RESEARCHED",
    "legislation_stage": "passed",
    "bill_counts": {
-    "total": 114,
-    "included": 5,
+    "total": 200,
+    "included": 6,
     "resolutions": 0,
-    "pending": 101,
+    "pending": 187,
     "manually_included": 5,
     "manually_excluded": 8,
-    "held": 109,
+    "held": 194,
     "by_stage": {
      "passed": 2,
      "debated": 0,
-     "introduced": 2,
+     "introduced": 3,
      "failed": 1
     }
    },
@@ -355,6 +462,22 @@
      "is_resolution": false
     },
     {
+     "id": 1243,
+     "legiscan_bill_id": 2121564,
+     "bill_number": "AB2487",
+     "bill_title": "Artificial intelligence: education and workforce development.",
+     "bill_url": "https://legiscan.com/CA/bill/AB2487/2025",
+     "bill_text_url": "https://legiscan.com/CA/text/AB2487/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "In committee: Set, first hearing. Hearing canceled at the request of author.",
+     "last_action_date": "2026-04-07",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
      "id": 451,
      "legiscan_bill_id": 1978599,
      "bill_number": "AB1064",
@@ -393,7 +516,7 @@
      "bill_title": "Public postsecondary education: Artificial Intelligence and Deepfake Working Group.",
      "bill_url": "https://legiscan.com/CA/bill/SB1235/2023",
      "bill_text_url": "https://legiscan.com/CA/text/SB1235/2023",
-     "bill_status": "Unknown",
+     "bill_status": "Introduced",
      "bill_stage": "introduced",
      "last_action": "April 24 set for first hearing canceled at the request of author.",
      "last_action_date": "2024-04-24",
@@ -461,7 +584,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-08T18:34:34.075667"
+   "last_updated": "2026-09-08T18:38:26.285508"
   },
   {
    "state_code": "CO",
@@ -469,13 +592,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 15,
+    "total": 22,
     "included": 0,
     "resolutions": 0,
-    "pending": 15,
+    "pending": 22,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 15,
+    "held": 22,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -523,7 +646,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-09-08T18:34:34.076517"
+   "last_updated": "2026-09-08T18:38:26.285701"
   },
   {
    "state_code": "CT",
@@ -531,13 +654,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 16,
+    "total": 29,
     "included": 1,
     "resolutions": 0,
-    "pending": 14,
+    "pending": 27,
     "manually_included": 1,
     "manually_excluded": 1,
-    "held": 15,
+    "held": 28,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -683,24 +806,56 @@
    "state_code": "FL",
    "state_name": "Florida",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "failed",
    "bill_counts": {
-    "total": 32,
-    "included": 0,
+    "total": 88,
+    "included": 1,
     "resolutions": 0,
-    "pending": 32,
+    "pending": 88,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 32,
+    "held": 87,
     "by_stage": {
      "passed": 0,
      "debated": 0,
      "introduced": 0,
-     "failed": 0
+     "failed": 1
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1349,
+    "legiscan_bill_id": 2065901,
+    "bill_number": "S1194",
+    "bill_title": "Artificial Intelligence in Education",
+    "bill_url": "https://legiscan.com/FL/bill/S1194/2026",
+    "bill_text_url": "https://legiscan.com/FL/text/S1194/2026",
+    "bill_status": "Failed / Dead",
+    "bill_stage": "failed",
+    "last_action": "Died in Education Pre-K - 12",
+    "last_action_date": "2026-03-13",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1349,
+     "legiscan_bill_id": 2065901,
+     "bill_number": "S1194",
+     "bill_title": "Artificial Intelligence in Education",
+     "bill_url": "https://legiscan.com/FL/bill/S1194/2026",
+     "bill_text_url": "https://legiscan.com/FL/text/S1194/2026",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in Education Pre-K - 12",
+     "last_action_date": "2026-03-13",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -730,13 +885,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 23,
-    "included": 0,
-    "resolutions": 0,
-    "pending": 23,
+    "total": 40,
+    "included": 1,
+    "resolutions": 1,
+    "pending": 40,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 23,
+    "held": 39,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -744,8 +899,40 @@
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1405,
+    "legiscan_bill_id": 1724818,
+    "bill_number": "HR381",
+    "bill_title": "Seckinger High School; inaugural year; innovative artificial intelligence education; honor",
+    "bill_url": "https://legiscan.com/GA/bill/HR381/2023",
+    "bill_text_url": "https://legiscan.com/GA/text/HR381/2023",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "House Read and Adopted",
+    "last_action_date": "2023-03-01",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": true
+   },
+   "bills": [
+    {
+     "id": 1405,
+     "legiscan_bill_id": 1724818,
+     "bill_number": "HR381",
+     "bill_title": "Seckinger High School; inaugural year; innovative artificial intelligence education; honor",
+     "bill_url": "https://legiscan.com/GA/bill/HR381/2023",
+     "bill_text_url": "https://legiscan.com/GA/text/HR381/2023",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "House Read and Adopted",
+     "last_action_date": "2023-03-01",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": true
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -775,13 +962,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 90,
-    "included": 4,
-    "resolutions": 2,
-    "pending": 86,
+    "total": 118,
+    "included": 6,
+    "resolutions": 4,
+    "pending": 114,
     "manually_included": 4,
     "manually_excluded": 0,
-    "held": 86,
+    "held": 112,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -869,6 +1056,38 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": true
+    },
+    {
+     "id": 1422,
+     "legiscan_bill_id": 2130891,
+     "bill_number": "SCR33",
+     "bill_title": "Requesting The Department Of Education To Develop Artificial Intelligence Literacy Curricula Plans And Programs For Use In Public Schools.",
+     "bill_url": "https://legiscan.com/HI/bill/SCR33/2026",
+     "bill_text_url": "https://legiscan.com/HI/text/SCR33/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to EDU/LBT.",
+     "last_action_date": "2026-03-19",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": true
+    },
+    {
+     "id": 1423,
+     "legiscan_bill_id": 2130662,
+     "bill_number": "SR32",
+     "bill_title": "Requesting The Department Of Education To Develop Artificial Intelligence Literacy Curricula Plans And Programs For Use In Public Schools.",
+     "bill_url": "https://legiscan.com/HI/bill/SR32/2026",
+     "bill_text_url": "https://legiscan.com/HI/text/SR32/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to EDU/LBT.",
+     "last_action_date": "2026-03-19",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": true
     }
    ],
    "local_signal": {
@@ -899,7 +1118,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T18:34:34.078136"
+   "last_updated": "2026-09-08T18:38:26.286037"
   },
   {
    "state_code": "ID",
@@ -907,13 +1126,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "passed",
    "bill_counts": {
-    "total": 4,
+    "total": 6,
     "included": 1,
     "resolutions": 0,
-    "pending": 3,
+    "pending": 5,
     "manually_included": 1,
     "manually_excluded": 0,
-    "held": 3,
+    "held": 5,
     "by_stage": {
      "passed": 1,
      "debated": 0,
@@ -982,18 +1201,18 @@
    "state_code": "IL",
    "state_name": "Illinois",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "debated",
+   "legislation_stage": "passed",
    "bill_counts": {
-    "total": 70,
+    "total": 104,
     "included": 1,
     "resolutions": 0,
-    "pending": 69,
+    "pending": 103,
     "manually_included": 1,
     "manually_excluded": 0,
-    "held": 69,
+    "held": 103,
     "by_stage": {
-     "passed": 0,
-     "debated": 1,
+     "passed": 1,
+     "debated": 0,
      "introduced": 0,
      "failed": 0
     }
@@ -1005,10 +1224,10 @@
     "bill_title": "SCH CD-TEACHER EVALUATION-AI",
     "bill_url": "https://legiscan.com/IL/bill/SB2909/2025",
     "bill_text_url": "https://legiscan.com/IL/text/SB2909/2025",
-    "bill_status": "Enrolled",
-    "bill_stage": "debated",
-    "last_action": "Added as Co-Sponsor Sen. Mary Edly-Allen",
-    "last_action_date": "2026-06-30",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Public Act . . . . . . . . . 104-0565",
+    "last_action_date": "2026-07-10",
     "match_confidence": "HIGH",
     "decision": "INCLUDED",
     "effective_included": true,
@@ -1022,10 +1241,10 @@
      "bill_title": "SCH CD-TEACHER EVALUATION-AI",
      "bill_url": "https://legiscan.com/IL/bill/SB2909/2025",
      "bill_text_url": "https://legiscan.com/IL/text/SB2909/2025",
-     "bill_status": "Enrolled",
-     "bill_stage": "debated",
-     "last_action": "Added as Co-Sponsor Sen. Mary Edly-Allen",
-     "last_action_date": "2026-06-30",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Public Act . . . . . . . . . 104-0565",
+     "last_action_date": "2026-07-10",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -1061,13 +1280,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 9,
+    "total": 11,
     "included": 0,
     "resolutions": 0,
-    "pending": 9,
+    "pending": 11,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 9,
+    "held": 11,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1106,17 +1325,17 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 12,
-    "included": 2,
+    "total": 15,
+    "included": 4,
     "resolutions": 0,
-    "pending": 10,
+    "pending": 13,
     "manually_included": 2,
     "manually_excluded": 0,
-    "held": 10,
+    "held": 11,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 2,
+     "introduced": 4,
      "failed": 0
     }
    },
@@ -1150,6 +1369,38 @@
      "last_action_date": "2026-02-16",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1488,
+     "legiscan_bill_id": 2117721,
+     "bill_number": "HF2528",
+     "bill_title": "A bill for an act modifying the duties of the workforce development board, state board of education, and department of education related to cyber and artificial intelligence.(Formerly HSB 609.)",
+     "bill_url": "https://legiscan.com/IA/bill/HF2528/2025",
+     "bill_text_url": "https://legiscan.com/IA/text/HF2528/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Introduced, placed on calendar. H.J. 303.",
+     "last_action_date": "2026-02-16",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1489,
+     "legiscan_bill_id": 2090504,
+     "bill_number": "HSB609",
+     "bill_title": "A bill for an act modifying the duties of the workforce development board, state board of education, and department of education related to cyber and artificial intelligence.(See HF 2528.)",
+     "bill_url": "https://legiscan.com/IA/bill/HSB609/2025",
+     "bill_text_url": "https://legiscan.com/IA/text/HSB609/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Committee report approving bill, renumbered as HF 2528.",
+     "last_action_date": "2026-02-16",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
      "effective_included": true,
      "is_resolution": false
     },
@@ -1199,13 +1450,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 7,
+    "total": 15,
     "included": 0,
     "resolutions": 0,
-    "pending": 7,
+    "pending": 15,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 7,
+    "held": 15,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1244,13 +1495,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 10,
+    "total": 18,
     "included": 0,
     "resolutions": 0,
-    "pending": 10,
+    "pending": 18,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 10,
+    "held": 18,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1289,13 +1540,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 17,
-    "included": 2,
-    "resolutions": 1,
-    "pending": 15,
+    "total": 25,
+    "included": 3,
+    "resolutions": 2,
+    "pending": 23,
     "manually_included": 2,
     "manually_excluded": 0,
-    "held": 15,
+    "held": 22,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1335,6 +1586,22 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
+    },
+    {
+     "id": 1507,
+     "legiscan_bill_id": 2036152,
+     "bill_number": "HR320",
+     "bill_title": "Requests the state Department of Education, the State Board of Elementary and Secondary Education, the Board of Regents, and postsecondary education management boards to promote artificial intelligence education for students and to encourage professional development relative to artificial intelligence for faculty and staff",
+     "bill_url": "https://legiscan.com/LA/bill/HR320/2025",
+     "bill_text_url": "https://legiscan.com/LA/text/HR320/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Taken by the Clerk of the House and presented to the Secretary of State in accordance with the Rules of the House.",
+     "last_action_date": "2025-06-13",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": true
     },
     {
      "id": 417,
@@ -1390,7 +1657,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-09-08T18:34:34.078885"
+   "last_updated": "2026-09-08T18:38:26.286207"
   },
   {
    "state_code": "ME",
@@ -1398,13 +1665,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 9,
+    "total": 11,
     "included": 1,
     "resolutions": 1,
-    "pending": 7,
+    "pending": 9,
     "manually_included": 1,
     "manually_excluded": 1,
-    "held": 8,
+    "held": 10,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1475,17 +1742,17 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "passed",
    "bill_counts": {
-    "total": 80,
-    "included": 7,
+    "total": 105,
+    "included": 9,
     "resolutions": 0,
-    "pending": 73,
+    "pending": 98,
     "manually_included": 7,
     "manually_excluded": 0,
-    "held": 73,
+    "held": 96,
     "by_stage": {
      "passed": 1,
-     "debated": 2,
-     "introduced": 4,
+     "debated": 3,
+     "introduced": 5,
      "failed": 0
     }
    },
@@ -1523,22 +1790,6 @@
      "is_resolution": false
     },
     {
-     "id": 457,
-     "legiscan_bill_id": 2112595,
-     "bill_number": "HB1057",
-     "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)",
-     "bill_url": "https://legiscan.com/MD/bill/HB1057/2026",
-     "bill_text_url": "https://legiscan.com/MD/text/HB1057/2026",
-     "bill_status": "Engrossed",
-     "bill_stage": "debated",
-     "last_action": "Referred Rules",
-     "last_action_date": "2026-04-13",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
      "id": 97,
      "legiscan_bill_id": 1961326,
      "bill_number": "HB1391",
@@ -1549,6 +1800,22 @@
      "bill_stage": "debated",
      "last_action": "Referred Education, Energy, and the Environment",
      "last_action_date": "2025-03-17",
+     "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 457,
+     "legiscan_bill_id": 2112595,
+     "bill_number": "HB1057",
+     "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)",
+     "bill_url": "https://legiscan.com/MD/bill/HB1057/2026",
+     "bill_text_url": "https://legiscan.com/MD/text/HB1057/2026",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred Rules",
+     "last_action_date": "2026-04-13",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -1567,6 +1834,38 @@
      "last_action_date": "2025-03-04",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1517,
+     "legiscan_bill_id": 1842215,
+     "bill_number": "HB1297",
+     "bill_title": "Education - Artificial Intelligence - Study and Regulations",
+     "bill_url": "https://legiscan.com/MD/bill/HB1297/2024",
+     "bill_text_url": "https://legiscan.com/MD/text/HB1297/2024",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred Education, Energy, and the Environment",
+     "last_action_date": "2024-03-18",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1518,
+     "legiscan_bill_id": 1838035,
+     "bill_number": "SB979",
+     "bill_title": "Education - Artificial Intelligence - Guidelines and Pilot Program",
+     "bill_url": "https://legiscan.com/MD/bill/SB979/2024",
+     "bill_text_url": "https://legiscan.com/MD/text/SB979/2024",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Hearing 3/06 at 1:00 p.m.",
+     "last_action_date": "2024-02-08",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
      "effective_included": true,
      "is_resolution": false
     },
@@ -1646,24 +1945,72 @@
    "state_code": "MA",
    "state_name": "Massachusetts",
    "research_status": "RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 15,
-    "included": 0,
+    "total": 104,
+    "included": 2,
     "resolutions": 0,
-    "pending": 15,
+    "pending": 104,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 15,
+    "held": 102,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
+     "introduced": 2,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1542,
+    "legiscan_bill_id": 1998675,
+    "bill_number": "S429",
+    "bill_title": "To establish a commission to investigate AI in education",
+    "bill_url": "https://legiscan.com/MA/bill/S429/2025",
+    "bill_text_url": "https://legiscan.com/MA/text/S429/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Accompanied a study order, see S2792",
+    "last_action_date": "2025-12-04",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1542,
+     "legiscan_bill_id": 1998675,
+     "bill_number": "S429",
+     "bill_title": "To establish a commission to investigate AI in education",
+     "bill_url": "https://legiscan.com/MA/bill/S429/2025",
+     "bill_text_url": "https://legiscan.com/MA/text/S429/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Accompanied a study order, see S2792",
+     "last_action_date": "2025-12-04",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1543,
+     "legiscan_bill_id": 2001175,
+     "bill_number": "H614",
+     "bill_title": "Relative to issuing guidance regarding setting policies for the use of AI in schools",
+     "bill_url": "https://legiscan.com/MA/bill/H614/2025",
+     "bill_text_url": "https://legiscan.com/MA/text/H614/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Reporting date extended to Wednesday, March 18, 2026",
+     "last_action_date": "2026-02-09",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -1693,30 +2040,158 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-08T18:34:34.079525"
+   "last_updated": "2026-09-08T18:38:26.286416"
   },
   {
    "state_code": "MI",
    "state_name": "Michigan",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "passed",
    "bill_counts": {
-    "total": 8,
-    "included": 0,
+    "total": 25,
+    "included": 7,
     "resolutions": 0,
-    "pending": 8,
+    "pending": 25,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 8,
+    "held": 18,
     "by_stage": {
-     "passed": 0,
-     "debated": 0,
-     "introduced": 0,
+     "passed": 4,
+     "debated": 2,
+     "introduced": 1,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1631,
+    "legiscan_bill_id": 954825,
+    "bill_number": "SB0149",
+    "bill_title": "Appropriations; zero budget; school aid appropriations; provide for fiscal year 2017-2018. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+    "bill_url": "https://legiscan.com/MI/bill/SB0149/2017",
+    "bill_text_url": "https://legiscan.com/MI/text/SB0149/2017",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Assigned Pa 586'18 With Immediate Effect 12/31/18 Addenda",
+    "last_action_date": "2018-12-31",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1631,
+     "legiscan_bill_id": 954825,
+     "bill_number": "SB0149",
+     "bill_title": "Appropriations; zero budget; school aid appropriations; provide for fiscal year 2017-2018. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+     "bill_url": "https://legiscan.com/MI/bill/SB0149/2017",
+     "bill_text_url": "https://legiscan.com/MI/text/SB0149/2017",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Assigned Pa 586'18 With Immediate Effect 12/31/18 Addenda",
+     "last_action_date": "2018-12-31",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1634,
+     "legiscan_bill_id": 2009892,
+     "bill_number": "SB0166",
+     "bill_title": "Appropriations: school aid; fiscal year 2025-2026 appropriations for K-12 school aid; provide for. Amends, adds & repeals (See bill).",
+     "bill_url": "https://legiscan.com/MI/bill/SB0166/2025",
+     "bill_text_url": "https://legiscan.com/MI/text/SB0166/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "For Final Disposition Of Budget, See Hb 4706",
+     "last_action_date": "2025-10-03",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1635,
+     "legiscan_bill_id": 1852983,
+     "bill_number": "HB5503",
+     "bill_title": "Appropriations: school aid; fiscal year 2024-2025 appropriations for K-12 school aid; provide for. Amends secs. 11 & 31aa of 1979 PA 94 (MCL 388.1611 & 388.1631aa) & adds 97h.",
+     "bill_url": "https://legiscan.com/MI/bill/HB5503/2023",
+     "bill_text_url": "https://legiscan.com/MI/text/HB5503/2023",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Assigned Pa 148'24",
+     "last_action_date": "2024-10-15",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1637,
+     "legiscan_bill_id": 1112705,
+     "bill_number": "SB0941",
+     "bill_title": "Appropriations; school aid; Marshall plan for talent; enact.",
+     "bill_url": "https://legiscan.com/MI/bill/SB0941/2017",
+     "bill_text_url": "https://legiscan.com/MI/text/SB0941/2017",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Assigned Pa 0227'18 With Immediate Effect",
+     "last_action_date": "2018-09-05",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1632,
+     "legiscan_bill_id": 2035768,
+     "bill_number": "HB4577",
+     "bill_title": "Appropriations: school aid; appropriations for K-12 school aid; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+     "bill_url": "https://legiscan.com/MI/bill/HB4577/2025",
+     "bill_text_url": "https://legiscan.com/MI/text/HB4577/2025",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred To Committee On Appropriations",
+     "last_action_date": "2025-06-12",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1633,
+     "legiscan_bill_id": 1565067,
+     "bill_number": "SB0832",
+     "bill_title": "Appropriations: school aid; appropriations for fiscal year 2022-2023; provide for. Amends secs. 11 & 17b of 1979 PA 94 (MCL 388.1611 & 388.1617b).",
+     "bill_url": "https://legiscan.com/MI/bill/SB0832/2021",
+     "bill_text_url": "https://legiscan.com/MI/text/SB0832/2021",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred To Conference Committee",
+     "last_action_date": "2022-06-23",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1636,
+     "legiscan_bill_id": 2025453,
+     "bill_number": "SB0230",
+     "bill_title": "Appropriations: school aid; appropriations for K-12 school aid; provide for. Amends & adds (See bill).",
+     "bill_url": "https://legiscan.com/MI/bill/SB0230/2025",
+     "bill_text_url": "https://legiscan.com/MI/text/SB0230/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred To Committee On Appropriations",
+     "last_action_date": "2025-04-22",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -1746,13 +2221,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 37,
+    "total": 57,
     "included": 0,
     "resolutions": 0,
-    "pending": 37,
+    "pending": 57,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 37,
+    "held": 57,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1791,50 +2266,50 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "failed",
    "bill_counts": {
-    "total": 35,
-    "included": 3,
+    "total": 48,
+    "included": 4,
     "resolutions": 0,
-    "pending": 32,
+    "pending": 45,
     "manually_included": 3,
     "manually_excluded": 0,
-    "held": 32,
+    "held": 44,
     "by_stage": {
      "passed": 0,
      "debated": 0,
      "introduced": 0,
-     "failed": 3
+     "failed": 4
     }
    },
    "headline_bill": {
-    "id": 690,
-    "legiscan_bill_id": 1927333,
-    "bill_number": "SB2059",
-    "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
-    "bill_url": "https://legiscan.com/MS/bill/SB2059/2025",
-    "bill_text_url": "https://legiscan.com/MS/text/SB2059/2025",
+    "id": 1668,
+    "legiscan_bill_id": 2087381,
+    "bill_number": "HB1242",
+    "bill_title": "Mississippi Dyslexia Generative Artificial Intelligence Education and Workforce Development Act; create.",
+    "bill_url": "https://legiscan.com/MS/bill/HB1242/2026",
+    "bill_text_url": "https://legiscan.com/MS/text/HB1242/2026",
     "bill_status": "Failed / Dead",
     "bill_stage": "failed",
     "last_action": "Died In Committee",
-    "last_action_date": "2025-03-04",
+    "last_action_date": "2026-02-03",
     "match_confidence": "HIGH",
-    "decision": "INCLUDED",
+    "decision": "PENDING",
     "effective_included": true,
     "is_resolution": false
    },
    "bills": [
     {
-     "id": 690,
-     "legiscan_bill_id": 1927333,
-     "bill_number": "SB2059",
-     "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
-     "bill_url": "https://legiscan.com/MS/bill/SB2059/2025",
-     "bill_text_url": "https://legiscan.com/MS/text/SB2059/2025",
+     "id": 1668,
+     "legiscan_bill_id": 2087381,
+     "bill_number": "HB1242",
+     "bill_title": "Mississippi Dyslexia Generative Artificial Intelligence Education and Workforce Development Act; create.",
+     "bill_url": "https://legiscan.com/MS/bill/HB1242/2026",
+     "bill_text_url": "https://legiscan.com/MS/text/HB1242/2026",
      "bill_status": "Failed / Dead",
      "bill_stage": "failed",
      "last_action": "Died In Committee",
-     "last_action_date": "2025-03-04",
+     "last_action_date": "2026-02-03",
      "match_confidence": "HIGH",
-     "decision": "INCLUDED",
+     "decision": "PENDING",
      "effective_included": true,
      "is_resolution": false
     },
@@ -1865,6 +2340,22 @@
      "bill_stage": "failed",
      "last_action": "Died In Committee",
      "last_action_date": "2026-02-03",
+     "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 690,
+     "legiscan_bill_id": 1927333,
+     "bill_number": "SB2059",
+     "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
+     "bill_url": "https://legiscan.com/MS/bill/SB2059/2025",
+     "bill_text_url": "https://legiscan.com/MS/text/SB2059/2025",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died In Committee",
+     "last_action_date": "2025-03-04",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -1900,13 +2391,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 18,
+    "total": 27,
     "included": 0,
     "resolutions": 0,
-    "pending": 18,
+    "pending": 27,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 18,
+    "held": 27,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1945,13 +2436,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 4,
+    "total": 5,
     "included": 0,
     "resolutions": 0,
-    "pending": 4,
+    "pending": 5,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 4,
+    "held": 5,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1990,13 +2481,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 4,
+    "total": 10,
     "included": 0,
     "resolutions": 0,
-    "pending": 4,
+    "pending": 10,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 4,
+    "held": 10,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2035,13 +2526,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 12,
+    "total": 21,
     "included": 0,
     "resolutions": 0,
-    "pending": 12,
+    "pending": 21,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 12,
+    "held": 21,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2125,13 +2616,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "debated",
    "bill_counts": {
-    "total": 92,
+    "total": 122,
     "included": 9,
     "resolutions": 0,
-    "pending": 80,
+    "pending": 110,
     "manually_included": 9,
     "manually_excluded": 3,
-    "held": 83,
+    "held": 113,
     "by_stage": {
      "passed": 0,
      "debated": 1,
@@ -2328,24 +2819,56 @@
    "state_code": "NM",
    "state_name": "New Mexico",
    "research_status": "RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 20,
-    "included": 0,
+    "total": 29,
+    "included": 1,
     "resolutions": 0,
-    "pending": 20,
+    "pending": 29,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 20,
+    "held": 28,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
+     "introduced": 1,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1736,
+    "legiscan_bill_id": 2108223,
+    "bill_number": "HB330",
+    "bill_title": "Ai Ethics As School Science Elective",
+    "bill_url": "https://legiscan.com/NM/bill/HB330/2026",
+    "bill_text_url": "https://legiscan.com/NM/text/HB330/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Action Postponed Indefinitely",
+    "last_action_date": "2026-02-04",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1736,
+     "legiscan_bill_id": 2108223,
+     "bill_number": "HB330",
+     "bill_title": "Ai Ethics As School Science Elective",
+     "bill_url": "https://legiscan.com/NM/bill/HB330/2026",
+     "bill_text_url": "https://legiscan.com/NM/text/HB330/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Action Postponed Indefinitely",
+     "last_action_date": "2026-02-04",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -2382,45 +2905,189 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-09-08T18:34:34.080055"
+   "last_updated": "2026-09-08T18:38:26.286584"
   },
   {
    "state_code": "NY",
    "state_name": "New York",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "debated",
+   "legislation_stage": "passed",
    "bill_counts": {
-    "total": 88,
-    "included": 7,
+    "total": 149,
+    "included": 18,
     "resolutions": 0,
-    "pending": 71,
+    "pending": 132,
     "manually_included": 7,
     "manually_excluded": 10,
-    "held": 81,
+    "held": 131,
     "by_stage": {
-     "passed": 0,
+     "passed": 5,
      "debated": 1,
-     "introduced": 6,
+     "introduced": 12,
      "failed": 0
     }
    },
    "headline_bill": {
-    "id": 749,
-    "legiscan_bill_id": 2010242,
-    "bill_number": "A07029",
-    "bill_title": "Directs the commissioner of education to make recommendations to the board of regents regarding the incorporation of instruction in artificial intelligence system literacy into the school curriculum at the elementary, junior high and senior high levels; directs the board of regents to adopt guidelines if the curriculum is adopted.",
-    "bill_url": "https://legiscan.com/NY/bill/A07029/2025",
-    "bill_text_url": "https://legiscan.com/NY/text/A07029/2025",
-    "bill_status": "Introduced",
-    "bill_stage": "introduced",
-    "last_action": "referred to education",
-    "last_action_date": "2026-01-07",
+    "id": 1749,
+    "legiscan_bill_id": 1934701,
+    "bill_number": "S03006",
+    "bill_title": "Enacts into law major components of legislation necessary to implement the state education, labor, housing and family assistance budget for the 2025-2026 state fiscal year; relates to contracts for excellence; relates to calculation of state aid to school districts; relates to a statewide dual enrollment policy; extends workforce education; relates to maximum class sizes for special education; extends chapter 82 of the laws of 1995; relates to foundation aid; provides for special apportionment for salary expenses; provides for special apportionment for public pension accruals; establishes a dual enrollment program; relates to universal pre-kindergarten and the Statewide universal full-day pre-kindergarten; extends provisions relating to paperwork reduction; relates to funding a program for work force education; extends provisions for monitors in the Hempstead union free school district, the Wyandanch union free school district and the Rochester city school district; relates to supplementary funding for the East Ramapo central school district; extends provisions authorizing the Roosevelt union free school district to finance deficits by the issuance of serial bonds; relates to requirements for zero emissions school buses; relates to certain instructional requirements for nonpublic schools (Part A); establishes a universal free school meals program; repeals provisions relating to the community eligibility provision state subsidy (Part B); relates to school policies regarding the use of internet-enabled devices during the school day (Part C); relates to scholarships awarded to part-time students by the New York state higher education services corporation; makes conforming changes; repeals provisions relating to tuition awards for part-time undergraduate students; relates to the New York state part-time scholarship award program (Part D); relates to authorizing the excelsior scholarship cover the cost of tuition in the state university of New York system (Part E); creates a New York opportunity promise scholarship for certain students who matriculated at a SUNY or CUNY community college, are over 25 years of age, have applied for certain tuition assistance programs, are eligible for resident tuition rates, and have not already obtained a postsecondary degree (Part F); provides for reduction of taxes pursuant to shelter rent (Part L); utilizes reserves in the mortgage insurance fund for the neighborhood preservation program, the rural preservation program, the rural rental assistance program, and the New York state supportive housing program (Part N); extends certain provisions relating to restructuring financing for residential school placements (Part O); authorizes child care support centers which are certified by the office of children and family services to place individuals as substitute caregivers at licensed and registered child care programs (Part P); relates to the provision of public assistance allowances to public assistance recipients upon the birth of a new child (Part Q); relates to increasing the standards of monthly need for aged, blind and disabled persons living in the community (Part R); relates to the effectiveness of provisions of law relating to the powers and duties of the commissioner of social services relating to the appointment of a temporary operator (Part S); relates to the healthy terminals act; amends certain definitions relating to covered airport location and covered airport workers; provides for the applicable standard rate as meaning the wage and benefit rates designated by the commissioner of labor (Part T); limits the amount of liquidated damages for certain frequency of pay violations (Part U); relates to civil penalties for violations of certain wage payment provisions (Part V); increases the civil penalties for violations of child labor laws (Part W); establishes a database for the employment of minors; allows for registration of minors and employers in such database; digitizes the process for minors to apply for employment (Part X); expands certain payments previously made to parents of deceased service members to spouses and minor children of such service members; authorizes the commissioner of veterans' affairs to conduct an outreach program for the purpose of informing the public and persons who may be eligible to receive an annuity (Part Y); requires submission of an annual report on the New York state museum (Part AA); decreases the length of the suspension period applicable to certain individuals who lose their jobs due to a labor dispute, such as a strike, and who seek to obtain unemployment insurance benefits (Part BB); requires social services for a city of a population of a million or more shall spend a certain amount of local funds for child care block grants (Part CC); establishes the crime of evading arrest by concealment of identity (Part DD); expands the merit time allowance and limited credit time allowance programs (Part EE); authorizes the commissioner of education to appoint a monitor to oversee the Mount Vernon city school district; requires such monitor to schedule three public hearings; requires the monitor and board of education to develop a proposed financial plan for the 2025--2026 school year and the four subsequent school years (Part FF); relates to the conversion to condominium ownership for the preservation of expiring affordable housing in the city of New York; provides expanded homeownership opportunities from the conversion of certain residential rental buildings to condominium status by property owners that commit to preserve the inventory of expiring affordable housing in the city of New York (Part GG); establishes the housing access voucher pilot program (Part HH); amends section 2 of chapter 868 of the laws of 1975 constituting the New York state financial emergency act for the city of New York, in relation to the effectiveness thereof (Part II); establishes the city of Buffalo parking authority; provides for its powers, duties and obligations (Part JJ); increases the maximum benefit rate for unemployment insurance (Part KK); amends provisions relating to discovery reform (Part LL); provides for the administration of certain funds and accounts related to the 2025-2026 budget; authorizes certain payments and transfers; relates to the administration of certain funds and accounts (Part MM).",
+    "bill_url": "https://legiscan.com/NY/bill/S03006/2025",
+    "bill_text_url": "https://legiscan.com/NY/text/S03006/2025",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "SIGNED CHAP.56",
+    "last_action_date": "2025-05-09",
     "match_confidence": "HIGH",
-    "decision": "INCLUDED",
+    "decision": "PENDING",
     "effective_included": true,
     "is_resolution": false
    },
    "bills": [
+    {
+     "id": 1749,
+     "legiscan_bill_id": 1934701,
+     "bill_number": "S03006",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state education, labor, housing and family assistance budget for the 2025-2026 state fiscal year; relates to contracts for excellence; relates to calculation of state aid to school districts; relates to a statewide dual enrollment policy; extends workforce education; relates to maximum class sizes for special education; extends chapter 82 of the laws of 1995; relates to foundation aid; provides for special apportionment for salary expenses; provides for special apportionment for public pension accruals; establishes a dual enrollment program; relates to universal pre-kindergarten and the Statewide universal full-day pre-kindergarten; extends provisions relating to paperwork reduction; relates to funding a program for work force education; extends provisions for monitors in the Hempstead union free school district, the Wyandanch union free school district and the Rochester city school district; relates to supplementary funding for the East Ramapo central school district; extends provisions authorizing the Roosevelt union free school district to finance deficits by the issuance of serial bonds; relates to requirements for zero emissions school buses; relates to certain instructional requirements for nonpublic schools (Part A); establishes a universal free school meals program; repeals provisions relating to the community eligibility provision state subsidy (Part B); relates to school policies regarding the use of internet-enabled devices during the school day (Part C); relates to scholarships awarded to part-time students by the New York state higher education services corporation; makes conforming changes; repeals provisions relating to tuition awards for part-time undergraduate students; relates to the New York state part-time scholarship award program (Part D); relates to authorizing the excelsior scholarship cover the cost of tuition in the state university of New York system (Part E); creates a New York opportunity promise scholarship for certain students who matriculated at a SUNY or CUNY community college, are over 25 years of age, have applied for certain tuition assistance programs, are eligible for resident tuition rates, and have not already obtained a postsecondary degree (Part F); provides for reduction of taxes pursuant to shelter rent (Part L); utilizes reserves in the mortgage insurance fund for the neighborhood preservation program, the rural preservation program, the rural rental assistance program, and the New York state supportive housing program (Part N); extends certain provisions relating to restructuring financing for residential school placements (Part O); authorizes child care support centers which are certified by the office of children and family services to place individuals as substitute caregivers at licensed and registered child care programs (Part P); relates to the provision of public assistance allowances to public assistance recipients upon the birth of a new child (Part Q); relates to increasing the standards of monthly need for aged, blind and disabled persons living in the community (Part R); relates to the effectiveness of provisions of law relating to the powers and duties of the commissioner of social services relating to the appointment of a temporary operator (Part S); relates to the healthy terminals act; amends certain definitions relating to covered airport location and covered airport workers; provides for the applicable standard rate as meaning the wage and benefit rates designated by the commissioner of labor (Part T); limits the amount of liquidated damages for certain frequency of pay violations (Part U); relates to civil penalties for violations of certain wage payment provisions (Part V); increases the civil penalties for violations of child labor laws (Part W); establishes a database for the employment of minors; allows for registration of minors and employers in such database; digitizes the process for minors to apply for employment (Part X); expands certain payments previously made to parents of deceased service members to spouses and minor children of such service members; authorizes the commissioner of veterans' affairs to conduct an outreach program for the purpose of informing the public and persons who may be eligible to receive an annuity (Part Y); requires submission of an annual report on the New York state museum (Part AA); decreases the length of the suspension period applicable to certain individuals who lose their jobs due to a labor dispute, such as a strike, and who seek to obtain unemployment insurance benefits (Part BB); requires social services for a city of a population of a million or more shall spend a certain amount of local funds for child care block grants (Part CC); establishes the crime of evading arrest by concealment of identity (Part DD); expands the merit time allowance and limited credit time allowance programs (Part EE); authorizes the commissioner of education to appoint a monitor to oversee the Mount Vernon city school district; requires such monitor to schedule three public hearings; requires the monitor and board of education to develop a proposed financial plan for the 2025--2026 school year and the four subsequent school years (Part FF); relates to the conversion to condominium ownership for the preservation of expiring affordable housing in the city of New York; provides expanded homeownership opportunities from the conversion of certain residential rental buildings to condominium status by property owners that commit to preserve the inventory of expiring affordable housing in the city of New York (Part GG); establishes the housing access voucher pilot program (Part HH); amends section 2 of chapter 868 of the laws of 1975 constituting the New York state financial emergency act for the city of New York, in relation to the effectiveness thereof (Part II); establishes the city of Buffalo parking authority; provides for its powers, duties and obligations (Part JJ); increases the maximum benefit rate for unemployment insurance (Part KK); amends provisions relating to discovery reform (Part LL); provides for the administration of certain funds and accounts related to the 2025-2026 budget; authorizes certain payments and transfers; relates to the administration of certain funds and accounts (Part MM).",
+     "bill_url": "https://legiscan.com/NY/bill/S03006/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/S03006/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "SIGNED CHAP.56",
+     "last_action_date": "2025-05-09",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1751,
+     "legiscan_bill_id": 2088234,
+     "bill_number": "A10008",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state transportation, economic development and environmental conservation budget for the 2026-2027 state fiscal year; extends provisions of law relating to increasing certain motor vehicle transaction fees (Part A); extends the accident prevention course internet technology pilot program (Part B); establishes a demonstration program in the city of New York for the installation and operation of intelligent speed assistance devices (Part D); extends provisions of law relating to motor vehicles equipped with autonomous vehicle technology (Part E); expands the automated work zone speed enforcement program utilizing photo speed violation monitoring systems to include all New York highways (Part G); extends provisions of law relating to certain tax increment financing provisions relating to the New York transit authority and the metropolitan transportation authority (Part H); authorizes the MTA to conduct environmental reviews under SEQRA for the crosstown extension of the Second Avenue subway project in two stages (Part I); enacts the dairy promotion act; enacts provisions related to the marketing of agricultural products in New York state; repeals certain provisions relating thereto (Part J); extends the refundability of the investment tax credit for farmers (Part K); authorizes the New York state energy research and development authority to finance a portion of its research, development and demonstration, policy and planning, and Fuel NY program from an assessment on gas and electric corporations (Part M); requires gas, electric, steam and water-works corporations to provide an executive compensation disclosure; requires such corporations to return all revenues derived from their actual return on equity in excess of the authorized rate of return to ratepayers; clarifies costs not to be included in rates (Part N); authorizes the public service commission to consider and approve multi-year changes in rates or charges for utilities (Part O); establishes an energy affordability index; permits the public service commission to implant affordability monitors in certain gas or electric corporations (Part P); makes reforms to the state environmental quality review act relating to sustainable housing and sprawl prevention (Part R); increases rebates for certain vehicles purchased by municipalities (Part S); extends the effectiveness of certain provisions of law relating to the powers and duties of the dormitory authority to establish subsidiaries (Part T); authorizes the trustees of the state university of New York to lease and contract to make available certain land on the state university of New York at Farmingdale's campus (Subpart A); authorizes the trustees of the state university of New York to lease and contract to make available certain land on the state university of New York at Stony Brook's campus (Subpart B); authorizes the commissioner of transportation to transfer and convey certain state-owned real property in the town of Babylon, county of Suffolk (Subpart C); authorizes the trustees of the state university of New York to lease and contract to make available grounds and facilities on the state university of New York College of Environmental Science and Forestry to the Abby Lane Housing Corporation (Part D)(Part U); extends the authority of the New York state urban development corporation to administer the empire state economic development fund (Part V); extends the loan powers of the New York state urban development corporation (Part W); enacts the \"safe by design act\" to authorize the attorney general to promulgate rules and regulations identifying methods for reasonable and technically feasible age assurance which may consider the size, financial resources, and technical capabilities of covered platforms, the costs and effectiveness of available age determination techniques for users of such platforms, the audience of such platforms, and prevalent practices of the industry of the operator (Part Y); relates to requiring insurers to provide written explanations for premium changes in certain covered policies (Part BB); places limitations on damages resulting from motor vehicle accidents (Part EE); requires insurers to file annual reports on insurance for multi-family buildings with the superintendent of financial services (Part GG); relates to the annual consumer guide of health insurers (Subpart A); relates to ongoing treatment by an out-of-network provider during pregnancy (Subpart B); relates to accessible formulary drug lists (Subpart C); relates to utilization reviews for treatment for a chronic health condition (Subpart D) (Part HH); extends the policy period for excess profit refunds or credits to motor vehicle insurance policyholders; requires insurers to submit reports demonstrating whether the insurer realized an excess profit and completed making any credits required (Part KK); relates to the effectiveness of the New York state health insurance continuation assistance demonstration project (Part LL); enacts the \"Long Island MacArthur Airport terminal and rail integration project act\" (Part NN); extends the effectiveness of certain provisions permitting videoconferencing and remote participation in public meetings under certain circumstances (Part OO); exempts major electric generating facilities that provide emergency back-up generation for manufacturing facilities that produce semiconductors from siting requirements set forth in article 10 of the public service law (Part PP); establishes the crime of criminal interference with access to a place of religious worship (Part QQ); extend provisions of law permitting NYC, Nassau and Suffolk to retain a portion of certain fines under the Cleaner, Greener NY Act of 2013 (Part RR); enacts the accelerate solar for affordable power (ASAP) act to direct the public service commission to advance reforms to the utility interconnection process to ensure timely and cost-effective integration of new distributed energy resources (Part SS); establishes a blue ribbon commission on residential affordability through energy savings (RATES commission) to study the causes and origins of rising utility rates and to recommend actions or reforms to reduce rates; provides for the repeal of such commission upon expiration thereof (Part TT); authorizes the creation of a traffic camera violations bureau to adjudicate owner liability for failure of operator to stop for a school bus displaying a red visual signal and stop-arm (Part UU); relates to climate change; requires the plan toward achieving the statewide greenhouse gas emissions limits to be updated in 2028 and every six years thereafter; outlines factors to include when developing a regulatory program or programs (Part VV); establishes a monitor team to oversee the Wyandanch union free school district (Part WW); relates to certain retirement benefit enhancements members of tier VI (Part XX); relation to the re-amortization and valuation methods used for contributions to the New York city employees retirement system, the New York city teachers' retirement system, the police pension fund, subchapter two, the fire department pension fund, subchapter two and the board of education retirement system of such city (Part YY); relates to service retirement benefits for uniformed members of the New York city fire department pension fund (Part ZZ); provides for longevity bonuses relating to first grade firefighters and promotions from the firefighter rank (Part AAA); requires certain pension systems to submit a self-report to the superintendent of the department of financial services; requires the superintendent of the department of financial services to submit a report on such reports (Part BBB); allows a beneficiary of a member whose death occurs on or after July 1, 2026 and who would have been entitled to a service credit at the time of such member's death to elect to receive a lump sum payment equal to the pension reserve that would have been established had the member retired on the date of such member's death (Part CCC); relates to certain retirement benefit enhancements for certain state law enforcement officers (Part DDD); relates to the treatment of prior service with certain agencies by the New York city police pension fund (Part EEE); relates to the restoration of 20 year service retirement for certain New York city corrections officers and sanitation workers (Part FFF); provides for the administration of certain funds and accounts related to the 2026--2027 budget (Part GGG); adds ten additional judges to the civil court of the city of New York (Part HHH); establishes the Excelsior power program designed to reduce peak energy demand (Part III); authorizes certain work in connection with the District Galleria project in the city of White Plains (Part JJJ).",
+     "bill_url": "https://legiscan.com/NY/bill/A10008/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/A10008/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "signed chap.58",
+     "last_action_date": "2026-05-26",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1752,
+     "legiscan_bill_id": 2088789,
+     "bill_number": "S09005",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state public protection and general government budget for the 2026-2027 state fiscal year; extends the recruitment incentive and retention program for certain active members of the New York army national guard, New York air national guard, and New York naval militia until 2031 (Part A); extends the suspension of the subsidy to the state emergency services revolving loan fund from the public safety communications surcharge until the end of the 2027--2028 state fiscal year (Part B); establishes crimes related to utilizing three-dimensional printers for manufacturing ghost guns and firearm components (Subpart A); provides for firearm prevention technology requirements for three-dimensional printers (Subpart B)(Part C); establishes the crimes of unlawful use of a drone; establishes \"the New York state blue list\" requiring that the state, its agencies, and any political subdivisions of the state only buy drones and drone mitigation technology from vendors listed on such registry (Part D); relates to the definition of insurance fraud (Part F); extends temporary orders of protection issued simultaneously with the issuance of a warrant until the defendant subsequently appears in court pursuant to such warrant or voluntarily or otherwise, unless the matter is dismissed (Part H); authorizes the liquor authority to change the duration of certain licenses (Subpart A); extends motion picture theater liquor licenses (Subpart B); prohibits wholesalers from assessing certain fees on retailers (Subpart C) (Part O); increases the frequency of education and training in ethics and lobbying; imposes fees for failure to complete training by the required timeframes (Part U); establishes dedicated workers' compensation fraud units within New York state district attorneys' office (Part W); specifies which providers are authorized to render certain medical care (Part X); increases certain purchasing and advertising thresholds to one hundred fifty thousand dollars (Part Y); relates to lobbyist registration fees (Part Z); requires the superintendent of state police to develop, maintain, and disseminate to all members of the division of state police a critical incident paid leave policy (Part AA); extends provisions related to the monetary threshold for certain restrictions on procurement contracts until 2028 (Part BB); extends the effectiveness of certain provisions relating to purchasing of services and commodities by the state (Part CC); repeals provisions that authorize proceedings to revert to the original court of record when a defendant fails to comply with or complete the mental health court program (Part GG); extends certain provisions constituting the New York State community commission on reparations remedies; relates to extending the time the New York State community commission on reparations remedies has to submit a written report of its findings and recommendations to the legislature and the governor; relates to the status of members of the commission (Part HH); requires prior approval for rate increases for certain policies covering losses or liabilities arising out of the ownership of a motor vehicle (Part II); prohibits the use of employment, education, homeownership, and zip code for determining private passenger motor vehicle insurance rates (Part JJ); extends provisions related to the operation and administration of the legislature (Part KK); enacts the \"Local Cops, Local Crimes Act\" (Subpart A); enacts the \"New York state Bivens act\" (Subpart B); restricts action state and municipal employees can take regarding immigration enforcement (Subpart C); prohibits children from being denied access to a free public education due to citizenship or immigration status and other prohibited practices (Subpart D); enacts the \"sensitive location protection act\" (Subpart E); prohibits law enforcement officers from wearing any mask or personal disguise while interacting with the public in the performance of their duties (Subpart F); creates a new immigrant trust office within the department of law (Subpart G); establishes certain procedures for child care programs for certain children who cannot be picked up as scheduled (Subpart H) (Part LL); extends the term and authority of the independent monitor for the Orange county industrial development agency; requires such monitor also monitor the Orange county funding corporation; modifies the applicability of certain tax exemptions based on population; extends provisions of law related to the independent monitor for the Orange county industrial development agency (Part MM); provides a period of probable usefulness of five years for certain police emergency response vehicles (Part NN); provides for appointments to a city charter revision commission by an incoming mayor (Part OO).",
+     "bill_url": "https://legiscan.com/NY/bill/S09005/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/S09005/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "SIGNED CHAP.55",
+     "last_action_date": "2026-05-27",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1754,
+     "legiscan_bill_id": 1317666,
+     "bill_number": "A09508",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state transportation, economic development and environmental conservation budget for the 2020-2021 state fiscal year; relates to consolidated local highway assistance payments (Part A); relates to penalties for commercial vehicles on parkways and penalties for over-height vehicles (Part B); relates to the display of amber and blue lights on safety service patrol vehicles (Part C); relates to the maximum dimension of certain vehicles proceeding to and from the New York state thruway authority (Part E); relates to agreements for fiber optics (Part F); relates to penalties for unlicensed operation of ground transportation to and from airports (Part H); relates to setting the aggregate principal amount of bonds the Metropolitan transit authority, the Triborough bridge and tunnel authority and the New York city transit authority can issue (Part I); relates to the New York transit authority and the metropolitan transportation authority, in relation to extending authorization for tax increment financing for the metropolitan transportation authority (Part K); relates to permitting the secretary of state to provide special handling for all documents filed or issued by the division of corporations and to permit additional levels of such expedited service (Part R); relates to prohibiting pricing of goods and services on the basis of gender (Part S); relates to making changes to the arms of the state (Part U); relates to qualifications for appointment and employment (Part V); relates to home inspection professional licensing (Part W); authorizes utility and cable television assessments that provide funds to the department of health from cable television assessment revenues and to the department of agriculture and markets, department of environmental conservation, department of state, and the office of parks, recreation and historic preservation from utility assessment revenues (Part Y); relates to the powers and duties of the dormitory authority of the state of New York relative to the establishment of subsidiaries for certain purposes (Part CC); amends the infrastructure investment act, in relation to requiring certain contracts to comply with service-disabled veteran-owned business enterprises, negotiating prices in certain lump-sum contracts, referencing certain sections of law and providing for a date of repeal (Part DD); extends the authority of the New York state urban development corporation to administer the empire state economic development fund (Part EE); relates to the powers of the New York state urban development corporation to make loans, in relation to extending the general loan powers of the New York state urban development corporation (Part FF); relates to economic transformation program eligibility (Part GG); authorizes the New York state energy research and development authority to finance a portion of its research, development and demonstration, policy and planning, and Fuel NY program, as well as climate change related expenses of the department of environmental conservation and the department of agriculture and markets' Fuel NY program, from an assessment on gas and electric corporations (Part HH); relates to the definition of farm laborer and labor practices for farm laborers (Part II); relates to procurement procedures for school districts in relation to New York state products (Part JJ); relates to the water pollution control revolving fund and the drinking water revolving fund (Part KK); relates to student debt consultants (Part MM); relates to expanded polystyrene foam container and polystyrene loose fill packaging ban; relates to moneys collected for violations of the expanded polystyrene foam container and polystyrene loose fill packaging ban (Part PP); authorizes the creation of state debt in the amount of three billion dollars, in relation to creating the environmental bond act of 2020 \"restore mother nature\" for the purposes of environmental improvements that preserve, enhance, and restore New York's natural resources and reduce the impact of climate change; provides for the submission to the people of a proposition or question therefor to be voted upon at the general election to be held in November, 2020 (Part QQ); relates to the implementation of the environmental bond act of 2020 \"restore mother nature\" (Part RR); authorizes the county of Nassau, to permanently and temporarily convey certain easements and to temporarily alienate certain parklands (Subpart A); authorizes the village of East Rockaway, county of Nassau, to permanently and temporarily convey certain easements and to temporarily alienate certain parklands (Subpart B); authorizes the village of Rockville Centre, county of Nassau, to permanently and temporarily convey certain easements and to temporarily alienate certain parklands (Subpart C)(Part UU); relates to banning fracking (Part WW); relates to bicycles with electric assist and electric scooters (Part XX); relates to increasing certain motor vehicle transaction fees; relates to the costs of the department of motor vehicles (Part YY); relates to the acceptance of applications for accident prevention and pre-licensing internet courses; establishes the accident prevention course internet technology pilot program (Part ZZ); amends the New York Buy American Act, in relation to the report to be provided and to making such provisions permanent (Part EEE); relates to prevailing wage requirements (Part FFF); amends the New York state urban development corporation act, in relation to the corporations' authorization to provide financial and technical assistance to community development financial institutions (Part III); accelerates the growth of renewable energy facilities to meet critical state energy policy goals (Part JJJ); extends the application deadline for businesses to participate in the START-UP NY program (Part KKK); authorizes the metropolitan transportation authority to borrow money and issue negotiable notes, bonds or other obligations to offset decreases in revenue (Part LLL); relates to the central business district tolling lockbox fund (Part MMM); relates to admission to residential treatment facilities (RTF) for children and youth (Part NNN); authorizes the transfer of certain office of mental health employees to the secure treatment rehabilitation center (Part OOO); relates to the amount of time an individual may be held for emergency observation, care, and treatment in CPEP and the implementation of satellite sites; relates to comprehensive psychiatric emergency programs (Part PPP); relates to penalties relating to mental health and substance use disorder parity compliance requirements; establishes the behavioral health parity compliance fund (Part QQQ); relates to providers of service (Part RRR); relates to applied behavior analysis (Part SSS); relates to the closure or transfer of a state-operated individualized residential alternative (Part TTT); provides funding for the Metropolitan Transportation Authority 2020-2024 capital program and paratransit operating expenses (Part UUU); relates to acquisitions or transfers of property for transit projects (Part VVV); relates to decoupling from certain federal tax changes (Part WWW); relates to installment loans and obligations evidencing installment loans (Item A); relates to statutory installment bonds (Item B); relates to refunding bonds (Item C); relates to the special powers of the New York state environmental facilities corporation (Item D); extends the authority of the department of environmental conservation to manage Atlantic and shortnose sturgeon (Item E); extends the authority of the department of environmental conservation to manage Atlantic Cod (Item F); extends the authority of the department of environmental conservation to manage Atlantic herring (Item G); extends the authority of the department of environmental conservation to manage black sea bass (Item H); extends the authority of the department of environmental conservation to manage blueback herring (Item I); extends the authority of the department of environmental conservation to manage crabs (Item J); extends the authority of the department of environmental conservation to restrict the taking of fish, shellfish and crustacea in special management areas (Item K); extends the authority of the department of environmental conservation to manage of fluke-summer flounder (Item L); extends the authority of the department of environmental conservation to manage scup (Item M); extends the authority of the department of environmental conservation to manage sharks (Item N); extends the authority of the department of environmental conservation to manage squid (Item O); extends the authority of the department of environmental conservation to manage whelk and conch (Item P); extends the authority of the department of environmental conservation to manage winter flounder (Item Q); relates to commercial fishing licenses (Item R)(Subpart A); authorizes certain health care professionals licensed to practice in other jurisdictions to practice in this state in connection with an event sanctioned by the World Triathlon Corporation (Item A); authorizes the city of Middletown to enter into a contract to sell or pledge as collateral for a loan some or all of the delinquent liens held by such city to a private party or engage a private party to collect some or all of the delinquent tax liens held by it (Item B); redistributes bond volume allocations made pursuant to section 146 of the federal tax reform act of 1986, relating to allocation of the unified state bond volume ceiling, enacts the private activity bond allocation act of 2020 (Item C); relates to the upstate flood mitigation task force (Item D); authorizes a pilot residential parking permit system in the city of Albany (Item K); relates to charging a fee for admission to the New York Botanical Garden (Item L); creates the radon task force, in relation to the reporting date and effectiveness thereof (Item M); relates to defining spearguns and allowing recreational spearfishing in New York's marine and coastal waters (Item N); relates to aquatic invasive species, spread prevention, and penalties (Item O); relates to the September 11th worker protection task force act (Item P); relates to extending time limitations for certain actions (Item Q); authorizes New York city marshals to exercise the same functions, powers and duties as sheriffs with respect to the execution of money judgments (Item R); relates to limits on certain supplementary insurance (Item S); relates to the sale of municipal obligations by the county of Erie (Item T); relates to payment in lieu of taxes for property acquired for park or recreational purposes (Item U); relates to payment in lieu of taxes for property acquired for park or recreational purposes by the town of Hempstead (Item V); relates to the provision of physical therapy assistant services in public and private primary and secondary schools (Item W); relates to the membership composition of the metropolitan transportation authority board (Item X); establishes the New York telecommunications relay service center (Item Y); relates to the tax abatement and exemption for rent regulated and rent controlled property occupied by senior citizens; relates to the tax abatement and exemption for rent regulated and rent controlled property occupied by persons with disabilities (Item Z); relates to the creation of a state information technology innovation center (Item AA); creates a presumption relating to certain lung disabilities incurred by volunteer firefighters (Item BB); relates to disability due to disease or malfunction of the heart or coronary arteries (Item CC); relates to certified school psychologists and special education services and programs for preschool children with handicapping conditions (Item DD); authorizes certain health care professionals licensed to practice in other jurisdictions to practice in this state in connection with an event sanctioned by New York Road Runners (Item EE); relates to paperwork reduction (Item FF); relates to bonds and notes of the city of Yonkers (Item GG); relates to the sale of bonds and notes of the city of Buffalo (Item HH); relates to assessment and review of assessments in the county of Nassau (Item II); extends provisions of the property/casualty insurance availability act (Item JJ); relates to certain tuition waivers for police officer students of the city university of New York (Item KK); requires regulations to permit tuition waivers for certain firefighters and fire officers for CUNY (Item LL); relates to repair of damaged pesticide containers (Item MM); relates to pesticide registration time frames and fees; relates to pesticide product registration timetables and fees (Item NN); relates to temporary investments by local governments (Item OO); authorizes services for non-residents in adult homes, residences for adults and enriched housing programs Item PP); relates to the sale of bonds and notes of the city of New York, the issuance of bonds or notes with variable rates of interest, interest rate exchange agreements of the city of New York, the refunding of bonds, and the down payment for projects financed by bonds; amends the New York state financial emergency act for the city of New York, in relation to a pledge and agreement of the state; relates to interest rate exchange agreements of the city of New York and refunding bonds of such city (Item QQ); relates to certain payments to the horsemen's organization (Item RR); relates to use of electronic means for the commencement and filing of papers in certain actions and proceedings (Item SS); establishes certain water charges for hospitals and charities in New York city (Item TT); relates to the boarding of out of state inmates at local correctional facilities (Item UU); relates to the adoption of the interstate compact for juveniles by the state of New York (Item VV); grants the chief administrator of the courts the authority to allow referees to determine applications for orders of protection during the hours family court is in session (Item WW); relates to an advisory panel on employee-owned enterprises within the division of small business services; relates to establishing an advisory panel on employee-owned enterprises within the division of small business services (Item XX); establishes the underground facilities safety training account (Item YY); authorizes the hunting of big game in the county of Albany with rifles (Item ZZ); relates to liquidator's permits and temporary retail permits (Item AAA); relates to the New York state thoroughbred breeding and development fund; relates to permitted deductions from wages (Item CCC) establishes the digital currency task force (Item DDD); authorizes the city of New York to sell to abutting property owners real property owned by such city, consisting of tax lots that cannot be independently developed due to the size, shape, configuration and topography of such lots and the zoning regulations applicable thereto (Item EEE); requires certain agencies to submit regulatory agendas for publication in the state register (Item FFF); relates to the taking of sharks (Item GGG); authorizes owners of residential real property in high risk brush fire areas in the borough of Staten Island to cut and remove reeds from their property, in relation to extending the expiration and repeal date thereof for an additional year (Item HHH); creates a temporary state commission to study and investigate how to regulate artificial intelligence, robotics and automation (Item III); relates to the determination of adjusted base proportions in special assessing units which are cities (Item JJJ); extends limitations on the shift between classes of taxable property in the town of Orangetown, county of Rockland (Item KKK); extends limitations on the shift between classes of taxable property in the town of Clarkstown, county of Rockland (Item LLL); allows certain special assessing units other than cities to adjust their current base proportions, adjusted base proportions for assessment rolls, and the base proportion in approved assessing units in Nassau county (Item MMM); increases certain special accidental death benefits (Item NNN); relates to the home based primary care for the elderly demonstration project (Item OOO); relates to the residential parking system in the village of Dobbs Ferry in the county of Westchester (Item PPP); relates to the incorporation of the New York Zoological Society, in relation to extending the expiration date of free one day admission to the zoological park (Item QQQ); increases the average assessed value threshold and to eligibility for J-51 tax abatements (Item RRR); relates to fees and expenses in unemployment insurance proceedings (Item SSS); extends authorization for certain exemptions from filing requirements (Item TTT); extends the tax rate reduction under the New York state real estate transfer tax and the New York city real property transfer tax for conveyances of real property to existing real estate investment funds (Item UUU)(Subpart B); relates to the imposition of sales and compensating use taxes by the county of Albany (Item A); extends the expiration of the provisions authorizing the county of Allegany to impose an additional one and one-half percent sales and compensating use taxes (Item B); extends the authorization of the county of Broome to impose an additional one percent of sales and compensating use taxes (Item C); extends the expiration of provisions authorizing the county of Cattaraugus to impose an additional one percent of sales and compensating use tax (Item D); extends the authorization of the county of Cayuga to impose an additional one percent of sales and compensating use taxes (Item E); authorizes Chautauqua county to impose an additional one percent rate of sales and compensating use taxes (Item F); extends the authorization of the county of Chemung to impose an additional one percent of sales and compensating use taxes (Item G); extends the authority of Chenango county to impose additional taxes (Item H); extends the expiration of the authorization granted to the county of Clinton to impose an additional rate of sales and compensating use tax (Item I); relates to sales and compensating use tax in Columbia county (Item J); extends the authorization for imposition of additional sales tax in the county of Cortland (Item K); extends the authorization of the county of Delaware to impose an additional one percent of sales and compensating use taxes (Item L); relates to sales and compensating use tax in Dutchess county (Item M); relates to the imposition of additional rates of sales and compensating use taxes by Erie county (Item N); extends the authorization granted to the county of Essex to impose an additional one percent of sales and compensating use taxes (Item O); extends the expiration of the authority granted to the county of Franklin to impose an additional one percent of sales and compensating use taxes (Item P); relates to the imposition of additional sales and compensating use tax in Fulton county (Item Q); extends the expiration of the authorization to the county of Genesee to impose an additional one percent of sales and compensating use taxes (Item R); extends the authorization for imposition of additional sales and compensating use taxes in Greene county (Item S); extends the authorization of the county of Hamilton to impose an additional one percent of sales and compensating use taxes (Item T); extends the period during which the county of Herkimer is authorized to impose additional sales and compensating use taxes (Item U); authorizes the county of Jefferson to impose additional sales tax (Item V); authorizes the county of Lewis to impose an additional one percent of sales and compensating use taxes (Item W); authorizes the county of Livingston to impose an additional one percent sales tax (Item X); extends the authorization of the county of Madison to impose an additional rate of sales and compensating use taxes (Item Y); relates to the imposition of sales and compensating use taxes by the county of Monroe (Item Z); relates to the imposition of sales and compensating use taxes in Montgomery county (Item AA); extends the authority of the county of Nassau to impose additional sales and compensating use taxes, and extending local government assistance programs in Nassau county (Item BB); relates to continuing to authorize Niagara county to impose an additional rate of sales and compensating use taxes (Item CC); authorizes Oneida county to impose additional rates of sales and compensating use taxes and providing for allocation and distribution of a portion of net collections from such additional rates (Item DD); extends the authorization of the county of Onondaga to impose an additional rate of sales and compensating use taxes (Item EE); extends the authorization for Ontario county to impose additional rates of sales and compensating use taxes (Item FF); extends the authority of the county of Orange to impose an additional rate of sales and compensating use taxes (Item GG); extends the period during which the county of Orleans is authorized to impose additional rates of sales and compensating use taxes (Item HH); extends authorization for an additional one percent sales and compensating use tax in the county of Oswego (Item II); extends the authorization for imposition of additional sales tax in the county of Otsego (Item JJ); relates to the imposition of sales and compensating use taxes in the county of Putnam (Item KK); extends the authorization of the county of Rensselaer to impose an additional one percent of sales and compensating use taxes (Item LL); authorizes the county of Rockland to impose an additional rate of sales and compensating use taxes (Item MM); extends the authority of St. Lawrence county to impose sales tax (Item NN); relates to the imposition of sales and compensating use tax in Schenectady county (Item OO); extends the authorization for imposition of additional sales tax in the county of Schoharie (Item PP); extends the authorization of the county of Schuyler to impose an additional one percent of sales and compensating use taxes (Item QQ); extends the expiration of the authorization to the county of Seneca to impose an additional one percent sales and compensating use tax (Item RR); extends the authorization of the county of Steuben to impose an additional one percent of sales and compensating use taxes (Item SS); extends the authority of the county of Suffolk to impose an additional one percent of sales and compensating use tax (Item TT); extends authorization to impose certain taxes in the county of Sullivan (Item UU); extends the authorization of the county of Tioga to impose an additional one percent of sales and compensating use taxes (Item VV); extends the authorization of the county of Tompkins to impose an additional one percent of sales and compensating use taxes (Item WW); extends the authority of the county of Ulster to impose an additional 1 percent sales and compensating use tax (Item XX); extends the additional one percent sales tax for Wayne county (Item YY); extends the expiration of the authorization to the county of Wyoming to impose an additional one percent sales and compensating use tax (Item ZZ); extends the authorization of the county of Yates to impose an additional one percent of sales and compensating use taxes (Item AAA); extends the authorization of the city of Oswego to impose an additional tax rate of sales and compensating use taxes (Item BBB); authorizes the city of Yonkers to impose additional sales tax (Item CCC); extends the authorization of the city of New Rochelle to impose an additional sales and compensating use tax (Item DDD); revises the period of authorization for the county of Westchester's additional one percent rate of sales and compensating use tax and the expiration of the Westchester county spending limitation act; relates to the method of disposition of sales and compensating use tax revenue in Westchester county and enacting the Westchester county spending limitation act, in relation to revising the period of authorization for the county of Westchester's additional one percent rate of sales; authorizes the county of Westchester to impose an additional rate of sales and compensating use tax, in relation to extending the authorization for the county of Westchester impose an additional tax rate of sales and compensating use taxes (Item EEE)(Subpart C); extends the authority of the county of Nassau to impose hotel and motel taxes in Nassau county; relates to hotel and motel taxes in Nassau county and a surcharge on tickets to places of entertainment in such county (Item A); increases hotel/motel taxes in Chautauqua county (Item B); extends the expiration of the authority granted to the county of Suffolk to impose hotel and motel taxes (Item C); relates to enabling the county of Albany to impose and collect taxes on occupancy of hotel or motel rooms in Albany county relating to revenues received from the collection of hotel or motel occupancy taxes (Item D) (Subpart D); authorizes the county of Schoharie to impose a county recording tax on obligation secured by a mortgage on real property (Item A); authorizes the county of Hamilton to impose a county recording tax on obligations secured by mortgages on real property (Item B); relates to the mortgage recording tax in the county of Fulton (Item C); extends the expiration of the mortgage recording tax imposed by the city of Yonkers (Item D); authorizes the county of Cortland to impose an additional mortgage recording tax (Item E); authorizes the county of Genesee to impose a county recording tax on obligation secured by a mortgage on real property (Item F); authorizes the county of Yates to impose a county recording tax on obligations secured by a mortgage on real property (Item G); relates to the mortgage recording tax in the county of Steuben (Item H); authorizes the county of Albany to impose a county recording tax on obligations secured by a mortgage on real property (Item I); authorizes the county of Greene to impose an additional mortgage recording tax (Item L); authorizes the county of Warren to impose an additional mortgage recording tax (Item M); authorizes the county of Herkimer to impose a county recording tax on obligation secured by a mortgage on real property (Item N)(Subpart E); imposes an additional real estate transfer tax within the county of Columbia (Subpart F); relates to the imposition of certain taxes in the city of New York, in relation to postponing the expiration of certain tax rates and taxes in the city of New York (Subpart G); relates to exemptions from sales and use taxes, in relation to extending certain provisions thereof; extends certain provisions relating to specially eligible premises and special rebates; extends certain provisions relating to exemptions and deductions from base rent; extends certain provisions relating to eligibility periods and requirements; extends certain provisions relating to eligibility periods and requirements, benefit periods and applications for abatements; extends certain provisions relating to a special reduction in determining the taxable base rent (Item A); extends the expiration of the solar electric generating system and the electric energy storage equipment tax abatement (Item B); authorizes reimbursements for expenditures made by or on behalf of social services districts for medical assistance for needy persons and administration thereof (Item C); repeals certain provisions of the state finance law relating to the motorcycle safety fund (Item D); relates to catastrophic or reinsurance coverage issued to certain small groups, relates to catastrophic or reinsurance coverage issued to certain small groups (Item E)(Subpart H)(Part XXX); relates to the disclosure of certain records by the commissioner of motor vehicles (Part YYY); relates to public financing for state office; establishes the New York state campaign finance fund; establishes the NYS campaign finance fund check-off (Part ZZZ)",
+     "bill_url": "https://legiscan.com/NY/bill/A09508/2019",
+     "bill_text_url": "https://legiscan.com/NY/text/A09508/2019",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "SIGNED CHAP.58",
+     "last_action_date": "2020-04-03",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1755,
+     "legiscan_bill_id": 1318424,
+     "bill_number": "S07508",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state transportation, economic development and environmental conservation budget for the 2020-2021 state fiscal year; relates to consolidated local highway assistance payments (Part A); relates to penalties for commercial vehicles on parkways and penalties for over-height vehicles (Part B); relates to the display of amber and blue lights on safety service patrol vehicles (Part C); relates to the maximum dimension of certain vehicles proceeding to and from the New York state thruway authority (Part E); relates to agreements for fiber optics (Part F); relates to penalties for unlicensed operation of ground transportation to and from airports (Part H); relates to setting the aggregate principal amount of bonds the Metropolitan transit authority, the Triborough bridge and tunnel authority and the New York city transit authority can issue (Part I); relates to the New York transit authority and the metropolitan transportation authority, in relation to extending authorization for tax increment financing for the metropolitan transportation authority (Part K); relates to permitting the secretary of state to provide special handling for all documents filed or issued by the division of corporations and to permit additional levels of such expedited service (Part R); relates to prohibiting pricing of goods and services on the basis of gender (Part S); relates to making changes to the arms of the state (Part U); relates to qualifications for appointment and employment (Part V); relates to home inspection professional licensing (Part W); authorizes utility and cable television assessments that provide funds to the department of health from cable television assessment revenues and to the department of agriculture and markets, department of environmental conservation, department of state, and the office of parks, recreation and historic preservation from utility assessment revenues (Part Y); relates to the powers and duties of the dormitory authority of the state of New York relative to the establishment of subsidiaries for certain purposes (Part CC); amends the infrastructure investment act, in relation to requiring certain contracts to comply with service-disabled veteran-owned business enterprises, negotiating prices in certain lump-sum contracts, referencing certain sections of law and providing for a date of repeal (Part DD); extends the authority of the New York state urban development corporation to administer the empire state economic development fund (Part EE); relates to the powers of the New York state urban development corporation to make loans, in relation to extending the general loan powers of the New York state urban development corporation (Part FF); relates to economic transformation program eligibility (Part GG); authorizes the New York state energy research and development authority to finance a portion of its research, development and demonstration, policy and planning, and Fuel NY program, as well as climate change related expenses of the department of environmental conservation and the department of agriculture and markets' Fuel NY program, from an assessment on gas and electric corporations (Part HH); relates to the definition of farm laborer and labor practices for farm laborers (Part II); relates to procurement procedures for school districts in relation to New York state products (Part JJ); relates to the water pollution control revolving fund and the drinking water revolving fund (Part KK); relates to student debt consultants (Part MM); relates to expanded polystyrene foam container and polystyrene loose fill packaging ban; relates to moneys collected for violations of the expanded polystyrene foam container and polystyrene loose fill packaging ban (Part PP); authorizes the creation of state debt in the amount of three billion dollars, in relation to creating the environmental bond act of 2020 \"restore mother nature\" for the purposes of environmental improvements that preserve, enhance, and restore New York's natural resources and reduce the impact of climate change; provides for the submission to the people of a proposition or question therefor to be voted upon at the general election to be held in November, 2020 (Part QQ); relates to the implementation of the environmental bond act of 2020 \"restore mother nature\" (Part RR); authorizes the county of Nassau, to permanently and temporarily convey certain easements and to temporarily alienate certain parklands (Subpart A); authorizes the village of East Rockaway, county of Nassau, to permanently and temporarily convey certain easements and to temporarily alienate certain parklands (Subpart B); authorizes the village of Rockville Centre, county of Nassau, to permanently and temporarily convey certain easements and to temporarily alienate certain parklands (Subpart C)(Part UU); relates to banning fracking (Part WW); relates to bicycles with electric assist and electric scooters (Part XX); relates to increasing certain motor vehicle transaction fees; relates to the costs of the department of motor vehicles (Part YY); relates to the acceptance of applications for accident prevention and pre-licensing internet courses; establishes the accident prevention course internet technology pilot program (Part ZZ); amends the New York Buy American Act, in relation to the report to be provided and to making such provisions permanent (Part EEE); relates to prevailing wage requirements (Part FFF); amends the New York state urban development corporation act, in relation to the corporations' authorization to provide financial and technical assistance to community development financial institutions (Part III); accelerates the growth of renewable energy facilities to meet critical state energy policy goals (Part JJJ); extends the application deadline for businesses to participate in the START-UP NY program (Part KKK); authorizes the metropolitan transportation authority to borrow money and issue negotiable notes, bonds or other obligations to offset decreases in revenue (Part LLL); relates to the central business district tolling lockbox fund (Part MMM); relates to admission to residential treatment facilities (RTF) for children and youth (Part NNN); authorizes the transfer of certain office of mental health employees to the secure treatment rehabilitation center (Part OOO); relates to the amount of time an individual may be held for emergency observation, care, and treatment in CPEP and the implementation of satellite sites; relates to comprehensive psychiatric emergency programs (Part PPP); relates to penalties relating to mental health and substance use disorder parity compliance requirements; establishes the behavioral health parity compliance fund (Part QQQ); relates to providers of service (Part RRR); relates to applied behavior analysis (Part SSS); relates to the closure or transfer of a state-operated individualized residential alternative (Part TTT); provides funding for the Metropolitan Transportation Authority 2020-2024 capital program and paratransit operating expenses (Part UUU); relates to acquisitions or transfers of property for transit projects (Part VVV); relates to decoupling from certain federal tax changes (Part WWW); relates to installment loans and obligations evidencing installment loans (Item A); relates to statutory installment bonds (Item B); relates to refunding bonds (Item C); relates to the special powers of the New York state environmental facilities corporation (Item D); extends the authority of the department of environmental conservation to manage Atlantic and shortnose sturgeon (Item E); extends the authority of the department of environmental conservation to manage Atlantic Cod (Item F); extends the authority of the department of environmental conservation to manage Atlantic herring (Item G); extends the authority of the department of environmental conservation to manage black sea bass (Item H); extends the authority of the department of environmental conservation to manage blueback herring (Item I); extends the authority of the department of environmental conservation to manage crabs (Item J); extends the authority of the department of environmental conservation to restrict the taking of fish, shellfish and crustacea in special management areas (Item K); extends the authority of the department of environmental conservation to manage of fluke-summer flounder (Item L); extends the authority of the department of environmental conservation to manage scup (Item M); extends the authority of the department of environmental conservation to manage sharks (Item N); extends the authority of the department of environmental conservation to manage squid (Item O); extends the authority of the department of environmental conservation to manage whelk and conch (Item P); extends the authority of the department of environmental conservation to manage winter flounder (Item Q); relates to commercial fishing licenses (Item R)(Subpart A); authorizes certain health care professionals licensed to practice in other jurisdictions to practice in this state in connection with an event sanctioned by the World Triathlon Corporation (Item A); authorizes the city of Middletown to enter into a contract to sell or pledge as collateral for a loan some or all of the delinquent liens held by such city to a private party or engage a private party to collect some or all of the delinquent tax liens held by it (Item B); redistributes bond volume allocations made pursuant to section 146 of the federal tax reform act of 1986, relating to allocation of the unified state bond volume ceiling, enacts the private activity bond allocation act of 2020 (Item C); relates to the upstate flood mitigation task force (Item D); authorizes a pilot residential parking permit system in the city of Albany (Item K); relates to charging a fee for admission to the New York Botanical Garden (Item L); creates the radon task force, in relation to the reporting date and effectiveness thereof (Item M); relates to defining spearguns and allowing recreational spearfishing in New York's marine and coastal waters (Item N); relates to aquatic invasive species, spread prevention, and penalties (Item O); relates to the September 11th worker protection task force act (Item P); relates to extending time limitations for certain actions (Item Q); authorizes New York city marshals to exercise the same functions, powers and duties as sheriffs with respect to the execution of money judgments (Item R); relates to limits on certain supplementary insurance (Item S); relates to the sale of municipal obligations by the county of Erie (Item T); relates to payment in lieu of taxes for property acquired for park or recreational purposes (Item U); relates to payment in lieu of taxes for property acquired for park or recreational purposes by the town of Hempstead (Item V); relates to the provision of physical therapy assistant services in public and private primary and secondary schools (Item W); relates to the membership composition of the metropolitan transportation authority board (Item X); establishes the New York telecommunications relay service center (Item Y); relates to the tax abatement and exemption for rent regulated and rent controlled property occupied by senior citizens; relates to the tax abatement and exemption for rent regulated and rent controlled property occupied by persons with disabilities (Item Z); relates to the creation of a state information technology innovation center (Item AA); creates a presumption relating to certain lung disabilities incurred by volunteer firefighters (Item BB); relates to disability due to disease or malfunction of the heart or coronary arteries (Item CC); relates to certified school psychologists and special education services and programs for preschool children with handicapping conditions (Item DD); authorizes certain health care professionals licensed to practice in other jurisdictions to practice in this state in connection with an event sanctioned by New York Road Runners (Item EE); relates to paperwork reduction (Item FF); relates to bonds and notes of the city of Yonkers (Item GG); relates to the sale of bonds and notes of the city of Buffalo (Item HH); relates to assessment and review of assessments in the county of Nassau (Item II); extends provisions of the property/casualty insurance availability act (Item JJ); relates to certain tuition waivers for police officer students of the city university of New York (Item KK); requires regulations to permit tuition waivers for certain firefighters and fire officers for CUNY (Item LL); relates to repair of damaged pesticide containers (Item MM); relates to pesticide registration time frames and fees; relates to pesticide product registration timetables and fees (Item NN); relates to temporary investments by local governments (Item OO); authorizes services for non-residents in adult homes, residences for adults and enriched housing programs Item PP); relates to the sale of bonds and notes of the city of New York, the issuance of bonds or notes with variable rates of interest, interest rate exchange agreements of the city of New York, the refunding of bonds, and the down payment for projects financed by bonds; amends the New York state financial emergency act for the city of New York, in relation to a pledge and agreement of the state; relates to interest rate exchange agreements of the city of New York and refunding bonds of such city (Item QQ); relates to certain payments to the horsemen's organization (Item RR); relates to use of electronic means for the commencement and filing of papers in certain actions and proceedings (Item SS); establishes certain water charges for hospitals and charities in New York city (Item TT); relates to the boarding of out of state inmates at local correctional facilities (Item UU); relates to the adoption of the interstate compact for juveniles by the state of New York (Item VV); grants the chief administrator of the courts the authority to allow referees to determine applications for orders of protection during the hours family court is in session (Item WW); relates to an advisory panel on employee-owned enterprises within the division of small business services; relates to establishing an advisory panel on employee-owned enterprises within the division of small business services (Item XX); establishes the underground facilities safety training account (Item YY); authorizes the hunting of big game in the county of Albany with rifles (Item ZZ); relates to liquidator's permits and temporary retail permits (Item AAA); relates to the New York state thoroughbred breeding and development fund; relates to permitted deductions from wages (Item CCC) establishes the digital currency task force (Item DDD); authorizes the city of New York to sell to abutting property owners real property owned by such city, consisting of tax lots that cannot be independently developed due to the size, shape, configuration and topography of such lots and the zoning regulations applicable thereto (Item EEE); requires certain agencies to submit regulatory agendas for publication in the state register (Item FFF); relates to the taking of sharks (Item GGG); authorizes owners of residential real property in high risk brush fire areas in the borough of Staten Island to cut and remove reeds from their property, in relation to extending the expiration and repeal date thereof for an additional year (Item HHH); creates a temporary state commission to study and investigate how to regulate artificial intelligence, robotics and automation (Item III); relates to the determination of adjusted base proportions in special assessing units which are cities (Item JJJ); extends limitations on the shift between classes of taxable property in the town of Orangetown, county of Rockland (Item KKK); extends limitations on the shift between classes of taxable property in the town of Clarkstown, county of Rockland (Item LLL); allows certain special assessing units other than cities to adjust their current base proportions, adjusted base proportions for assessment rolls, and the base proportion in approved assessing units in Nassau county (Item MMM); increases certain special accidental death benefits (Item NNN); relates to the home based primary care for the elderly demonstration project (Item OOO); relates to the residential parking system in the village of Dobbs Ferry in the county of Westchester (Item PPP); relates to the incorporation of the New York Zoological Society, in relation to extending the expiration date of free one day admission to the zoological park (Item QQQ); increases the average assessed value threshold and to eligibility for J-51 tax abatements (Item RRR); relates to fees and expenses in unemployment insurance proceedings (Item SSS); extends authorization for certain exemptions from filing requirements (Item TTT); extends the tax rate reduction under the New York state real estate transfer tax and the New York city real property transfer tax for conveyances of real property to existing real estate investment funds (Item UUU)(Subpart B); relates to the imposition of sales and compensating use taxes by the county of Albany (Item A); extends the expiration of the provisions authorizing the county of Allegany to impose an additional one and one-half percent sales and compensating use taxes (Item B); extends the authorization of the county of Broome to impose an additional one percent of sales and compensating use taxes (Item C); extends the expiration of provisions authorizing the county of Cattaraugus to impose an additional one percent of sales and compensating use tax (Item D); extends the authorization of the county of Cayuga to impose an additional one percent of sales and compensating use taxes (Item E); authorizes Chautauqua county to impose an additional one percent rate of sales and compensating use taxes (Item F); extends the authorization of the county of Chemung to impose an additional one percent of sales and compensating use taxes (Item G); extends the authority of Chenango county to impose additional taxes (Item H); extends the expiration of the authorization granted to the county of Clinton to impose an additional rate of sales and compensating use tax (Item I); relates to sales and compensating use tax in Columbia county (Item J); extends the authorization for imposition of additional sales tax in the county of Cortland (Item K); extends the authorization of the county of Delaware to impose an additional one percent of sales and compensating use taxes (Item L); relates to sales and compensating use tax in Dutchess county (Item M); relates to the imposition of additional rates of sales and compensating use taxes by Erie county (Item N); extends the authorization granted to the county of Essex to impose an additional one percent of sales and compensating use taxes (Item O); extends the expiration of the authority granted to the county of Franklin to impose an additional one percent of sales and compensating use taxes (Item P); relates to the imposition of additional sales and compensating use tax in Fulton county (Item Q); extends the expiration of the authorization to the county of Genesee to impose an additional one percent of sales and compensating use taxes (Item R); extends the authorization for imposition of additional sales and compensating use taxes in Greene county (Item S); extends the authorization of the county of Hamilton to impose an additional one percent of sales and compensating use taxes (Item T); extends the period during which the county of Herkimer is authorized to impose additional sales and compensating use taxes (Item U); authorizes the county of Jefferson to impose additional sales tax (Item V); authorizes the county of Lewis to impose an additional one percent of sales and compensating use taxes (Item W); authorizes the county of Livingston to impose an additional one percent sales tax (Item X); extends the authorization of the county of Madison to impose an additional rate of sales and compensating use taxes (Item Y); relates to the imposition of sales and compensating use taxes by the county of Monroe (Item Z); relates to the imposition of sales and compensating use taxes in Montgomery county (Item AA); extends the authority of the county of Nassau to impose additional sales and compensating use taxes, and extending local government assistance programs in Nassau county (Item BB); relates to continuing to authorize Niagara county to impose an additional rate of sales and compensating use taxes (Item CC); authorizes Oneida county to impose additional rates of sales and compensating use taxes and providing for allocation and distribution of a portion of net collections from such additional rates (Item DD); extends the authorization of the county of Onondaga to impose an additional rate of sales and compensating use taxes (Item EE); extends the authorization for Ontario county to impose additional rates of sales and compensating use taxes (Item FF); extends the authority of the county of Orange to impose an additional rate of sales and compensating use taxes (Item GG); extends the period during which the county of Orleans is authorized to impose additional rates of sales and compensating use taxes (Item HH); extends authorization for an additional one percent sales and compensating use tax in the county of Oswego (Item II); extends the authorization for imposition of additional sales tax in the county of Otsego (Item JJ); relates to the imposition of sales and compensating use taxes in the county of Putnam (Item KK); extends the authorization of the county of Rensselaer to impose an additional one percent of sales and compensating use taxes (Item LL); authorizes the county of Rockland to impose an additional rate of sales and compensating use taxes (Item MM); extends the authority of St. Lawrence county to impose sales tax (Item NN); relates to the imposition of sales and compensating use tax in Schenectady county (Item OO); extends the authorization for imposition of additional sales tax in the county of Schoharie (Item PP); extends the authorization of the county of Schuyler to impose an additional one percent of sales and compensating use taxes (Item QQ); extends the expiration of the authorization to the county of Seneca to impose an additional one percent sales and compensating use tax (Item RR); extends the authorization of the county of Steuben to impose an additional one percent of sales and compensating use taxes (Item SS); extends the authority of the county of Suffolk to impose an additional one percent of sales and compensating use tax (Item TT); extends authorization to impose certain taxes in the county of Sullivan (Item UU); extends the authorization of the county of Tioga to impose an additional one percent of sales and compensating use taxes (Item VV); extends the authorization of the county of Tompkins to impose an additional one percent of sales and compensating use taxes (Item WW); extends the authority of the county of Ulster to impose an additional 1 percent sales and compensating use tax (Item XX); extends the additional one percent sales tax for Wayne county (Item YY); extends the expiration of the authorization to the county of Wyoming to impose an additional one percent sales and compensating use tax (Item ZZ); extends the authorization of the county of Yates to impose an additional one percent of sales and compensating use taxes (Item AAA); extends the authorization of the city of Oswego to impose an additional tax rate of sales and compensating use taxes (Item BBB); authorizes the city of Yonkers to impose additional sales tax (Item CCC); extends the authorization of the city of New Rochelle to impose an additional sales and compensating use tax (Item DDD); revises the period of authorization for the county of Westchester's additional one percent rate of sales and compensating use tax and the expiration of the Westchester county spending limitation act; relates to the method of disposition of sales and compensating use tax revenue in Westchester county and enacting the Westchester county spending limitation act, in relation to revising the period of authorization for the county of Westchester's additional one percent rate of sales; authorizes the county of Westchester to impose an additional rate of sales and compensating use tax, in relation to extending the authorization for the county of Westchester impose an additional tax rate of sales and compensating use taxes (Item EEE)(Subpart C); extends the authority of the county of Nassau to impose hotel and motel taxes in Nassau county; relates to hotel and motel taxes in Nassau county and a surcharge on tickets to places of entertainment in such county (Item A); increases hotel/motel taxes in Chautauqua county (Item B); extends the expiration of the authority granted to the county of Suffolk to impose hotel and motel taxes (Item C); relates to enabling the county of Albany to impose and collect taxes on occupancy of hotel or motel rooms in Albany county relating to revenues received from the collection of hotel or motel occupancy taxes (Item D) (Subpart D); authorizes the county of Schoharie to impose a county recording tax on obligation secured by a mortgage on real property (Item A); authorizes the county of Hamilton to impose a county recording tax on obligations secured by mortgages on real property (Item B); relates to the mortgage recording tax in the county of Fulton (Item C); extends the expiration of the mortgage recording tax imposed by the city of Yonkers (Item D); authorizes the county of Cortland to impose an additional mortgage recording tax (Item E); authorizes the county of Genesee to impose a county recording tax on obligation secured by a mortgage on real property (Item F); authorizes the county of Yates to impose a county recording tax on obligations secured by a mortgage on real property (Item G); relates to the mortgage recording tax in the county of Steuben (Item H); authorizes the county of Albany to impose a county recording tax on obligations secured by a mortgage on real property (Item I); authorizes the county of Greene to impose an additional mortgage recording tax (Item L); authorizes the county of Warren to impose an additional mortgage recording tax (Item M); authorizes the county of Herkimer to impose a county recording tax on obligation secured by a mortgage on real property (Item N)(Subpart E); imposes an additional real estate transfer tax within the county of Columbia (Subpart F); relates to the imposition of certain taxes in the city of New York, in relation to postponing the expiration of certain tax rates and taxes in the city of New York (Subpart G); relates to exemptions from sales and use taxes, in relation to extending certain provisions thereof; extends certain provisions relating to specially eligible premises and special rebates; extends certain provisions relating to exemptions and deductions from base rent; extends certain provisions relating to eligibility periods and requirements; extends certain provisions relating to eligibility periods and requirements, benefit periods and applications for abatements; extends certain provisions relating to a special reduction in determining the taxable base rent (Item A); extends the expiration of the solar electric generating system and the electric energy storage equipment tax abatement (Item B); authorizes reimbursements for expenditures made by or on behalf of social services districts for medical assistance for needy persons and administration thereof (Item C); repeals certain provisions of the state finance law relating to the motorcycle safety fund (Item D); relates to catastrophic or reinsurance coverage issued to certain small groups, relates to catastrophic or reinsurance coverage issued to certain small groups (Item E)(Subpart H)(Part XXX); relates to the disclosure of certain records by the commissioner of motor vehicles (Part YYY); relates to public financing for state office; establishes the New York state campaign finance fund; establishes the NYS campaign finance fund check-off (Part ZZZ)",
+     "bill_url": "https://legiscan.com/NY/bill/S07508/2019",
+     "bill_text_url": "https://legiscan.com/NY/text/S07508/2019",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "SIGNED CHAP.58",
+     "last_action_date": "2020-04-03",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1745,
+     "legiscan_bill_id": 2088333,
+     "bill_number": "S09006",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state education, labor, housing and family assistance budget for the 2026-2027 state fiscal year; relates to contracts for excellence, foundation aid, the homeless and foster count, renewable energy projects, zero-emissions school buses and to apportioning aid for universal prekindergarten; relates to reimbursement for the 2026-2027 school year and the maximum contract hours, withholding a portion of employment preparation education aid, and the effectiveness thereof; relates to the use of apportionments for the EXCEL program and the effectiveness thereof; relates to maximum class sizes for special classes for certain students with disabilities; provides for special apportionment for salary expenses; provides for special apportionment for public pension accruals; amends provisions relating to the apportionment amount for the Roosevelt union free school district; provides for set-asides from the state funds which certain districts are receiving from the total foundation aid; provides for support of public libraries; repeals certain provisions relating to the statewide universal full-day prekindergarten program (Part A); relates to evidence-based instructional practices in the subject of mathematics for students in kindergarten through grade five (Part B); relates to the eligibility of students enrolled in an approved program leading to a degree in a high demand field for the New York opportunity promise scholarship (Part C); allows for the chancellor of SUNY and CUNY to impose differential tuition rates on non-resident undergraduate and graduate students until the 2028-2029 academic year (Part E); relates to early childhood educator eligibility for the masters-in-education teacher incentive scholarship program (Part F); changes the name of the \"New York state musical instrument revolving fund\" to the \"New York state music grant fund\"; includes musical education in school districts and boards of cooperative educational services within not-for-profit musical entities incorporated in the state and organized for the purpose of the presentation of performing arts for the benefit of the public (Part G); extends provisions of law relating to restructuring financing for residential school placements (Part K); increases the standards of monthly need for aged, blind and disabled persons living in the community (Part L); utilizes reserves in the mortgage insurance fund for the neighborhood preservation program, the rural preservation program, the rural rental assistance program, and the New York state supportive housing program, the solutions to end homelessness program or the operational support for AIDS housing program (Part M); increases the number of land banks which can simultaneously exist in the state of New York from 35 to 45 (Part N); authorizes a tax abatement for alterations and improvements to multiple dwellings for purposes of preserving habitability in affordable housing (Part O); relates to establishing the crime of aggravated harassment of a rent regulated tenant (Part P); renumbers the disparate impact standard for housing and employment in the human rights law (Part Q); defines eligible multiple dwelling under the affordable New York housing program; includes a multiple dwelling that is located on a parcel of land which was part of a tract of land for which a special permit for a large scale general development was approved via the uniform land use review procedure on or before June 15, 2022, and such tract contains a multiple dwelling for which the commencement date is after December 31, 2015 and on or before June 15, 2022 and complies with certain affordability options (Part R).",
+     "bill_url": "https://legiscan.com/NY/bill/S09006/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/S09006/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "SUBSTITUTED BY A10006C",
+     "last_action_date": "2026-05-20",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1746,
+     "legiscan_bill_id": 2157318,
+     "bill_number": "S10671",
+     "bill_title": "Provides that each school district, charter school, and board of cooperative educational services shall adopt and implement a written policy governing the use of humanoid robots in schools and that such policy shall prohibit the use of an artificial intelligence-enabled humanoid robot in an instructional capacity; defines terms.",
+     "bill_url": "https://legiscan.com/NY/bill/S10671/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/S10671/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "REFERRED TO RULES",
+     "last_action_date": "2026-07-29",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1747,
+     "legiscan_bill_id": 2157340,
+     "bill_number": "A11662",
+     "bill_title": "Prohibits humanoid robots and AI systems from being used in schools; provides limited exceptions; provides for student privacy protections; makes related provisions.",
+     "bill_url": "https://legiscan.com/NY/bill/A11662/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/A11662/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "referred to education",
+     "last_action_date": "2026-07-31",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1748,
+     "legiscan_bill_id": 2088515,
+     "bill_number": "S09008",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state transportation, economic development and environmental conservation budget for the 2026-2027 state fiscal year; extends provisions of law relating to increasing certain motor vehicle transaction fees (Part A); extends the accident prevention course internet technology pilot program (Part B); establishes a demonstration program in the city of New York for the installation and operation of intelligent speed assistance devices (Part D); extends provisions of law relating to motor vehicles equipped with autonomous vehicle technology (Part E); expands the automated work zone speed enforcement program utilizing photo speed violation monitoring systems to include all New York highways (Part G); extends provisions of law relating to certain tax increment financing provisions relating to the New York transit authority and the metropolitan transportation authority (Part H); authorizes the MTA to conduct environmental reviews under SEQRA for the crosstown extension of the Second Avenue subway project in two stages (Part I); enacts the dairy promotion act; enacts provisions related to the marketing of agricultural products in New York state; repeals certain provisions relating thereto (Part J); extends the refundability of the investment tax credit for farmers (Part K); authorizes the New York state energy research and development authority to finance a portion of its research, development and demonstration, policy and planning, and Fuel NY program from an assessment on gas and electric corporations (Part M); requires gas, electric, steam and water-works corporations to provide an executive compensation disclosure; requires such corporations to return all revenues derived from their actual return on equity in excess of the authorized rate of return to ratepayers; clarifies costs not to be included in rates (Part N); authorizes the public service commission to consider and approve multi-year changes in rates or charges for utilities (Part O); establishes an energy affordability index; permits the public service commission to implant affordability monitors in certain gas or electric corporations (Part P); makes reforms to the state environmental quality review act relating to sustainable housing and sprawl prevention (Part R); increases rebates for certain vehicles purchased by municipalities (Part S); extends the effectiveness of certain provisions of law relating to the powers and duties of the dormitory authority to establish subsidiaries (Part T); authorizes the trustees of the state university of New York to lease and contract to make available certain land on the state university of New York at Farmingdale's campus (Subpart A); authorizes the trustees of the state university of New York to lease and contract to make available certain land on the state university of New York at Stony Brook's campus (Subpart B); authorizes the commissioner of transportation to transfer and convey certain state-owned real property in the town of Babylon, county of Suffolk (Subpart C); authorizes the trustees of the state university of New York to lease and contract to make available grounds and facilities on the state university of New York College of Environmental Science and Forestry to the Abby Lane Housing Corporation (Part D)(Part U); extends the authority of the New York state urban development corporation to administer the empire state economic development fund (Part V); extends the loan powers of the New York state urban development corporation (Part W); enacts the \"safe by design act\" to authorize the attorney general to promulgate rules and regulations identifying methods for reasonable and technically feasible age assurance which may consider the size, financial resources, and technical capabilities of covered platforms, the costs and effectiveness of available age determination techniques for users of such platforms, the audience of such platforms, and prevalent practices of the industry of the operator (Part Y); relates to requiring insurers to provide written explanations for premium changes in certain covered policies (Part BB); places limitations on damages resulting from motor vehicle accidents (Part EE); requires insurers to file annual reports on insurance for multi-family buildings with the superintendent of financial services (Part GG); relates to the annual consumer guide of health insurers (Subpart A); relates to ongoing treatment by an out-of-network provider during pregnancy (Subpart B); relates to accessible formulary drug lists (Subpart C); relates to utilization reviews for treatment for a chronic health condition (Subpart D) (Part HH); extends the policy period for excess profit refunds or credits to motor vehicle insurance policyholders; requires insurers to submit reports demonstrating whether the insurer realized an excess profit and completed making any credits required (Part KK); relates to the effectiveness of the New York state health insurance continuation assistance demonstration project (Part LL); enacts the \"Long Island MacArthur Airport terminal and rail integration project act\" (Part NN); extends the effectiveness of certain provisions permitting videoconferencing and remote participation in public meetings under certain circumstances (Part OO); exempts major electric generating facilities that provide emergency back-up generation for manufacturing facilities that produce semiconductors from siting requirements set forth in article 10 of the public service law (Part PP); establishes the crime of criminal interference with access to a place of religious worship (Part QQ); extend provisions of law permitting NYC, Nassau and Suffolk to retain a portion of certain fines under the Cleaner, Greener NY Act of 2013 (Part RR); enacts the accelerate solar for affordable power (ASAP) act to direct the public service commission to advance reforms to the utility interconnection process to ensure timely and cost-effective integration of new distributed energy resources (Part SS); establishes a blue ribbon commission on residential affordability through energy savings (RATES commission) to study the causes and origins of rising utility rates and to recommend actions or reforms to reduce rates; provides for the repeal of such commission upon expiration thereof (Part TT); authorizes the creation of a traffic camera violations bureau to adjudicate owner liability for failure of operator to stop for a school bus displaying a red visual signal and stop-arm (Part UU); relates to climate change; requires the plan toward achieving the statewide greenhouse gas emissions limits to be updated in 2028 and every six years thereafter; outlines factors to include when developing a regulatory program or programs (Part VV); establishes a monitor team to oversee the Wyandanch union free school district (Part WW); relates to certain retirement benefit enhancements members of tier VI (Part XX); relation to the re-amortization and valuation methods used for contributions to the New York city employees retirement system, the New York city teachers' retirement system, the police pension fund, subchapter two, the fire department pension fund, subchapter two and the board of education retirement system of such city (Part YY); relates to service retirement benefits for uniformed members of the New York city fire department pension fund (Part ZZ); provides for longevity bonuses relating to first grade firefighters and promotions from the firefighter rank (Part AAA); requires certain pension systems to submit a self-report to the superintendent of the department of financial services; requires the superintendent of the department of financial services to submit a report on such reports (Part BBB); allows a beneficiary of a member whose death occurs on or after July 1, 2026 and who would have been entitled to a service credit at the time of such member's death to elect to receive a lump sum payment equal to the pension reserve that would have been established had the member retired on the date of such member's death (Part CCC); relates to certain retirement benefit enhancements for certain state law enforcement officers (Part DDD); relates to the treatment of prior service with certain agencies by the New York city police pension fund (Part EEE); relates to the restoration of 20 year service retirement for certain New York city corrections officers and sanitation workers (Part FFF); provides for the administration of certain funds and accounts related to the 2026--2027 budget (Part GGG); adds ten additional judges to the civil court of the city of New York (Part HHH); establishes the Excelsior power program designed to reduce peak energy demand (Part III); authorizes certain work in connection with the District Galleria project in the city of White Plains (Part JJJ).",
+     "bill_url": "https://legiscan.com/NY/bill/S09008/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/S09008/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "SUBSTITUTED BY A10008C",
+     "last_action_date": "2026-05-26",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
     {
      "id": 749,
      "legiscan_bill_id": 2010242,
@@ -2486,6 +3153,22 @@
      "is_resolution": false
     },
     {
+     "id": 1750,
+     "legiscan_bill_id": 1934970,
+     "bill_number": "A03006",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state education, labor, housing and family assistance budget for the 2025-2026 state fiscal year; relates to contracts for excellence; relates to calculation of state aid to school districts; relates to a statewide dual enrollment policy; extends workforce education; relates to maximum class sizes for special education; extends chapter 82 of the laws of 1995; relates to foundation aid; provides for special apportionment for salary expenses; provides for special apportionment for public pension accruals; establishes a dual enrollment program; relates to universal pre-kindergarten and the Statewide universal full-day pre-kindergarten; extends provisions relating to paperwork reduction; relates to funding a program for work force education; extends provisions for monitors in the Hempstead union free school district, the Wyandanch union free school district and the Rochester city school district; relates to supplementary funding for the East Ramapo central school district; extends provisions authorizing the Roosevelt union free school district to finance deficits by the issuance of serial bonds; relates to requirements for zero emissions school buses; relates to certain instructional requirements for nonpublic schools (Part A); establishes a universal free school meals program; repeals provisions relating to the community eligibility provision state subsidy (Part B); relates to school policies regarding the use of internet-enabled devices during the school day (Part C); relates to scholarships awarded to part-time students by the New York state higher education services corporation; makes conforming changes; repeals provisions relating to tuition awards for part-time undergraduate students; relates to the New York state part-time scholarship award program (Part D); relates to authorizing the excelsior scholarship cover the cost of tuition in the state university of New York system (Part E); creates a New York opportunity promise scholarship for certain students who matriculated at a SUNY or CUNY community college, are over 25 years of age, have applied for certain tuition assistance programs, are eligible for resident tuition rates, and have not already obtained a postsecondary degree (Part F); provides for reduction of taxes pursuant to shelter rent (Part L); utilizes reserves in the mortgage insurance fund for the neighborhood preservation program, the rural preservation program, the rural rental assistance program, and the New York state supportive housing program (Part N); extends certain provisions relating to restructuring financing for residential school placements (Part O); authorizes child care support centers which are certified by the office of children and family services to place individuals as substitute caregivers at licensed and registered child care programs (Part P); relates to the provision of public assistance allowances to public assistance recipients upon the birth of a new child (Part Q); relates to increasing the standards of monthly need for aged, blind and disabled persons living in the community (Part R); relates to the effectiveness of provisions of law relating to the powers and duties of the commissioner of social services relating to the appointment of a temporary operator (Part S); relates to the healthy terminals act; amends certain definitions relating to covered airport location and covered airport workers; provides for the applicable standard rate as meaning the wage and benefit rates designated by the commissioner of labor (Part T); limits the amount of liquidated damages for certain frequency of pay violations (Part U); relates to civil penalties for violations of certain wage payment provisions (Part V); increases the civil penalties for violations of child labor laws (Part W); establishes a database for the employment of minors; allows for registration of minors and employers in such database; digitizes the process for minors to apply for employment (Part X); expands certain payments previously made to parents of deceased service members to spouses and minor children of such service members; authorizes the commissioner of veterans' affairs to conduct an outreach program for the purpose of informing the public and persons who may be eligible to receive an annuity (Part Y); requires submission of an annual report on the New York state museum (Part AA); decreases the length of the suspension period applicable to certain individuals who lose their jobs due to a labor dispute, such as a strike, and who seek to obtain unemployment insurance benefits (Part BB); requires social services for a city of a population of a million or more shall spend a certain amount of local funds for child care block grants (Part CC); establishes the crime of evading arrest by concealment of identity (Part DD); expands the merit time allowance and limited credit time allowance programs (Part EE); authorizes the commissioner of education to appoint a monitor to oversee the Mount Vernon city school district; requires such monitor to schedule three public hearings; requires the monitor and board of education to develop a proposed financial plan for the 2025--2026 school year and the four subsequent school years (Part FF); relates to the conversion to condominium ownership for the preservation of expiring affordable housing in the city of New York; provides expanded homeownership opportunities from the conversion of certain residential rental buildings to condominium status by property owners that commit to preserve the inventory of expiring affordable housing in the city of New York (Part GG); establishes the housing access voucher pilot program (Part HH); amends section 2 of chapter 868 of the laws of 1975 constituting the New York state financial emergency act for the city of New York, in relation to the effectiveness thereof (Part II); establishes the city of Buffalo parking authority; provides for its powers, duties and obligations (Part JJ); increases the maximum benefit rate for unemployment insurance (Part KK); amends provisions relating to discovery reform (Part LL); provides for the administration of certain funds and accounts related to the 2025-2026 budget; authorizes certain payments and transfers; relates to the administration of certain funds and accounts (Part MM).",
+     "bill_url": "https://legiscan.com/NY/bill/A03006/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/A03006/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "substituted by s3006c",
+     "last_action_date": "2025-05-08",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
      "id": 601,
      "legiscan_bill_id": 2010112,
      "bill_number": "A06972",
@@ -2514,6 +3197,22 @@
      "last_action_date": "2026-01-07",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1753,
+     "legiscan_bill_id": 2088846,
+     "bill_number": "A10005",
+     "bill_title": "Enacts into law major components of legislation necessary to implement the state public protection and general government budget for the 2026-2027 state fiscal year; extends the recruitment incentive and retention program for certain active members of the New York army national guard, New York air national guard, and New York naval militia until 2031 (Part A); extends the suspension of the subsidy to the state emergency services revolving loan fund from the public safety communications surcharge until the end of the 2027--2028 state fiscal year (Part B); establishes crimes related to utilizing three-dimensional printers for manufacturing ghost guns and firearm components (Subpart A); provides for firearm prevention technology requirements for three-dimensional printers (Subpart B)(Part C); establishes the crimes of unlawful use of a drone; establishes \"the New York state blue list\" requiring that the state, its agencies, and any political subdivisions of the state only buy drones and drone mitigation technology from vendors listed on such registry (Part D); relates to the definition of insurance fraud (Part F); extends temporary orders of protection issued simultaneously with the issuance of a warrant until the defendant subsequently appears in court pursuant to such warrant or voluntarily or otherwise, unless the matter is dismissed (Part H); authorizes the liquor authority to change the duration of certain licenses (Subpart A); extends motion picture theater liquor licenses (Subpart B); prohibits wholesalers from assessing certain fees on retailers (Subpart C) (Part O); increases the frequency of education and training in ethics and lobbying; imposes fees for failure to complete training by the required timeframes (Part U); establishes dedicated workers' compensation fraud units within New York state district attorneys' office (Part W); specifies which providers are authorized to render certain medical care (Part X); increases certain purchasing and advertising thresholds to one hundred fifty thousand dollars (Part Y); relates to lobbyist registration fees (Part Z); requires the superintendent of state police to develop, maintain, and disseminate to all members of the division of state police a critical incident paid leave policy (Part AA); extends provisions related to the monetary threshold for certain restrictions on procurement contracts until 2028 (Part BB); extends the effectiveness of certain provisions relating to purchasing of services and commodities by the state (Part CC); repeals provisions that authorize proceedings to revert to the original court of record when a defendant fails to comply with or complete the mental health court program (Part GG); extends certain provisions constituting the New York State community commission on reparations remedies; relates to extending the time the New York State community commission on reparations remedies has to submit a written report of its findings and recommendations to the legislature and the governor; relates to the status of members of the commission (Part HH); requires prior approval for rate increases for certain policies covering losses or liabilities arising out of the ownership of a motor vehicle (Part II); prohibits the use of employment, education, homeownership, and zip code for determining private passenger motor vehicle insurance rates (Part JJ); extends provisions related to the operation and administration of the legislature (Part KK); enacts the \"Local Cops, Local Crimes Act\" (Subpart A); enacts the \"New York state Bivens act\" (Subpart B); restricts action state and municipal employees can take regarding immigration enforcement (Subpart C); prohibits children from being denied access to a free public education due to citizenship or immigration status and other prohibited practices (Subpart D); enacts the \"sensitive location protection act\" (Subpart E); prohibits law enforcement officers from wearing any mask or personal disguise while interacting with the public in the performance of their duties (Subpart F); creates a new immigrant trust office within the department of law (Subpart G); establishes certain procedures for child care programs for certain children who cannot be picked up as scheduled (Subpart H) (Part LL); extends the term and authority of the independent monitor for the Orange county industrial development agency; requires such monitor also monitor the Orange county funding corporation; modifies the applicability of certain tax exemptions based on population; extends provisions of law related to the independent monitor for the Orange county industrial development agency (Part MM); provides a period of probable usefulness of five years for certain police emergency response vehicles (Part NN); provides for appointments to a city charter revision commission by an incoming mayor (Part OO).",
+     "bill_url": "https://legiscan.com/NY/bill/A10005/2025",
+     "bill_text_url": "https://legiscan.com/NY/text/A10005/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "substituted by s9005c",
+     "last_action_date": "2026-05-21",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
      "effective_included": true,
      "is_resolution": false
     },
@@ -2592,13 +3291,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 24,
+    "total": 46,
     "included": 3,
     "resolutions": 0,
-    "pending": 21,
+    "pending": 43,
     "manually_included": 3,
     "manually_excluded": 0,
-    "held": 21,
+    "held": 43,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2701,13 +3400,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 5,
+    "total": 7,
     "included": 0,
     "resolutions": 0,
-    "pending": 5,
+    "pending": 7,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 5,
+    "held": 7,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2746,13 +3445,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 7,
+    "total": 19,
     "included": 0,
     "resolutions": 0,
-    "pending": 7,
+    "pending": 19,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 7,
+    "held": 19,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2789,19 +3488,19 @@
    "state_code": "OK",
    "state_name": "Oklahoma",
    "research_status": "RESEARCHED",
-   "legislation_stage": "debated",
+   "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 22,
-    "included": 2,
+    "total": 39,
+    "included": 3,
     "resolutions": 0,
-    "pending": 20,
+    "pending": 37,
     "manually_included": 2,
     "manually_excluded": 0,
-    "held": 20,
+    "held": 36,
     "by_stage": {
      "passed": 0,
-     "debated": 1,
-     "introduced": 1,
+     "debated": 0,
+     "introduced": 3,
      "failed": 0
     }
    },
@@ -2812,8 +3511,8 @@
     "bill_title": "Artificial intelligence education; creating the AI Education Innovation Act, the AI Education Innovation Revolving Fund and the AI Education Advisory Council; effective date.",
     "bill_url": "https://legiscan.com/OK/bill/HB1782/2026",
     "bill_text_url": "https://legiscan.com/OK/text/HB1782/2026",
-    "bill_status": "Engrossed",
-    "bill_stage": "debated",
+    "bill_status": "Unknown",
+    "bill_stage": "introduced",
     "last_action": "Placed on General Order",
     "last_action_date": "2026-04-21",
     "match_confidence": "HIGH",
@@ -2829,12 +3528,28 @@
      "bill_title": "Artificial intelligence education; creating the AI Education Innovation Act, the AI Education Innovation Revolving Fund and the AI Education Advisory Council; effective date.",
      "bill_url": "https://legiscan.com/OK/bill/HB1782/2026",
      "bill_text_url": "https://legiscan.com/OK/text/HB1782/2026",
-     "bill_status": "Engrossed",
-     "bill_stage": "debated",
+     "bill_status": "Unknown",
+     "bill_stage": "introduced",
      "last_action": "Placed on General Order",
      "last_action_date": "2026-04-21",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1198,
+     "legiscan_bill_id": 2079134,
+     "bill_number": "SB1734",
+     "bill_title": "Schools; creating the Oklahoma Responsible Technology in Schools Act; requiring development of guidance for use of artificial intelligence and emerging technologies. Effective date. Emergency.",
+     "bill_url": "https://legiscan.com/OK/bill/SB1734/2026",
+     "bill_text_url": "https://legiscan.com/OK/text/SB1734/2026",
+     "bill_status": "Unknown",
+     "bill_stage": "introduced",
+     "last_action": "Approved by Governor 05/12/2026",
+     "last_action_date": "2026-05-13",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
      "effective_included": true,
      "is_resolution": false
     },
@@ -2845,7 +3560,7 @@
      "bill_title": "Schools; State Department of Education; artificial intelligence; training; curriculum; revolving fund.",
      "bill_url": "https://legiscan.com/OK/bill/HB3827/2024",
      "bill_text_url": "https://legiscan.com/OK/text/HB3827/2024",
-     "bill_status": "Introduced",
+     "bill_status": "Unknown",
      "bill_stage": "introduced",
      "last_action": "Recommendation to the full committee; Do Pass, amended by committee substitute Appropriations and Budget Education Subcommittee",
      "last_action_date": "2024-02-26",
@@ -2893,7 +3608,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-09-08T18:34:34.080809"
+   "last_updated": "2026-09-08T18:38:26.286749"
   },
   {
    "state_code": "OR",
@@ -2901,13 +3616,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 6,
+    "total": 11,
     "included": 0,
     "resolutions": 0,
-    "pending": 6,
+    "pending": 11,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 6,
+    "held": 11,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2944,24 +3659,56 @@
    "state_code": "PA",
    "state_name": "Pennsylvania",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "passed",
    "bill_counts": {
-    "total": 24,
-    "included": 0,
+    "total": 40,
+    "included": 1,
     "resolutions": 0,
-    "pending": 23,
+    "pending": 39,
     "manually_included": 0,
     "manually_excluded": 1,
-    "held": 24,
+    "held": 39,
     "by_stage": {
-     "passed": 0,
+     "passed": 1,
      "debated": 0,
      "introduced": 0,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1847,
+    "legiscan_bill_id": 2033920,
+    "bill_number": "HB1505",
+    "bill_title": "In preliminary provisions, providing for standardized testing study; in grounds and buildings, repealing provisions relating to lead testing and providing for lead testing; providing for school facilities; in certification of teachers, further providing for special education certificate grade spans and age levels and duties of department, for program of continuing professional and paraprofessional education, for continuing professional education for school or system leaders and for Pennsylvania school leadership standards, repealing provisions relating to permit for classroom monitors and providing for permit for classroom monitors; in pupils and attendance, further providing for attendance policy at charter, regional charter and cyber charter schools, providing for school district enrollee wellness checks and further providing for procedure when child is truant and for procedure upon filing of citation; in student supports, further providing for policy relating to bullying; in school safety and security, further providing for definitions, for School Safety and Security Grant Program, for school safety and security coordinator and for school safety and security training, providing for school safety and mental health grants for 2026-2027 school year, further providing for school safety and security coordinator training and for reporting and memorandum of understanding and providing for school mapping services; in school health services, further providing for health services and for reports and providing for eating disorder awareness and education; in terms and courses of study, providing for use of funds for implementing later school start times, further providing for flexible instructional days and for physical education, providing for recess periods, further providing for economic education and personal financial literacy programs and providing for social media literacy education; in early learning programs, further providing for definitions and for duties of approved providers; in high schools, further providing for attendance in other districts; in charter schools, further providing for enrollment, for cyber charter school requirements and prohibitions, for enrollment and notification and for enrollee wellness checks; in disability inclusive curriculum, further providing for pilot program; in career and technical education, providing for temporary waiver; in community colleges, further providing for financial program and reimbursement of payments; in Thaddeus Stevens College of Technology, further providing for individuals eligible for admission; in the State System of Higher Education, further providing for definitions and for Grow Pennsylvania Tuition Waiver Program; in institutions of higher education, further providing for definitions and for agency duties, providing for institution duties and further providing for report; in Ready-to-Succeed Scholarship, further providing for agency; in funding for public libraries, providing for State aid for fiscal year 2026-2027; in reimbursements by Commonwealth and between school districts, further providing for student-weighted basic education funding beginning with 2023-2024 school year and for extraordinary special education program expenses, providing for temporary assistance program and further providing for assistance to school districts declared to be in financial recovery status or identified for financial watch status and for Ready-to-Learn Block Grant; and, in construction and renovation of buildings by school entities, further providing for applicability.",
+    "bill_url": "https://legiscan.com/PA/bill/HB1505/2025",
+    "bill_text_url": "https://legiscan.com/PA/text/HB1505/2025",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Act No. 20 of 2026",
+    "last_action_date": "2026-07-12",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1847,
+     "legiscan_bill_id": 2033920,
+     "bill_number": "HB1505",
+     "bill_title": "In preliminary provisions, providing for standardized testing study; in grounds and buildings, repealing provisions relating to lead testing and providing for lead testing; providing for school facilities; in certification of teachers, further providing for special education certificate grade spans and age levels and duties of department, for program of continuing professional and paraprofessional education, for continuing professional education for school or system leaders and for Pennsylvania school leadership standards, repealing provisions relating to permit for classroom monitors and providing for permit for classroom monitors; in pupils and attendance, further providing for attendance policy at charter, regional charter and cyber charter schools, providing for school district enrollee wellness checks and further providing for procedure when child is truant and for procedure upon filing of citation; in student supports, further providing for policy relating to bullying; in school safety and security, further providing for definitions, for School Safety and Security Grant Program, for school safety and security coordinator and for school safety and security training, providing for school safety and mental health grants for 2026-2027 school year, further providing for school safety and security coordinator training and for reporting and memorandum of understanding and providing for school mapping services; in school health services, further providing for health services and for reports and providing for eating disorder awareness and education; in terms and courses of study, providing for use of funds for implementing later school start times, further providing for flexible instructional days and for physical education, providing for recess periods, further providing for economic education and personal financial literacy programs and providing for social media literacy education; in early learning programs, further providing for definitions and for duties of approved providers; in high schools, further providing for attendance in other districts; in charter schools, further providing for enrollment, for cyber charter school requirements and prohibitions, for enrollment and notification and for enrollee wellness checks; in disability inclusive curriculum, further providing for pilot program; in career and technical education, providing for temporary waiver; in community colleges, further providing for financial program and reimbursement of payments; in Thaddeus Stevens College of Technology, further providing for individuals eligible for admission; in the State System of Higher Education, further providing for definitions and for Grow Pennsylvania Tuition Waiver Program; in institutions of higher education, further providing for definitions and for agency duties, providing for institution duties and further providing for report; in Ready-to-Succeed Scholarship, further providing for agency; in funding for public libraries, providing for State aid for fiscal year 2026-2027; in reimbursements by Commonwealth and between school districts, further providing for student-weighted basic education funding beginning with 2023-2024 school year and for extraordinary special education program expenses, providing for temporary assistance program and further providing for assistance to school districts declared to be in financial recovery status or identified for financial watch status and for Ready-to-Learn Block Grant; and, in construction and renovation of buildings by school entities, further providing for applicability.",
+     "bill_url": "https://legiscan.com/PA/bill/HB1505/2025",
+     "bill_text_url": "https://legiscan.com/PA/text/HB1505/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Act No. 20 of 2026",
+     "last_action_date": "2026-07-12",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -2991,13 +3738,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 31,
+    "total": 50,
     "included": 0,
     "resolutions": 0,
-    "pending": 31,
+    "pending": 50,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 31,
+    "held": 50,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3034,7 +3781,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-08T18:34:34.081856"
+   "last_updated": "2026-09-08T18:38:26.287108"
   },
   {
    "state_code": "SC",
@@ -3042,13 +3789,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 6,
+    "total": 17,
     "included": 1,
     "resolutions": 0,
-    "pending": 5,
+    "pending": 16,
     "manually_included": 1,
     "manually_excluded": 0,
-    "held": 5,
+    "held": 16,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3164,13 +3911,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 25,
+    "total": 35,
     "included": 0,
     "resolutions": 0,
-    "pending": 25,
+    "pending": 35,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 25,
+    "held": 35,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3209,13 +3956,13 @@
    "research_status": "RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 31,
+    "total": 49,
     "included": 6,
     "resolutions": 0,
-    "pending": 23,
+    "pending": 41,
     "manually_included": 6,
     "manually_excluded": 2,
-    "held": 25,
+    "held": 43,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3289,6 +4036,22 @@
      "is_resolution": false
     },
     {
+     "id": 90,
+     "legiscan_bill_id": 2007316,
+     "bill_number": "HB5282",
+     "bill_title": "Relating to the use of artificial intelligence to score certain portions of assessment instruments administered to public school students.",
+     "bill_url": "https://legiscan.com/TX/bill/HB5282/2025",
+     "bill_text_url": "https://legiscan.com/TX/text/HB5282/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Public Education",
+     "last_action_date": "2025-04-07",
+     "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
      "id": 30,
      "legiscan_bill_id": 2041986,
      "bill_number": "HB148",
@@ -3315,22 +4078,6 @@
      "bill_stage": "introduced",
      "last_action": "Filed",
      "last_action_date": "2025-07-22",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 90,
-     "legiscan_bill_id": 2007316,
-     "bill_number": "HB5282",
-     "bill_title": "Relating to the use of artificial intelligence to score certain portions of assessment instruments administered to public school students.",
-     "bill_url": "https://legiscan.com/TX/bill/HB5282/2025",
-     "bill_text_url": "https://legiscan.com/TX/text/HB5282/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Referred to Public Education",
-     "last_action_date": "2025-04-07",
      "match_confidence": "HIGH",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -3385,7 +4132,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-08T18:34:34.082324"
+   "last_updated": "2026-09-08T18:38:26.287259"
   },
   {
    "state_code": "UT",
@@ -3393,13 +4140,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "failed",
    "bill_counts": {
-    "total": 35,
+    "total": 76,
     "included": 1,
     "resolutions": 0,
-    "pending": 34,
+    "pending": 75,
     "manually_included": 1,
     "manually_excluded": 0,
-    "held": 34,
+    "held": 75,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3470,13 +4217,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 18,
+    "total": 27,
     "included": 2,
     "resolutions": 0,
-    "pending": 16,
+    "pending": 25,
     "manually_included": 2,
     "manually_excluded": 0,
-    "held": 16,
+    "held": 25,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3561,39 +4308,71 @@
    "state_code": "VA",
    "state_name": "Virginia",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "introduced",
+   "legislation_stage": "passed",
    "bill_counts": {
-    "total": 24,
-    "included": 1,
+    "total": 142,
+    "included": 3,
     "resolutions": 0,
-    "pending": 23,
+    "pending": 141,
     "manually_included": 1,
     "manually_excluded": 0,
-    "held": 23,
+    "held": 139,
     "by_stage": {
-     "passed": 0,
+     "passed": 2,
      "debated": 0,
      "introduced": 1,
      "failed": 0
     }
    },
    "headline_bill": {
-    "id": 1150,
-    "legiscan_bill_id": 1808295,
-    "bill_number": "SB385",
-    "bill_title": "Artificial intelligence technology; use in education.",
-    "bill_url": "https://legiscan.com/VA/bill/SB385/2024",
-    "bill_text_url": "https://legiscan.com/VA/text/SB385/2024",
-    "bill_status": "Introduced",
-    "bill_stage": "introduced",
-    "last_action": "Stricken at request of Patron in Finance and Appropriations (15-Y 0-N)",
-    "last_action_date": "2024-02-07",
+    "id": 1971,
+    "legiscan_bill_id": 2078302,
+    "bill_number": "HB1186",
+    "bill_title": "Artificial intelligence; use of systems for student instruction.",
+    "bill_url": "https://legiscan.com/VA/bill/HB1186/2026",
+    "bill_text_url": "https://legiscan.com/VA/text/HB1186/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Acts of Assembly Chapter text (CHAP0937)",
+    "last_action_date": "2026-04-13",
     "match_confidence": "HIGH",
-    "decision": "INCLUDED",
+    "decision": "PENDING",
     "effective_included": true,
     "is_resolution": false
    },
    "bills": [
+    {
+     "id": 1971,
+     "legiscan_bill_id": 2078302,
+     "bill_number": "HB1186",
+     "bill_title": "Artificial intelligence; use of systems for student instruction.",
+     "bill_url": "https://legiscan.com/VA/bill/HB1186/2026",
+     "bill_text_url": "https://legiscan.com/VA/text/HB1186/2026",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Acts of Assembly Chapter text (CHAP0937)",
+     "last_action_date": "2026-04-13",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1972,
+     "legiscan_bill_id": 2085474,
+     "bill_number": "SB394",
+     "bill_title": "Artificial intelligence; use of systems for student instruction.",
+     "bill_url": "https://legiscan.com/VA/bill/SB394/2026",
+     "bill_text_url": "https://legiscan.com/VA/text/SB394/2026",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Acts of Assembly Chapter text (CHAP0943)",
+     "last_action_date": "2026-04-13",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
     {
      "id": 1150,
      "legiscan_bill_id": 1808295,
@@ -3638,24 +4417,56 @@
    "state_code": "WA",
    "state_name": "Washington",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "debated",
    "bill_counts": {
-    "total": 20,
-    "included": 0,
+    "total": 75,
+    "included": 1,
     "resolutions": 0,
-    "pending": 19,
+    "pending": 74,
     "manually_included": 0,
     "manually_excluded": 1,
-    "held": 20,
+    "held": 74,
     "by_stage": {
      "passed": 0,
-     "debated": 0,
+     "debated": 1,
      "introduced": 0,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 2089,
+    "legiscan_bill_id": 2064805,
+    "bill_number": "SB5956",
+    "bill_title": "Addressing artificial intelligence, student discipline, and surveillance in public schools.",
+    "bill_url": "https://legiscan.com/WA/bill/SB5956/2025",
+    "bill_text_url": "https://legiscan.com/WA/text/SB5956/2025",
+    "bill_status": "Engrossed",
+    "bill_stage": "debated",
+    "last_action": "By resolution, returned to Senate Rules Committee for third reading.",
+    "last_action_date": "2026-03-12",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 2089,
+     "legiscan_bill_id": 2064805,
+     "bill_number": "SB5956",
+     "bill_title": "Addressing artificial intelligence, student discipline, and surveillance in public schools.",
+     "bill_url": "https://legiscan.com/WA/bill/SB5956/2025",
+     "bill_text_url": "https://legiscan.com/WA/text/SB5956/2025",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "By resolution, returned to Senate Rules Committee for third reading.",
+     "last_action_date": "2026-03-12",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3685,13 +4496,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 16,
+    "total": 30,
     "included": 2,
     "resolutions": 1,
-    "pending": 14,
+    "pending": 28,
     "manually_included": 2,
     "manually_excluded": 0,
-    "held": 14,
+    "held": 28,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3778,13 +4589,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 8,
+    "total": 10,
     "included": 0,
     "resolutions": 0,
-    "pending": 8,
+    "pending": 10,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 8,
+    "held": 10,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3823,13 +4634,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 2,
+    "total": 6,
     "included": 0,
     "resolutions": 0,
-    "pending": 1,
+    "pending": 5,
     "manually_included": 0,
     "manually_excluded": 1,
-    "held": 2,
+    "held": 6,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3866,24 +4677,56 @@
    "state_code": "DC",
    "state_name": "District of Columbia",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "introduced",
    "bill_counts": {
-    "total": 0,
-    "included": 0,
+    "total": 42,
+    "included": 1,
     "resolutions": 0,
-    "pending": 0,
+    "pending": 42,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 0,
+    "held": 41,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
+     "introduced": 1,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 2164,
+    "legiscan_bill_id": 2053226,
+    "bill_number": "B26-0491",
+    "bill_title": "Artificial Intelligence Literacy in Education Act of 2025",
+    "bill_url": "https://legiscan.com/DC/bill/B26-0491/2025",
+    "bill_text_url": "https://legiscan.com/DC/text/B26-0491/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Referred to Committee on Committee of the Whole",
+    "last_action_date": "2025-12-02",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 2164,
+     "legiscan_bill_id": 2053226,
+     "bill_number": "B26-0491",
+     "bill_title": "Artificial Intelligence Literacy in Education Act of 2025",
+     "bill_url": "https://legiscan.com/DC/bill/B26-0491/2025",
+     "bill_text_url": "https://legiscan.com/DC/text/B26-0491/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Committee on Committee of the Whole",
+     "last_action_date": "2025-12-02",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3954,7 +4797,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-08T18:34:34.077442"
+   "last_updated": "2026-09-08T18:38:26.285873"
   },
   {
    "state_code": "PR",
@@ -4007,7 +4850,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-08T18:34:34.081277"
+   "last_updated": "2026-09-08T18:38:26.286949"
   },
   {
    "state_code": "VI",
@@ -4054,7 +4897,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-08T18:34:34.082808"
+   "last_updated": "2026-09-08T18:38:26.287410"
   }
  ]
 }
