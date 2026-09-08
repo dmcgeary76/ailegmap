@@ -44,12 +44,18 @@ DEFINITION_WINDOW = 200   # chars around a hit to look for "means" / "as used in
 def _phrase_pattern(term: str) -> "re.Pattern":
     """Match a vocabulary term in extracted text. Between the words of a phrase
     allow any whitespace (PDF line wraps), hyphens, and stray line numbers
-    ("artificial\n 12 intelligence" is how Iowa's PDFs come out of pypdf).
-    Terms of three letters or fewer need a boundary on both sides."""
+    ("artificial\n 12 intelligence" is how Iowa's PDFs come out of pypdf),
+    or nothing at all ("artificialintelligence"). Terms of three letters or
+    fewer need a boundary on both sides; longer ones need none."""
     parts = [re.escape(w) for w in term.split()]
-    gap = r"(?:[\s\-]+(?:\d{1,3}\s+)?)"
+    gap = r"(?:[\s\-]*(?:\d{1,3}\s+)?)"
     body = gap.join(parts)
-    return re.compile(r"(?<!\w)" + body + (r"(?!\w)" if len(term) <= 3 else ""), re.I)
+    if len(term) <= 3:
+        return re.compile(r"(?<!\w)" + body + r"(?!\w)", re.I)
+    # Longer terms get NO word boundaries: Missouri's PDFs come out of pypdf
+    # with the spaces dropped ("Theinclusion ofartificial intelligence"), and
+    # "artificial intelligence" is unambiguous however it is glued.
+    return re.compile(body, re.I)
 
 
 _AI_PATTERNS = [_phrase_pattern(t) for t in AI_TERMS]

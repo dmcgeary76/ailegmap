@@ -174,3 +174,10 @@ def test_ligatures_and_end_of_line_hyphenation():
     html_doc = "<p>The board shall adopt an artiﬁcial intelligence policy. Uses of artificial intelli-\ngence include tutoring.</p>".encode()
     s = score_text(extract_text(html_doc, MIME_HTML) + " x" * 300)
     assert s["ai_mentions"] == 2
+
+
+def test_missouri_style_dropped_spaces_still_match():
+    glued = "(e)Theinclusion ofartificial intelligence; (f)Thedeterioration ofstudent competency. " + "x " * 300
+    assert score_text(glued)["ai_mentions"] == 1
+    assert score_text("machinelearning tools and Chatbots. " + "x " * 300)["ai_mentions"] == 2
+    assert score_text("the chair said. aid to schools. " + "x " * 300)["ai_mentions"] == 0
