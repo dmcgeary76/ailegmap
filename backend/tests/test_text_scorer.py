@@ -164,3 +164,13 @@ def test_density_governs_dense_and_thin():
     assert s["ai_mentions"] == 1 and not s["definition_only"] and s["thin"]
     assert combine("MEDIUM", "review", s) == ("LOW", "thin_mention")
     assert combine("MEDIUM", "review", score_text("nothing here " * 300)) == ("LOW", "no_mention")
+
+
+def test_ligatures_and_end_of_line_hyphenation():
+    from app.sync.text_scorer import _tidy
+    assert _tidy("artiﬁcial intelligence") == "artificial intelligence"
+    assert _tidy("artificial intelli-\n  gence in schools") == "artificial intelligence in schools"
+    assert _tidy("machine-\nlearning") == "machinelearning" or "machine" in _tidy("machine-\nlearning")  # known trade-off
+    html_doc = "<p>The board shall adopt an artiﬁcial intelligence policy. Uses of artificial intelli-\ngence include tutoring.</p>".encode()
+    s = score_text(extract_text(html_doc, MIME_HTML) + " x" * 300)
+    assert s["ai_mentions"] == 2

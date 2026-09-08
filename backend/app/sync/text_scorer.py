@@ -96,8 +96,20 @@ def extract_text(data: bytes, mime_id: int) -> Optional[str]:
     return None  # WordPerfect, .doc, RTF: skip
 
 
+_LIGATURES = {"\ufb00": "ff", "\ufb01": "fi", "\ufb02": "fl", "\ufb03": "ffi", "\ufb04": "ffl",
+              "\u00ad": "", "\u2010": "-", "\u2011": "-", "\u2019": "'", "\u201c": '"', "\u201d": '"'}
+
+
 def _tidy(s: str) -> str:
+    """Normalise extracted text so the vocabulary can match it.
+
+    PDF text arrives with typographic ligatures ("arti\ufb01cial" -- the fi
+    ligature -- is not "artificial" to a regex), soft hyphens, and words
+    hyphenated across line ends ("intelli-\ngence"). Fix all three."""
+    for a, b in _LIGATURES.items():
+        s = s.replace(a, b)
     s = s.replace("\xa0", " ")
+    s = re.sub(r"(\w)-\s*\n\s*(?=[a-z])", r"\1", s)   # end-of-line syllable hyphenation
     s = re.sub(r"[ \t\r\f\v]+", " ", s)
     s = re.sub(r"\n\s*\n+", "\n", s)
     return s.strip()
