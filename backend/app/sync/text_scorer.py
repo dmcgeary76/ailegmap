@@ -34,15 +34,25 @@ MAX_TEXT_BYTES = 2_000_000
 
 # Thresholds -- first cut from docs/TEXT_DENSITY_SCORER.md; tune after the
 # first --score-text run prints the distribution.
-DENSE_MENTIONS = 3        # this many hits (or one in a heading) = the bill is about AI
-THIN_MENTIONS = 2         # at most this many, all inside definitions = a passing mention
+DENSE_MENTIONS = 3        # this many hits AND DENSE_DENSITY (or one in a heading) = about AI
+DENSE_DENSITY = 1.0       # hits per 1,000 words; keeps an 80k-word bond bill with 11 hits out
+THIN_MENTIONS = 2         # at most this many hits, and either all inside definitions ...
+THIN_DENSITY = 0.5        # ... or this sparse = a passing mention
 MIN_WORDS_FOR_TITLE_ONLY = 200   # don't call a HIGH "title_only" on a stub document
 DEFINITION_WINDOW = 200   # chars around a hit to look for "means" / "as used in"
 
-_AI_PATTERNS = [
-    re.compile(r"(?<!\w)" + re.escape(t) + (r"(?!\w)" if len(t) <= 3 else ""), re.I)
-    for t in AI_TERMS
-]
+def _phrase_pattern(term: str) -> "re.Pattern":
+    """Match a vocabulary term in extracted text. Between the words of a phrase
+    allow any whitespace (PDF line wraps), hyphens, and stray line numbers
+    ("artificial\n 12 intelligence" is how Iowa's PDFs come out of pypdf).
+    Terms of three letters or fewer need a boundary on both sides."""
+    parts = [re.escape(w) for w in term.split()]
+    gap = r"(?:[\s\-]+(?:\d{1,3}\s+)?)"
+    body = gap.join(parts)
+    return re.compile(r"(?<!\w)" + body + (r"(?!\w)" if len(term) <= 3 else ""), re.I)
+
+
+_AI_PATTERNS = [_phrase_pattern(t) for t in AI_TERMS]
 _DEFINITION_CUES = re.compile(
     r"\b(means|shall mean|is defined as|as used in|as defined in|definitions?|the term)\b", re.I)
 _HEADING_LEAD = re.compile(r"^\s*(sec(tion)?\.?\s*\d|§|article\s+[\divx]+|part\s+[\divx]+|chapter\s+\d|\d+(\.\d+)*\s*[.)-])", re.I)
@@ -107,10 +117,10 @@ def _is_heading(line: str) -> bool:
     if _HEADING_LEAD.match(line):
         return True
     letters = [c for c in line if c.isalpha()]
-    if letters and sum(c.isupper() for c in letters) / len(letters) > 0.8:
+    if len(letters) >= 12 and sum(c.isupper() for c in letters) / len(letters) > 0.8:
         return True   # "ARTIFICIAL INTELLIGENCE IN SCHOOLS"
-    if not line.endswith((".", ";", ",")) and len(words) <= 10 and line[:1].isupper():
-        return True   # short title-ish line without terminal punctuation
+    # No "short line without a period" rule: PDF extraction wraps every line,
+    # so that heuristic called one hit in three a heading on the first run.
     return False
 
 
@@ -157,8 +167,8 @@ def score_text(text: str) -> Dict:
         "ai_in_heading": in_heading,
         "ai_density": density,
         "definition_only": definition_only,
-        "dense": in_heading or n >= DENSE_MENTIONS,
-        "thin": n <= THIN_MENTIONS and definition_only,
+        "dense": in_heading or (n >= DENSE_MENTIONS and density >= DENSE_DENSITY),
+        "thin": n <= THIN_MENTIONS and (definition_only or density < THIN_DENSITY),
     }
 
 
@@ -167,8 +177,9 @@ def combine(title_confidence: str, title_flag: str, ts: Optional[Dict]) -> Tuple
 
     Title-only noise / higher-ed gates are never overridden. Otherwise:
       HIGH   + no AI in a real document           -> LOW   'title_only'
-      MEDIUM + dense (heading or >= 3 hits)       -> MEDIUM 'dense'      (review first)
-      MEDIUM + thin (<= 2 hits, all definitions)  -> LOW   'thin_mention'
+      MEDIUM + no AI in a real document           -> LOW   'no_mention'
+      MEDIUM + dense (heading, or >= 3 hits at >= 1/1k words) -> MEDIUM 'dense' (review first)
+      MEDIUM + thin (<= 2 hits, definitions or < 0.5/1k)      -> LOW 'thin_mention'
       MEDIUM otherwise                            -> MEDIUM 'review'
       anything with no readable text             -> unchanged, flag 'text_unreadable'
                                                    only where the flag was 'review'
@@ -184,6 +195,8 @@ def combine(title_confidence: str, title_flag: str, ts: Optional[Dict]) -> Tuple
             return CONF_LOW, "title_only"
         return CONF_HIGH, title_flag
     if title_confidence == CONF_MEDIUM:
+        if ts["ai_mentions"] == 0 and ts["words"] >= MIN_WORDS_FOR_TITLE_ONLY:
+            return CONF_LOW, "no_mention"
         if ts["dense"]:
             return CONF_MEDIUM, "dense"
         if ts["thin"]:
@@ -199,11 +212,12 @@ def text_score_from_bill(bill) -> Optional[Dict]:
     if bill.text_words is None:   # scored, but the document was unreadable
         return {"words": None, "readable": False}
     n = bill.ai_mentions or 0
+    density = bill.ai_density or 0.0
     return {
         "words": bill.text_words, "ai_mentions": n, "ai_in_heading": bool(bill.ai_in_heading),
-        "ai_density": bill.ai_density or 0.0, "definition_only": bool(bill.definition_only),
-        "dense": bool(bill.ai_in_heading) or n >= DENSE_MENTIONS,
-        "thin": n <= THIN_MENTIONS and bool(bill.definition_only),
+        "ai_density": density, "definition_only": bool(bill.definition_only),
+        "dense": bool(bill.ai_in_heading) or (n >= DENSE_MENTIONS and density >= DENSE_DENSITY),
+        "thin": n <= THIN_MENTIONS and (bool(bill.definition_only) or density < THIN_DENSITY),
         "readable": True,
     }
 
@@ -233,6 +247,7 @@ class TextScorer:
         q = self.db.query(Bill).filter(or_(Bill.match_confidence.in_((CONF_HIGH, CONF_MEDIUM)),
                                            Bill.decision == "INCLUDED",
                                            Bill.text_scored_at.isnot(None)))
+        q = q.filter(Bill.superseded_by.is_(None))   # the carried-over copy has the same text
         if scope != "all":
             q = q.filter(Bill.state_code == scope)
         return q.order_by(Bill.state_code, Bill.bill_number).all()
@@ -349,3 +364,35 @@ def distribution(db, scope: str = "all") -> str:
             buckets["10+ hits"] += 1
     lines.append("  hits: " + ", ".join(f"{k}={v}" for k, v in sorted(buckets.items())))
     return "\n".join(lines)
+
+
+def dump_text(db, sync, state: str, bill_number: str, chars: int = 3000) -> str:
+    """Diagnostic: list a bill's text documents and print the start of the
+    extracted text of the newest one, with the hit positions."""
+    from app.models.legislation import Bill
+    b = (db.query(Bill).filter(Bill.state_code == state.upper(), Bill.bill_number == bill_number)
+         .order_by(Bill.legiscan_bill_id.desc()).first())
+    if not b:
+        return f"no bill {state} {bill_number}"
+    data = sync._get(op="getBill", id=b.legiscan_bill_id) or {}
+    texts = (data.get("bill") or {}).get("texts") or []
+    out = [f"{b.state_code} {b.bill_number} (legiscan {b.legiscan_bill_id}) -- {len(texts)} text document(s):"]
+    for t in texts:
+        out.append(f"  doc {t.get('doc_id')}  {t.get('date')}  {t.get('type')}  mime={t.get('mime_id')}  size={t.get('text_size')}")
+    if not texts:
+        return "\n".join(out)
+    newest = max(texts, key=lambda t: (t.get("date") or "", t.get("doc_id") or 0))
+    doc = (sync._get(op="getBillText", id=newest["doc_id"]) or {}).get("text") or {}
+    raw = base64.b64decode(doc.get("doc") or "")
+    text = extract_text(raw, int(doc.get("mime_id") or 0))
+    if text is None:
+        out.append(f"  newest doc {newest.get('doc_id')}: UNREADABLE (mime {doc.get('mime_id')}, {len(raw)} bytes)")
+        return "\n".join(out)
+    sc = score_text(text)
+    out.append(f"  newest doc {newest.get('doc_id')}: {sc}")
+    for pat in _AI_PATTERNS:
+        for m in list(pat.finditer(text))[:3]:
+            out.append(f"    hit @{m.start()}: …{text[max(0, m.start()-40):m.end()+40]!r}…")
+    out.append("---- extracted text (first %d chars) ----" % chars)
+    out.append(text[:chars])
+    return "\n".join(out)

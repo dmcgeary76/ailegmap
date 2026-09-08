@@ -119,6 +119,7 @@ NOISE_TITLE_TERMS = [
     "honor", "inaugural year",
     "budget act", "trailer bill", "omnibus", "maintenance of the codes",
     "supplemental appropriation", "making appropriations", "appropriations",
+    "appropriates money", "appropriate money", "ordinary expenses of the legislat",
     "necessary to implement the state",   # NY budget article VII bills
     "house rules",
     "state capitol", " day.", " day at", "rules of procedure",
@@ -694,11 +695,24 @@ def main():
                              "score AI-term density, and fold it into the confidence")
     parser.add_argument("--force-text", action="store_true",
                         help="With --score-text: re-fetch even when the stored text_hash is unchanged")
+    parser.add_argument("--dump-text", nargs=2, metavar=("STATE", "BILL"),
+                        help="Diagnostic: list a bill's text documents and print the extracted text of the newest")
     parser.add_argument("--text-report", action="store_true",
                         help="Print the distribution of stored text scores (no network)")
     parser.add_argument("--rescore", action="store_true",
                         help="Re-run the title scorer over stored bills (no API calls); combine with --state or --all")
     args = parser.parse_args()
+
+    if args.dump_text:
+        from app.database import SessionLocal, init_db
+        from app.sync.text_scorer import dump_text
+        init_db()
+        db = SessionLocal()
+        try:
+            print(dump_text(db, LegiScanSync(db, fetch_status=False), *args.dump_text))
+        finally:
+            db.close()
+        return
 
     if not (args.state or args.all):
         parser.print_help()

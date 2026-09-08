@@ -138,3 +138,29 @@ def test_text_scorer_driver_with_fake_api(db, monkeypatch):
     # second run: hashes unchanged -> no getBillText calls
     stats2 = TextScorer(db, sync).run("all")
     assert stats2["skipped_same_hash"] == 2 and stats2["fetched"] == 0
+
+
+def test_pdf_line_wraps_and_line_numbers_still_match():
+    wrapped = "1 school districts shall adopt policies on artificial\n2 intelligence and generative\n 3 AI tools. " * 3 + "x " * 300
+    s = score_text(wrapped)
+    assert s["ai_mentions"] == 6           # 3 x ("artificial intelligence" + "generative AI")
+    assert not s["definition_only"]
+
+
+def test_heading_needs_structure_not_just_a_short_line():
+    # a wrapped PDF line that happens to be short is NOT a heading
+    assert score_text("the district may use artificial intelligence\nfor threat detection. " + "x " * 300)["ai_in_heading"] is False
+    assert score_text("SECTION 3. ARTIFICIAL INTELLIGENCE IN SCHOOLS\nbody text. " + "x " * 300)["ai_in_heading"] is True
+    assert score_text("Sec. 4. Use of artificial intelligence\nbody. " + "x " * 300)["ai_in_heading"] is True
+
+
+def test_density_governs_dense_and_thin():
+    bond_bill = ("the authority shall issue bonds for the artificial intelligence institute. " + "filler " * 1500) * 11
+    s = score_text(bond_bill)
+    assert s["ai_mentions"] == 11 and s["ai_density"] < 1.0 and not s["dense"]
+    assert combine("MEDIUM", "review", s) == ("MEDIUM", "review")
+    sparse = "school safety plans may include artificial intelligence detection. " + "filler " * 3000
+    s = score_text(sparse)
+    assert s["ai_mentions"] == 1 and not s["definition_only"] and s["thin"]
+    assert combine("MEDIUM", "review", s) == ("LOW", "thin_mention")
+    assert combine("MEDIUM", "review", score_text("nothing here " * 300)) == ("LOW", "no_mention")
