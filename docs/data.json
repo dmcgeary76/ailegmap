@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-08T20:53:22.895952Z",
+ "generated_at": "2026-09-08T21:12:16.802400Z",
  "last_sync": "2026-09-08T19:29:32.088207Z",
  "summary": {
   "jurisdictions": 54,
-  "states_with_included_bills": 26,
+  "states_with_included_bills": 32,
   "states_by_legislation_stage": {
-   "passed": 6,
-   "debated": 5,
-   "introduced": 12,
+   "passed": 7,
+   "debated": 7,
+   "introduced": 15,
    "failed": 3,
-   "none": 28
+   "none": 22
   },
   "states_researched": 14,
   "states_with_guidance": 10,
@@ -23,9 +23,9 @@
   },
   "bills": {
    "total": 2205,
-   "included": 84,
-   "pending": 2092,
-   "excluded": 29
+   "included": 119,
+   "pending": 2048,
+   "excluded": 38
   },
   "local_actions": {
    "total": 3,
@@ -231,7 +231,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T18:38:26.284844"
+   "last_updated": "2026-09-08T21:12:16.379567"
   },
   {
    "state_code": "AZ",
@@ -346,24 +346,56 @@
    "state_code": "AR",
    "state_name": "Arkansas",
    "research_status": "RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "failed",
    "bill_counts": {
     "total": 8,
-    "included": 0,
+    "included": 1,
     "resolutions": 0,
-    "pending": 8,
-    "manually_included": 0,
+    "pending": 7,
+    "manually_included": 1,
     "manually_excluded": 0,
-    "held": 8,
+    "held": 7,
     "by_stage": {
      "passed": 0,
      "debated": 0,
      "introduced": 0,
-     "failed": 0
+     "failed": 1
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1241,
+    "legiscan_bill_id": 1944017,
+    "bill_number": "HB1283",
+    "bill_title": "To Require The Division Of Elementary And Secondary Education To Include Digital Media Standards In Kindergarten Through Grade Twelve Library Media Standards.",
+    "bill_url": "https://legiscan.com/AR/bill/HB1283/2025",
+    "bill_text_url": "https://legiscan.com/AR/text/HB1283/2025",
+    "bill_status": "Failed / Dead",
+    "bill_stage": "failed",
+    "last_action": "Died in Senate Committee at Sine Die adjournment.",
+    "last_action_date": "2025-05-05",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1241,
+     "legiscan_bill_id": 1944017,
+     "bill_number": "HB1283",
+     "bill_title": "To Require The Division Of Elementary And Secondary Education To Include Digital Media Standards In Kindergarten Through Grade Twelve Library Media Standards.",
+     "bill_url": "https://legiscan.com/AR/bill/HB1283/2025",
+     "bill_text_url": "https://legiscan.com/AR/text/HB1283/2025",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in Senate Committee at Sine Die adjournment.",
+     "last_action_date": "2025-05-05",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -390,7 +422,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-09-08T18:38:26.285289"
+   "last_updated": "2026-09-08T21:12:16.379943"
   },
   {
    "state_code": "CA",
@@ -399,16 +431,16 @@
    "legislation_stage": "passed",
    "bill_counts": {
     "total": 200,
-    "included": 6,
+    "included": 11,
     "resolutions": 0,
-    "pending": 186,
-    "manually_included": 6,
-    "manually_excluded": 8,
-    "held": 194,
+    "pending": 180,
+    "manually_included": 11,
+    "manually_excluded": 9,
+    "held": 189,
     "by_stage": {
      "passed": 2,
-     "debated": 0,
-     "introduced": 3,
+     "debated": 3,
+     "introduced": 5,
      "failed": 1
     }
    },
@@ -510,6 +542,86 @@
      "is_resolution": false
     },
     {
+     "id": 1246,
+     "legiscan_bill_id": 2119598,
+     "bill_number": "AB2071",
+     "bill_title": "Pupil instruction: digital wellness.",
+     "bill_url": "https://legiscan.com/CA/bill/AB2071/2025",
+     "bill_text_url": "https://legiscan.com/CA/text/AB2071/2025",
+     "bill_status": "Enrolled",
+     "bill_stage": "debated",
+     "last_action": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 77. Noes 0.).",
+     "last_action_date": "2026-08-31",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1247,
+     "legiscan_bill_id": 1978694,
+     "bill_number": "AB1159",
+     "bill_title": "Student personal information.",
+     "bill_url": "https://legiscan.com/CA/bill/AB1159/2025",
+     "bill_text_url": "https://legiscan.com/CA/text/AB1159/2025",
+     "bill_status": "Enrolled",
+     "bill_stage": "debated",
+     "last_action": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 70. Noes 4.).",
+     "last_action_date": "2026-08-31",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 517,
+     "legiscan_bill_id": 2120772,
+     "bill_number": "AB2298",
+     "bill_title": "Pupil instruction: computer science: content standards.",
+     "bill_url": "https://legiscan.com/CA/bill/AB2298/2025",
+     "bill_text_url": "https://legiscan.com/CA/text/AB2298/2025",
+     "bill_status": "Enrolled",
+     "bill_stage": "debated",
+     "last_action": "Enrolled and presented to the Governor at 4 p.m.",
+     "last_action_date": "2026-09-04",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 516,
+     "legiscan_bill_id": 2121621,
+     "bill_number": "AB2544",
+     "bill_title": "Education for Filmmakers Pilot Program.",
+     "bill_url": "https://legiscan.com/CA/bill/AB2544/2025",
+     "bill_text_url": "https://legiscan.com/CA/text/AB2544/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Re-referred to Com. on E.D., G., & H.I.",
+     "last_action_date": "2026-03-23",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 527,
+     "legiscan_bill_id": 2121529,
+     "bill_number": "AB2452",
+     "bill_title": "Curriculum frameworks: instructional materials evaluation criteria: media literacy.",
+     "bill_url": "https://legiscan.com/CA/bill/AB2452/2025",
+     "bill_text_url": "https://legiscan.com/CA/text/AB2452/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "In committee: Set, first hearing. Hearing canceled at the request of author.",
+     "last_action_date": "2026-03-19",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
      "id": 817,
      "legiscan_bill_id": 1848536,
      "bill_number": "SB1235",
@@ -584,7 +696,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-08T18:38:26.285508"
+   "last_updated": "2026-09-08T21:12:16.380312"
   },
   {
    "state_code": "CO",
@@ -646,7 +758,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-09-08T18:38:26.285701"
+   "last_updated": "2026-09-08T21:12:16.380627"
   },
   {
    "state_code": "CT",
@@ -806,20 +918,20 @@
    "state_code": "FL",
    "state_name": "Florida",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "failed",
+   "legislation_stage": "introduced",
    "bill_counts": {
     "total": 88,
-    "included": 1,
+    "included": 7,
     "resolutions": 0,
-    "pending": 87,
-    "manually_included": 1,
+    "pending": 81,
+    "manually_included": 7,
     "manually_excluded": 0,
-    "held": 87,
+    "held": 81,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
-     "failed": 1
+     "introduced": 1,
+     "failed": 6
     }
    },
    "headline_bill": {
@@ -851,6 +963,102 @@
      "last_action": "Died in Education Pre-K - 12",
      "last_action_date": "2026-03-13",
      "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1350,
+     "legiscan_bill_id": 1797287,
+     "bill_number": "S1344",
+     "bill_title": "Computer Science Education",
+     "bill_url": "https://legiscan.com/FL/bill/S1344/2024",
+     "bill_text_url": "https://legiscan.com/FL/text/S1344/2024",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in Fiscal Policy",
+     "last_action_date": "2024-03-08",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1351,
+     "legiscan_bill_id": 1784035,
+     "bill_number": "H0483",
+     "bill_title": "Computer Science Education",
+     "bill_url": "https://legiscan.com/FL/bill/H0483/2024",
+     "bill_text_url": "https://legiscan.com/FL/text/H0483/2024",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in Education & Employment Committee",
+     "last_action_date": "2024-03-08",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 534,
+     "legiscan_bill_id": 1984764,
+     "bill_number": "H1213",
+     "bill_title": "K-12 School Route Optimization Pilot Program",
+     "bill_url": "https://legiscan.com/FL/bill/H1213/2025",
+     "bill_text_url": "https://legiscan.com/FL/text/H1213/2025",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in Rules",
+     "last_action_date": "2025-06-16",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 933,
+     "legiscan_bill_id": 1985537,
+     "bill_number": "S1424",
+     "bill_title": "K-12 School Transportation",
+     "bill_url": "https://legiscan.com/FL/bill/S1424/2025",
+     "bill_text_url": "https://legiscan.com/FL/text/S1424/2025",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in Education Pre-K - 12",
+     "last_action_date": "2025-06-16",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 131,
+     "legiscan_bill_id": 2069946,
+     "bill_number": "H1503",
+     "bill_title": "Computer Science Education and Certification",
+     "bill_url": "https://legiscan.com/FL/bill/H1503/2026",
+     "bill_text_url": "https://legiscan.com/FL/text/H1503/2026",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died in returning Messages",
+     "last_action_date": "2026-03-13",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1362,
+     "legiscan_bill_id": 2069728,
+     "bill_number": "S1694",
+     "bill_title": "Technology Education",
+     "bill_url": "https://legiscan.com/FL/bill/S1694/2026",
+     "bill_text_url": "https://legiscan.com/FL/text/S1694/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Laid on Table, refer to CS/CS/HB 1503",
+     "last_action_date": "2026-03-06",
+     "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
@@ -931,16 +1139,16 @@
    "legislation_stage": "introduced",
    "bill_counts": {
     "total": 118,
-    "included": 6,
+    "included": 7,
     "resolutions": 4,
-    "pending": 112,
-    "manually_included": 6,
+    "pending": 111,
+    "manually_included": 7,
     "manually_excluded": 0,
-    "held": 112,
+    "held": 111,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 2,
+     "introduced": 3,
      "failed": 0
     }
    },
@@ -989,6 +1197,22 @@
      "last_action": "Referred to EDU/LBT, WAM.",
      "last_action_date": "2026-01-26",
      "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1424,
+     "legiscan_bill_id": 2095373,
+     "bill_number": "HB2466",
+     "bill_title": "Relating To Education.",
+     "bill_url": "https://legiscan.com/HI/bill/HB2466/2026",
+     "bill_text_url": "https://legiscan.com/HI/text/HB2466/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to EDN, JHA, FIN, referral sheet 6",
+     "last_action_date": "2026-02-02",
+     "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
@@ -1086,7 +1310,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T18:38:26.286037"
+   "last_updated": "2026-09-08T21:12:16.381267"
   },
   {
    "state_code": "ID",
@@ -1172,17 +1396,17 @@
    "legislation_stage": "passed",
    "bill_counts": {
     "total": 104,
-    "included": 1,
+    "included": 3,
     "resolutions": 0,
-    "pending": 103,
-    "manually_included": 1,
+    "pending": 101,
+    "manually_included": 3,
     "manually_excluded": 0,
-    "held": 103,
+    "held": 101,
     "by_stage": {
      "passed": 1,
-     "debated": 0,
+     "debated": 1,
      "introduced": 0,
-     "failed": 0
+     "failed": 1
     }
    },
    "headline_bill": {
@@ -1214,6 +1438,38 @@
      "last_action": "Public Act . . . . . . . . . 104-0565",
      "last_action_date": "2026-07-10",
      "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 276,
+     "legiscan_bill_id": 1635340,
+     "bill_number": "HB0299",
+     "bill_title": "EDUCATION-TECH",
+     "bill_url": "https://legiscan.com/IL/bill/HB0299/2023",
+     "bill_text_url": "https://legiscan.com/IL/text/HB0299/2023",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Session Sine Die",
+     "last_action_date": "2025-01-07",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 282,
+     "legiscan_bill_id": 1940278,
+     "bill_number": "SB0416",
+     "bill_title": "EDUCATION-TECH",
+     "bill_url": "https://legiscan.com/IL/bill/SB0416/2025",
+     "bill_text_url": "https://legiscan.com/IL/text/SB0416/2025",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Rule 19(a) / Re-referred to Rules Committee",
+     "last_action_date": "2026-05-31",
+     "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
@@ -1445,24 +1701,56 @@
    "state_code": "KY",
    "state_name": "Kentucky",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "introduced",
    "bill_counts": {
     "total": 18,
-    "included": 0,
+    "included": 1,
     "resolutions": 0,
-    "pending": 18,
-    "manually_included": 0,
+    "pending": 17,
+    "manually_included": 1,
     "manually_excluded": 0,
-    "held": 18,
+    "held": 17,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
+     "introduced": 1,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1499,
+    "legiscan_bill_id": 1795473,
+    "bill_number": "SB52",
+    "bill_title": "AN ACT relating to technology in education and declaring an emergency.",
+    "bill_url": "https://legiscan.com/KY/bill/SB52/2024",
+    "bill_text_url": "https://legiscan.com/KY/text/SB52/2024",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "to Education (S)",
+    "last_action_date": "2024-01-03",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1499,
+     "legiscan_bill_id": 1795473,
+     "bill_number": "SB52",
+     "bill_title": "AN ACT relating to technology in education and declaring an emergency.",
+     "bill_url": "https://legiscan.com/KY/bill/SB52/2024",
+     "bill_text_url": "https://legiscan.com/KY/text/SB52/2024",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "to Education (S)",
+     "last_action_date": "2024-01-03",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -1609,7 +1897,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-09-08T18:38:26.286207"
+   "last_updated": "2026-09-08T21:12:16.381895"
   },
   {
    "state_code": "ME",
@@ -1618,12 +1906,12 @@
    "legislation_stage": null,
    "bill_counts": {
     "total": 11,
-    "included": 1,
-    "resolutions": 1,
-    "pending": 9,
-    "manually_included": 1,
+    "included": 2,
+    "resolutions": 2,
+    "pending": 8,
+    "manually_included": 2,
     "manually_excluded": 1,
-    "held": 10,
+    "held": 9,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -1663,6 +1951,22 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": true
+    },
+    {
+     "id": 444,
+     "legiscan_bill_id": 2057501,
+     "bill_number": "LD2052",
+     "bill_title": "Resolve, to Study the Use of Technology in Classrooms and Study Safeguards Related to Its Use",
+     "bill_url": "https://legiscan.com/ME/bill/LD2052/2025",
+     "bill_text_url": "https://legiscan.com/ME/text/LD2052/2025",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "FINALLY PASSED - Emergency - 2/3 Elected Required, in concurrence.",
+     "last_action_date": "2026-03-25",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
     }
    ],
    "local_signal": {
@@ -1695,16 +1999,16 @@
    "legislation_stage": "passed",
    "bill_counts": {
     "total": 105,
-    "included": 9,
+    "included": 10,
     "resolutions": 0,
-    "pending": 96,
-    "manually_included": 9,
+    "pending": 95,
+    "manually_included": 10,
     "manually_excluded": 0,
-    "held": 96,
+    "held": 95,
     "by_stage": {
      "passed": 1,
      "debated": 3,
-     "introduced": 5,
+     "introduced": 6,
      "failed": 0
     }
    },
@@ -1868,6 +2172,22 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
+    },
+    {
+     "id": 45,
+     "legiscan_bill_id": 2093275,
+     "bill_number": "HB530",
+     "bill_title": "Task Force on Proactive Review of Audio and Video Recordings on Special Education Buses",
+     "bill_url": "https://legiscan.com/MD/bill/HB530/2026",
+     "bill_text_url": "https://legiscan.com/MD/text/HB530/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Hearing 2/18 at 1:00 p.m.",
+     "last_action_date": "2026-02-04",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -1992,7 +2312,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-08T18:38:26.286416"
+   "last_updated": "2026-09-08T21:12:16.382196"
   },
   {
    "state_code": "MI",
@@ -2091,17 +2411,17 @@
    "legislation_stage": "failed",
    "bill_counts": {
     "total": 48,
-    "included": 4,
+    "included": 6,
     "resolutions": 0,
-    "pending": 44,
-    "manually_included": 4,
-    "manually_excluded": 0,
-    "held": 44,
+    "pending": 41,
+    "manually_included": 6,
+    "manually_excluded": 1,
+    "held": 42,
     "by_stage": {
      "passed": 0,
      "debated": 0,
      "introduced": 0,
-     "failed": 4
+     "failed": 6
     }
    },
    "headline_bill": {
@@ -2184,6 +2504,38 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
+    },
+    {
+     "id": 694,
+     "legiscan_bill_id": 2084187,
+     "bill_number": "HB1035",
+     "bill_title": "MS Future Innovators Act; enact to require high school computer science or CTE with embedded computer science course.",
+     "bill_url": "https://legiscan.com/MS/bill/HB1035/2026",
+     "bill_text_url": "https://legiscan.com/MS/text/HB1035/2026",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died In Committee",
+     "last_action_date": "2026-03-03",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 695,
+     "legiscan_bill_id": 1936069,
+     "bill_number": "SB2535",
+     "bill_title": "MS Future Innovators Act; enact to require high-school computer science or CTE with embedded computer science course.",
+     "bill_url": "https://legiscan.com/MS/bill/SB2535/2025",
+     "bill_text_url": "https://legiscan.com/MS/text/SB2535/2025",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Died In Committee",
+     "last_action_date": "2025-03-04",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -2213,24 +2565,56 @@
    "state_code": "MO",
    "state_name": "Missouri",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "introduced",
    "bill_counts": {
     "total": 27,
-    "included": 0,
+    "included": 1,
     "resolutions": 0,
-    "pending": 27,
-    "manually_included": 0,
+    "pending": 26,
+    "manually_included": 1,
     "manually_excluded": 0,
-    "held": 27,
+    "held": 26,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
+     "introduced": 1,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 974,
+    "legiscan_bill_id": 2114226,
+    "bill_number": "HB3281",
+    "bill_title": "Establishes provisions relating to software accountability for education",
+    "bill_url": "https://legiscan.com/MO/bill/HB3281/2026",
+    "bill_text_url": "https://legiscan.com/MO/text/HB3281/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Referred: Emerging Issues(H)",
+    "last_action_date": "2026-05-15",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 974,
+     "legiscan_bill_id": 2114226,
+     "bill_number": "HB3281",
+     "bill_title": "Establishes provisions relating to software accountability for education",
+     "bill_url": "https://legiscan.com/MO/bill/HB3281/2026",
+     "bill_text_url": "https://legiscan.com/MO/text/HB3281/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred: Emerging Issues(H)",
+     "last_action_date": "2026-05-15",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -2348,24 +2732,56 @@
    "state_code": "NV",
    "state_name": "Nevada",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "failed",
    "bill_counts": {
     "total": 21,
-    "included": 0,
+    "included": 1,
     "resolutions": 0,
-    "pending": 21,
-    "manually_included": 0,
+    "pending": 20,
+    "manually_included": 1,
     "manually_excluded": 0,
-    "held": 21,
+    "held": 20,
     "by_stage": {
      "passed": 0,
      "debated": 0,
      "introduced": 0,
-     "failed": 0
+     "failed": 1
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1697,
+    "legiscan_bill_id": 2013451,
+    "bill_number": "AB531",
+    "bill_title": "Revises provisions relating to education. (BDR 34-525)",
+    "bill_url": "https://legiscan.com/NV/bill/AB531/2025",
+    "bill_text_url": "https://legiscan.com/NV/text/AB531/2025",
+    "bill_status": "Failed / Dead",
+    "bill_stage": "failed",
+    "last_action": "(Pursuant to Joint Standing Rule No. 14.3.1, no further action allowed.)",
+    "last_action_date": "2025-04-12",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1697,
+     "legiscan_bill_id": 2013451,
+     "bill_number": "AB531",
+     "bill_title": "Revises provisions relating to education. (BDR 34-525)",
+     "bill_url": "https://legiscan.com/NV/bill/AB531/2025",
+     "bill_text_url": "https://legiscan.com/NV/text/AB531/2025",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "(Pursuant to Joint Standing Rule No. 14.3.1, no further action allowed.)",
+     "last_action_date": "2025-04-12",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -2443,9 +2859,9 @@
     "total": 122,
     "included": 9,
     "resolutions": 0,
-    "pending": 110,
+    "pending": 109,
     "manually_included": 9,
-    "manually_excluded": 3,
+    "manually_excluded": 4,
     "held": 113,
     "by_stage": {
      "passed": 0,
@@ -2729,7 +3145,7 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-09-08T18:38:26.286584"
+   "last_updated": "2026-09-08T21:12:16.382466"
   },
   {
    "state_code": "NY",
@@ -2740,9 +3156,9 @@
     "total": 149,
     "included": 9,
     "resolutions": 0,
-    "pending": 130,
+    "pending": 129,
     "manually_included": 9,
-    "manually_excluded": 10,
+    "manually_excluded": 11,
     "held": 140,
     "by_stage": {
      "passed": 0,
@@ -2974,9 +3390,9 @@
     "total": 46,
     "included": 3,
     "resolutions": 0,
-    "pending": 43,
+    "pending": 41,
     "manually_included": 3,
-    "manually_excluded": 0,
+    "manually_excluded": 2,
     "held": 43,
     "by_stage": {
      "passed": 0,
@@ -3171,16 +3587,16 @@
    "legislation_stage": "passed",
    "bill_counts": {
     "total": 39,
-    "included": 3,
+    "included": 4,
     "resolutions": 0,
-    "pending": 36,
-    "manually_included": 3,
-    "manually_excluded": 0,
-    "held": 36,
+    "pending": 34,
+    "manually_included": 4,
+    "manually_excluded": 1,
+    "held": 35,
     "by_stage": {
      "passed": 1,
      "debated": 1,
-     "introduced": 1,
+     "introduced": 2,
      "failed": 0
     }
    },
@@ -3248,6 +3664,22 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
+    },
+    {
+     "id": 1021,
+     "legiscan_bill_id": 2048922,
+     "bill_number": "HB2371",
+     "bill_title": "Schools; mental health; pilot programs; revolving fund; effective date.",
+     "bill_url": "https://legiscan.com/OK/bill/HB2371/2026",
+     "bill_text_url": "https://legiscan.com/OK/text/HB2371/2026",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Recommendation to the full committee; Do Pass Appropriations and Budget Education Subcommittee",
+     "last_action_date": "2025-02-17",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3288,7 +3720,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-09-08T18:38:26.286749"
+   "last_updated": "2026-09-08T21:12:16.382701"
   },
   {
    "state_code": "OR",
@@ -3339,24 +3771,88 @@
    "state_code": "PA",
    "state_name": "Pennsylvania",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "debated",
    "bill_counts": {
     "total": 40,
-    "included": 0,
+    "included": 3,
     "resolutions": 0,
-    "pending": 39,
-    "manually_included": 0,
-    "manually_excluded": 1,
-    "held": 40,
+    "pending": 35,
+    "manually_included": 3,
+    "manually_excluded": 2,
+    "held": 37,
     "by_stage": {
      "passed": 0,
-     "debated": 0,
-     "introduced": 0,
+     "debated": 1,
+     "introduced": 2,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 1037,
+    "legiscan_bill_id": 2142496,
+    "bill_number": "HB2375",
+    "bill_title": "In charter schools, further providing for definitions, for charter school requirements, for establishment of charter school, for causes for nonrenewal or termination, for powers and duties of department, for cyber charter school requirements and prohibitions and for establishment of cyber charter school; and, in the State Board of Education, further providing for powers and duties of the board.",
+    "bill_url": "https://legiscan.com/PA/bill/HB2375/2025",
+    "bill_text_url": "https://legiscan.com/PA/text/HB2375/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Referred to Education",
+    "last_action_date": "2026-04-14",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 1037,
+     "legiscan_bill_id": 2142496,
+     "bill_number": "HB2375",
+     "bill_title": "In charter schools, further providing for definitions, for charter school requirements, for establishment of charter school, for causes for nonrenewal or termination, for powers and duties of department, for cyber charter school requirements and prohibitions and for establishment of cyber charter school; and, in the State Board of Education, further providing for powers and duties of the board.",
+     "bill_url": "https://legiscan.com/PA/bill/HB2375/2025",
+     "bill_text_url": "https://legiscan.com/PA/text/HB2375/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Education",
+     "last_action_date": "2026-04-14",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1038,
+     "legiscan_bill_id": 2023404,
+     "bill_number": "SB631",
+     "bill_title": "Providing for parental consent for virtual mental health services provided by a school entity.",
+     "bill_url": "https://legiscan.com/PA/bill/SB631/2025",
+     "bill_text_url": "https://legiscan.com/PA/text/SB631/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Education",
+     "last_action_date": "2025-04-11",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1039,
+     "legiscan_bill_id": 1873862,
+     "bill_number": "SB913",
+     "bill_title": "Providing for parental consent for virtual mental health services provided by a school entity.",
+     "bill_url": "https://legiscan.com/PA/bill/SB913/2023",
+     "bill_text_url": "https://legiscan.com/PA/text/SB913/2023",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred to EDUCATION",
+     "last_action_date": "2024-06-27",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3387,12 +3883,12 @@
    "legislation_stage": null,
    "bill_counts": {
     "total": 50,
-    "included": 0,
-    "resolutions": 0,
-    "pending": 50,
-    "manually_included": 0,
+    "included": 1,
+    "resolutions": 1,
+    "pending": 49,
+    "manually_included": 1,
     "manually_excluded": 0,
-    "held": 50,
+    "held": 49,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -3400,8 +3896,40 @@
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 4,
+    "legiscan_bill_id": 2138196,
+    "bill_number": "H8345",
+    "bill_title": "HOUSE RESOLUTION CREATING A SPECIAL LEGISLATIVE COMMISSION TO STUDY THE USE AND IMPACT OF DIGITAL AND ELECTRONIC TECHNOLOGY IN PUBLIC EDUCATION AND ON MENTAL HEALTH (Creates a fourteen (14) member special legislative study commission to study the use and impact of digital and electronic technology in public education and on mental health.)",
+    "bill_url": "https://legiscan.com/RI/bill/H8345/2026",
+    "bill_text_url": "https://legiscan.com/RI/text/H8345/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "House passed Sub A",
+    "last_action_date": "2026-06-02",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": true
+   },
+   "bills": [
+    {
+     "id": 4,
+     "legiscan_bill_id": 2138196,
+     "bill_number": "H8345",
+     "bill_title": "HOUSE RESOLUTION CREATING A SPECIAL LEGISLATIVE COMMISSION TO STUDY THE USE AND IMPACT OF DIGITAL AND ELECTRONIC TECHNOLOGY IN PUBLIC EDUCATION AND ON MENTAL HEALTH (Creates a fourteen (14) member special legislative study commission to study the use and impact of digital and electronic technology in public education and on mental health.)",
+     "bill_url": "https://legiscan.com/RI/bill/H8345/2026",
+     "bill_text_url": "https://legiscan.com/RI/text/H8345/2026",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "House passed Sub A",
+     "last_action_date": "2026-06-02",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": true
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3429,7 +3957,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-08T18:38:26.287108"
+   "last_updated": "2026-09-08T21:12:16.383135"
   },
   {
    "state_code": "SC",
@@ -3557,24 +4085,104 @@
    "state_code": "TN",
    "state_name": "Tennessee",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": null,
+   "legislation_stage": "introduced",
    "bill_counts": {
     "total": 35,
-    "included": 0,
+    "included": 4,
     "resolutions": 0,
-    "pending": 35,
-    "manually_included": 0,
+    "pending": 31,
+    "manually_included": 4,
     "manually_excluded": 0,
-    "held": 35,
+    "held": 31,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 0,
+     "introduced": 4,
      "failed": 0
     }
    },
-   "headline_bill": null,
-   "bills": [],
+   "headline_bill": {
+    "id": 624,
+    "legiscan_bill_id": 2090607,
+    "bill_number": "SB2105",
+    "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to education.",
+    "bill_url": "https://legiscan.com/TN/bill/SB2105/2025",
+    "bill_text_url": "https://legiscan.com/TN/text/SB2105/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Passed on Second Consideration, refer to Senate Education Committee",
+    "last_action_date": "2026-02-05",
+    "match_confidence": "MEDIUM",
+    "decision": "INCLUDED",
+    "effective_included": true,
+    "is_resolution": false
+   },
+   "bills": [
+    {
+     "id": 624,
+     "legiscan_bill_id": 2090607,
+     "bill_number": "SB2105",
+     "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to education.",
+     "bill_url": "https://legiscan.com/TN/bill/SB2105/2025",
+     "bill_text_url": "https://legiscan.com/TN/text/SB2105/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Passed on Second Consideration, refer to Senate Education Committee",
+     "last_action_date": "2026-02-05",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 622,
+     "legiscan_bill_id": 1955110,
+     "bill_number": "HB0933",
+     "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to school safety.",
+     "bill_url": "https://legiscan.com/TN/bill/HB0933/2025",
+     "bill_text_url": "https://legiscan.com/TN/text/HB0933/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Taken off notice for cal in s/c Education Administration Subcommittee of Education Committee",
+     "last_action_date": "2025-03-18",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 623,
+     "legiscan_bill_id": 1953992,
+     "bill_number": "SB0814",
+     "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to school safety.",
+     "bill_url": "https://legiscan.com/TN/bill/SB0814/2025",
+     "bill_text_url": "https://legiscan.com/TN/text/SB0814/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Sponsor(s) Added.",
+     "last_action_date": "2025-02-24",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1083,
+     "legiscan_bill_id": 2106214,
+     "bill_number": "HB2416",
+     "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to education.",
+     "bill_url": "https://legiscan.com/TN/bill/HB2416/2025",
+     "bill_text_url": "https://legiscan.com/TN/text/HB2416/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Assigned to s/c Education Instruction Subcommittee",
+     "last_action_date": "2026-02-05",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    }
+   ],
    "local_signal": {
     "count": 0,
     "active": 0,
@@ -3607,9 +4215,9 @@
     "total": 49,
     "included": 6,
     "resolutions": 0,
-    "pending": 41,
+    "pending": 40,
     "manually_included": 6,
-    "manually_excluded": 2,
+    "manually_excluded": 3,
     "held": 43,
     "by_stage": {
      "passed": 0,
@@ -3780,26 +4388,26 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-08T18:38:26.287259"
+   "last_updated": "2026-09-08T21:12:16.383393"
   },
   {
    "state_code": "UT",
    "state_name": "Utah",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "failed",
+   "legislation_stage": "passed",
    "bill_counts": {
     "total": 76,
-    "included": 1,
+    "included": 4,
     "resolutions": 0,
-    "pending": 75,
-    "manually_included": 1,
+    "pending": 72,
+    "manually_included": 4,
     "manually_excluded": 0,
-    "held": 75,
+    "held": 72,
     "by_stage": {
-     "passed": 0,
-     "debated": 0,
+     "passed": 1,
+     "debated": 1,
      "introduced": 0,
-     "failed": 1
+     "failed": 2
     }
    },
    "headline_bill": {
@@ -3834,6 +4442,54 @@
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
+    },
+    {
+     "id": 116,
+     "legiscan_bill_id": 2084286,
+     "bill_number": "HB0273",
+     "bill_title": "Classroom Technology Amendments",
+     "bill_url": "https://legiscan.com/UT/bill/HB0273/2026",
+     "bill_text_url": "https://legiscan.com/UT/text/HB0273/2026",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Governor Signed in Lieutenant Governor's office for filing",
+     "last_action_date": "2026-03-18",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1921,
+     "legiscan_bill_id": 2060253,
+     "bill_number": "HB0042",
+     "bill_title": "School Cybersecurity Amendments",
+     "bill_url": "https://legiscan.com/UT/bill/HB0042/2026",
+     "bill_text_url": "https://legiscan.com/UT/text/HB0042/2026",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "House/ received from Senate in Clerk of the House",
+     "last_action_date": "2026-03-06",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1930,
+     "legiscan_bill_id": 2122567,
+     "bill_number": "SB0322",
+     "bill_title": "Educational Technology Regulatory Sandbox",
+     "bill_url": "https://legiscan.com/UT/bill/SB0322/2026",
+     "bill_text_url": "https://legiscan.com/UT/text/SB0322/2026",
+     "bill_status": "Failed / Dead",
+     "bill_stage": "failed",
+     "last_action": "Senate/ filed in Senate file for bills not passed",
+     "last_action_date": "2026-03-06",
+     "match_confidence": "MEDIUM",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
     }
    ],
    "local_signal": {
@@ -3863,18 +4519,18 @@
    "state_code": "VT",
    "state_name": "Vermont",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "introduced",
+   "legislation_stage": "debated",
    "bill_counts": {
     "total": 27,
-    "included": 2,
+    "included": 3,
     "resolutions": 0,
-    "pending": 25,
-    "manually_included": 2,
+    "pending": 24,
+    "manually_included": 3,
     "manually_excluded": 0,
-    "held": 25,
+    "held": 24,
     "by_stage": {
      "passed": 0,
-     "debated": 0,
+     "debated": 1,
      "introduced": 2,
      "failed": 0
     }
@@ -3924,6 +4580,22 @@
      "last_action": "Read first time and referred to the Committee on Government Operations and Military Affairs",
      "last_action_date": "2024-02-27",
      "match_confidence": "HIGH",
+     "decision": "INCLUDED",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 279,
+     "legiscan_bill_id": 2071486,
+     "bill_number": "H0650",
+     "bill_title": "An act relating to educational technology products",
+     "bill_url": "https://legiscan.com/VT/bill/H0650/2025",
+     "bill_text_url": "https://legiscan.com/VT/text/H0650/2025",
+     "bill_status": "Engrossed",
+     "bill_stage": "debated",
+     "last_action": "Referred to Committee on Finance per Senate Rule 31",
+     "last_action_date": "2026-05-13",
+     "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
@@ -4445,7 +5117,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-08T18:38:26.285873"
+   "last_updated": "2026-09-08T21:12:16.380938"
   },
   {
    "state_code": "PR",
@@ -4498,7 +5170,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-08T18:38:26.286949"
+   "last_updated": "2026-09-08T21:12:16.382882"
   },
   {
    "state_code": "VI",
@@ -4545,7 +5217,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-08T18:38:26.287410"
+   "last_updated": "2026-09-08T21:12:16.383556"
   }
  ]
 }
