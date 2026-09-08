@@ -1,4 +1,8 @@
-# Text-density scorer — scope (not built yet)
+# Text-density scorer — design notes
+
+> **Built 2026-09-08** as `backend/app/sync/text_scorer.py`, run with
+> `python -m app.sync.legiscan_sync --score-text`. The notes below are the original scope;
+> thresholds now live at the top of that module and the README documents the rules.
 
 **Problem.** `score_bill()` sees only the title. A bill clears the LegiScan full-text query by
 mentioning an AI term *once, anywhere* — so digital-citizenship, cyberbullying and CS-curriculum

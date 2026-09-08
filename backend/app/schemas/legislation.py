@@ -30,6 +30,12 @@ class BillOut(BillBrief):
     """Full review-queue row."""
     state_code: str
     description: Optional[str] = None
+    flag_reason: Optional[str] = None
+    superseded_by: Optional[int] = None
+    ai_mentions: Optional[int] = None
+    ai_in_heading: Optional[bool] = None
+    definition_only: Optional[bool] = None
+    text_words: Optional[int] = None
     subjects: Optional[list] = None
     status_date: Optional[str]
     relevance_score: Optional[int]

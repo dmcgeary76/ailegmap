@@ -26,7 +26,7 @@ import enum
 import re
 
 from sqlalchemy import (
-    Column, String, Text, DateTime, Boolean, Integer, JSON,
+    Column, String, Text, DateTime, Boolean, Integer, Float, JSON,
     Enum as SQLEnum, ForeignKey, UniqueConstraint,
 )
 from sqlalchemy.orm import relationship
@@ -191,6 +191,18 @@ class Bill(Base):
     flag_reason = Column(String(20))        # noise | higher_ed | review | ""
     matched_ai_terms = Column(JSON, default=list)
     matched_edu_terms = Column(JSON, default=list)
+
+    # Text-density score (app/sync/text_scorer.py). The text itself is never
+    # stored; text_hash lets a re-run skip unchanged documents.
+    text_doc_id = Column(Integer)
+    text_hash = Column(String(64))
+    text_mime = Column(Integer)          # LegiScan mime_id (1 HTML, 2 PDF, 6 docx ...)
+    text_words = Column(Integer)         # None = document fetched but unreadable
+    ai_mentions = Column(Integer)
+    ai_in_heading = Column(Boolean)
+    ai_density = Column(Float)           # mentions per 1,000 words
+    definition_only = Column(Boolean)
+    text_scored_at = Column(DateTime)
 
     # Carry-over duplicate: LegiScan gives a bill a fresh id when a two-year
     # session rolls into its second year, so the same bill can exist twice.

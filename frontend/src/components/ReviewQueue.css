@@ -233,3 +233,10 @@
   color: #9ca3af;
   padding: 1.5rem;
 }
+
+.rq-text {
+  margin-top: 3px;
+  font-size: 0.72rem;
+  color: #6b7280;
+  white-space: nowrap;
+}

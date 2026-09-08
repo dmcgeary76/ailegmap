@@ -7,4 +7,5 @@ python-dotenv==1.0.0
 requests==2.31.0
 pytest==7.4.3
 httpx==0.25.2          # FastAPI TestClient
+pypdf==4.3.1           # text-density scorer: PDF bill texts
 # psycopg2-binary==2.9.9   # only for scripts/migrate_from_postgres.py

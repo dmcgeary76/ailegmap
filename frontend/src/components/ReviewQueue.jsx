@@ -164,6 +164,10 @@ function ReviewQueue() {
           <select value={flagReason} onChange={(e) => setFlagReason(e.target.value)}>
             <option value="">All</option>
             <option value="review">Review</option>
+            <option value="dense">Dense (text is about AI)</option>
+            <option value="thin_mention">Thin mention (definitions only)</option>
+            <option value="title_only">Title only (no AI in text)</option>
+            <option value="text_unreadable">Text unreadable</option>
             <option value="noise">Noise</option>
             <option value="higher_ed">Higher-ed</option>
           </select>
@@ -273,6 +277,14 @@ function ReviewQueue() {
                   </td>
                   <td className="rq-terms">
                     {terms.length ? terms.join(', ') : <span className="rq-muted">—</span>}
+                    {it.text_scored_at || it.text_words != null || it.ai_mentions != null ? (
+                      <div className="rq-text" title="AI-term hits in the bill text (text-density scorer)">
+                        {it.text_words == null
+                          ? 'text: unreadable'
+                          : `text: ${it.ai_mentions} hit${it.ai_mentions === 1 ? '' : 's'} / ${it.text_words} words${it.ai_in_heading ? ' · in heading' : ''}${it.definition_only ? ' · definitions only' : ''}`}
+                      </div>
+                    ) : null}
+                    {it.superseded_by ? <div className="rq-text" title={`Carried over; the newer copy is LegiScan id ${it.superseded_by}`}>carry-over duplicate</div> : null}
                   </td>
                   <td>
                     {it.effective_included ? (

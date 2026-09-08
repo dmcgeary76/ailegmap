@@ -7,6 +7,13 @@ Timestamps are in the project's local time.
 
 ## 2026-09-08
 
+### Text-density scorer (the roadmap item)
+- New `app/sync/text_scorer.py`: `--score-text` fetches each HIGH / MEDIUM / INCLUDED bill's newest text (`getBill` → `getBillText`), extracts HTML / PDF (`pypdf`) / .docx, counts AI-term hits (same vocabulary as the title scorer, both-boundary matching for short terms, overlapping hits de-duplicated), detects a hit in a section heading, and checks whether every hit sits within 200 chars of a definition cue. Stored on `bills` as counts only — `text_words`, `ai_mentions`, `ai_in_heading`, `ai_density`, `definition_only`, plus `text_doc_id` / `text_hash` / `text_mime` / `text_scored_at`; the text itself is never kept.
+- **Rules (`combine`)**: HIGH with zero hits in a ≥200-word document → LOW `title_only`; MEDIUM with a heading hit or ≥3 hits → MEDIUM `dense` (review these first); MEDIUM with ≤2 hits all in definitions → LOW `thin_mention`; unreadable formats (WordPerfect, .doc, RTF) → `text_unreadable`, confidence unchanged. Title-only `noise` / `higher_ed` gates are never overridden. Thresholds at the top of the module — first cut, to be tuned from `--text-report`.
+- `--rescore` now re-folds the stored text columns, so a text-derived demotion survives a vocabulary change. `--force-text` re-fetches regardless of hash; already-scored bills stay candidates so a changed document is re-read.
+- Review queue shows `text: N hits / M words · in heading · definitions only`, a carry-over-duplicate note, and the new flags in the flag filter.
+- 7 new tests (52 total) incl. an end-to-end run against a stubbed LegiScan. `pypdf` added to requirements.
+
 ### First full re-sync after the query fix — and two more sync bugs it exposed
 - **Numbers.** 2,206 bills found across 50 states + DC (was 1,197); 991 new; 2,167 `getBill` calls, 0 errors, 23 minutes. DC has rows for the first time (42). LegiScan `getSearch` counts: CA 200, NY 150, VA 142, NJ 122, HI 118 — CA's round 200 is being checked for a result cap.
 - **Bug: the title scorer's "ai" term matched "aid".** `_matched_terms` enforced only a left word boundary (so "school" matches "schools"), which made `ai` match "school **ai**d", "aims", "aircraft". Seven Michigan school-aid appropriations bills and nine New York budget bills scored HIGH and went straight onto the map. Fixed: terms of three letters or fewer require a right boundary too. Noise vocabulary also gains `appropriations`, `honor`, `inaugural year` and `necessary to implement the state`. `--rescore` moved 125 rows.

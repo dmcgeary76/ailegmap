@@ -127,6 +127,24 @@ The sync requires an AI term **and** an education term in the bill text (via a L
 
 MEDIUM used to auto-include. It stopped on 2026-09-04 after an audit found that 0 of 126 MEDIUM bills had an AI term in the title — they were digital-citizenship, cyberbullying and computer-science-curriculum bills that mention AI once in a definitions section, and they were setting the map color for 21 states. The rule lives in one place, `AUTO_INCLUDE_CONFIDENCE` in `app/models/legislation.py`. The scorer only sees titles; the real fix (scoring AI-term density in the bill *text* via `getBillText`) is on the roadmap.
 
+**Then the text is read.** `python -m app.sync.legiscan_sync --score-text` fetches each HIGH / MEDIUM /
+INCLUDED bill's newest text document (`getBill` → `getBillText`; HTML, PDF and .docx are readable, the
+rest are flagged `text_unreadable`), counts AI-term hits, notes whether one sits in a section heading
+and whether every hit is inside a definition, and folds that into the confidence:
+
+| Title says | Text says | Result |
+|---|---|---|
+| HIGH | zero AI mentions in a real document | LOW, `title_only` (e.g. "educational materials" false positives) |
+| MEDIUM | a heading mentions AI, or 3+ hits | stays MEDIUM, flagged `dense` — review these first |
+| MEDIUM | ≤ 2 hits, all inside definitions | LOW, `thin_mention` |
+| MEDIUM | anything else | stays MEDIUM, `review` |
+
+Re-runs skip bills whose `text_hash` hasn't changed; `--force-text` re-fetches everything;
+`--text-report` prints the distribution without touching the network. The text itself is never stored —
+only the counts (`ai_mentions`, `ai_in_heading`, `ai_density`, `definition_only`, `text_words`) — and
+`--rescore` re-folds those stored counts, so a text-derived demotion survives a vocabulary change.
+Thresholds live at the top of `app/sync/text_scorer.py`.
+
 A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and survives future syncs.
 Decisions live in **`backend/data/decisions.csv`** (tracked in git), keyed by LegiScan bill id: the review
 UI writes the file after every decision, and `python -m app.seed` replays it onto the database, so the
@@ -180,7 +198,7 @@ python test_data_pipes.py      # data-pipeline connectivity checks
 - [x] `getSearch` pagination for states exceeding the 50-result page
 - [x] Real state outlines (d3-geo Albers USA + us-atlas)
 - [x] Local (district/city/county) actions layer with derived leaning
-- [ ] **Text-density scorer:** score AI-term density in the bill text via `getBillText` and demote definition-only mentions — scoped in [`docs/TEXT_DENSITY_SCORER.md`](docs/TEXT_DENSITY_SCORER.md)
+- [x] **Text-density scorer:** `--score-text` reads each candidate bill's text and demotes definition-only mentions (`app/sync/text_scorer.py`; design notes in [`docs/TEXT_DENSITY_SCORER.md`](docs/TEXT_DENSITY_SCORER.md))
 - [ ] Automated state-education-agency (SEA) guidance scraper
 - [ ] `--from-url` helper that drafts a local-action row from an article into a pending queue (only if weekly manual intake gets tedious)
 

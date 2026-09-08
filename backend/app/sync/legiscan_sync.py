@@ -660,7 +660,9 @@ def rescore(db, scope: str = "all") -> Dict[str, int]:
         if bill.last_action_date and bill.last_action_date.startswith("0000"):
             bill.last_action_date = ""
         score = score_bill({"title": bill.bill_title or "", "relevance": bill.relevance_score or 0})
-        new = dict(match_confidence=score["confidence"], flag_reason=flag_for(score),
+        from app.sync.text_scorer import combine, text_score_from_bill
+        conf, flag = combine(score["confidence"], flag_for(score), text_score_from_bill(bill))
+        new = dict(match_confidence=conf, flag_reason=flag,
                    matched_ai_terms=score["title_ai_terms"], matched_edu_terms=score["title_edu_terms"])
         if any(getattr(bill, k) != v for k, v in new.items()):
             if bill.match_confidence != new["match_confidence"]:
@@ -687,6 +689,13 @@ def main():
     parser.add_argument("--query", type=str, default=None,
                         help="Override the LegiScan search query for this run (diagnosis: e.g. --preview "
                              "--query 'SB1734' to check whether the index knows a bill at all)")
+    parser.add_argument("--score-text", action="store_true",
+                        help="Fetch each HIGH/MEDIUM/INCLUDED bill's latest text (getBill + getBillText), "
+                             "score AI-term density, and fold it into the confidence")
+    parser.add_argument("--force-text", action="store_true",
+                        help="With --score-text: re-fetch even when the stored text_hash is unchanged")
+    parser.add_argument("--text-report", action="store_true",
+                        help="Print the distribution of stored text scores (no network)")
     parser.add_argument("--rescore", action="store_true",
                         help="Re-run the title scorer over stored bills (no API calls); combine with --state or --all")
     args = parser.parse_args()
@@ -695,6 +704,34 @@ def main():
         parser.print_help()
         return
     scope = "all" if args.all else args.state.upper()
+
+    if args.text_report:
+        from app.database import SessionLocal, init_db
+        from app.sync.text_scorer import distribution
+        init_db()
+        db = SessionLocal()
+        try:
+            print(distribution(db, scope))
+        finally:
+            db.close()
+        return
+
+    if args.score_text:
+        from app.database import SessionLocal, init_db
+        from app.sync.text_scorer import TextScorer, distribution
+        init_db()
+        db = SessionLocal()
+        try:
+            sync = LegiScanSync(db, fetch_status=False)
+            stats = TextScorer(db, sync, force=args.force_text).run(scope)
+            print("\n📊 TEXT SCORING SUMMARY")
+            for k, v in stats.items():
+                print(f"{k:<18} {v}")
+            print()
+            print(distribution(db, scope))
+        finally:
+            db.close()
+        return
 
     if args.rescore:
         from app.database import SessionLocal, init_db
