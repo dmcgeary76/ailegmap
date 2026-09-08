@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T19:12:01.716996Z",
+ "generated_at": "2026-09-08T19:28:08.773486Z",
  "last_sync": "2026-09-08T19:12:01.122204Z",
  "summary": {
   "jurisdictions": 54,
@@ -23,9 +23,9 @@
   },
   "bills": {
    "total": 2205,
-   "included": 103,
-   "pending": 2113,
-   "excluded": 28
+   "included": 102,
+   "pending": 2092,
+   "excluded": 29
   },
   "local_actions": {
    "total": 3,
@@ -242,8 +242,8 @@
     "total": 22,
     "included": 3,
     "resolutions": 0,
-    "pending": 20,
-    "manually_included": 2,
+    "pending": 19,
+    "manually_included": 3,
     "manually_excluded": 0,
     "held": 19,
     "by_stage": {
@@ -314,7 +314,7 @@
      "last_action": "Senate consent calendar",
      "last_action_date": "2026-03-09",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
@@ -401,8 +401,8 @@
     "total": 200,
     "included": 6,
     "resolutions": 0,
-    "pending": 187,
-    "manually_included": 5,
+    "pending": 186,
+    "manually_included": 6,
     "manually_excluded": 8,
     "held": 194,
     "by_stage": {
@@ -473,7 +473,7 @@
      "last_action": "In committee: Set, first hearing. Hearing canceled at the request of author.",
      "last_action_date": "2026-04-07",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -811,8 +811,8 @@
     "total": 88,
     "included": 1,
     "resolutions": 0,
-    "pending": 88,
-    "manually_included": 0,
+    "pending": 87,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 87,
     "by_stage": {
@@ -834,7 +834,7 @@
     "last_action": "Died in Education Pre-K - 12",
     "last_action_date": "2026-03-13",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -851,7 +851,7 @@
      "last_action": "Died in Education Pre-K - 12",
      "last_action_date": "2026-03-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
@@ -965,8 +965,8 @@
     "total": 118,
     "included": 6,
     "resolutions": 4,
-    "pending": 114,
-    "manually_included": 4,
+    "pending": 112,
+    "manually_included": 6,
     "manually_excluded": 0,
     "held": 112,
     "by_stage": {
@@ -1069,7 +1069,7 @@
      "last_action": "Referred to EDU/LBT.",
      "last_action_date": "2026-03-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": true
     },
@@ -1085,7 +1085,7 @@
      "last_action": "Referred to EDU/LBT.",
      "last_action_date": "2026-03-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": true
     }
@@ -1326,16 +1326,16 @@
    "legislation_stage": "introduced",
    "bill_counts": {
     "total": 15,
-    "included": 4,
+    "included": 3,
     "resolutions": 0,
-    "pending": 13,
-    "manually_included": 2,
-    "manually_excluded": 0,
-    "held": 11,
+    "pending": 11,
+    "manually_included": 3,
+    "manually_excluded": 1,
+    "held": 12,
     "by_stage": {
      "passed": 0,
      "debated": 0,
-     "introduced": 4,
+     "introduced": 3,
      "failed": 0
     }
    },
@@ -1384,23 +1384,7 @@
      "last_action": "Introduced, placed on calendar. H.J. 303.",
      "last_action_date": "2026-02-16",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 1489,
-     "legiscan_bill_id": 2090504,
-     "bill_number": "HSB609",
-     "bill_title": "A bill for an act modifying the duties of the workforce development board, state board of education, and department of education related to cyber and artificial intelligence.(See HF 2528.)",
-     "bill_url": "https://legiscan.com/IA/bill/HSB609/2025",
-     "bill_text_url": "https://legiscan.com/IA/text/HSB609/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "Committee report approving bill, renumbered as HF 2528.",
-     "last_action_date": "2026-02-16",
-     "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -1543,8 +1527,8 @@
     "total": 25,
     "included": 3,
     "resolutions": 2,
-    "pending": 23,
-    "manually_included": 2,
+    "pending": 22,
+    "manually_included": 3,
     "manually_excluded": 0,
     "held": 22,
     "by_stage": {
@@ -1599,7 +1583,7 @@
      "last_action": "Taken by the Clerk of the House and presented to the Secretary of State in accordance with the Rules of the House.",
      "last_action_date": "2025-06-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": true
     },
@@ -1745,8 +1729,8 @@
     "total": 105,
     "included": 9,
     "resolutions": 0,
-    "pending": 98,
-    "manually_included": 7,
+    "pending": 96,
+    "manually_included": 9,
     "manually_excluded": 0,
     "held": 96,
     "by_stage": {
@@ -1849,7 +1833,7 @@
      "last_action": "Referred Education, Energy, and the Environment",
      "last_action_date": "2024-03-18",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -1865,7 +1849,7 @@
      "last_action": "Hearing 3/06 at 1:00 p.m.",
      "last_action_date": "2024-02-08",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -1950,8 +1934,8 @@
     "total": 104,
     "included": 2,
     "resolutions": 0,
-    "pending": 104,
-    "manually_included": 0,
+    "pending": 102,
+    "manually_included": 2,
     "manually_excluded": 0,
     "held": 102,
     "by_stage": {
@@ -1973,7 +1957,7 @@
     "last_action": "Accompanied a study order, see S2792",
     "last_action_date": "2025-12-04",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -1990,7 +1974,7 @@
      "last_action": "Accompanied a study order, see S2792",
      "last_action_date": "2025-12-04",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -2006,7 +1990,7 @@
      "last_action": "Reporting date extended to Wednesday, March 18, 2026",
      "last_action_date": "2026-02-09",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
@@ -2269,8 +2253,8 @@
     "total": 48,
     "included": 4,
     "resolutions": 0,
-    "pending": 45,
-    "manually_included": 3,
+    "pending": 44,
+    "manually_included": 4,
     "manually_excluded": 0,
     "held": 44,
     "by_stage": {
@@ -2292,7 +2276,7 @@
     "last_action": "Died In Committee",
     "last_action_date": "2026-02-03",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -2309,7 +2293,7 @@
      "last_action": "Died In Committee",
      "last_action_date": "2026-02-03",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -2824,8 +2808,8 @@
     "total": 29,
     "included": 1,
     "resolutions": 0,
-    "pending": 29,
-    "manually_included": 0,
+    "pending": 28,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 28,
     "by_stage": {
@@ -2847,7 +2831,7 @@
     "last_action": "Action Postponed Indefinitely",
     "last_action_date": "2026-02-04",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -2864,7 +2848,7 @@
      "last_action": "Action Postponed Indefinitely",
      "last_action_date": "2026-02-04",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
@@ -2916,8 +2900,8 @@
     "total": 149,
     "included": 18,
     "resolutions": 0,
-    "pending": 132,
-    "manually_included": 7,
+    "pending": 130,
+    "manually_included": 9,
     "manually_excluded": 10,
     "held": 131,
     "by_stage": {
@@ -3052,7 +3036,7 @@
      "last_action": "REFERRED TO RULES",
      "last_action_date": "2026-07-29",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -3068,7 +3052,7 @@
      "last_action": "referred to education",
      "last_action_date": "2026-07-31",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -3493,8 +3477,8 @@
     "total": 39,
     "included": 3,
     "resolutions": 0,
-    "pending": 37,
-    "manually_included": 2,
+    "pending": 36,
+    "manually_included": 3,
     "manually_excluded": 0,
     "held": 36,
     "by_stage": {
@@ -3549,7 +3533,7 @@
      "last_action": "Approved by Governor 05/12/2026",
      "last_action_date": "2026-05-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -4313,8 +4297,8 @@
     "total": 142,
     "included": 3,
     "resolutions": 0,
-    "pending": 141,
-    "manually_included": 1,
+    "pending": 139,
+    "manually_included": 3,
     "manually_excluded": 0,
     "held": 139,
     "by_stage": {
@@ -4336,7 +4320,7 @@
     "last_action": "Acts of Assembly Chapter text (CHAP0937)",
     "last_action_date": "2026-04-13",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -4353,7 +4337,7 @@
      "last_action": "Acts of Assembly Chapter text (CHAP0937)",
      "last_action_date": "2026-04-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -4369,7 +4353,7 @@
      "last_action": "Acts of Assembly Chapter text (CHAP0943)",
      "last_action_date": "2026-04-13",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -4422,8 +4406,8 @@
     "total": 75,
     "included": 1,
     "resolutions": 0,
-    "pending": 74,
-    "manually_included": 0,
+    "pending": 73,
+    "manually_included": 1,
     "manually_excluded": 1,
     "held": 74,
     "by_stage": {
@@ -4445,7 +4429,7 @@
     "last_action": "By resolution, returned to Senate Rules Committee for third reading.",
     "last_action_date": "2026-03-12",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -4462,7 +4446,7 @@
      "last_action": "By resolution, returned to Senate Rules Committee for third reading.",
      "last_action_date": "2026-03-12",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
@@ -4682,8 +4666,8 @@
     "total": 42,
     "included": 1,
     "resolutions": 0,
-    "pending": 42,
-    "manually_included": 0,
+    "pending": 41,
+    "manually_included": 1,
     "manually_excluded": 0,
     "held": 41,
     "by_stage": {
@@ -4705,7 +4689,7 @@
     "last_action": "Referred to Committee on Committee of the Whole",
     "last_action_date": "2025-12-02",
     "match_confidence": "HIGH",
-    "decision": "PENDING",
+    "decision": "INCLUDED",
     "effective_included": true,
     "is_resolution": false
    },
@@ -4722,7 +4706,7 @@
      "last_action": "Referred to Committee on Committee of the Whole",
      "last_action_date": "2025-12-02",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
