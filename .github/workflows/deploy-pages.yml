@@ -9,7 +9,6 @@ name: Deploy static map to Pages
 on:
   push:
     branches: [main]
-    paths: ["frontend/**", "docs/**", ".github/workflows/deploy-pages.yml"]
   workflow_dispatch:
 
 permissions:
