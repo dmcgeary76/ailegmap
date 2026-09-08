@@ -1,15 +1,6 @@
 {
   "state_code": "LA",
-  "research_status": "NOT_RESEARCHED",
-  "_draft": {
-    "drafted_by": "claude 2026-09-08",
-    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
-    "verify": [
-      "HB 119 (Ivy Daniels Act, signed 2026-06-09, effective 2026-08-01) is a criminal statute on AI-generated images with a school-instruction mandate for grades 6+. It is in notes, not stance -- confirm you agree it doesn't move LA to REGULATE",
-      "HB 1149 (AI instruction grades 6-12) shows as introduced 2026-04-01 in the DB; the session ended in June -- outcome unverified, next sync will tell",
-      "Open the LDOE PDF once and confirm the four-tier use framework (AI-Empowered / Enhanced / Assisted / Prohibited) is in it -- that detail comes from a secondary source"
-    ]
-  },
+  "research_status": "RESEARCHED",
   "guidance_exists": true,
   "guidance_type": "ADVISORY",
   "guidance_issued_by": "Louisiana Department of Education",

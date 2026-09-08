@@ -1,14 +1,6 @@
 {
   "state_code": "AR",
-  "research_status": "NOT_RESEARCHED",
-  "_draft": {
-    "drafted_by": "claude 2026-09-08",
-    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
-    "verify": [
-      "Confirm no ADE/DESE K-12 AI guidance document exists (dese.ade.arkansas.gov) -- none found on aiforeducation.io, Ballotpedia or Playlab as of Sept 2026",
-      "The old STATE_DATA_SOURCES note claimed 'requires vendor data agreements specifying student data handling' -- no source found; dropped unless you have one"
-    ]
-  },
+  "research_status": "RESEARCHED",
   "guidance_exists": false,
   "guidance_type": "NONE",
   "regulatory_stance": "ABSENT",

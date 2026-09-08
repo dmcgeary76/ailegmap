@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T16:42:00.750888Z",
+ "generated_at": "2026-09-08T18:34:35.908609Z",
  "last_sync": null,
  "summary": {
   "jurisdictions": 54,
@@ -11,15 +11,15 @@
    "failed": 2,
    "none": 33
   },
-  "states_researched": 9,
-  "states_with_guidance": 6,
+  "states_researched": 14,
+  "states_with_guidance": 10,
   "states_by_stance": {
    "PROHIBIT": 1,
    "RESTRICT": 0,
-   "REGULATE": 0,
-   "SUPPORT": 4,
+   "REGULATE": 1,
+   "SUPPORT": 7,
    "MANDATE": 1,
-   "ABSENT": 3
+   "ABSENT": 4
   },
   "bills": {
    "total": 1197,
@@ -140,7 +140,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T16:41:59.782328"
+   "last_updated": "2026-09-08T18:34:34.073796"
   },
   {
    "state_code": "AZ",
@@ -238,7 +238,7 @@
   {
    "state_code": "AR",
    "state_name": "Arkansas",
-   "research_status": "NOT_RESEARCHED",
+   "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
     "total": 6,
@@ -275,10 +275,15 @@
    "regulatory_stance": "ABSENT",
    "maturity": "NASCENT",
    "key_focus_areas": [],
-   "unique_context": null,
-   "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.197125"
+   "unique_context": "No state education agency guidance on AI in K-12. The Governor's AI & Analytics Center of Excellence working group (launched June 2024) reported in Feb 2025 and Feb 2026 on AI in state government, not schools. A 2025 task-force report recommended AI-literacy curricular frameworks, educator PD, equitable access, student-data protection and district implementation support, but no statewide guidance document has followed.",
+   "notes": "Trackers (aiforeducation.io, Ballotpedia) list Arkansas as having no released K-12 AI guidance. The 2021 CSforAR high-school AI/ML course standards predate generative AI and are a curriculum standard, not usage guidance.",
+   "sources": [
+    "https://governor.arkansas.gov/news_post/governor-sanders-receives-report-from-arkansas-ai-and-analytics-center-of-excellence/",
+    "https://governor.arkansas.gov/news_post/sanders-receives-ai-center-of-excellence-effectiveness-and-safety-report/",
+    "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
+    "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
+   ],
+   "last_updated": "2026-09-08T18:34:34.074913"
   },
   {
    "state_code": "CA",
@@ -456,12 +461,12 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-08T16:41:59.783155"
+   "last_updated": "2026-09-08T18:34:34.075667"
   },
   {
    "state_code": "CO",
    "state_name": "Colorado",
-   "research_status": "NOT_RESEARCHED",
+   "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
     "total": 15,
@@ -489,19 +494,36 @@
     "headline": null
    },
    "local_actions": [],
-   "guidance_exists": false,
-   "guidance_type": "NONE",
-   "guidance_issued_by": null,
-   "guidance_issued_date": null,
-   "guidance_url": null,
-   "guidance_core_principles": [],
-   "regulatory_stance": "ABSENT",
-   "maturity": "NASCENT",
-   "key_focus_areas": [],
-   "unique_context": null,
-   "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.195145"
+   "guidance_exists": true,
+   "guidance_type": "ADVISORY",
+   "guidance_issued_by": "Colorado Education Initiative (nonprofit), linked and supplemented by the Colorado Department of Education",
+   "guidance_issued_date": "2024-08-01T00:00:00",
+   "guidance_url": "https://ed.cde.state.co.us/artificialintelligence",
+   "guidance_core_principles": [
+    "human_judgment_central",
+    "ai_supplements_not_replaces_educators",
+    "critical_evaluation_of_outputs",
+    "data_privacy",
+    "equity"
+   ],
+   "regulatory_stance": "SUPPORT",
+   "maturity": "ACTIVE",
+   "key_focus_areas": [
+    "educator_professional_development",
+    "ai_literacy",
+    "district_pilots",
+    "data_privacy"
+   ],
+   "unique_context": "Colorado's guidance is a public-private artifact: the Colorado Roadmap for AI in K-12 Education (Colorado Education Initiative, August 2024) with its 'If and How' decision checklist and AI Resource Evaluation Tool, hosted alongside CDE's own AI competency profiles for students, educators, administrators and specialized service providers. Nothing is mandatory; districts implement individually.",
+   "notes": "CDE's AI page states it does not endorse listed resources and cites FERPA/COPPA as the binding constraints. A proposed 2025-26 ballot initiative (#148, 'AI-Powered Education') would create AI-delivered instruction with adult 'guides'; it is not law.",
+   "sources": [
+    "https://ed.cde.state.co.us/artificialintelligence",
+    "https://www.coloradoedinitiative.org/wp-content/uploads/2024/08/Colorado-Roadmap-for-AI-in-K-12-Education_August-2024.pdf",
+    "https://www.coloradoedinitiative.org/colorado-releases-roadmap-for-ai-in-k-12-education/",
+    "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
+    "https://leg.colorado.gov/initiative_files/323/download"
+   ],
+   "last_updated": "2026-09-08T18:34:34.076517"
   },
   {
    "state_code": "CT",
@@ -877,7 +899,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T16:41:59.784333"
+   "last_updated": "2026-09-08T18:34:34.078136"
   },
   {
    "state_code": "ID",
@@ -1264,7 +1286,7 @@
   {
    "state_code": "LA",
    "state_name": "Louisiana",
-   "research_status": "NOT_RESEARCHED",
+   "research_status": "RESEARCHED",
    "legislation_stage": "introduced",
    "bill_counts": {
     "total": 17,
@@ -1340,19 +1362,35 @@
     "headline": null
    },
    "local_actions": [],
-   "guidance_exists": false,
-   "guidance_type": "NONE",
-   "guidance_issued_by": null,
-   "guidance_issued_date": null,
-   "guidance_url": null,
-   "guidance_core_principles": [],
-   "regulatory_stance": "ABSENT",
-   "maturity": "NASCENT",
-   "key_focus_areas": [],
-   "unique_context": null,
-   "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.188973"
+   "guidance_exists": true,
+   "guidance_type": "ADVISORY",
+   "guidance_issued_by": "Louisiana Department of Education",
+   "guidance_issued_date": "2024-08-28T00:00:00",
+   "guidance_url": "https://doe.louisiana.gov/docs/default-source/technology-footprint/ldoe-ai-guidance.pdf",
+   "guidance_core_principles": [
+    "data_privacy",
+    "ethical_use",
+    "student_centered_learning",
+    "transparency",
+    "professional_development"
+   ],
+   "regulatory_stance": "SUPPORT",
+   "maturity": "ACTIVE",
+   "key_focus_areas": [
+    "data_privacy",
+    "ai_literacy",
+    "professional_development",
+    "tiered_classroom_use"
+   ],
+   "unique_context": "LDOE's 'Artificial Intelligence in Louisiana Schools' (Aug 28, 2024) is advisory, meant as the foundation for local policies, and organizes classroom use into tiers from AI-Empowered to AI-Prohibited. The legislature has so far acted around the edges: HR 249 (2026, adopted) asks BESE to fold AI into content standards; HB 1149 (2026) would require AI instruction in grades 6-12; HB 119 (2026, enacted) is a deepfake-image crime law that also requires schools to teach the consequences from grade 6, with LDOE developing the materials.",
+   "notes": "Superintendent Cade Brumley on the release: 'As the impact of artificial intelligence grows, it's important we provide information on effective and safe utilization.' LDOE also publishes an 'AI for Leaders' companion.",
+   "sources": [
+    "https://doe.louisiana.gov/about/news-releases/release/2024/08/28/louisiana-releases-guidance-for-responsible-use-of-artificial-intelligence-in-k-12-classrooms",
+    "https://doe.louisiana.gov/docs/default-source/technology-footprint/ldoe-ai-guidance.pdf",
+    "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
+    "https://www.billtrack50.com/billdetail/1972291"
+   ],
+   "last_updated": "2026-09-08T18:34:34.078885"
   },
   {
    "state_code": "ME",
@@ -1655,7 +1693,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-08T16:41:59.784849"
+   "last_updated": "2026-09-08T18:34:34.079525"
   },
   {
    "state_code": "MI",
@@ -2289,7 +2327,7 @@
   {
    "state_code": "NM",
    "state_name": "New Mexico",
-   "research_status": "NOT_RESEARCHED",
+   "research_status": "RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
     "total": 20,
@@ -2317,19 +2355,34 @@
     "headline": null
    },
    "local_actions": [],
-   "guidance_exists": false,
-   "guidance_type": "NONE",
-   "guidance_issued_by": null,
-   "guidance_issued_date": null,
-   "guidance_url": null,
-   "guidance_core_principles": [],
-   "regulatory_stance": "ABSENT",
-   "maturity": "NASCENT",
-   "key_focus_areas": [],
-   "unique_context": null,
-   "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.194117"
+   "guidance_exists": true,
+   "guidance_type": "ADVISORY",
+   "guidance_issued_by": "New Mexico Public Education Department",
+   "guidance_issued_date": "2025-04-29T00:00:00",
+   "guidance_url": "https://web.ped.nm.gov/wp-content/uploads/2025/05/NM-AI-Guidance-Signed-4-29-2025.pdf",
+   "guidance_core_principles": [
+    "human_oversight",
+    "data_privacy",
+    "digital_equity",
+    "ai_literacy"
+   ],
+   "regulatory_stance": "SUPPORT",
+   "maturity": "IN_PROGRESS",
+   "key_focus_areas": [
+    "human_oversight",
+    "data_privacy",
+    "digital_equity",
+    "legislative_study"
+   ],
+   "unique_context": "PED's 'AI Guidance for K-12 Education 1.0' (signed April 29, 2025) is non-binding and self-described as in process; it builds on the 2023 Digital Equity in Education Act and uses a 'M.A.Z.E.' framework (Monitor, Assess, Zero-in, Evaluate). The Legislative Education Study Committee ran an AI working group in 2025 and in May 2026 its staff urged lawmakers to adopt comprehensive policy covering data privacy, curriculum and tribal sovereignty. HB 330 (2026) proposed AI ethics as a computer-science elective.",
+   "notes": "AFT New Mexico expects AI language in teacher contracts by 2027. The LESC 2025 working-group report recommended a state oversight body.",
+   "sources": [
+    "https://web.ped.nm.gov/wp-content/uploads/2025/05/NM-AI-Guidance-Signed-4-29-2025.pdf",
+    "https://sourcenm.com/2026/05/29/nm-lawmakers-receive-push-to-update-ai-education-policies/",
+    "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
+    "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
+   ],
+   "last_updated": "2026-09-08T18:34:34.080055"
   },
   {
    "state_code": "NY",
@@ -2735,7 +2788,7 @@
   {
    "state_code": "OK",
    "state_name": "Oklahoma",
-   "research_status": "NOT_RESEARCHED",
+   "research_status": "RESEARCHED",
    "legislation_stage": "debated",
    "bill_counts": {
     "total": 22,
@@ -2811,19 +2864,36 @@
     "headline": null
    },
    "local_actions": [],
-   "guidance_exists": false,
-   "guidance_type": "NONE",
-   "guidance_issued_by": null,
-   "guidance_issued_date": null,
-   "guidance_url": null,
-   "guidance_core_principles": [],
-   "regulatory_stance": "ABSENT",
-   "maturity": "NASCENT",
-   "key_focus_areas": [],
-   "unique_context": null,
-   "notes": null,
-   "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190960"
+   "guidance_exists": true,
+   "guidance_type": "MANDATORY",
+   "guidance_issued_by": "Oklahoma Legislature (SB 1734, Responsible Technology in Schools Act) with implementation guidance from the Oklahoma State Department of Education",
+   "guidance_issued_date": "2026-05-12T00:00:00",
+   "guidance_url": "https://legiscan.com/OK/bill/SB1734/2026",
+   "guidance_core_principles": [
+    "educator_directed_use",
+    "no_ai_high_stakes_decisions",
+    "parent_opt_out",
+    "annual_family_disclosure",
+    "data_minimization"
+   ],
+   "regulatory_stance": "REGULATE",
+   "maturity": "ACTIVE",
+   "key_focus_areas": [
+    "district_policy_mandate",
+    "high_stakes_decisions",
+    "parent_rights",
+    "vendor_transparency"
+   ],
+   "unique_context": "The Oklahoma Responsible Technology in Schools Act (SB 1734, signed May 12, 2026, effective July 1, 2026) is one of the few enacted K-12 AI statutes: AI may be used for instruction only under educator direction, may not be the primary basis for grading, discipline or promotion, parents may opt students out of student-facing AI tools without penalty, and districts must disclose AI vendors and data collected annually. Every district and charter must adopt a board-approved written AI policy before the 2027-28 school year; OSDE is to issue implementation guidance. Non-compliance risks eligibility for state-funded programs.",
+   "notes": "Before the statute, OSDE had published advisory 'Guidance and Considerations for Artificial Intelligence in Oklahoma Schools' (2024) with an AI acceptable-use rating scale. Most other 2026 Oklahoma AI bills (deepfakes, chatbot protections for minors, agency oversight) stalled, partly under a federal executive order discouraging state AI regulation.",
+   "sources": [
+    "https://legiscan.com/OK/bill/SB1734/2026",
+    "https://oksenate.gov/press-releases/senator-seifried-advances-bill-setting-guardrails-ai-schools",
+    "https://www.lightspeedsystems.com/blog/oklahoma-sb-1734-is-now-law-what-every-district-needs-to-do-before-2027-28/",
+    "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
+    "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
+   ],
+   "last_updated": "2026-09-08T18:34:34.080809"
   },
   {
    "state_code": "OR",
@@ -2964,7 +3034,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-08T16:41:59.785896"
+   "last_updated": "2026-09-08T18:34:34.081856"
   },
   {
    "state_code": "SC",
@@ -3315,7 +3385,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-08T16:41:59.786462"
+   "last_updated": "2026-09-08T18:34:34.082324"
   },
   {
    "state_code": "UT",
@@ -3884,7 +3954,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-08T16:41:59.783749"
+   "last_updated": "2026-09-08T18:34:34.077442"
   },
   {
    "state_code": "PR",
@@ -3937,7 +4007,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-08T16:41:59.785383"
+   "last_updated": "2026-09-08T18:34:34.081277"
   },
   {
    "state_code": "VI",
@@ -3984,7 +4054,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-08T16:41:59.786958"
+   "last_updated": "2026-09-08T18:34:34.082808"
   }
  ]
 }

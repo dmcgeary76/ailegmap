@@ -1,15 +1,6 @@
 {
   "state_code": "CO",
-  "research_status": "NOT_RESEARCHED",
-  "_draft": {
-    "drafted_by": "claude 2026-09-08",
-    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
-    "verify": [
-      "Judgment call: the Roadmap is authored by the Colorado Education Initiative (a nonprofit), not CDE. CDE links to it and publishes AI competency profiles but says it 'does not endorse any resource'. Drafted as guidance_exists=true / ADVISORY with the issuer named honestly -- flip to false if you want SEA-authored only",
-      "Maturity ACTIVE vs IN_PROGRESS: roadmap (Aug 2024) + statewide AI Summit (Mar 2025) + CDE competency profiles + district pilots. ACTIVE proposed",
-      "Ballot initiative 2025-26 #148 'AI-Powered Education' is a proposed citizen initiative, not law -- mentioned in notes only"
-    ]
-  },
+  "research_status": "RESEARCHED",
   "guidance_exists": true,
   "guidance_type": "ADVISORY",
   "guidance_issued_by": "Colorado Education Initiative (nonprofit), linked and supplemented by the Colorado Department of Education",

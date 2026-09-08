@@ -1,15 +1,6 @@
 {
   "state_code": "NM",
-  "research_status": "NOT_RESEARCHED",
-  "_draft": {
-    "drafted_by": "claude 2026-09-08",
-    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
-    "verify": [
-      "Maturity IN_PROGRESS proposed: the PED document is literally labeled 'In Process ... 1.0' and the LESC analyst told lawmakers in May 2026 the state still needs comprehensive policy. Change to ACTIVE if you weight the signed guidance more",
-      "HB 330 (2026, AI ethics as a CS elective) -- outcome unverified; FutureEd's tracker lists it without a status",
-      "Tribal sovereignty as a named principle comes from the LESC May 2026 recommendation, not the PED document itself -- it's in notes, not guidance_core_principles"
-    ]
-  },
+  "research_status": "RESEARCHED",
   "guidance_exists": true,
   "guidance_type": "ADVISORY",
   "guidance_issued_by": "New Mexico Public Education Department",

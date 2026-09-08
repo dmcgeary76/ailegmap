@@ -7,6 +7,12 @@ Timestamps are in the project's local time.
 
 ## 2026-09-08
 
+### Five more researched profiles: AR, CO, LA, NM, OK (9 → 14 of 54)
+- Drafted from current agency pages, statutes and trackers, reviewed and approved by David the same day. **OK** REGULATE / ACTIVE — the Responsible Technology in Schools Act (SB 1734, signed 2026-05-12, effective 2026-07-01) mandates board-approved district AI policies before 2027-28, bars AI as the primary basis for grading/discipline/promotion, and gives parents an opt-out. **LA** SUPPORT / ACTIVE (LDOE advisory guidance, 2024-08-28; HB 119 Ivy Daniels Act adds a grade-6+ instruction mandate on AI-image offenses). **NM** SUPPORT / IN_PROGRESS (PED guidance 1.0 signed 2025-04-29; LESC still pushing for comprehensive policy). **CO** SUPPORT / ACTIVE (Colorado Education Initiative roadmap, Aug 2024, linked by CDE — nonprofit-authored, noted as such). **AR** ABSENT / NASCENT (no SEA guidance; governor's AI working group reports cover state government only).
+- Also updated `docs/STATE_DATA_SOURCES.md`-era claims: the OK note undersold SB 1734; the AR "vendor data agreements" claim had no source and was dropped.
+- **Sync recall bug found:** OK SB 1734 — a signed statute with "artificial intelligence" in its title — is not in the bills table after the June 30 sync. Investigate before the next full sync.
+- `docs/data.json` regenerated: 14 researched, stance counts SUPPORT 7 / ABSENT 4 / PROHIBIT 1 / REGULATE 1 / MANDATE 1.
+
 ### HIGH-bill audit: every auto-included bill now has a human-readable decision
 - **Why.** 75 HIGH bills were coloring 25 states with nobody having looked at them. Among the ones painting states "Passed into law": WY HB0102 (a deepfake/exploitative-imagery crime statute), ME LD109 (a Resolve about the Arts Commission and AI copyright), NY S08831 (automated employment-decision tools for public employers — school districts appear only as employers), plus two adopted resolutions (HI HR40, LA HR249) that "urge" a department and are not laws.
 - **Decisions.** All 75 reviewed by title/description. 14 excluded (CT HB06889, ME LD109, NJ A2616/A4821/A5034, NY A04550/A07838/A09106/S08484/A09487/S08831, PA HB2314, WA SB6082, WY HB0102), 61 included, each with a one-line note; borderline keeps flagged in the note (NY S10049 DASA/cyberbullying, NY A08947 internet-safety curriculum, VT H0863 marked *verify*). Reviewer is recorded as `claude-audit-2026-09-08` so the calls are distinguishable from David's — flip any row in the CSV.

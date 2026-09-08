@@ -1,16 +1,6 @@
 {
   "state_code": "OK",
-  "research_status": "NOT_RESEARCHED",
-  "_draft": {
-    "drafted_by": "claude 2026-09-08",
-    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
-    "verify": [
-      "SB 1734 IS law: signed by Gov. Stitt 2026-05-12 (Senate 42-0, House 89-0), effective 2026-07-01, written district policies due before 2027-28. The old research note undersold it",
-      "SB 1734 is NOT in the bills table -- the June 30 sync missed a signed statute whose title contains 'artificial intelligence'. Re-sync OK first and check whether it's a LegiScan full-text quirk or a query gap",
-      "guidance_type MANDATORY reflects the statute; OSDE's earlier 'Guidance and Considerations for AI in Oklahoma Schools' (2024) is advisory and its date/URL on sde.ok.gov should be pinned down -- I only found third-party mirrors",
-      "Stance REGULATE (mandates district policies, restricts high-stakes uses, opt-out rights) rather than MANDATE (which would imply mandated AI use)"
-    ]
-  },
+  "research_status": "RESEARCHED",
   "guidance_exists": true,
   "guidance_type": "MANDATORY",
   "guidance_issued_by": "Oklahoma Legislature (SB 1734, Responsible Technology in Schools Act) with implementation guidance from the Oklahoma State Department of Education",
