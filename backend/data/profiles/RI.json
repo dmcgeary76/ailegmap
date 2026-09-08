@@ -1,0 +1,18 @@
+{
+  "state_code": "RI",
+  "research_status": "RESEARCHED",
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Rhode Island Department of Education",
+  "guidance_url": "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf",
+  "guidance_core_principles": [
+    "academic_integrity",
+    "equity",
+    "security_privacy"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "IN_PROGRESS",
+  "sources": [
+    "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
+  ]
+}

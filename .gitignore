@@ -28,6 +28,7 @@ frontend/dist/
 
 # ---- Editors / OS ----
 .DS_Store
+.fuse_hidden*
 .idea/
 .vscode/
 *.swp
@@ -35,3 +36,12 @@ frontend/dist/
 # ---- Logs ----
 *.log
 npm-debug.log*
+
+# ---- Local database ----
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ---- Session screenshots / scratch (not part of the app) ----
+Claude outputs/

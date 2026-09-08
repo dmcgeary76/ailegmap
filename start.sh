@@ -1,51 +1,21 @@
 #!/bin/bash
+# Start the backend (port 8000) and the frontend (port 5173). No database
+# server needed -- the backend uses backend/k12_ai.db (SQLite).
+cd "$(dirname "$0")"
 
-echo "🚀 Starting K-12 AI Legislative Map"
-echo "===================================="
-echo ""
-
-# Check PostgreSQL
-if ! brew services list | grep postgresql@15 | grep -q "started"; then
-    echo "🗄️  Starting PostgreSQL..."
-    brew services start postgresql@15
-    sleep 2
+if [ ! -d backend/venv ]; then
+  echo "No backend/venv yet -- run ./setup.sh first"; exit 1
 fi
 
-echo ""
-echo "📋 Backend will start in Terminal 1"
-echo "📋 Frontend will start in Terminal 2"
-echo ""
-echo "Once both are running:"
-echo "  🌐 Frontend: http://localhost:5173"
-echo "  ⚙️  Backend: http://localhost:8000"
-echo "  📚 API Docs: http://localhost:8000/docs"
-echo ""
-
-# Function to start backend
-start_backend() {
-    cd "$(dirname "$0")/backend"
-    source venv/bin/activate
-    echo "🚀 Backend starting on http://localhost:8000"
-    python -m uvicorn app.main:app --reload
-}
-
-# Function to start frontend
-start_frontend() {
-    cd "$(dirname "$0")/frontend"
-    echo "🚀 Frontend starting on http://localhost:5173"
-    npm run dev
-}
-
-# Start both in separate processes
-start_backend &
+(cd backend && source venv/bin/activate && python -m uvicorn app.main:app --reload) &
 BACKEND_PID=$!
-
-sleep 3
-
-start_frontend &
+sleep 2
+(cd frontend && npm run dev) &
 FRONTEND_PID=$!
 
-# Handle cleanup
+echo ""
+echo "  Frontend: http://localhost:5173"
+echo "  API:      http://localhost:8000   (docs at /docs)"
+echo ""
 trap "kill $BACKEND_PID $FRONTEND_PID 2>/dev/null" EXIT
-
 wait

@@ -1,88 +1,56 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState, useEffect, useCallback } from 'react'
 import './App.css'
+import { api } from './api'
 import Dashboard from './components/Dashboard'
 import USMap from './components/USMap'
 import StateModal from './components/StateModal'
 import ReviewQueue from './components/ReviewQueue'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
-
 function App() {
   const [view, setView] = useState('map') // 'map' | 'review'
+  const [layer, setLayer] = useState('legislation') // 'legislation' | 'stance'
   const [states, setStates] = useState([])
   const [summary, setSummary] = useState(null)
-  const [selectedState, setSelectedState] = useState(null)
+  const [selectedCode, setSelectedCode] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [filters, setFilters] = useState({
-    stance: null,
-    maturity: null,
-  })
+  const [filter, setFilter] = useState(null) // {legislation_stage} | {stance} | null
 
-  // Fetch all states and summary on mount and when filters change
-  useEffect(() => {
-    fetchData()
-  }, [filters])
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true)
-
-      // Build query params
-      const params = new URLSearchParams()
-      if (filters.stance) params.append('stance', filters.stance)
-      if (filters.maturity) params.append('maturity', filters.maturity)
-
-      const [statesRes, summaryRes] = await Promise.all([
-        axios.get(`${API_URL}/api/states?${params}`),
-        axios.get(`${API_URL}/api/dashboard/summary`),
-      ])
-
-      setStates(statesRes.data)
-      setSummary(summaryRes.data)
+      const [s, sum] = await Promise.all([api.states(filter || {}), api.summary()])
+      setStates(s)
+      setSummary(sum)
       setError(null)
     } catch (err) {
-      console.error('Error fetching data:', err)
-      setError('Failed to load data. Is the backend running?')
+      console.error(err)
+      setError('Failed to load data. Is the backend running on port 8000?')
     } finally {
       setLoading(false)
     }
-  }
+  }, [filter])
 
-  const handleStateClick = (stateCode) => {
-    const state = states.find(s => s.state_code === stateCode)
-    setSelectedState(state)
-  }
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
 
-  const handleCloseModal = () => {
-    setSelectedState(null)
-  }
-
-  const handleFilterChange = (filterType, value) => {
-    setFilters(prev => ({
-      ...prev,
-      [filterType]: value === null ? null : value
-    }))
-  }
+  // Coming back from the review tab: decisions may have changed the map.
+  useEffect(() => {
+    if (view === 'map') fetchData()
+  }, [view, fetchData])
 
   return (
     <div className="app">
       <header className="app-header">
         <h1>K-12 AI Legislative Map</h1>
-        <p>Tracking AI legislation across U.S. state education systems</p>
+        <p>AI legislation and state guidance across U.S. K-12 education systems</p>
         <nav className="app-nav">
-          <button
-            className={view === 'map' ? 'nav-tab active' : 'nav-tab'}
-            onClick={() => setView('map')}
-          >
+          <button className={view === 'map' ? 'nav-tab active' : 'nav-tab'} onClick={() => setView('map')}>
             Map
           </button>
-          <button
-            className={view === 'review' ? 'nav-tab active' : 'nav-tab'}
-            onClick={() => setView('review')}
-          >
-            Review Queue
+          <button className={view === 'review' ? 'nav-tab active' : 'nav-tab'} onClick={() => setView('review')}>
+            Review bills{summary?.bills?.pending ? ` (${summary.bills.pending} pending)` : ''}
           </button>
         </nav>
       </header>
@@ -93,27 +61,28 @@ function App() {
         <div className="error-container"><p>{error}</p></div>
       ) : (
         <>
-          {loading && <div className="loading">Loading...</div>}
+          {loading && !states.length && <div className="loading">Loading…</div>}
 
-          {!loading && (
+          {states.length > 0 && (
             <div className="app-layout">
               <aside className="sidebar">
-                {summary && <Dashboard summary={summary} onFilterChange={handleFilterChange} />}
-              </aside>
-
-              <main className="main-content">
-                {states.length > 0 ? (
-                  <USMap states={states} onStateClick={handleStateClick} />
-                ) : (
-                  <p className="no-data">No states found</p>
+                {summary && (
+                  <Dashboard
+                    summary={summary}
+                    layer={layer}
+                    onLayerChange={setLayer}
+                    filter={filter}
+                    onFilterChange={setFilter}
+                  />
                 )}
+              </aside>
+              <main className="main-content">
+                <USMap states={states} layer={layer} onStateClick={setSelectedCode} />
               </main>
             </div>
           )}
 
-          {selectedState && (
-            <StateModal state={selectedState} onClose={handleCloseModal} />
-          )}
+          {selectedCode && <StateModal stateCode={selectedCode} onClose={() => setSelectedCode(null)} />}
         </>
       )}
     </div>

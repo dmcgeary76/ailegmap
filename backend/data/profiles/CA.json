@@ -1,0 +1,23 @@
+{
+  "state_code": "CA",
+  "research_status": "RESEARCHED",
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "California Department of Education",
+  "guidance_url": "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp",
+  "guidance_core_principles": [
+    "data_privacy",
+    "equity",
+    "academic_integrity"
+  ],
+  "regulatory_stance": "PROHIBIT",
+  "maturity": "ACTIVE",
+  "key_focus_areas": [
+    "data_privacy",
+    "student_protection"
+  ],
+  "unique_context": "Most developed state guidance; data privacy focus.",
+  "sources": [
+    "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
+  ]
+}

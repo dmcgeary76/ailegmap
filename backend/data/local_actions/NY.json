@@ -1,0 +1,25 @@
+{
+  "state_code": "NY",
+  "actions": [
+    {
+      "jurisdiction": "New York City Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "MORATORIUM",
+      "direction": -2,
+      "applies_to": "students",
+      "grade_band": "PK-8",
+      "authority": "mayor + chancellor directive",
+      "lifecycle": "adopted",
+      "effective_from": "2026-09-02",
+      "effective_until": "2027-06-30",
+      "enrollment": 900000,
+      "summary": "Student-facing generative AI (chatbots, AI tutors) barred in pre-K through 8th grade for the 2026-27 school year; teachers may still use AI for planning and admin. High school continues with up to ~50,000 students in five approved gen-AI pilots plus two mandatory 45-minute AI-literacy modules per year.",
+      "notes": "Announced 2026-09-02 by Mayor Zohran Mamdani and Chancellor Kamar Samuels, who called it 'the broadest generative AI moratorium in the nation'. One-year term, to be reassessed. Exceptions for assistive tech (IEP/ELL) and computer-based assessments. Paired with screen-time caps (none PK-2, 30 min/day 3-5, 45 min/day 6-8) and AI features being disabled in 38 existing software contracts. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/",
+        "https://districtadministration.com/article/new-york-city-schools-says-no-ai-in-k-8-for-a-year/",
+        "https://www.schools.nyc.gov/about-us/policies/guidance-on-artificial-intelligence"
+      ]
+    }
+  ]
+}

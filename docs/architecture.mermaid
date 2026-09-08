@@ -1,7 +1,13 @@
 flowchart TD
   LS[("LegiScan API
 (all sessions)")]
-  SEA["SEA guidance sites
+  PROF["data/profiles/*.json
+state guidance & stance
+(hand-researched)"]:::curated
+  LOCAL["data/local_actions/*.json
+district / city / county actions
+(hand-curated, inclusion rule)"]:::curated
+  SEA["SEA guidance scraper
 (planned)"]:::future
 
   subgraph SYNC["Backend sync · legiscan_sync.py"]
@@ -13,38 +19,48 @@ HIGH / MEDIUM / LOW"]
 Introduced → Passed"]
   end
 
-  subgraph DB["PostgreSQL"]
-    SL[("state_legislation")]
-    BRQ[("bill_review_queue
-auto + manual decision")]
-    AUD[("legislation_updates
-audit trail")]
+  SEED["app.seed"]
+
+  subgraph DB["SQLite · k12_ai.db"]
+    B[("bills
+auto class + reviewer decision")]
+    SP[("state_profiles")]
+    LA[("local_actions")]
   end
+
+  DER["derive.py (read time)
+legislation_stage · headline_bill
+action status · local_signal"]
 
   subgraph API["FastAPI"]
     AS["/api/states"]
     AR["/api/bills/review"]
+    AL["/api/local-actions"]
   end
 
   subgraph FE["React + Vite UI"]
-    MAP["US Map
-(color-coded by status)"]
-    MOD["State Modal"]
+    MAP["US map · real geography
+color = legislation / stance
+glyphs = pending · local leaning"]
+    MOD["State modal
+local actions · bills · guidance"]
     RQ["Review Queue tab"]
   end
 
   REV(["Reviewer (you)"]):::human
 
-  LS --> Q --> SCORE --> STAT
-  STAT --> SL
-  STAT --> BRQ
-  SCORE -. low confidence .-> BRQ
-  SYNC --> AUD
-  BRQ --> AR --> RQ --> REV
+  LS --> Q --> SCORE --> STAT --> B
+  PROF --> SEED --> SP
+  LOCAL --> SEED --> LA
+  B --> DER
+  SP --> DER
+  LA --> DER
+  DER --> AS --> MAP --> MOD
+  LA --> AL
+  B --> AR --> RQ --> REV
   REV -- "include / exclude" --> AR
-  SL --> AS --> MAP --> MOD
-  BRQ --> AS
-  SEA -. planned .-> BRQ
+  SEA -. planned .-> PROF
 
   classDef future stroke-dasharray:5 5,fill:#f5f5f5,color:#777;
+  classDef curated fill:#fef3c7,stroke:#d97706,color:#78350f;
   classDef human fill:#ede9fe,stroke:#7c3aed,color:#4c1d95;

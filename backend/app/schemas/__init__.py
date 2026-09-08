@@ -1,13 +1,4 @@
-from app.schemas.legislation import (
-    StateLegislationCreate,
-    StateLegislationUpdate,
-    StateLegislationResponse,
-    LegislationUpdateResponse,
+from app.schemas.legislation import (  # noqa: F401
+    BillOut, BillBrief, StateSummary, StateDetail, StateProfileUpdate,
+    DashboardSummary, StatusChangeOut,
 )
-
-__all__ = [
-    "StateLegislationCreate",
-    "StateLegislationUpdate",
-    "StateLegislationResponse",
-    "LegislationUpdateResponse",
-]

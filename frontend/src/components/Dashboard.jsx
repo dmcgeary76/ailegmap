@@ -1,139 +1,113 @@
-import { useState } from 'react'
 import './Dashboard.css'
+import { STAGE_COLORS, STAGE_LABELS, STANCE_COLORS, STANCE_LABELS } from '../api'
 
-export default function Dashboard({ summary, onFilterChange }) {
-  const [expandedSection, setExpandedSection] = useState(null)
+const STAGES = ['passed', 'debated', 'introduced', 'failed', 'none']
+const STANCES = ['PROHIBIT', 'RESTRICT', 'REGULATE', 'SUPPORT', 'MANDATE', 'ABSENT']
 
-  const toggleSection = (section) => {
-    setExpandedSection(expandedSection === section ? null : section)
-  }
+function fmtDate(iso) {
+  if (!iso) return 'never'
+  return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+}
 
-  const handleFilterSelect = (filterType, value) => {
-    onFilterChange(filterType, value)
-  }
-
-  if (!summary) return <div>Loading summary...</div>
-
-  const stanceOptions = [
-    { label: 'Prohibit', value: 'PROHIBIT', color: 'prohibit' },
-    { label: 'Restrict', value: 'RESTRICT', color: 'restrict' },
-    { label: 'Regulate', value: 'REGULATE', color: 'regulate' },
-    { label: 'Support', value: 'SUPPORT', color: 'support' },
-    { label: 'Mandate', value: 'MANDATE', color: 'mandate' },
-    { label: 'Absent', value: 'ABSENT', color: 'absent' },
-  ]
-
-  const maturityOptions = [
-    { label: 'Nascent', value: 'NASCENT' },
-    { label: 'In Progress', value: 'IN_PROGRESS' },
-    { label: 'Active', value: 'ACTIVE' },
-    { label: 'Mature', value: 'MATURE' },
-  ]
+export default function Dashboard({ summary, layer, onLayerChange, filter, onFilterChange }) {
+  const s = summary
+  const active = (key, value) => filter && filter[key] === value
 
   return (
     <div className="dashboard">
       <div className="dashboard-card">
-        <h2>Dashboard</h2>
-
+        <h2>Overview</h2>
         <div className="stat-grid">
           <div className="stat">
-            <div className="stat-value">{summary.total_states}</div>
-            <div className="stat-label">Total States</div>
+            <div className="stat-value">{s.states_with_included_bills}</div>
+            <div className="stat-label">Jurisdictions with included bills</div>
           </div>
           <div className="stat">
-            <div className="stat-value">{summary.states_with_legislation}</div>
-            <div className="stat-label">With Legislation</div>
+            <div className="stat-value">{s.states_by_legislation_stage.passed}</div>
+            <div className="stat-label">With a passed bill</div>
           </div>
           <div className="stat">
-            <div className="stat-value">{summary.states_with_guidance}</div>
-            <div className="stat-label">With Guidance</div>
+            <div className="stat-value">{s.states_researched}</div>
+            <div className="stat-label">Guidance researched</div>
           </div>
+          <div className="stat">
+            <div className="stat-value">{s.local_actions?.active ?? 0}</div>
+            <div className="stat-label">Active local actions ({s.local_actions?.states ?? 0} states)</div>
+          </div>
+        </div>
+        <div className="review-progress">
+          <div className="rp-bar">
+            <span className="rp-inc" style={{ flex: s.bills.included }} title={`${s.bills.included} included`} />
+            <span className="rp-pend" style={{ flex: s.bills.pending }} title={`${s.bills.pending} pending`} />
+            <span className="rp-exc" style={{ flex: s.bills.excluded }} title={`${s.bills.excluded} excluded`} />
+          </div>
+          <div className="rp-caption">
+            {s.bills.total} bills found · {s.bills.included} on map · {s.bills.pending} pending review
+          </div>
+          <div className="rp-caption muted">Last LegiScan sync: {fmtDate(s.last_sync)}</div>
         </div>
       </div>
 
       <div className="dashboard-card">
-        <button
-          className="section-toggle"
-          onClick={() => toggleSection('stance')}
-        >
-          <span>Filter by Stance</span>
-          <span className="toggle-icon">{expandedSection === 'stance' ? '▼' : '▶'}</span>
-        </button>
-        {expandedSection === 'stance' && (
-          <div className="filter-options">
-            <button className="filter-btn" onClick={() => handleFilterSelect('stance', null)}>
-              All Stances
-            </button>
-            {stanceOptions.map(option => (
-              <button
-                key={option.value}
-                className={`filter-btn stance-${option.color}`}
-                onClick={() => handleFilterSelect('stance', option.value)}
-              >
-                {option.label}
-                <span className="count">({summary.states_by_stance[option.value] || 0})</span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="dashboard-card">
-        <button
-          className="section-toggle"
-          onClick={() => toggleSection('maturity')}
-        >
-          <span>Filter by Maturity</span>
-          <span className="toggle-icon">{expandedSection === 'maturity' ? '▼' : '▶'}</span>
-        </button>
-        {expandedSection === 'maturity' && (
-          <div className="filter-options">
-            <button className="filter-btn" onClick={() => handleFilterSelect('maturity', null)}>
-              All Maturity Levels
-            </button>
-            {maturityOptions.map(option => (
-              <button
-                key={option.value}
-                className="filter-btn"
-                onClick={() => handleFilterSelect('maturity', option.value)}
-              >
-                {option.label}
-                <span className="count">({summary.states_by_maturity[option.value] || 0})</span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="dashboard-card">
-        <h3>Legend</h3>
-        <div className="legend">
-          <div className="legend-item">
-            <div className="legend-color prohibit"></div>
-            <span>Prohibit</span>
-          </div>
-          <div className="legend-item">
-            <div className="legend-color restrict"></div>
-            <span>Restrict</span>
-          </div>
-          <div className="legend-item">
-            <div className="legend-color regulate"></div>
-            <span>Regulate</span>
-          </div>
-          <div className="legend-item">
-            <div className="legend-color support"></div>
-            <span>Support</span>
-          </div>
-          <div className="legend-item">
-            <div className="legend-color mandate"></div>
-            <span>Mandate</span>
-          </div>
-          <div className="legend-item">
-            <div className="legend-color absent"></div>
-            <span>Absent</span>
-          </div>
+        <h3>Color the map by</h3>
+        <div className="layer-toggle">
+          <button className={layer === 'legislation' ? 'active' : ''} onClick={() => { onLayerChange('legislation'); onFilterChange(null) }}>
+            Legislation status
+          </button>
+          <button className={layer === 'stance' ? 'active' : ''} onClick={() => { onLayerChange('stance'); onFilterChange(null) }}>
+            Regulatory stance
+          </button>
         </div>
+
+        {layer === 'legislation' ? (
+          <div className="filter-options">
+            <button className={`filter-btn ${!filter ? 'active' : ''}`} onClick={() => onFilterChange(null)}>All</button>
+            {STAGES.map((k) => (
+              <button
+                key={k}
+                className={`filter-btn ${active('legislation_stage', k) ? 'active' : ''}`}
+                onClick={() => onFilterChange(active('legislation_stage', k) ? null : { legislation_stage: k })}
+              >
+                <span className="swatch" style={{ background: STAGE_COLORS[k] }} />
+                {STAGE_LABELS[k]}
+                <span className="count">{s.states_by_legislation_stage[k] || 0}</span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="filter-options">
+            <button className={`filter-btn ${!filter ? 'active' : ''}`} onClick={() => onFilterChange(null)}>All</button>
+            {STANCES.map((k) => (
+              <button
+                key={k}
+                className={`filter-btn ${active('stance', k) ? 'active' : ''}`}
+                onClick={() => onFilterChange(active('stance', k) ? null : { stance: k })}
+              >
+                <span className="swatch" style={{ background: STANCE_COLORS[k] }} />
+                {STANCE_LABELS[k]}
+                <span className="count">{s.states_by_stance[k] || 0}</span>
+              </button>
+            ))}
+            <p className="muted small">
+              {s.jurisdictions - s.states_researched} jurisdictions not yet researched.
+            </p>
+          </div>
+        )}
       </div>
+
+      {s.recent_status_changes.length > 0 && (
+        <div className="dashboard-card">
+          <h3>Recent status changes</h3>
+          <ul className="changes">
+            {s.recent_status_changes.map((c, i) => (
+              <li key={i}>
+                <strong>{c.state_code} {c.bill_number}</strong> {c.old_status || '—'} → {c.new_status}
+                <span className="muted"> · {fmtDate(c.changed_at)}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

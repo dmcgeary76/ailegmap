@@ -1,3 +1,5 @@
+> **Out of date (2026-09-02):** this document describes the PostgreSQL / `state_legislation` design. The current setup, data model and endpoints are in the top-level [README](../README.md) and `CHANGELOG.md`; the live API reference is at http://localhost:8000/docs.
+
 # Data Schema: State Legislation Records
 
 ## Overview

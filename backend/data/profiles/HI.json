@@ -1,0 +1,20 @@
+{
+  "state_code": "HI",
+  "research_status": "RESEARCHED",
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Hawaii Department of Education",
+  "guidance_url": "https://hawaiipublicschools.org/student-programs/artificial-intelligence/",
+  "guidance_core_principles": [
+    "human_oversight",
+    "data_protection",
+    "equity",
+    "accountability"
+  ],
+  "regulatory_stance": "MANDATE",
+  "maturity": "MATURE",
+  "unique_context": "Island state with cultural curriculum integration; AI literacy graduation requirement from 2028.",
+  "sources": [
+    "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
+  ]
+}

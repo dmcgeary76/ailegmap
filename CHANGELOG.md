@@ -5,11 +5,54 @@ Timestamps are in the project's local time.
 
 ---
 
+## 2026-09-04
+
+### Relevance gate: MEDIUM no longer auto-includes
+- **Audit.** `score_bill()` only ever sees the title. MEDIUM meant "education word in the title, AI somewhere in the body", and the full-text query's guarantee that AI appears *somewhere* is satisfied by a single mention in a definitions list. Result: 0 of 126 MEDIUM bills had an AI term in the title (by construction), 125 of them were on the map unreviewed — 62% of everything shown — and LegiScan's relevance score couldn't separate them from HIGH (medians 24 vs 26). Texas' MEDIUMs were digital citizenship (SB2787, HB641), cyberbullying (HB1405, SB1445), the SCOPE Act (HB18) and intimate-imagery (SB747) bills; HB18 alone was what colored Texas "passed".
+- **Change.** New `AUTO_INCLUDE_CONFIDENCE = ("HIGH",)` in `models/legislation.py` is the single source of the rule; `Bill.effective_included`, the review API's SQL filters/stats, and the sync's `is_k12_ai` gate all read it. MEDIUM rows now carry `flag_reason: review` and wait in the queue like LOW. Map impact: 21 states change — TX/UT/PA/VA/CT/VT downgrade a stage, and AL, AR, FL, GA, KS, MI, MN, MO, NH, NM, NV, RI, SD, TN, WI go gray until a reviewer includes something. Grayer and truer.
+- **Typo tolerance.** `AI_TERMS` gains "artifical intelligence", "artificial-intelligence", "artificial intelligance" and "a.i."; the LegiScan query also searches the common misspelling. WV HB5205 ("model policies on ... artifical intelligence") moves MEDIUM → HIGH.
+- **`--rescore`.** `python -m app.sync.legiscan_sync --all --rescore` re-runs the title scorer over stored rows with no API calls, so vocabulary/gate changes apply without a full sync. Decisions untouched. Ran it: 1,197 rescored, 129 rows changed (WV's confidence plus the MEDIUM flag_reason backfill).
+- 5 new tests (35 total). Next: the text-density scorer described in the README roadmap.
+
+### Local actions layer (v0.3)
+- **New `local_actions` table + `backend/data/local_actions/<ST>.json`.** One row per *notable* non-legislative action by a district, city, county or regional body — never one row per district. The folder README carries a written inclusion rule (top-5 district in its state, national trade-press coverage, or first-of-its-kind) so the layer stays at tens of rows nationally.
+- **Direction as the sentiment proxy.** Each action has `direction` -2..+2 (prohibit → embrace) plus `action_type`, `applies_to`, `grade_band`, `authority` (a board vote outlives a superintendent memo — worth recording), `lifecycle`, dates, approximate `enrollment`, summary, notes and sources.
+- **Derived, not edited.** `derive.py` computes each action's status (proposed / active / expired / rescinded) from its dates and lifecycle, and a per-state `local_signal` (count, active, leaning, score, latest, headline) as the enrollment- and recency-weighted mean direction of *active* actions. A one-year moratorium stops counting the day it ends with no edit. States with no rows read as "no notable local actions", not "neutral".
+- **Seeded with three sourced rows:** NYC Public Schools' PK-8 student-facing generative-AI moratorium for 2026-27 (announced 2026-09-02; HS pilots continue; screen-time caps; AI disabled in 38 contracts), LAUSD's district-device block on student gen-AI for 2026-27 (administrator action citing the board's June screen-time vote), and El Paso ISD's home-grown policy in the absence of Texas guidance (carried over from the TX profile note; adoption date unverified and flagged as such).
+- **API:** `/api/states` gains `local_signal`; `/api/states/{code}` gains `local_actions`; new `/api/local-actions` list with `state_code` / `status` filters; dashboard summary reports `local_actions` totals and `states_by_local_leaning`. `app.export` includes both.
+- **UI:** "Local actions" section in the state modal (placed above the bill list — for a state like NY with 15 included bills it would otherwise be buried), a leaning-colored square on the map, a local headline line in the map tooltip, an "Active local actions" stat, and legend entries.
+- **Seed validation.** `python -m app.seed` now fails loudly on a malformed action row (bad enum, direction out of range, unparseable date, unknown field) instead of silently skewing a state's leaning.
+- 5 new pytest cases (30 total).
+
+### Real state outlines
+- Replaced the labeled-circle markers with actual state geometry: `us-atlas` states-10m TopoJSON projected with `d3-geo`'s Albers USA (Alaska and Hawaii inset automatically). New deps: `d3-geo`, `topojson-client`, `us-atlas` — run `npm install` in `frontend/`.
+- Nine small north-eastern states (VT NH MA RI CT NJ DE MD DC) get their labels and glyphs in a stack off the coast with leader lines, the way print atlases do it, so nothing overlaps. DC and the three territories (off-projection) are boxes along the bottom edge.
+- Tooltip is now an HTML element that follows the cursor instead of a fixed SVG panel that used to sit on Florida.
+- `docs/architecture.mermaid` redrawn for the v0.2/v0.3 model (it still showed PostgreSQL and `state_legislation`).
+
+---
+
+## 2026-09-02
+
+### Rebuilt on one data model (v0.2)
+- **SQLite instead of PostgreSQL.** The backend now runs on `backend/k12_ai.db` with zero setup; `init_db()` creates the schema and `python -m app.seed` loads the 54 jurisdiction profiles from `backend/data/profiles/*.json`. Postgres, `docker-compose` as a requirement, and the three hand-rolled migration scripts are gone. `scripts/migrate_from_postgres.py` copies bills and review decisions out of an existing Postgres database if you have one.
+- **One source of truth per fact.** The old `state_legislation` row mixed a copied "headline bill", a `legislation_status` that was edited by hand and by the sync, and the manually-researched stance. It is now split: `state_profiles` holds only what a person researched (stance, guidance, maturity, `research_status`), `bills` holds every LegiScan result with its review decision, and `app/derive.py` computes `legislation_stage`, `headline_bill` and the bill counts on every read. Re-syncs can no longer clobber research, and review decisions can no longer disagree with the map.
+- **Honest "not yet assessed".** 45 of 54 jurisdictions had never been researched but were displayed as `ABSENT` / "no policy". They now carry `research_status: NOT_RESEARCHED` and render gray on the stance layer. The 9 researched states (AK, CA, HI, MA, RI, TX, GU, PR, VI) kept their content verbatim.
+- **Map has two layers.** Color by *Legislation status* (automatic, from included bills) or *Regulatory stance* (manual). Filters, legend and tooltip follow the selected layer; a small amber dot marks states with bills still pending review.
+- **State modal lists every included bill** instead of one copied headline, ordered strongest first, with the held/pending count and a pointer to the review tab.
+- **API cleanup.** `/api/states` returns the derived shape (`legislation_stage`, `headline_bill`, `bill_counts`, `research_status`); `/api/dashboard/summary` replaces `/api/states/stats` and reports review progress; the duplicate `review_queue.py` router (which crashed on import) is deleted, `bill_review.py` is the only review API. Requesting a state that LegiScan has no data for now 404s instead of inventing a row.
+- **Tests.** `backend/tests/` has 25 pytest cases covering derivation, ranking, sync upserts and every endpoint; runs in about a second with no API key.
+- **Removed:** `Map.jsx`, `StateMap.jsx` (never mounted), `test_bill_review.py`, `test_data_pipes.py` (Postgres-only), `load_data.sh`, `load_territories.sh`.
+- **Still on the roadmap:** real state outlines (the map is still labeled markers at approximate positions), and automated collection of state guidance documents.
+
+---
+
 ## 2026-07-02
 
 ### Architecture diagram on the project page
 - Added a "System architecture" section to `docs/index.html` rendering the LegiScan → sync → PostgreSQL → FastAPI → React data flow as a live Mermaid diagram, matching `docs/architecture.mermaid`.
 - Diagram is embedded as Mermaid source (via CDN, rendered client-side) rather than a static image, so `docs/architecture.mermaid` stays the single source of truth — edit one file, both the diagram source and the rendered page update together.
+- **Fixed low-contrast diagram:** it originally rendered with Mermaid's light "default" theme inside a white card, but connector lines vanished against the page's dark background wherever that white card didn't render as intended. Switched to Mermaid's dark theme with colors matched to the page palette and a dark panel background for the card, so the diagram is dark-mode-native rather than relying on a light patch surviving inside an otherwise all-dark page.
 
 ---
 

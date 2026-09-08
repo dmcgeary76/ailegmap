@@ -1,0 +1,22 @@
+{
+  "state_code": "PR",
+  "research_status": "RESEARCHED",
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Puerto Rico Department of Education",
+  "guidance_url": "https://de.pr.gov",
+  "guidance_core_principles": [
+    "ai_literacy",
+    "digital_citizenship",
+    "privacy_protection",
+    "personalized_learning",
+    "responsible_ai_use"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "IN_PROGRESS",
+  "unique_context": "Comprehensive guidance framework with 9 core objectives from the Department of Education, not formal legislation. Guidance-driven approach aligned with mainland states; follows US education policy generally.",
+  "notes": "Fully researched 2026-06-30 (see docs/STATE_DATA_SOURCES.md). LegiScan does not cover PR, so this profile is maintained by hand.",
+  "sources": [
+    "https://de.pr.gov"
+  ]
+}

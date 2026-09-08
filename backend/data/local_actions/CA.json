@@ -1,0 +1,24 @@
+{
+  "state_code": "CA",
+  "actions": [
+    {
+      "jurisdiction": "Los Angeles Unified School District",
+      "jurisdiction_type": "district",
+      "action_type": "MORATORIUM",
+      "direction": -2,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "senior administrators (citing the board's June 2026 screen-time vote)",
+      "lifecycle": "adopted",
+      "effective_from": "2026-09-02",
+      "effective_until": "2027-06-30",
+      "enrollment": 400000,
+      "summary": "All students blocked from generative AI on district devices for 2026-27 while a new Generative AI Ad Hoc Committee reviews instructional use and safeguards; recommendations due by end of the school year. Teachers may still use AI on district devices.",
+      "notes": "Confirmed by the district by email 2026-09-02, reported 2026-09-03. Previously students 13+ who completed digital-citizenship training could use approved AI tools. Applies to district-owned devices only; no policy yet on personal devices. Not a board vote - administrators acted 'in the spirit of' the board's unanimous June 2026 screen-time limits, so its durability is weaker than a board-adopted policy. Enrollment figure is approximate.",
+      "sources": [
+        "https://www.k12dive.com/news/lausd-restricts-all-students-from-using-ai-tools/829612/",
+        "https://www.edweek.org/technology/lausd-adopts-moratorium-on-student-ai-use-another-big-move-to-limit-tech-use/2026/09"
+      ]
+    }
+  ]
+}

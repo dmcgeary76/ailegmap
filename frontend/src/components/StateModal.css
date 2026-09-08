@@ -219,3 +219,43 @@
     padding: 16px;
   }
 }
+
+/* v0.2 additions */
+.stage-badge, .stage-chip { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; color: #fff; }
+.stage-chip { padding: 1px 8px; font-size: 0.72rem; }
+.stage-passed { background: #1d6b3a; }
+.stage-debated { background: #3f87c9; }
+.stage-introduced { background: #8fb7e0; color: #1f2937; }
+.stage-failed { background: #a89f95; }
+.stage-none { background: #e2e4e0; color: #374151; }
+.stance-badge.stance-unassessed { background: #e2e4e0; color: #374151; }
+.bill-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.bill-list li { padding: 10px 12px; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 8px; }
+.bill-list li.headline { border-color: #1f2937; }
+.bill-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.bill-number { font-weight: 700; }
+.bill-title { font-size: 0.9rem; margin-top: 4px; }
+.bill-action { font-size: 0.78rem; margin-top: 4px; }
+.chip-muted { font-size: 0.7rem; color: #6b7280; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 6px; }
+.small { font-size: 0.8rem; }
+.sources { padding-left: 18px; font-size: 0.82rem; word-break: break-all; }
+.error { color: #b91c1c; }
+
+/* Local actions (v0.3) */
+.leaning-badge { margin-left: 10px; font-size: 0.7rem; font-weight: 600; color: #fff; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: middle; }
+.action-list { list-style: none; padding: 0; margin: 0; }
+.action { padding: 12px 14px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px; background: #fafafa; }
+.action.status-expired, .action.status-rescinded { opacity: 0.65; }
+.action-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.action-chip { font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+.action-chip.dir-neg { background: #fee2e2; color: #991b1b; }
+.action-chip.dir-pos { background: #dcfce7; color: #166534; }
+.action-chip.dir-zero { background: #f3f4f6; color: #374151; }
+.status-chip { font-size: 0.7rem; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; background: #e5e7eb; color: #374151; }
+.status-chip.status-active { background: #1f2937; color: #fff; }
+.status-chip.status-proposed { background: #fef3c7; color: #92400e; }
+.action-meta { margin-top: 4px; }
+.action-summary { margin: 8px 0 4px; line-height: 1.45; font-size: 0.9rem; }
+.action-notes summary { cursor: pointer; font-size: 0.8rem; color: #6b7280; }
+.action-notes p { font-size: 0.85rem; color: #4b5563; margin: 6px 0 0; line-height: 1.45; }
+.action-sources { margin-top: 6px; display: flex; gap: 10px; }

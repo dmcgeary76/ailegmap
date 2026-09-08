@@ -1,53 +1,46 @@
 #!/usr/bin/env python3
 """
-LegiScan API sync script: Poll for K-12 AI legislation updates.
+LegiScan sync: discover K-12 AI bills, score them, and keep the bills table current.
 
-Monthly sync for all 50 states + territories:
-1. Search LegiScan full-text engine for AI bills that ALSO touch K-12 education
-2. Score each result for K-12-AI relevance (fuzzy mapping) and assign confidence
-3. Capture real bill status (Introduced / Passed / Failed / ...) for map color-coding
-4. Rank bills so the best K-12-AI match becomes the state's primary bill
-5. Flag new / low-confidence bills for manual review (audit trail)
+1. Search LegiScan's full-text index for bills that mention an AI concept AND a
+   K-12 education concept (all sessions, so passed/historical bills count).
+2. Score each result for K-12-AI relevance from its title -> HIGH / MEDIUM / LOW.
+   Only HIGH is shown on the map without review; MEDIUM and LOW wait in the queue.
+3. Look up authoritative status via getBill (skipped when LegiScan's
+   change_hash says the bill hasn't changed since we last looked).
+4. Upsert every bill into the ``bills`` table. Metadata and the automatic
+   classification refresh on every run; a reviewer's include/exclude decision
+   is never touched. Stage transitions are logged to ``bill_status_changes``.
 
-Why this version exists
-------------------------
-The previous version queried the bare phrase "artificial intelligence" with no
-education filter and no `year` parameter. LegiScan's getSearch defaults to
-`year=2` (current session only), so passed legislation from prior years was
-dropped, and the unfiltered query returned any AI bill in the state (tax,
-procurement, deepfakes, etc.). Whichever bill came back first was stored as the
-state's primary bill -- which is why states showed bills unrelated to K-12 AI.
-
-This version:
-  * Requires BOTH an AI term AND an education term via a boolean full-text query
-  * Searches ALL sessions (year=1) so passed/historical bills are included
-  * Scores + ranks results, promoting the best K-12-AI match and flagging the rest
-  * Reads the numeric status code to distinguish introduced / debated / passed
+The map derives each state's headline bill and color from ``bills`` at read
+time, so this script never decides what a state "is" -- it only keeps the
+evidence fresh.
 
 Usage:
-    python legiscan_sync.py --preview --state CA   # Show ranked results, NO DB writes
-    python legiscan_sync.py --state CA             # Sync one state
-    python legiscan_sync.py --all                  # Sync all states
-    python legiscan_sync.py --all --dry-run        # Test all states, no commits
-    python legiscan_sync.py --review               # (see review_queue API)
-
-Note: api.legiscan.com must be reachable from where this runs. The --preview
-mode requires only the LEGISCAN_API_KEY and a network connection (no database),
-so it is the quickest way to confirm the keyword search returns valid results.
+    python -m app.sync.legiscan_sync --preview --state CA   # ranked results, no DB writes
+    python -m app.sync.legiscan_sync --state CA             # sync one state
+    python -m app.sync.legiscan_sync --all                  # all LegiScan-covered jurisdictions
+    python -m app.sync.legiscan_sync --all --no-status      # skip getBill lookups (fast, status stays Unknown)
+    python -m app.sync.legiscan_sync --all --rescore        # re-run the title scorer on stored rows, no API
 """
 
-import requests
-import json
 import argparse
+import json
+import os
 import re
+import sys
+import time
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
-import time
-import os
-import sys
 
-# Add backend to path
+import requests
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+
+from app.models.legislation import JURISDICTIONS, LEGISCAN_UNSUPPORTED, AUTO_INCLUDE_CONFIDENCE  # noqa: E402
+
+# Jurisdictions the sync searches (LegiScan rejects GU/PR/VI outright).
+SEARCHABLE = [c for c in JURISDICTIONS if c not in LEGISCAN_UNSUPPORTED]
 
 # LegiScan API configuration
 LEGISCAN_BASE = "https://api.legiscan.com"
@@ -63,6 +56,10 @@ PAGE_SIZE = 50  # getSearch's fixed page size (confirmed in LegiScan API docs)
 
 AI_TERMS = [
     "artificial intelligence",
+    "artificial-intelligence",
+    "artifical intelligence",    # WV HB5205 has this typo in its enrolled title
+    "artificial intelligance",
+    "a.i.",
     "machine learning",
     "generative ai",
     "large language model",
@@ -130,7 +127,7 @@ NOISE_TITLE_TERMS = [
 # Phrases are quoted; LegiScan applies NLP stemming for singular/plural variants.
 SEARCH_QUERY = (
     '('
-    '("artificial intelligence" OR "machine learning" OR "generative AI" '
+    '("artificial intelligence" OR "artifical intelligence" OR "machine learning" OR "generative AI" '
     'OR "large language model" OR "automated decision" OR chatbot) '
     'AND '
     '(school OR student OR pupil OR teacher OR educator OR classroom '
@@ -157,15 +154,6 @@ CONF_HIGH = "HIGH"
 CONF_MEDIUM = "MEDIUM"
 CONF_LOW = "LOW"
 
-# US states + territories (50 states + 3 territories)
-STATES = [
-    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",
-    "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
-    "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
-    "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
-    "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
-    "GU", "PR", "VI",  # Territories: Guam, Puerto Rico, Virgin Islands
-]
 
 
 # ===========================================================================
@@ -247,7 +235,8 @@ def score_bill(bill: Dict) -> Dict:
     #   * Ceremonial / budget / procedural title  -> LOW (noise, never auto-promote)
     #   * Explicitly higher-ed (no K-12 marker)    -> LOW (out of K-12 scope)
     #   * AI + education both in title             -> HIGH (clearly on-topic)
-    #   * Education in title (AI guaranteed in body)-> MEDIUM (education-focused)
+    #   * Education in title (AI somewhere in body)-> MEDIUM (review; usually a
+    #       digital-citizenship / cyberbullying / CS bill that defines AI once)
     #   * AI only / neither in title               -> LOW (review; e.g. AI in
     #       procurement, health, elections that mention "school" once in the body)
     if is_noise:
@@ -261,8 +250,8 @@ def score_bill(bill: Dict) -> Dict:
     else:
         confidence = CONF_LOW
 
-    # is_k12_ai gate: HIGH/MEDIUM auto-qualify; LOW is kept but flagged for review.
-    is_k12_ai = confidence in (CONF_HIGH, CONF_MEDIUM)
+    # is_k12_ai gate: only AUTO_INCLUDE_CONFIDENCE goes on the map unreviewed.
+    is_k12_ai = confidence in AUTO_INCLUDE_CONFIDENCE
 
     return {
         "relevance": legiscan_relevance,
@@ -312,20 +301,14 @@ def rank_bills(bills: List[Dict]) -> List[Dict]:
 # ===========================================================================
 
 class LegiScanSync:
-    """Sync K-12 AI legislation from LegiScan API."""
+    """Discover bills for a jurisdiction and upsert them into the bills table."""
 
-    def __init__(self, db=None, dry_run: bool = False, api_key: Optional[str] = None,
-                 years: str = "1", fetch_status: bool = True):
+    def __init__(self, db=None, api_key: Optional[str] = None, years: str = "1",
+                 fetch_status: bool = True, sleep: float = 0.4):
         self.db = db
-        self.dry_run = dry_run
-        # getSearch does NOT return a bill's progress status, so we make a
-        # follow-up getBill call per *relevant* bill to learn whether it passed.
-        # Set False to skip (faster, but status stays "Unknown").
         self.fetch_status = fetch_status
-        # `years`: LegiScan getSearch `year` param. 1=all, 2=current, 3=recent,
-        # 4=prior, or a 4-digit year. Default "1" (all sessions) so passed and
-        # historical bills are captured -- the previous default of 2 dropped them.
-        self.years = years
+        self.years = years  # 1=all sessions, 2=current, 3=recent, 4=prior, or YYYY
+        self.sleep = sleep
         self.api_key = api_key
         if self.api_key is None:
             try:
@@ -334,554 +317,330 @@ class LegiScanSync:
             except Exception:
                 self.api_key = os.environ.get("LEGISCAN_API_KEY")
         self.stats = {
-            "searched": 0,
-            "found": 0,
-            "relevant": 0,
-            "low_confidence": 0,
-            "updated": 0,
-            "flagged_review": 0,
-            "errors": 0,
+            "searched": 0, "found": 0, "relevant": 0, "low_confidence": 0,
+            "new_bills": 0, "status_changes": 0, "getbill_calls": 0, "errors": 0,
         }
 
     # ---- network ---------------------------------------------------------
 
-    def search_bills(self, state: str) -> List[Dict]:
-        """Search LegiScan for K-12 AI bills in a state (all sessions).
+    def _get(self, **params) -> Optional[Dict]:
+        params["key"] = self.api_key
+        try:
+            r = requests.get(LEGISCAN_BASE, params=params, timeout=20)
+            r.raise_for_status()
+            data = r.json()
+        except (requests.RequestException, json.JSONDecodeError) as e:
+            print(f"❌ Request failed: {e}")
+            self.stats["errors"] += 1
+            return None
+        if data.get("status") != "OK":
+            alert = data.get("alert", {}).get("message", "")
+            print(f"❌ API error: {data.get('status')} {alert}")
+            self.stats["errors"] += 1
+            return None
+        return data
 
-        getSearch returns at most PAGE_SIZE (50) results per call, even when
-        `summary.count` reports far more hits in the index -- CA/NJ/HI/MD/NY/IL
-        all silently lost bills past page 1 before this loop existed (up to 39
-        missed for CA alone). Keep requesting subsequent pages until we've
-        collected everything the index reports, or a page comes back short.
-        """
+    def search_bills(self, state: str) -> List[Dict]:
+        """All getSearch results for a state. getSearch caps at PAGE_SIZE per call,
+        so page until the index's reported count is satisfied."""
         if not self.api_key:
-            print(f"  ❌ LegiScan API key not set")
-            print(f"     Set LEGISCAN_API_KEY in backend/.env or export LEGISCAN_API_KEY=your_key")
+            print("  ❌ LEGISCAN_API_KEY not set (backend/.env)")
             self.stats["errors"] += 1
             return []
 
         bills: List[Dict] = []
         total_count = 0
         page = 1
-        max_pages = 20  # safety cap; a single state's index shouldn't need this many
-
+        max_pages = 20
+        print(f"  🔍 Searching {state}...", end=" ", flush=True)
         while page <= max_pages:
-            try:
-                params = {
-                    "key": self.api_key,
-                    "op": "getSearch",
-                    "state": state,
-                    "query": SEARCH_QUERY,
-                    "year": self.years,  # 1 = all sessions (captures passed/historical)
-                    "page": page,
-                }
-
-                if page == 1:
-                    print(f"  🔍 Searching {state}...", end=" ", flush=True)
-                response = requests.get(LEGISCAN_BASE, params=params, timeout=20)
-                response.raise_for_status()
-                data = response.json()
-
-                if data.get("status") != "OK":
-                    alert = data.get("alert", {}).get("message", "")
-                    print(f"❌ API error: {data.get('status')} {alert}")
-                    self.stats["errors"] += 1
-                    return bills  # keep whatever prior pages succeeded
-
-                searchresult = data.get("searchresult", {})
-                summary = searchresult.get("summary", {})
-                total_count = summary.get("count", 0)
-
-                page_bills = [
-                    bill for key, bill in searchresult.items()
-                    if key != "summary" and isinstance(bill, dict)
-                ]
-                if not page_bills:
-                    break
-
-                bills.extend(page_bills)
-
-                # Stop once we have everything the index reports, or the page
-                # came back short of PAGE_SIZE (LegiScan's own signal there's
-                # no next page) -- whichever happens first.
-                if len(bills) >= total_count or len(page_bills) < PAGE_SIZE:
-                    break
-
-                page += 1
-                time.sleep(0.4)  # rate limiting between pages, same as elsewhere
-
-            except requests.RequestException as e:
-                print(f"❌ Request failed: {e}")
-                self.stats["errors"] += 1
+            data = self._get(op="getSearch", state=state, query=SEARCH_QUERY,
+                             year=self.years, page=page)
+            if data is None:
                 return bills
-            except json.JSONDecodeError:
-                print(f"❌ Invalid JSON response")
-                self.stats["errors"] += 1
-                return bills
-
-        pages_fetched = min(page, max_pages)
-        if pages_fetched > 1:
-            print(f"✅ ({len(bills)} returned across {pages_fetched} pages, {total_count} total in index)")
-        else:
-            print(f"✅ ({len(bills)} returned, {total_count} total in index)")
+            sr = data.get("searchresult", {})
+            total_count = sr.get("summary", {}).get("count", 0)
+            page_bills = [b for k, b in sr.items() if k != "summary" and isinstance(b, dict)]
+            if not page_bills:
+                break
+            bills.extend(page_bills)
+            if len(bills) >= total_count or len(page_bills) < PAGE_SIZE:
+                break
+            page += 1
+            time.sleep(self.sleep)
+        print(f"✅ ({len(bills)} returned, {total_count} in index)")
         return bills
 
-    def fetch_bill_status(self, bill_id) -> Optional[Tuple[str, str, str]]:
-        """getBill lookup for authoritative status. Returns (label, stage, date)."""
+    def fetch_bill(self, bill_id) -> Optional[Dict]:
+        """getBill: authoritative status plus description/subjects."""
         if not bill_id or not self.api_key:
             return None
-        try:
-            params = {"key": self.api_key, "op": "getBill", "id": bill_id}
-            r = requests.get(LEGISCAN_BASE, params=params, timeout=20)
-            r.raise_for_status()
-            data = r.json()
-            if data.get("status") != "OK":
-                return None
-            bill = data.get("bill", {})
-            label, stage = map_status(bill.get("status"))
-            return (label, stage, bill.get("status_date", ""))
-        except (requests.RequestException, json.JSONDecodeError):
+        data = self._get(op="getBill", id=bill_id)
+        self.stats["getbill_calls"] += 1
+        if data is None:
             return None
+        bill = data.get("bill", {})
+        label, stage = map_status(bill.get("status"))
+        return {
+            "status_label": label,
+            "stage": stage,
+            "status_date": bill.get("status_date", ""),
+            "description": bill.get("description", ""),
+            "subjects": [s.get("subject_name") for s in bill.get("subjects", []) if s.get("subject_name")],
+            "change_hash": bill.get("change_hash", ""),
+        }
 
-    def _enrich_status(self, bills: List[Dict]):
-        """Populate real status on the given (relevant) bills via getBill."""
+    def _enrich(self, bills: List[Dict], known_hashes: Dict[int, str]):
+        """Attach getBill detail to each bill unless its change_hash is unchanged."""
         if not self.fetch_status:
             return
         for b in bills:
-            result = self.fetch_bill_status(b.get("bill_id"))
-            if result:
-                label, stage, date = result
-                b["_status_label"] = label
-                b["_stage"] = stage
-                b["status_date"] = date
-            time.sleep(0.4)  # rate limiting
+            bid = b.get("bill_id")
+            if bid in known_hashes and b.get("change_hash") and known_hashes[bid] == b["change_hash"]:
+                continue  # nothing changed since last sync -- skip the call
+            detail = self.fetch_bill(bid)
+            if detail:
+                b["_status_label"] = detail["status_label"]
+                b["_stage"] = detail["stage"]
+                b["status_date"] = detail["status_date"]
+                b["_description"] = detail["description"]
+                b["_subjects"] = detail["subjects"]
+                b["change_hash"] = detail["change_hash"] or b.get("change_hash")
+            time.sleep(self.sleep)
 
-    # ---- persistence -----------------------------------------------------
+    # ---- orchestration per state ------------------------------------------
 
-    def _bill_payload(self, bill: Dict) -> Dict:
-        """Build the normalized bill dict we store (with relevance metadata)."""
-        score = bill.get("_score") or score_bill(bill)
-        label = bill.get("_status_label")
-        stage = bill.get("_stage")
-        if label is None or stage is None:
-            label, stage = map_status(bill.get("status"))
-        return {
-            "bill_number": bill.get("bill_number"),
-            "bill_title": bill.get("title", ""),
-            "bill_status": label,
-            "bill_stage": stage,  # introduced | debated | passed | failed
-            "bill_url": bill.get("url", ""),
-            "bill_text_url": bill.get("text_url", ""),
-            "last_action": bill.get("last_action", ""),
-            "last_action_date": bill.get("last_action_date", ""),
-            "status_date": bill.get("status_date", ""),
-            "legiscan_bill_id": bill.get("bill_id"),
-            "relevance_score": score["relevance"],
-            "match_confidence": score["confidence"],
-            "matched_ai_terms": score["title_ai_terms"],
-            "matched_edu_terms": score["title_edu_terms"],
-        }
-
-    def sync_state(self, state: str):
-        """Search, rank, and persist all K-12 AI bills for a state."""
-        raw_bills = self.search_bills(state)
+    def sync_state(self, state: str) -> List[Dict]:
+        raw = self.search_bills(state)
         self.stats["searched"] += 1
-        if not raw_bills:
+        if not raw:
             return []
 
-        ranked = rank_bills(raw_bills)
+        ranked = rank_bills(raw)
         self.stats["found"] += len(ranked)
-
         relevant = [b for b in ranked if b["_score"]["is_k12_ai"]]
         low_conf = [b for b in ranked if not b["_score"]["is_k12_ai"]]
-
-        # Fetch authoritative status for relevant bills only, then re-sort so
-        # passed bills become the primary candidate.
-        self._enrich_status(relevant)
-        relevant.sort(
-            key=lambda b: (
-                _confidence_rank(b["_score"]["confidence"]),
-                1 if b.get("_stage") == "passed" else 0,
-                b["_score"]["relevance"],
-                b.get("last_action_date") or "",
-            ),
-            reverse=True,
-        )
-
         self.stats["relevant"] += len(relevant)
         self.stats["low_confidence"] += len(low_conf)
 
-        if not relevant:
-            print(f"     ⚠️  No high/medium-confidence K-12 AI bills "
-                  f"({len(low_conf)} low-confidence flagged for review)")
+        known_hashes = self._known_hashes(state) if self.db is not None else {}
+        self._enrich(ranked, known_hashes)
 
-        if self.db is None or self.dry_run:
-            # Preview / dry-run: report relevant first, then flagged-for-review.
-            for b in relevant:
+        if self.db is None:
+            self._print_preview(relevant, low_conf)
+            return ranked
+
+        self._ensure_profile(state)
+        self._upsert_bills(state, ranked)
+        return ranked
+
+    def _print_preview(self, relevant, low_conf):
+        for b in relevant:
+            s = b["_score"]
+            print(f"     [{s['confidence']:<6}] rel={s['relevance']:>3} {b['_status_label']:<14} "
+                  f"{b.get('bill_number','?'):<10} {(b.get('title','') or '')[:70]}")
+        if low_conf:
+            print(f"     ----- {len(low_conf)} held for review (low confidence) -----")
+            for b in low_conf:
                 s = b["_score"]
-                print(f"     [{s['confidence']:<6}] rel={s['relevance']:>3} "
-                      f"{b['_status_label']:<14} {b.get('bill_number','?'):<10} "
-                      f"{(b.get('title','') or '')[:70]}")
-            if low_conf:
-                print(f"     ----- {len(low_conf)} flagged for review (low confidence) -----")
-                for b in low_conf:
-                    s = b["_score"]
-                    tag = "noise" if s["flags"]["noise"] else ("higher-ed" if s["flags"]["higher_ed"] else "review")
-                    print(f"     [{s['confidence']:<6}] rel={s['relevance']:>3} "
-                          f"{tag:<14} {b.get('bill_number','?'):<10} "
-                          f"{(b.get('title','') or '')[:70]}")
-            return relevant + low_conf
+                tag = "noise" if s["flags"]["noise"] else ("higher-ed" if s["flags"]["higher_ed"] else "review")
+                print(f"     [{s['confidence']:<6}] rel={s['relevance']:>3} {b['_status_label']:<14} "
+                      f"{tag:<9} {b.get('bill_number','?'):<10} {(b.get('title','') or '')[:60]}")
 
-        self._persist(state, relevant, low_conf)
-        self._upsert_review_items(state, relevant + low_conf)
-        return relevant + low_conf
+    # ---- persistence -----------------------------------------------------
 
-    def _upsert_review_items(self, state: str, bills: List[Dict]):
-        """Record every discovered bill in the bill-level review queue.
+    def _known_hashes(self, state: str) -> Dict[int, str]:
+        from app.models.legislation import Bill
+        rows = self.db.query(Bill.legiscan_bill_id, Bill.change_hash, Bill.bill_stage) \
+            .filter(Bill.state_code == state).all()
+        # Only trust a hash if we also have a real stage for it (a --no-status
+        # run stores hashes with stage "introduced"/Unknown, which must be refreshed).
+        return {bid: h for bid, h, stage in rows if h and stage and stage != "unknown"}
 
-        Refreshes metadata + auto-classification each run; preserves any manual
-        decision/note a reviewer has set. Keyed on (state_code, legiscan_bill_id)
-        so recycled bill numbers across sessions don't collide.
-        """
-        from app.models.legislation import BillReviewItem
+    def _ensure_profile(self, state: str):
+        from app.models.legislation import StateProfile
+        if not self.db.query(StateProfile).filter_by(state_code=state).first():
+            self.db.add(StateProfile(state_code=state, state_name=JURISDICTIONS.get(state, state)))
+            self.db.commit()
 
+    def _upsert_bills(self, state: str, bills: List[Dict]):
+        """Insert new bills, refresh existing ones, log stage transitions, keep decisions."""
+        from app.models.legislation import Bill, BillStatusChange
+
+        now = datetime.utcnow()
         for b in bills:
             bid = b.get("bill_id")
             if not bid:
                 continue
             score = b.get("_score") or score_bill(b)
-            label = b.get("_status_label")
-            stage = b.get("_stage")
+            label, stage = b.get("_status_label"), b.get("_stage")
             if label is None or stage is None:
                 label, stage = map_status(b.get("status"))
+            flag = flag_for(score)
 
-            conf = score["confidence"]
-            auto = "INCLUDE" if score["is_k12_ai"] else "REVIEW"
-            if score["flags"]["noise"]:
-                flag = "noise"
-            elif score["flags"]["higher_ed"]:
-                flag = "higher_ed"
-            elif not score["is_k12_ai"]:
-                flag = "review"
-            else:
-                flag = ""
+            fields = dict(
+                bill_number=b.get("bill_number"),
+                bill_title=b.get("title", "") or "",
+                bill_url=b.get("url", ""),
+                bill_text_url=b.get("text_url", ""),
+                last_action=b.get("last_action", ""),
+                last_action_date=b.get("last_action_date", ""),
+                relevance_score=score["relevance"],
+                match_confidence=score["confidence"],
+                flag_reason=flag,
+                matched_ai_terms=score["title_ai_terms"],
+                matched_edu_terms=score["title_edu_terms"],
+                last_seen=now,
+            )
+            if b.get("change_hash"):
+                fields["change_hash"] = b["change_hash"]
+            if "_description" in b:
+                fields["description"] = b["_description"]
+                fields["subjects"] = b["_subjects"]
 
-            item = self.db.query(BillReviewItem).filter_by(
-                state_code=state, legiscan_bill_id=bid
-            ).first()
+            bill = self.db.query(Bill).filter_by(state_code=state, legiscan_bill_id=bid).first()
+            if bill is None:
+                bill = Bill(state_code=state, legiscan_bill_id=bid, decision="PENDING",
+                            bill_status=label, bill_stage=stage,
+                            status_date=b.get("status_date", ""), first_seen=now, **fields)
+                self.db.add(bill)
+                self.stats["new_bills"] += 1
+                continue
 
-            if item is None:
-                self.db.add(BillReviewItem(
-                    state_code=state,
-                    legiscan_bill_id=bid,
-                    bill_number=b.get("bill_number"),
-                    bill_title=b.get("title", ""),
-                    bill_url=b.get("url", ""),
-                    bill_text_url=b.get("text_url", ""),
-                    bill_status=label,
-                    bill_stage=stage,
-                    status_date=b.get("status_date", ""),
-                    last_action=b.get("last_action", ""),
-                    last_action_date=b.get("last_action_date", ""),
-                    relevance_score=score["relevance"],
-                    match_confidence=conf,
-                    auto_decision=auto,
-                    flag_reason=flag,
-                    matched_ai_terms=score["title_ai_terms"],
-                    matched_edu_terms=score["title_edu_terms"],
-                    decision="PENDING",
-                ))
-            else:
-                # Refresh metadata + classification; KEEP manual decision/note.
-                item.bill_number = b.get("bill_number")
-                item.bill_title = b.get("title", "")
-                item.bill_url = b.get("url", "")
-                item.bill_text_url = b.get("text_url", "")
-                item.bill_status = label
-                item.bill_stage = stage
-                item.status_date = b.get("status_date", "") or item.status_date
-                item.last_action = b.get("last_action", "")
-                item.last_action_date = b.get("last_action_date", "")
-                item.relevance_score = score["relevance"]
-                item.match_confidence = conf
-                item.auto_decision = auto
-                item.flag_reason = flag
-                item.matched_ai_terms = score["title_ai_terms"]
-                item.matched_edu_terms = score["title_edu_terms"]
-                item.last_seen = datetime.utcnow()
+            for k, v in fields.items():
+                setattr(bill, k, v)
+            enriched = "_status_label" in b  # only trust status we actually fetched this run
+            if enriched:
+                if bill.bill_stage != stage or bill.bill_status != label:
+                    self.db.add(BillStatusChange(
+                        bill=bill, old_status=bill.bill_status, new_status=label,
+                        old_stage=bill.bill_stage, new_stage=stage, changed_at=now,
+                    ))
+                    self.stats["status_changes"] += 1
+                bill.bill_status = label
+                bill.bill_stage = stage
+                bill.status_date = b.get("status_date", "") or bill.status_date
+            # decision / decision_note / reviewed_* deliberately untouched
 
         self.db.commit()
 
-    def _persist(self, state: str, relevant: List[Dict], low_conf: List[Dict]):
-        """Write ranked results to the DB with an audit trail."""
-        from app.models.legislation import StateLegislation, LegislationUpdate
-        from sqlalchemy.orm.attributes import flag_modified
+    # ---- runs --------------------------------------------------------------
 
-        primary = relevant[0] if relevant else None
-        extras = (relevant[1:] if relevant else []) + low_conf
-
-        state_record = self.db.query(StateLegislation).filter(
-            StateLegislation.state_code == state
-        ).first()
-
-        primary_payload = self._bill_payload(primary) if primary else None
-
-        if not state_record:
-            state_record = StateLegislation(
-                state_code=state,
-                state_name=self._get_state_name(state),
-                bill_number=primary_payload["bill_number"] if primary_payload else None,
-                bill_title=primary_payload["bill_title"] if primary_payload else None,
-                bill_status=primary_payload["bill_status"] if primary_payload else "Absent",
-                bill_url=primary_payload["bill_url"] if primary_payload else None,
-                bill_legiscan_id=primary_payload["legiscan_bill_id"] if primary_payload else None,
-                match_confidence=primary_payload["match_confidence"] if primary_payload else None,
-                bill_stage=primary_payload["bill_stage"] if primary_payload else None,
-                additional_bills=[self._bill_payload(b) for b in extras],
-                guidance_exists=False,
-                regulatory_stance="ABSENT",
-                maturity="NASCENT",
-            )
-            self.db.add(state_record)
-            self.db.commit()
-            self.db.add(LegislationUpdate(
-                state_legislation_id=state_record.id,
-                field_changed="full_record",
-                old_value=None,
-                new_value=f"New state record. Primary: "
-                          f"{primary_payload['bill_number'] if primary_payload else 'none'} "
-                          f"({primary_payload['match_confidence'] if primary_payload else 'n/a'})",
-                changed_by="legiscan_sync",
-                change_reason="Initial state record from LegiScan API (K-12 AI filtered)",
-            ))
-            self.db.commit()
-            self.stats["flagged_review"] += 1
-            return
-
-        # Existing record: refresh primary if we found a stronger/passed match,
-        # and merge the rest into additional_bills. Dedup by legiscan_bill_id --
-        # bill_number recycles across sessions (year=1), so two different HB4390s
-        # are distinct bills and must both be kept.
-        existing_extra = state_record.additional_bills or []
-        known = {b.get("legiscan_bill_id") for b in existing_extra if b.get("legiscan_bill_id")}
-
-        def _rank(confidence, stage):
-            # Same ordering rank_bills() uses to pick a primary within one run,
-            # applied here across runs so a stronger bill can replace a weaker
-            # stored one instead of freezing in place forever. Legacy rows with
-            # no stored confidence/stage rank at the bottom (0, 0), so the first
-            # real HIGH/MEDIUM match found after this migration will promote.
-            return (_confidence_rank(confidence), 1 if stage == "passed" else 0)
-
-        changed = False
-        if primary_payload:
-            # NOTE: deliberately NOT gated on `primary_payload["legiscan_bill_id"]
-            # not in known` here. A bill that deserves to be primary may already
-            # be sitting in additional_bills from before this promotion logic
-            # existed (or from a run where it wasn't yet strong enough) -- being
-            # "known" must not permanently block it from ever being promoted.
-            # `known` is only used below to avoid *duplicate* entries in extras.
-            same_bill = (
-                state_record.bill_legiscan_id is not None
-                and state_record.bill_legiscan_id == primary_payload["legiscan_bill_id"]
-            )
-            stronger = _rank(primary_payload["match_confidence"], primary_payload["bill_stage"]) > \
-                _rank(state_record.match_confidence, state_record.bill_stage)
-
-            if same_bill:
-                # Same bill re-surfacing (e.g. status advanced from Introduced to
-                # Passed) -- refresh its fields in place, don't touch extras.
-                if (state_record.bill_status != primary_payload["bill_status"]
-                        or state_record.bill_title != primary_payload["bill_title"]):
-                    old_status = state_record.bill_status
-                    state_record.bill_title = primary_payload["bill_title"]
-                    state_record.bill_status = primary_payload["bill_status"]
-                    state_record.bill_url = primary_payload["bill_url"]
-                    state_record.match_confidence = primary_payload["match_confidence"]
-                    state_record.bill_stage = primary_payload["bill_stage"]
-                    changed = True
-                    self.db.add(LegislationUpdate(
-                        state_legislation_id=state_record.id,
-                        field_changed="bill_status",
-                        old_value=str(old_status),
-                        new_value=primary_payload["bill_status"],
-                        changed_by="legiscan_sync",
-                        change_reason="Status refresh on existing primary bill",
-                    ))
-            elif not state_record.bill_number or stronger:
-                # Promote. If this bill is already sitting in additional_bills
-                # (e.g. from before this promotion logic existed), pull it out
-                # first so it doesn't end up listed as both primary and extra.
-                if primary_payload["legiscan_bill_id"] in known:
-                    existing_extra = [
-                        b for b in existing_extra
-                        if b.get("legiscan_bill_id") != primary_payload["legiscan_bill_id"]
-                    ]
-
-                # Demote the current primary (if any) into additional_bills so
-                # it isn't lost, then adopt the new one.
-                if state_record.bill_number and state_record.bill_legiscan_id and \
-                        state_record.bill_legiscan_id not in known:
-                    existing_extra.append({
-                        "bill_number": state_record.bill_number,
-                        "bill_title": state_record.bill_title,
-                        "bill_status": state_record.bill_status,
-                        "bill_url": state_record.bill_url,
-                        "legiscan_bill_id": state_record.bill_legiscan_id,
-                        "match_confidence": state_record.match_confidence,
-                        "bill_stage": state_record.bill_stage,
-                    })
-                    known.add(state_record.bill_legiscan_id)
-
-                old = state_record.bill_number
-                state_record.bill_number = primary_payload["bill_number"]
-                state_record.bill_title = primary_payload["bill_title"]
-                state_record.bill_status = primary_payload["bill_status"]
-                state_record.bill_url = primary_payload["bill_url"]
-                state_record.bill_legiscan_id = primary_payload["legiscan_bill_id"]
-                state_record.match_confidence = primary_payload["match_confidence"]
-                state_record.bill_stage = primary_payload["bill_stage"]
-                changed = True
-                self.db.add(LegislationUpdate(
-                    state_legislation_id=state_record.id,
-                    field_changed="bill_number",
-                    old_value=str(old),
-                    new_value=primary_payload["bill_number"],
-                    changed_by="legiscan_sync",
-                    change_reason=f"Promoted stronger primary bill "
-                                  f"({primary_payload['match_confidence']} confidence, "
-                                  f"{primary_payload['bill_stage']})",
-                ))
-                known.add(primary_payload["legiscan_bill_id"])
-            else:
-                extras = [primary] + extras
-
-        for b in extras:
-            payload = self._bill_payload(b)
-            bid = payload["legiscan_bill_id"]
-            if bid and bid not in known:
-                existing_extra.append(payload)
-                known.add(bid)
-                changed = True
-                self.db.add(LegislationUpdate(
-                    state_legislation_id=state_record.id,
-                    field_changed="additional_bills",
-                    old_value=None,
-                    new_value=f"Added {payload['bill_number']} "
-                              f"({payload['match_confidence']}, {payload['bill_status']})",
-                    changed_by="legiscan_sync",
-                    change_reason="Bill from LegiScan API (K-12 AI filtered)",
-                ))
-
-        if changed:
-            state_record.additional_bills = existing_extra
-            flag_modified(state_record, "additional_bills")
-            self.db.commit()
-            self.stats["updated"] += 1
-
-    # ---- orchestration ---------------------------------------------------
-
-    def sync_all(self):
+    def run(self, scope: str):
+        """scope: 'all' or a jurisdiction code."""
+        from app.models.legislation import SyncRun
+        states = SEARCHABLE if scope == "all" else [scope]
         print("\n📡 LegiScan Sync: K-12 AI Legislation")
         print("=" * 70)
-        print(f"Query: {SEARCH_QUERY}")
-        print(f"Years: {self.years} (1=all sessions)   Dry run: {self.dry_run}")
-        print()
-        for state in STATES:
+        print(f"Scope: {scope}   Years: {self.years} (1=all sessions)   "
+              f"Status lookups: {'on' if self.fetch_status else 'off'}")
+        print(f"Query: {SEARCH_QUERY}\n")
+
+        run = None
+        if self.db is not None:
+            run = SyncRun(scope=scope, started_at=datetime.utcnow())
+            self.db.add(run)
+            self.db.commit()
+
+        for state in states:
+            if state in LEGISCAN_UNSUPPORTED:
+                print(f"  ⏭  {state}: not covered by LegiScan (profile is maintained by hand)")
+                continue
             try:
                 self.sync_state(state)
-                time.sleep(0.6)  # rate limiting
-            except Exception as e:
+                time.sleep(self.sleep)
+            except Exception as e:  # keep one bad state from poisoning the rest
                 print(f"❌ Error syncing {state}: {e}")
                 self.stats["errors"] += 1
                 if self.db is not None:
-                    # Without this, a single failed flush poisons the session --
-                    # every subsequent state's commit fails too (cascading errors).
                     self.db.rollback()
-        self._print_summary()
 
-    def sync_one(self, state: str):
-        print("\n📡 LegiScan Sync: Single State")
-        print("=" * 70)
-        print(f"State: {state}   Years: {self.years}   Dry run: {self.dry_run}")
-        print(f"Query: {SEARCH_QUERY}\n")
-        self.sync_state(state)
+        if run is not None:
+            run.finished_at = datetime.utcnow()
+            run.stats = dict(self.stats)
+            self.db.commit()
         self._print_summary()
 
     def _print_summary(self):
         print("\n" + "=" * 70)
         print("📊 SYNC SUMMARY")
         print("=" * 70)
-        print(f"States searched:        {self.stats['searched']}")
-        print(f"Bills returned:         {self.stats['found']}")
-        print(f"K-12 AI relevant:       {self.stats['relevant']}")
-        print(f"Low-confidence flagged: {self.stats['low_confidence']}")
-        print(f"Records updated:        {self.stats['updated']}")
-        print(f"New records:            {self.stats['flagged_review']}")
-        print(f"Errors:                 {self.stats['errors']}")
-        print("\n⚠️  DRY RUN - no changes committed" if self.dry_run else "\n✅ Sync complete")
+        for k, v in self.stats.items():
+            print(f"{k:<18} {v}")
+        print("\n✅ Sync complete" if self.db is not None else "\n👀 Preview only -- nothing written")
 
-    @staticmethod
-    def _get_state_name(state: str) -> str:
-        jurisdictions = {
-            "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
-            "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",
-            "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho",
-            "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas",
-            "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland",
-            "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi",
-            "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada",
-            "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York",
-            "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma",
-            "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
-            "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah",
-            "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia",
-            "WI": "Wisconsin", "WY": "Wyoming",
-            "GU": "Guam", "PR": "Puerto Rico", "VI": "Virgin Islands",
-        }
-        return jurisdictions.get(state, state)
+
+def flag_for(score: Dict) -> str:
+    if score["flags"]["noise"]:
+        return "noise"
+    if score["flags"]["higher_ed"]:
+        return "higher_ed"
+    if not score["is_k12_ai"]:
+        return "review"
+    return ""
+
+
+def rescore(db, scope: str = "all") -> Dict[str, int]:
+    """Re-run the title scorer over stored bills. No network. Use after changing
+    the vocabulary or gates so existing rows pick up the new classification.
+    Decisions are untouched; only the automatic fields change."""
+    from app.models.legislation import Bill
+    q = db.query(Bill)
+    if scope != "all":
+        q = q.filter(Bill.state_code == scope)
+    changed = {"rescored": 0, "changed": 0}
+    for bill in q.all():
+        score = score_bill({"title": bill.bill_title or "", "relevance": bill.relevance_score or 0})
+        new = dict(match_confidence=score["confidence"], flag_reason=flag_for(score),
+                   matched_ai_terms=score["title_ai_terms"], matched_edu_terms=score["title_edu_terms"])
+        if any(getattr(bill, k) != v for k, v in new.items()):
+            if bill.match_confidence != new["match_confidence"]:
+                print(f"  {bill.state_code} {bill.bill_number:10} {bill.match_confidence} -> {new['match_confidence']}: {(bill.bill_title or '')[:80]}")
+            for k, v in new.items():
+                setattr(bill, k, v)
+            changed["changed"] += 1
+        changed["rescored"] += 1
+    db.commit()
+    return changed
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Sync K-12 AI legislation from LegiScan API")
-    parser.add_argument("--state", type=str, help="Sync single state (e.g., CA, TX, HI)")
-    parser.add_argument("--all", action="store_true", help="Sync all states + territories")
-    parser.add_argument("--dry-run", action="store_true", help="Show changes without committing")
-    parser.add_argument("--preview", action="store_true",
-                        help="Search and print ranked results only (no DB connection needed)")
+    parser = argparse.ArgumentParser(description="Sync K-12 AI legislation from LegiScan")
+    parser.add_argument("--state", type=str, help="Sync one jurisdiction (e.g. CA)")
+    parser.add_argument("--all", action="store_true", help="Sync every LegiScan-covered jurisdiction")
+    parser.add_argument("--preview", action="store_true", help="Print ranked results; no DB")
     parser.add_argument("--years", type=str, default="1",
-                        help="LegiScan year scope: 1=all, 2=current, 3=recent, 4=prior, or YYYY (default 1)")
-    parser.add_argument("--no-status", action="store_true",
-                        help="Skip per-bill getBill status lookups (faster; status stays Unknown)")
+                        help="1=all sessions, 2=current, 3=recent, 4=prior, or YYYY (default 1)")
+    parser.add_argument("--no-status", action="store_true", help="Skip getBill lookups")
+    parser.add_argument("--rescore", action="store_true",
+                        help="Re-run the title scorer over stored bills (no API calls); combine with --state or --all")
     args = parser.parse_args()
 
-    # Preview mode: no DB required -- quickest way to validate the keyword search.
-    if args.preview:
-        sync = LegiScanSync(db=None, dry_run=True, years=args.years,
-                            fetch_status=not args.no_status)
-        if args.state:
-            sync.sync_one(args.state.upper())
-        elif args.all:
-            sync.sync_all()
-        else:
-            print("Use --preview with --state CA or --all")
+    if not (args.state or args.all):
+        parser.print_help()
+        return
+    scope = "all" if args.all else args.state.upper()
+
+    if args.rescore:
+        from app.database import SessionLocal, init_db
+        init_db()
+        db = SessionLocal()
+        try:
+            r = rescore(db, scope)
+        finally:
+            db.close()
+        print(f"\nRescored {r['rescored']} bills, {r['changed']} changed classification fields")
         return
 
-    from app.database import SessionLocal
+    if args.preview:
+        LegiScanSync(db=None, years=args.years, fetch_status=not args.no_status).run(scope)
+        return
+
+    from app.database import SessionLocal, init_db
+    init_db()
     db = SessionLocal()
     try:
-        sync = LegiScanSync(db, dry_run=args.dry_run, years=args.years,
-                            fetch_status=not args.no_status)
-        if args.state:
-            sync.sync_one(args.state.upper())
-        elif args.all:
-            sync.sync_all()
-        else:
-            print("Usage:")
-            print("  python legiscan_sync.py --preview --state CA  # validate search, no DB")
-            print("  python legiscan_sync.py --state CA            # sync one state")
-            print("  python legiscan_sync.py --all                 # sync all states")
-            print("  python legiscan_sync.py --all --dry-run       # test without committing")
+        LegiScanSync(db, years=args.years, fetch_status=not args.no_status).run(scope)
     finally:
         db.close()
 

@@ -12,47 +12,61 @@ Click a state to see the AI legislation governing its K-12 public classrooms, wi
 - **Filters for relevance.** A bill only counts as K-12-AI legislation if it references both an AI concept *and* a K-12 education concept; everything else (AI procurement, deepfake/CSAM crime bills, higher-ed, budget acts, ceremonial resolutions) is scored down and routed to a review queue rather than shown blindly.
 - **Captures real bill status** via per-bill LegiScan `getBill` lookups, so passed / vetoed / introduced is accurate for color-coding.
 - **Human-in-the-loop curation.** Every discovered bill lands in a bill-level review queue with an automatic confidence (HIGH/MEDIUM/LOW). A reviewer can include or exclude any bill from the map through a dedicated UI; decisions persist across re-syncs.
+- **Sees below the state line.** A curated `local_actions` layer records notable *non-legislative* moves by districts, cities and counties (NYC's PK-8 generative-AI moratorium, LAUSD's device-level block, El Paso ISD's home-grown policy). The direction of each action is the project's sentiment proxy; it rolls up to a per-state "leaning" drawn as a small square on the map.
 
 ## Tech stack
 
-- **Frontend:** React 18 + Vite (interactive US map, state modal, review-queue panel)
+- **Frontend:** React 18 + Vite (real-geography US map via d3-geo + us-atlas, two color layers plus glyph overlays, state detail modal, bill review queue)
 - **Backend:** Python FastAPI + SQLAlchemy
-- **Database:** PostgreSQL
-- **Data source:** LegiScan API (legislation); state education agency guidance (manual today — automated scraper planned)
+- **Database:** SQLite (`backend/k12_ai.db`, created automatically — no database server to run)
+- **Data sources:** LegiScan API for bills; hand-researched state guidance profiles in `backend/data/profiles/*.json`; hand-curated local actions in `backend/data/local_actions/*.json`
+
+## How the data fits together
+
+There are two independent color layers, and one overlay:
+
+| Layer | Where it comes from | Vocabulary |
+|---|---|---|
+| **Legislation status** (automatic) | LegiScan bills that a reviewer has included, or that scored HIGH confidence and were never excluded. Derived from the strongest bill: `passed` > `debated` > `introduced` > `failed`. | `legislation_stage` |
+| **Regulatory stance** (manual) | `backend/data/profiles/<STATE>.json`, written by a person after reading the state's guidance. Shown only for states marked `RESEARCHED`; everything else is gray "not yet assessed". | `PROHIBIT / RESTRICT / REGULATE / SUPPORT / MANDATE / ABSENT` |
+| **Local actions** (manual, overlay) | `backend/data/local_actions/<STATE>.json`: one row per notable district/city/county action, kept small by the inclusion rule in that folder's README. Each action has a `direction` from -2 (prohibit) to +2 (embrace); a state's `local_signal.leaning` is the enrollment- and recency-weighted mean of its *active* actions. Whether an action is active or expired is derived from its dates, never edited. | `restrictive / mixed / permissive`, action types `MORATORIUM / RESTRICT / PERMIT / ADOPT / GUIDANCE / PROCUREMENT` |
+
+A state's `headline_bill` is simply its strongest included bill. Nothing is stored twice: the bill table is the source of truth for legislation, the profile JSON for stance, the local-actions JSON for sub-state activity, and `app/derive.py` computes everything else on read. A gray "not researched" state can carry a red local marker — that contrast (no state policy, biggest district just banned it) is deliberate.
 
 ## Quick start
 
-### Prerequisites
-- Python 3.11+, Node 18+, PostgreSQL 14+ (or Docker & Docker Compose)
-- A free [LegiScan API key](https://legiscan.com/legiscan)
-
-### Configure secrets
-Copy the example env and add your key (this file is gitignored — never commit it):
 ```bash
-cp .env.example backend/.env
-# edit backend/.env and set LEGISCAN_API_KEY=your_key
+./setup.sh      # venv, npm install, create SQLite schema, seed the state profiles
+./start.sh      # backend on :8000, frontend on :5173
 ```
 
-### Run (manual)
+Or by hand:
 ```bash
-# Backend
 cd backend
-python -m venv venv && source venv/bin/activate
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-python -m app.migrations.001_add_sync_tracking upgrade
-python -m app.migrations.002_add_bill_review_queue upgrade
-uvicorn app.main:app --reload --port 8000
+cp .env.example .env           # add LEGISCAN_API_KEY
+python -c "from app.database import init_db; init_db()"
+python -m app.seed             # loads backend/data/profiles/*.json
+uvicorn app.main:app --reload
 
-# Frontend (separate terminal)
-cd frontend
-npm install
-npm run dev
+cd ../frontend && npm install && npm run dev
 ```
 
-Services:
 - Frontend: http://localhost:5173
-- Backend API: http://localhost:8000
 - API docs (Swagger): http://localhost:8000/docs
+
+### Tests
+```bash
+cd backend && source venv/bin/activate && pytest
+```
+The suite runs against a throwaway SQLite database and needs no API key.
+
+### Editing a state's guidance profile
+Edit (or create) `backend/data/profiles/<STATE>.json`, set `research_status` to `RESEARCHED`, then run `python -m app.seed`. `python -m app.export` writes the current database back out to JSON if you edited a profile through the API instead.
+
+### Adding a local action
+Read the inclusion rule in `backend/data/local_actions/README.md` first (top-5 district in the state, national trade-press coverage, or first-of-its-kind — otherwise it doesn't go in). Add the row to `backend/data/local_actions/<STATE>.json` with at least one source and run `python -m app.seed`. The file replaces that state's rows, so removing a row from the file removes it from the map; to retire an action without losing history set `lifecycle: rescinded`. Weekly skim of K-12 Dive, EdWeek, Chalkbeat and EdSource is enough intake — big-district AI moves are heavily covered.
 
 ## Syncing legislation
 
@@ -85,10 +99,12 @@ The sync requires an AI term **and** an education term in the bill text (via a L
 | Title contains | Confidence | On map by default? |
 |---|---|---|
 | AI term **and** education term | HIGH | ✅ |
-| Education term (AI in body) | MEDIUM | ✅ |
+| Education term only (AI somewhere in the body) | MEDIUM | ❌ (held for review) |
 | AI only / neither / higher-ed-only / noise | LOW | ❌ (held for review) |
 
-A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and survives future syncs. See [`docs/SYNC_IMPLEMENTATION.md`](docs/SYNC_IMPLEMENTATION.md) for details.
+MEDIUM used to auto-include. It stopped on 2026-09-04 after an audit found that 0 of 126 MEDIUM bills had an AI term in the title — they were digital-citizenship, cyberbullying and computer-science-curriculum bills that mention AI once in a definitions section, and they were setting the map color for 21 states. The rule lives in one place, `AUTO_INCLUDE_CONFIDENCE` in `app/models/legislation.py`. The scorer only sees titles; the real fix (scoring AI-term density in the bill *text* via `getBillText`) is on the roadmap.
+
+A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and survives future syncs. After changing the vocabulary or gates, `python -m app.sync.legiscan_sync --all --rescore` re-classifies stored rows without any API calls. See [`docs/SYNC_IMPLEMENTATION.md`](docs/SYNC_IMPLEMENTATION.md) for details.
 
 ## Project structure
 
@@ -111,9 +127,9 @@ A manual decision (INCLUDED / EXCLUDED) always overrides the automatic call and 
 ## Data schema
 
 See [`docs/DATA_SCHEMA.md`](docs/DATA_SCHEMA.md). Core entities:
-- `state_legislation` — per-state legislation, guidance, and district activity
-- `legislation_updates` — field-level change history / audit trail
-- `bill_review_queue` — bill-level curation queue with auto-classification and manual include/exclude decisions
+- `bills` — every LegiScan result with auto-classification and the reviewer's include/exclude decision
+- `state_profiles` — hand-researched guidance and stance
+- `local_actions` — hand-curated district/city/county actions (`backend/data/local_actions/README.md` documents the fields)
 
 ## Tests
 
@@ -128,9 +144,13 @@ python test_data_pipes.py      # data-pipeline connectivity checks
 - [x] Interactive map, state modal, color-coding scaffolding
 - [x] LegiScan sync: multi-year, relevance-filtered, real status
 - [x] Bill-level review queue + curation UI
-- [ ] Wire `bill_stage` / `match_confidence` into the map view's color-coding
+- [x] Wire `bill_stage` / `match_confidence` into the map view's color-coding
+- [x] `getSearch` pagination for states exceeding the 50-result page
+- [x] Real state outlines (d3-geo Albers USA + us-atlas)
+- [x] Local (district/city/county) actions layer with derived leaning
+- [ ] **Text-density scorer:** score AI-term density in the bill text via `getBillText` and demote definition-only mentions — scoped in [`docs/TEXT_DENSITY_SCORER.md`](docs/TEXT_DENSITY_SCORER.md)
 - [ ] Automated state-education-agency (SEA) guidance scraper
-- [ ] `getSearch` pagination for states exceeding the 50-result page
+- [ ] `--from-url` helper that drafts a local-action row from an article into a pending queue (only if weekly manual intake gets tedious)
 
 ## Notes
 

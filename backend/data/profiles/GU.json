@@ -1,0 +1,14 @@
+{
+  "state_code": "GU",
+  "research_status": "RESEARCHED",
+  "guidance_exists": false,
+  "regulatory_stance": "ABSENT",
+  "maturity": "NASCENT",
+  "unique_context": "No K-12-specific AI policy yet. Guam established an AI Regulatory Task Force (2025) with a University of Guam-led education subcommittee aligning to federal AI priorities (child protection, workforce readiness) -- education is on its radar but not yet codified. GovGuam OTECH separately issued a government-wide AI Use Policy for line agencies (Jan 2025, OTECH-POL2025-001), which is IT/administrative, not education-specific.",
+  "notes": "Re-researched 2026-07-01 -- see docs/STATE_DATA_SOURCES.md. Direct outreach to Guam Dept of Education still needed for a K-12-specific answer; draft in docs/territory_outreach_emails.md.",
+  "sources": [
+    "https://islandtimes.org/guam-establishes-artificial-intelligence-regulatory-task-force/",
+    "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
+    "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
+  ]
+}

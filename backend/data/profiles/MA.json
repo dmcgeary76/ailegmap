@@ -1,0 +1,20 @@
+{
+  "state_code": "MA",
+  "research_status": "RESEARCHED",
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Massachusetts DESE",
+  "guidance_url": "https://www.doe.mass.edu/edtech/ai/default.html",
+  "guidance_core_principles": [
+    "data_privacy",
+    "transparency",
+    "bias_mitigation",
+    "human_oversight",
+    "academic_integrity"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "IN_PROGRESS",
+  "sources": [
+    "https://www.doe.mass.edu/edtech/ai/default.html"
+  ]
+}

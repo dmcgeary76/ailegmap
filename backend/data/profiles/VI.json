@@ -1,0 +1,12 @@
+{
+  "state_code": "VI",
+  "research_status": "RESEARCHED",
+  "guidance_exists": false,
+  "regulatory_stance": "ABSENT",
+  "maturity": "NASCENT",
+  "unique_context": "No public K-12 AI legislation or department guidance found. Governor Albert Bryan Jr. has publicly called for a broad education-system overhaul citing AI-driven changes in the future of work, but this is political commentary, not a VIDE policy.",
+  "notes": "Re-researched 2026-07-01, no change from original research -- see docs/STATE_DATA_SOURCES.md. Direct outreach to VIDE still needed; draft in docs/territory_outreach_emails.md.",
+  "sources": [
+    "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
+  ]
+}

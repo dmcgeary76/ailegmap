@@ -1,3 +1,5 @@
+> **Out of date (2026-09-02):** this document describes the PostgreSQL / `state_legislation` design. The current setup, data model and endpoints are in the top-level [README](../README.md) and `CHANGELOG.md`; the live API reference is at http://localhost:8000/docs.
+
 # Data Sync Implementation Guide
 
 Automated pipeline for K-12 AI legislation polling and manual review.
@@ -12,7 +14,7 @@ The LegiScan sync (`backend/app/sync/legiscan_sync.py`) was substantially rework
 - **Relevance-filtered query.** The full-text query requires an AI term **and** an education term, and excludes ceremonial resolutions: a bill must genuinely touch AI in a K-12 context to surface.
 - **Confidence scoring.** A client-side scorer reads each bill title and assigns HIGH / MEDIUM / LOW. AI-but-not-education titles (procurement, deepfake/CSAM crime, elections), higher-ed-only bills, and budget/ceremonial noise are scored LOW and held for review rather than auto-included. Matching is word-boundary aware (so "secondary education" does not match inside "postsecondary education").
 - **Real status.** `getSearch` does not return a bill's progress, so the sync makes a per-bill `getBill` call (for relevant bills) to populate accurate status (Introduced / Engrossed / Enrolled / Passed / Vetoed / Failed) plus a `stage` for map color-coding.
-- **Bill-level review queue.** Every discovered bill is upserted into `bill_review_queue` (model `BillReviewItem`) with its auto-classification and an overridable manual `decision` (PENDING / INCLUDED / EXCLUDED). `effective_included` resolves a manual decision first, else the auto rule (HIGH/MEDIUM in, LOW out). Re-syncs refresh metadata/status but preserve manual decisions; rows are keyed on `(state_code, legiscan_bill_id)` so recycled bill numbers across sessions stay distinct.
+- **Bill-level review queue.** Every discovered bill is upserted into `bill_review_queue` (model `BillReviewItem`) with its auto-classification and an overridable manual `decision` (PENDING / INCLUDED / EXCLUDED). `effective_included` resolves a manual decision first, else the auto rule (`AUTO_INCLUDE_CONFIDENCE`, currently HIGH only — MEDIUM stopped auto-including 2026-09-04, see README "How relevance works"). Re-syncs refresh metadata/status but preserve manual decisions; rows are keyed on `(state_code, legiscan_bill_id)` so recycled bill numbers across sessions stay distinct.
 
 CLI:
 ```bash

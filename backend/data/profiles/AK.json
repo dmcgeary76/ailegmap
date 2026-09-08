@@ -1,0 +1,23 @@
+{
+  "state_code": "AK",
+  "research_status": "RESEARCHED",
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Alaska Department of Education",
+  "guidance_url": "https://education.alaska.gov/artificial-intelligence/",
+  "guidance_core_principles": [
+    "human_centered_design",
+    "fair_access",
+    "transparency",
+    "oversight",
+    "security",
+    "ethical_use",
+    "cultural_responsiveness"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "IN_PROGRESS",
+  "unique_context": "Remote/rural state with a cultural-responsiveness focus; guidance-driven rather than legislation-driven.",
+  "sources": [
+    "https://education.alaska.gov/artificial-intelligence/"
+  ]
+}

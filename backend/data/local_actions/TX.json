@@ -1,0 +1,22 @@
+{
+  "state_code": "TX",
+  "actions": [
+    {
+      "jurisdiction": "El Paso Independent School District",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "district policy (see notes)",
+      "lifecycle": "adopted",
+      "effective_from": "2026-04-13",
+      "enrollment": 50000,
+      "summary": "With no Texas state guidance, El Paso ISD wrote its own AI policy and El Paso-area districts have adopted classroom tools such as PowerBuddy and MagicSchool AI alongside AI-literacy lessons.",
+      "notes": "Carried over from the TX state profile's free-text note. effective_from is the date of the El Paso Matters coverage, not a board adoption date; the specific adopting authority and date are unverified - firm up from the district's board minutes. Enrollment figure is approximate.",
+      "sources": [
+        "https://elpasomatters.org/2026/04/13/ai-artificial-intelligence-in-el-paso-texas-schools-chatgpt-gemini-ai-literacy/"
+      ]
+    }
+  ]
+}

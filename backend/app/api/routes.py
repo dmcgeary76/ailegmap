@@ -1,173 +1,206 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy.orm import Session
-from sqlalchemy import desc
-from typing import List
+"""State-level API: the map's read model plus profile editing."""
 from datetime import datetime
+from typing import List, Optional
 
+from fastapi import APIRouter, Depends, HTTPException, Query
+from sqlalchemy import desc
+from sqlalchemy.orm import Session, selectinload
+
+from app import derive
 from app.database import get_db
-from app.models.legislation import StateLegislation, LegislationUpdate, RegulatoryStance, Maturity
+from app.models.legislation import (
+    StateProfile, Bill, BillStatusChange, SyncRun, LocalAction, JURISDICTIONS,
+    RegulatoryStance, ResearchStatus, STAGE_RANK,
+)
 from app.schemas.legislation import (
-    StateLegislationCreate,
-    StateLegislationResponse,
-    StateLegislationUpdate as StateLegislationUpdateSchema,
-    DashboardSummary,
-    LegislationUpdateResponse,
+    StateSummary, StateDetail, StateProfileUpdate, DashboardSummary, StatusChangeOut, BillBrief,
+    LocalActionOut,
 )
 
-router = APIRouter(prefix="/api", tags=["legislation"])
+router = APIRouter(prefix="/api", tags=["states"])
 
 
-# Retrieve endpoints
+def _ensure_all_profiles(db: Session) -> List[StateProfile]:
+    """Every jurisdiction gets a profile row, so the map never has holes."""
+    existing = {p.state_code: p for p in db.query(StateProfile).all()}
+    missing = [code for code in JURISDICTIONS if code not in existing]
+    if missing:
+        for code in missing:
+            p = StateProfile(state_code=code, state_name=JURISDICTIONS[code])
+            db.add(p)
+            existing[code] = p
+        db.commit()
+    return sorted(existing.values(), key=lambda p: p.state_code)
 
-@router.get("/states", response_model=List[StateLegislationResponse])
-def get_all_states(
+
+def _actions_by_state(db: Session) -> dict:
+    out: dict = {}
+    for a in db.query(LocalAction).all():
+        out.setdefault(a.state_code, []).append(a)
+    return out
+
+
+def _action_out(a: LocalAction) -> LocalActionOut:
+    return LocalActionOut(**{c.name: getattr(a, c.name) for c in LocalAction.__table__.columns
+                             if c.name != "added_at"}, status=derive.action_status(a))
+
+
+def _summary(profile: StateProfile, bills: List[Bill], actions: List[LocalAction] = ()) -> dict:
+    head = derive.headline_bill(bills)
+    return {
+        **{c.name: getattr(profile, c.name) for c in StateProfile.__table__.columns if c.name != "id"},
+        "legislation_stage": derive.legislation_stage(bills),
+        "headline_bill": BillBrief.model_validate(head) if head else None,
+        "bill_counts": derive.review_counts(bills),
+        "local_signal": derive.local_signal(actions),
+    }
+
+
+@router.get("/states", response_model=List[StateSummary])
+def list_states(
     db: Session = Depends(get_db),
-    stance: str = Query(None),
-    maturity: str = Query(None),
+    stance: Optional[RegulatoryStance] = Query(None, description="Researched states with this stance"),
+    legislation_stage: Optional[str] = Query(None, pattern="^(passed|debated|introduced|failed|none)$"),
 ):
-    """Get all state legislation records with optional filtering."""
-    query = db.query(StateLegislation)
+    profiles = _ensure_all_profiles(db)
+    bills_by_state: dict = {}
+    for b in db.query(Bill).all():
+        bills_by_state.setdefault(b.state_code, []).append(b)
+    actions_by_state = _actions_by_state(db)
 
-    if stance:
-        query = query.filter(StateLegislation.regulatory_stance == stance)
-    if maturity:
-        query = query.filter(StateLegislation.maturity == maturity)
+    out = []
+    for p in profiles:
+        s = _summary(p, bills_by_state.get(p.state_code, []), actions_by_state.get(p.state_code, []))
+        if stance and not (p.research_status == ResearchStatus.RESEARCHED and p.regulatory_stance == stance):
+            continue
+        if legislation_stage and (s["legislation_stage"] or "none") != legislation_stage:
+            continue
+        out.append(s)
+    return out
 
-    return query.all()
+
+def _get_or_create_profile(db: Session, code: str) -> StateProfile:
+    profile = db.query(StateProfile).filter(StateProfile.state_code == code).first()
+    if not profile:
+        if code not in JURISDICTIONS:
+            raise HTTPException(status_code=404, detail=f"Unknown jurisdiction {code}")
+        profile = StateProfile(state_code=code, state_name=JURISDICTIONS[code])
+        db.add(profile)
+        db.commit()
+    return profile
 
 
-@router.get("/states/{state_code}", response_model=StateLegislationResponse)
+@router.get("/states/{state_code}", response_model=StateDetail)
 def get_state(state_code: str, db: Session = Depends(get_db)):
-    """Get legislation record for a specific state."""
-    state = db.query(StateLegislation).filter(
-        StateLegislation.state_code == state_code.upper()
-    ).first()
+    code = state_code.upper()
+    profile = _get_or_create_profile(db, code)
+    bills = db.query(Bill).filter(Bill.state_code == code).all()
+    actions = db.query(LocalAction).filter(LocalAction.state_code == code).all()
+    s = _summary(profile, bills, actions)
+    s["bills"] = [BillBrief.model_validate(b) for b in derive.included_bills(bills)]
+    s["local_actions"] = [_action_out(a) for a in derive.sort_actions(actions)]
+    return s
 
-    if not state:
-        raise HTTPException(status_code=404, detail=f"State {state_code} not found")
 
-    return state
+@router.get("/local-actions", response_model=List[LocalActionOut])
+def list_local_actions(
+    db: Session = Depends(get_db),
+    state_code: Optional[str] = Query(None, min_length=2, max_length=2),
+    status: Optional[str] = Query(None, pattern="^(proposed|active|expired|rescinded)$"),
+):
+    """Every curated local action, newest first. Edit data/local_actions/<ST>.json and re-seed to change."""
+    q = db.query(LocalAction)
+    if state_code:
+        q = q.filter(LocalAction.state_code == state_code.upper())
+    rows = [_action_out(a) for a in q.all()]
+    if status:
+        rows = [r for r in rows if r.status == status]
+    return sorted(rows, key=lambda r: r.effective_from or "", reverse=True)
+
+
+@router.put("/states/{state_code}", response_model=StateDetail)
+def update_profile(state_code: str, update: StateProfileUpdate, db: Session = Depends(get_db)):
+    code = state_code.upper()
+    profile = _get_or_create_profile(db, code)
+    for field, value in update.model_dump(exclude_unset=True).items():
+        setattr(profile, field, value)
+    profile.last_updated = datetime.utcnow()
+    db.commit()
+    return get_state(code, db)
 
 
 @router.get("/dashboard/summary", response_model=DashboardSummary)
-def get_dashboard_summary(db: Session = Depends(get_db)):
-    """Get dashboard summary statistics."""
-    total_states = db.query(StateLegislation).count()
+def dashboard_summary(db: Session = Depends(get_db)):
+    profiles = _ensure_all_profiles(db)
+    bills = db.query(Bill).all()
+    by_state: dict = {}
+    for b in bills:
+        by_state.setdefault(b.state_code, []).append(b)
 
-    # Count by stance
-    stance_counts = {}
-    for stance in RegulatoryStance:
-        count = db.query(StateLegislation).filter(
-            StateLegislation.regulatory_stance == stance
-        ).count()
-        stance_counts[stance.value] = count
+    stage_counts = {s: 0 for s in STAGE_RANK}
+    stage_counts["none"] = 0
+    with_included = 0
+    for p in profiles:
+        stage = derive.legislation_stage(by_state.get(p.state_code, []))
+        stage_counts[stage or "none"] += 1
+        if stage:
+            with_included += 1
 
-    # Count by maturity
-    maturity_counts = {}
-    for mat in Maturity:
-        count = db.query(StateLegislation).filter(
-            StateLegislation.maturity == mat
-        ).count()
-        maturity_counts[mat.value] = count
+    researched = [p for p in profiles if p.research_status == ResearchStatus.RESEARCHED]
+    stance_counts = {s.value: 0 for s in RegulatoryStance}
+    for p in researched:
+        stance_counts[p.regulatory_stance.value] += 1
 
-    # States with guidance
-    states_with_guidance = db.query(StateLegislation).filter(
-        StateLegislation.guidance_exists == True
-    ).count()
+    bill_counts = derive.review_counts(bills)
 
-    # States with legislation
-    states_with_legislation = db.query(StateLegislation).filter(
-        StateLegislation.bill_number.isnot(None)
-    ).count()
+    actions_by_state = _actions_by_state(db)
+    leaning_counts = {"restrictive": 0, "permissive": 0, "mixed": 0, "none": 0}
+    for p in profiles:
+        leaning_counts[derive.local_signal(actions_by_state.get(p.state_code, []))["leaning"] or "none"] += 1
+    all_actions = [a for rows in actions_by_state.values() for a in rows]
 
-    # Recent updates
-    recent_updates = db.query(LegislationUpdate).order_by(
-        desc(LegislationUpdate.changed_at)
-    ).limit(10).all()
+    last_run = db.query(SyncRun).filter(SyncRun.finished_at.isnot(None)) \
+        .order_by(desc(SyncRun.finished_at)).first()
+
+    changes = (
+        db.query(BillStatusChange)
+        .options(selectinload(BillStatusChange.bill))
+        .order_by(desc(BillStatusChange.changed_at))
+        .limit(10).all()
+    )
+    recent = [
+        StatusChangeOut(
+            state_code=c.bill.state_code, bill_number=c.bill.bill_number,
+            bill_title=c.bill.bill_title, old_status=c.old_status,
+            new_status=c.new_status, new_stage=c.new_stage, changed_at=c.changed_at,
+        )
+        for c in changes
+    ]
 
     return DashboardSummary(
-        total_states=total_states,
+        jurisdictions=len(profiles),
+        states_with_included_bills=with_included,
+        states_by_legislation_stage=stage_counts,
+        states_researched=len(researched),
+        states_with_guidance=sum(1 for p in profiles if p.guidance_exists),
         states_by_stance=stance_counts,
-        states_by_maturity=maturity_counts,
-        states_with_guidance=states_with_guidance,
-        states_with_legislation=states_with_legislation,
-        recent_updates=recent_updates,
+        bills={
+            "total": bill_counts["total"],
+            "included": bill_counts["included"],
+            "pending": bill_counts["pending"],
+            "excluded": bill_counts["manually_excluded"],
+        },
+        local_actions={
+            "total": len(all_actions),
+            "active": len(derive.active_actions(all_actions)),
+            "states": sum(1 for rows in actions_by_state.values() if rows),
+        },
+        states_by_local_leaning=leaning_counts,
+        last_sync=last_run.finished_at if last_run else None,
+        recent_status_changes=recent,
     )
 
-
-# Create endpoint
-
-@router.post("/states", response_model=StateLegislationResponse)
-def create_state_legislation(
-    legislation: StateLegislationCreate,
-    db: Session = Depends(get_db),
-):
-    """Create a new state legislation record."""
-    # Check if state already exists
-    existing = db.query(StateLegislation).filter(
-        StateLegislation.state_code == legislation.state_code.upper()
-    ).first()
-
-    if existing:
-        raise HTTPException(
-            status_code=400,
-            detail=f"State {legislation.state_code} already exists"
-        )
-
-    db_legislation = StateLegislation(
-        **legislation.model_dump()
-    )
-    db.add(db_legislation)
-    db.commit()
-    db.refresh(db_legislation)
-
-    return db_legislation
-
-
-# Update endpoint
-
-@router.put("/states/{state_code}", response_model=StateLegislationResponse)
-def update_state_legislation(
-    state_code: str,
-    update_data: StateLegislationUpdateSchema,
-    db: Session = Depends(get_db),
-):
-    """Update a state legislation record."""
-    state = db.query(StateLegislation).filter(
-        StateLegislation.state_code == state_code.upper()
-    ).first()
-
-    if not state:
-        raise HTTPException(status_code=404, detail=f"State {state_code} not found")
-
-    # Track changes
-    update_dict = update_data.model_dump(exclude_unset=True)
-    for field, value in update_dict.items():
-        old_value = getattr(state, field)
-        if old_value != value:
-            # Create audit log entry
-            audit = LegislationUpdate(
-                state_legislation_id=state.id,
-                field_changed=field,
-                old_value=str(old_value),
-                new_value=str(value),
-                changed_at=datetime.utcnow(),
-                changed_by="user",
-            )
-            db.add(audit)
-
-        setattr(state, field, value)
-
-    state.last_updated = datetime.utcnow()
-    db.commit()
-    db.refresh(state)
-
-    return state
-
-
-# Health check
 
 @router.get("/health")
 def health_check():
-    """Health check endpoint."""
     return {"status": "ok"}

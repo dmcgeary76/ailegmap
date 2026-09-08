@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
 import './ReviewQueue.css'
-
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+import { api } from '../api'
 
 const STAGE_LABELS = {
   passed: 'Passed',
@@ -33,10 +31,10 @@ function ReviewQueue() {
 
   // Load the list of states for the selector once.
   useEffect(() => {
-    axios
-      .get(`${API_URL}/api/states`)
-      .then((res) => {
-        const opts = (res.data || [])
+    api
+      .states()
+      .then((data) => {
+        const opts = (data || [])
           .map((s) => ({ code: s.state_code, name: s.state_name }))
           .sort((a, b) => a.name.localeCompare(b.name))
         setStateOptions(opts)
@@ -48,27 +46,25 @@ function ReviewQueue() {
     setLoading(true)
     setError(null)
     try {
-      const params = new URLSearchParams({ limit: '1000' })
-      // stateCode === '' means "All states/territories" -- omit the filter
-      // entirely rather than sending an empty state_code param.
-      if (stateCode) params.append('state_code', stateCode)
-      if (confidence) params.append('confidence', confidence)
-      if (decision) params.append('decision', decision)
-      if (flagReason) params.append('flag_reason', flagReason)
-      if (onMap) params.append('included', onMap)
+      const params = { limit: 5000 }
+      // stateCode === '' means "All states/territories" -- omit the filter.
+      if (stateCode) params.state_code = stateCode
+      if (confidence) params.confidence = confidence
+      if (decision) params.decision = decision
+      if (flagReason) params.flag_reason = flagReason
+      if (onMap) params.included = onMap
 
-      const statsParams = stateCode ? `?state_code=${stateCode}` : ''
-      const [itemsRes, statsRes] = await Promise.all([
-        axios.get(`${API_URL}/api/bills/review?${params}`),
-        axios.get(`${API_URL}/api/bills/review/stats${statsParams}`),
+      const [items, statsData] = await Promise.all([
+        api.reviewList(params),
+        api.reviewStats(stateCode ? { state_code: stateCode } : {}),
       ])
-      const sorted = [...itemsRes.data].sort(
+      const sorted = [...items].sort(
         (a, b) =>
           (CONF_ORDER[a.match_confidence] ?? 9) - (CONF_ORDER[b.match_confidence] ?? 9) ||
           (b.relevance_score || 0) - (a.relevance_score || 0)
       )
       setItems(sorted)
-      setStats(statsRes.data)
+      setStats(statsData)
       setSelected(new Set())
     } catch (err) {
       console.error(err)
@@ -85,14 +81,10 @@ function ReviewQueue() {
   const applyDecision = async (id, value) => {
     setSavingIds((p) => ({ ...p, [id]: true }))
     try {
-      const res = await axios.post(`${API_URL}/api/bills/review/${id}/decision`, {
-        decision: value,
-        reviewed_by: 'review_ui',
-      })
-      setItems((prev) => prev.map((it) => (it.id === id ? res.data : it)))
+      const updated = await api.decide(id, { decision: value, reviewed_by: 'review_ui' })
+      setItems((prev) => prev.map((it) => (it.id === id ? updated : it)))
       // refresh stats (effective_on_map may change)
-      const statsRes = await axios.get(`${API_URL}/api/bills/review/stats?state_code=${stateCode}`)
-      setStats(statsRes.data)
+      setStats(await api.reviewStats(stateCode ? { state_code: stateCode } : {}))
     } catch (err) {
       console.error(err)
       setError('Failed to save decision.')
@@ -106,11 +98,7 @@ function ReviewQueue() {
     if (!ids.length) return
     setLoading(true)
     try {
-      await axios.post(`${API_URL}/api/bills/review/bulk-decision`, {
-        ids,
-        decision: value,
-        reviewed_by: 'review_ui',
-      })
+      await api.bulkDecide({ ids, decision: value, reviewed_by: 'review_ui' })
       await fetchData()
     } catch (err) {
       console.error(err)
