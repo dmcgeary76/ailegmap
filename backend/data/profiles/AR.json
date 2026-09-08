@@ -1,0 +1,25 @@
+{
+  "state_code": "AR",
+  "research_status": "NOT_RESEARCHED",
+  "_draft": {
+    "drafted_by": "claude 2026-09-08",
+    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
+    "verify": [
+      "Confirm no ADE/DESE K-12 AI guidance document exists (dese.ade.arkansas.gov) -- none found on aiforeducation.io, Ballotpedia or Playlab as of Sept 2026",
+      "The old STATE_DATA_SOURCES note claimed 'requires vendor data agreements specifying student data handling' -- no source found; dropped unless you have one"
+    ]
+  },
+  "guidance_exists": false,
+  "guidance_type": "NONE",
+  "regulatory_stance": "ABSENT",
+  "maturity": "NASCENT",
+  "key_focus_areas": [],
+  "unique_context": "No state education agency guidance on AI in K-12. The Governor's AI & Analytics Center of Excellence working group (launched June 2024) reported in Feb 2025 and Feb 2026 on AI in state government, not schools. A 2025 task-force report recommended AI-literacy curricular frameworks, educator PD, equitable access, student-data protection and district implementation support, but no statewide guidance document has followed.",
+  "notes": "Trackers (aiforeducation.io, Ballotpedia) list Arkansas as having no released K-12 AI guidance. The 2021 CSforAR high-school AI/ML course standards predate generative AI and are a curriculum standard, not usage guidance.",
+  "sources": [
+    "https://governor.arkansas.gov/news_post/governor-sanders-receives-report-from-arkansas-ai-and-analytics-center-of-excellence/",
+    "https://governor.arkansas.gov/news_post/sanders-receives-ai-center-of-excellence-effectiveness-and-safety-report/",
+    "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
+    "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
+  ]
+}

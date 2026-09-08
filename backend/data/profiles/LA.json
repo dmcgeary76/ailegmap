@@ -1,0 +1,41 @@
+{
+  "state_code": "LA",
+  "research_status": "NOT_RESEARCHED",
+  "_draft": {
+    "drafted_by": "claude 2026-09-08",
+    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
+    "verify": [
+      "HB 119 (Ivy Daniels Act, signed 2026-06-09, effective 2026-08-01) is a criminal statute on AI-generated images with a school-instruction mandate for grades 6+. It is in notes, not stance -- confirm you agree it doesn't move LA to REGULATE",
+      "HB 1149 (AI instruction grades 6-12) shows as introduced 2026-04-01 in the DB; the session ended in June -- outcome unverified, next sync will tell",
+      "Open the LDOE PDF once and confirm the four-tier use framework (AI-Empowered / Enhanced / Assisted / Prohibited) is in it -- that detail comes from a secondary source"
+    ]
+  },
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Louisiana Department of Education",
+  "guidance_issued_date": "2024-08-28",
+  "guidance_url": "https://doe.louisiana.gov/docs/default-source/technology-footprint/ldoe-ai-guidance.pdf",
+  "guidance_core_principles": [
+    "data_privacy",
+    "ethical_use",
+    "student_centered_learning",
+    "transparency",
+    "professional_development"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "ACTIVE",
+  "key_focus_areas": [
+    "data_privacy",
+    "ai_literacy",
+    "professional_development",
+    "tiered_classroom_use"
+  ],
+  "unique_context": "LDOE's 'Artificial Intelligence in Louisiana Schools' (Aug 28, 2024) is advisory, meant as the foundation for local policies, and organizes classroom use into tiers from AI-Empowered to AI-Prohibited. The legislature has so far acted around the edges: HR 249 (2026, adopted) asks BESE to fold AI into content standards; HB 1149 (2026) would require AI instruction in grades 6-12; HB 119 (2026, enacted) is a deepfake-image crime law that also requires schools to teach the consequences from grade 6, with LDOE developing the materials.",
+  "notes": "Superintendent Cade Brumley on the release: 'As the impact of artificial intelligence grows, it's important we provide information on effective and safe utilization.' LDOE also publishes an 'AI for Leaders' companion.",
+  "sources": [
+    "https://doe.louisiana.gov/about/news-releases/release/2024/08/28/louisiana-releases-guidance-for-responsible-use-of-artificial-intelligence-in-k-12-classrooms",
+    "https://doe.louisiana.gov/docs/default-source/technology-footprint/ldoe-ai-guidance.pdf",
+    "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
+    "https://www.billtrack50.com/billdetail/1972291"
+  ]
+}

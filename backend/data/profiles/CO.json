@@ -1,0 +1,42 @@
+{
+  "state_code": "CO",
+  "research_status": "NOT_RESEARCHED",
+  "_draft": {
+    "drafted_by": "claude 2026-09-08",
+    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
+    "verify": [
+      "Judgment call: the Roadmap is authored by the Colorado Education Initiative (a nonprofit), not CDE. CDE links to it and publishes AI competency profiles but says it 'does not endorse any resource'. Drafted as guidance_exists=true / ADVISORY with the issuer named honestly -- flip to false if you want SEA-authored only",
+      "Maturity ACTIVE vs IN_PROGRESS: roadmap (Aug 2024) + statewide AI Summit (Mar 2025) + CDE competency profiles + district pilots. ACTIVE proposed",
+      "Ballot initiative 2025-26 #148 'AI-Powered Education' is a proposed citizen initiative, not law -- mentioned in notes only"
+    ]
+  },
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "Colorado Education Initiative (nonprofit), linked and supplemented by the Colorado Department of Education",
+  "guidance_issued_date": "2024-08-01",
+  "guidance_url": "https://ed.cde.state.co.us/artificialintelligence",
+  "guidance_core_principles": [
+    "human_judgment_central",
+    "ai_supplements_not_replaces_educators",
+    "critical_evaluation_of_outputs",
+    "data_privacy",
+    "equity"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "ACTIVE",
+  "key_focus_areas": [
+    "educator_professional_development",
+    "ai_literacy",
+    "district_pilots",
+    "data_privacy"
+  ],
+  "unique_context": "Colorado's guidance is a public-private artifact: the Colorado Roadmap for AI in K-12 Education (Colorado Education Initiative, August 2024) with its 'If and How' decision checklist and AI Resource Evaluation Tool, hosted alongside CDE's own AI competency profiles for students, educators, administrators and specialized service providers. Nothing is mandatory; districts implement individually.",
+  "notes": "CDE's AI page states it does not endorse listed resources and cites FERPA/COPPA as the binding constraints. A proposed 2025-26 ballot initiative (#148, 'AI-Powered Education') would create AI-delivered instruction with adult 'guides'; it is not law.",
+  "sources": [
+    "https://ed.cde.state.co.us/artificialintelligence",
+    "https://www.coloradoedinitiative.org/wp-content/uploads/2024/08/Colorado-Roadmap-for-AI-in-K-12-Education_August-2024.pdf",
+    "https://www.coloradoedinitiative.org/colorado-releases-roadmap-for-ai-in-k-12-education/",
+    "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
+    "https://leg.colorado.gov/initiative_files/323/download"
+  ]
+}

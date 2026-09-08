@@ -1,0 +1,40 @@
+{
+  "state_code": "NM",
+  "research_status": "NOT_RESEARCHED",
+  "_draft": {
+    "drafted_by": "claude 2026-09-08",
+    "approve_by": "set research_status to RESEARCHED and delete this _draft block, then: python -m app.seed",
+    "verify": [
+      "Maturity IN_PROGRESS proposed: the PED document is literally labeled 'In Process ... 1.0' and the LESC analyst told lawmakers in May 2026 the state still needs comprehensive policy. Change to ACTIVE if you weight the signed guidance more",
+      "HB 330 (2026, AI ethics as a CS elective) -- outcome unverified; FutureEd's tracker lists it without a status",
+      "Tribal sovereignty as a named principle comes from the LESC May 2026 recommendation, not the PED document itself -- it's in notes, not guidance_core_principles"
+    ]
+  },
+  "guidance_exists": true,
+  "guidance_type": "ADVISORY",
+  "guidance_issued_by": "New Mexico Public Education Department",
+  "guidance_issued_date": "2025-04-29",
+  "guidance_url": "https://web.ped.nm.gov/wp-content/uploads/2025/05/NM-AI-Guidance-Signed-4-29-2025.pdf",
+  "guidance_core_principles": [
+    "human_oversight",
+    "data_privacy",
+    "digital_equity",
+    "ai_literacy"
+  ],
+  "regulatory_stance": "SUPPORT",
+  "maturity": "IN_PROGRESS",
+  "key_focus_areas": [
+    "human_oversight",
+    "data_privacy",
+    "digital_equity",
+    "legislative_study"
+  ],
+  "unique_context": "PED's 'AI Guidance for K-12 Education 1.0' (signed April 29, 2025) is non-binding and self-described as in process; it builds on the 2023 Digital Equity in Education Act and uses a 'M.A.Z.E.' framework (Monitor, Assess, Zero-in, Evaluate). The Legislative Education Study Committee ran an AI working group in 2025 and in May 2026 its staff urged lawmakers to adopt comprehensive policy covering data privacy, curriculum and tribal sovereignty. HB 330 (2026) proposed AI ethics as a computer-science elective.",
+  "notes": "AFT New Mexico expects AI language in teacher contracts by 2027. The LESC 2025 working-group report recommended a state oversight body.",
+  "sources": [
+    "https://web.ped.nm.gov/wp-content/uploads/2025/05/NM-AI-Guidance-Signed-4-29-2025.pdf",
+    "https://sourcenm.com/2026/05/29/nm-lawmakers-receive-push-to-update-ai-education-policies/",
+    "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
+    "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
+  ]
+}
