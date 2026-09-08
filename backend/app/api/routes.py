@@ -129,8 +129,9 @@ def update_profile(state_code: str, update: StateProfileUpdate, db: Session = De
     return get_state(code, db)
 
 
-@router.get("/dashboard/summary", response_model=DashboardSummary)
-def dashboard_summary(db: Session = Depends(get_db)):
+def build_dashboard_summary(db: Session) -> DashboardSummary:
+    """The dashboard's numbers. Shared by the live endpoint and ``app.export``
+    so the static build shows exactly what the API would."""
     profiles = _ensure_all_profiles(db)
     bills = db.query(Bill).all()
     by_state: dict = {}
@@ -199,6 +200,11 @@ def dashboard_summary(db: Session = Depends(get_db)):
         last_sync=last_run.finished_at if last_run else None,
         recent_status_changes=recent,
     )
+
+
+@router.get("/dashboard/summary", response_model=DashboardSummary)
+def dashboard_summary(db: Session = Depends(get_db)):
+    return build_dashboard_summary(db)
 
 
 @router.get("/health")

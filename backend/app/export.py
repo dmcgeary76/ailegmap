@@ -3,8 +3,11 @@
     python -m app.export                    # writes ../docs/data.json
     python -m app.export --out /tmp/x.json
 
-The static map (docs/) reads this file, so publishing is: sync -> review ->
-export -> commit. No server is needed to view the map.
+The frontend's static build (``npm run build:static`` in frontend/) ships
+this file next to the app and reads it instead of calling the API, so
+publishing is: sync -> review -> export -> commit -> push. No server is
+needed to view the map. The file carries everything /api/states,
+/api/states/{code} and /api/dashboard/summary would return.
 """
 import argparse
 import json
@@ -14,6 +17,7 @@ from app import derive
 from app.database import SessionLocal, init_db, BACKEND_DIR
 from app.models.legislation import StateProfile, Bill, SyncRun, LocalAction, JURISDICTIONS
 from app.schemas.legislation import BillBrief
+from app.api.routes import build_dashboard_summary
 
 DEFAULT_OUT = BACKEND_DIR.parent / "docs" / "data.json"
 
@@ -41,6 +45,7 @@ def build_export(db) -> dict:
             "research_status": p.research_status.value if p else "NOT_RESEARCHED",
             "legislation_stage": derive.legislation_stage(bills),
             "bill_counts": derive.review_counts(bills),
+            "headline_bill": BillBrief.model_validate(included[0]).model_dump() if included else None,
             "bills": [BillBrief.model_validate(b).model_dump() for b in included],
             "local_signal": derive.local_signal(actions),
             "local_actions": [
@@ -71,6 +76,7 @@ def build_export(db) -> dict:
     return {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "last_sync": last_run.finished_at.isoformat() + "Z" if last_run else None,
+        "summary": build_dashboard_summary(db).model_dump(mode="json"),
         "states": states,
     }
 

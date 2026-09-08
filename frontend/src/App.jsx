@@ -1,10 +1,13 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
-import { api } from './api'
+import { api, STATIC } from './api'
 import Dashboard from './components/Dashboard'
 import USMap from './components/USMap'
 import StateModal from './components/StateModal'
 import ReviewQueue from './components/ReviewQueue'
+
+const fmtDate = (iso) =>
+  new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
 
 function App() {
   const [view, setView] = useState('map') // 'map' | 'review'
@@ -15,17 +18,19 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [filter, setFilter] = useState(null) // {legislation_stage} | {stance} | null
+  const [meta, setMeta] = useState(null) // static build: {generated_at, last_sync}
 
   const fetchData = useCallback(async () => {
     try {
       setLoading(true)
-      const [s, sum] = await Promise.all([api.states(filter || {}), api.summary()])
+      const [s, sum, m] = await Promise.all([api.states(filter || {}), api.summary(), api.meta()])
       setStates(s)
       setSummary(sum)
+      setMeta(m)
       setError(null)
     } catch (err) {
       console.error(err)
-      setError('Failed to load data. Is the backend running on port 8000?')
+      setError(STATIC ? 'Failed to load data.json.' : 'Failed to load data. Is the backend running on port 8000?')
     } finally {
       setLoading(false)
     }
@@ -45,14 +50,23 @@ function App() {
       <header className="app-header">
         <h1>K-12 AI Legislative Map</h1>
         <p>AI legislation and state guidance across U.S. K-12 education systems</p>
-        <nav className="app-nav">
-          <button className={view === 'map' ? 'nav-tab active' : 'nav-tab'} onClick={() => setView('map')}>
-            Map
-          </button>
-          <button className={view === 'review' ? 'nav-tab active' : 'nav-tab'} onClick={() => setView('review')}>
-            Review bills{summary?.bills?.pending ? ` (${summary.bills.pending} pending)` : ''}
-          </button>
-        </nav>
+        {STATIC ? (
+          meta?.generated_at && (
+            <p className="app-meta">
+              Data as of {fmtDate(meta.generated_at)}
+              {summary?.bills?.pending ? ` · ${summary.bills.pending} bills still awaiting review` : ''}
+            </p>
+          )
+        ) : (
+          <nav className="app-nav">
+            <button className={view === 'map' ? 'nav-tab active' : 'nav-tab'} onClick={() => setView('map')}>
+              Map
+            </button>
+            <button className={view === 'review' ? 'nav-tab active' : 'nav-tab'} onClick={() => setView('review')}>
+              Review bills{summary?.bills?.pending ? ` (${summary.bills.pending} pending)` : ''}
+            </button>
+          </nav>
+        )}
       </header>
 
       {view === 'review' ? (

@@ -5,6 +5,18 @@ Timestamps are in the project's local time.
 
 ---
 
+## 2026-09-08
+
+### Static-data mode: the map no longer needs a server
+- **One interface, two data sources.** `frontend/src/api.js` now has a `static` implementation next to the live one. With `VITE_DATA_URL` set (the `build:static` script sets it to `./data.json`) the app loads the export once and serves `states()` (with the same `stance` / `legislation_stage` filters the API accepts), `state(code)` and `summary()` from it. Components don't know which mode they're in. The review-queue calls reject with a clear message; the Review tab is hidden and the header shows "Data as of …" plus the pending count instead.
+- **Export carries the whole read model.** `docs/data.json` now includes the dashboard `summary` (the endpoint's builder was extracted to `build_dashboard_summary()` in `routes.py` so the two can't drift) and each state's `headline_bill`. Regenerated: 54 jurisdictions, 78 included bills, 128 KB.
+- **Deployable anywhere.** `vite.config.js` sets `base: './'` so the same build works at a site root (Vercel) or under `/ailegmap/` (GitHub Pages). `npm run build:static` produces `frontend/dist/` = app + `data.json` (~500 KB total). Verified headless: zero requests to `:8000`, one to `data.json`, filters and the state modal work, no console errors.
+- **Deploy plumbing.** `.github/workflows/deploy-pages.yml` builds on push to `main` and publishes to Pages with the map at the root and `docs/` at `/about/` (requires switching the Pages source to "GitHub Actions" once). `vercel.json` sets the build command and output directory for a Vercel import.
+- **Housekeeping (earlier today).** First commit since July 2 — a stale `.git/HEAD.lock` from that day had been blocking commits. `.gitignore` now covers `*.db-wal`, `*.db-shm`, `.fuse_hidden*`, and the session-screenshot folder; `docs/data.json` is tracked.
+- Publishing loop is now: **sync → review → export → commit → push.** Still to do: the HIGH-bill audit (WY and ME are green on the strength of a deepfake bill and an arts-commission resolve), resolution-aware stage, the five missing profiles, and the text-density scorer.
+
+---
+
 ## 2026-09-04
 
 ### Relevance gate: MEDIUM no longer auto-includes

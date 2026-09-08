@@ -16,7 +16,7 @@ Click a state to see the AI legislation governing its K-12 public classrooms, wi
 
 ## Tech stack
 
-- **Frontend:** React 18 + Vite (real-geography US map via d3-geo + us-atlas, two color layers plus glyph overlays, state detail modal, bill review queue)
+- **Frontend:** React 18 + Vite (real-geography US map via d3-geo + us-atlas, two color layers plus glyph overlays, state detail modal, bill review queue). Runs against the API locally, or as a static build that reads `docs/data.json` — see *Publishing the map without a server*.
 - **Backend:** Python FastAPI + SQLAlchemy
 - **Database:** SQLite (`backend/k12_ai.db`, created automatically — no database server to run)
 - **Data sources:** LegiScan API for bills; hand-researched state guidance profiles in `backend/data/profiles/*.json`; hand-curated local actions in `backend/data/local_actions/*.json`
@@ -67,6 +67,29 @@ Edit (or create) `backend/data/profiles/<STATE>.json`, set `research_status` to 
 
 ### Adding a local action
 Read the inclusion rule in `backend/data/local_actions/README.md` first (top-5 district in the state, national trade-press coverage, or first-of-its-kind — otherwise it doesn't go in). Add the row to `backend/data/local_actions/<STATE>.json` with at least one source and run `python -m app.seed`. The file replaces that state's rows, so removing a row from the file removes it from the map; to retire an action without losing history set `lifecycle: rescinded`. Weekly skim of K-12 Dive, EdWeek, Chalkbeat and EdSource is enough intake — big-district AI moves are heavily covered.
+
+## Publishing the map without a server
+
+The map half of the app needs no backend: `python -m app.export` writes everything the map shows to
+`docs/data.json` (tracked in git), and a static build of the frontend reads that file instead of the API.
+
+```bash
+cd backend && source venv/bin/activate && python -m app.export   # refresh docs/data.json
+cd ../frontend && npm run build:static                            # -> frontend/dist/ (map + data.json)
+```
+
+`frontend/dist/` is a plain folder of files — open it from any static host. The review queue is not in
+the static build (there is nowhere to record decisions); reviewing stays local with `./start.sh`.
+So the publishing loop is **sync → review → export → commit → push**.
+
+- **GitHub Pages:** `.github/workflows/deploy-pages.yml` builds and deploys on every push to `main`
+  (set *Settings → Pages → Source* to "GitHub Actions" once). The map lands at the site root, the
+  project page and changelog at `/about/`.
+- **Vercel:** import the repo; `vercel.json` already sets the build command and output directory.
+- **Anything else** (a VPS behind nginx/Traefik, S3, a USB stick): copy `frontend/dist/` there.
+
+Assets are built with relative paths (`base: './'`), so the same build works at the site root or under a
+subpath like `/ailegmap/`.
 
 ## Syncing legislation
 

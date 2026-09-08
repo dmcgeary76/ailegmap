@@ -1,16 +1,72 @@
 import axios from 'axios'
 
-export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+// Two ways to get data, one interface.
+//
+//   live   (default)   talks to the FastAPI backend at VITE_API_URL. Map +
+//                      review queue. This is what `npm run dev` uses.
+//   static             reads one JSON file written by `python -m app.export`
+//                      (VITE_DATA_URL, e.g. ./data.json). Map only -- there is
+//                      no server to record review decisions. This is what
+//                      `npm run build:static` produces for GitHub Pages / Vercel.
+//
+// The export carries exactly what /api/states, /api/states/{code} and
+// /api/dashboard/summary return, so components don't know which mode they're in.
 
-export const api = {
+export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+export const DATA_URL = import.meta.env.VITE_DATA_URL || ''
+export const STATIC = Boolean(DATA_URL)
+
+const liveApi = {
   states: (params) => axios.get(`${API_URL}/api/states`, { params }).then((r) => r.data),
   state: (code) => axios.get(`${API_URL}/api/states/${code}`).then((r) => r.data),
   summary: () => axios.get(`${API_URL}/api/dashboard/summary`).then((r) => r.data),
+  meta: () => Promise.resolve(null),
   reviewList: (params) => axios.get(`${API_URL}/api/bills/review`, { params }).then((r) => r.data),
   reviewStats: (params) => axios.get(`${API_URL}/api/bills/review/stats`, { params }).then((r) => r.data),
   decide: (id, body) => axios.post(`${API_URL}/api/bills/review/${id}/decision`, body).then((r) => r.data),
   bulkDecide: (body) => axios.post(`${API_URL}/api/bills/review/bulk-decision`, body).then((r) => r.data),
 }
+
+let dataPromise = null
+const loadData = () => {
+  if (!dataPromise) {
+    dataPromise = axios.get(DATA_URL).then((r) => r.data).catch((err) => {
+      dataPromise = null // let a reload retry
+      throw err
+    })
+  }
+  return dataPromise
+}
+
+// Same filters /api/states accepts. Anything else is ignored, as the API does.
+function matchesFilter(s, params = {}) {
+  if (params.stance && !(s.research_status === 'RESEARCHED' && s.regulatory_stance === params.stance)) return false
+  if (params.legislation_stage && (s.legislation_stage || 'none') !== params.legislation_stage) return false
+  return true
+}
+
+const notInStatic = (what) => () =>
+  Promise.reject(new Error(`${what} is not available in the static build -- run the backend locally.`))
+
+const staticApi = {
+  states: async (params) => (await loadData()).states.filter((s) => matchesFilter(s, params)),
+  state: async (code) => {
+    const s = (await loadData()).states.find((x) => x.state_code === String(code).toUpperCase())
+    if (!s) throw new Error(`Unknown jurisdiction ${code}`)
+    return s
+  },
+  summary: async () => (await loadData()).summary,
+  meta: async () => {
+    const d = await loadData()
+    return { generated_at: d.generated_at, last_sync: d.last_sync }
+  },
+  reviewList: notInStatic('The review queue'),
+  reviewStats: notInStatic('The review queue'),
+  decide: notInStatic('Reviewing bills'),
+  bulkDecide: notInStatic('Reviewing bills'),
+}
+
+export const api = STATIC ? staticApi : liveApi
 
 // ---- shared vocabulary ----------------------------------------------------
 

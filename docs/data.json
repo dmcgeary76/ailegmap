@@ -1,6 +1,46 @@
 {
- "generated_at": "2026-09-04T19:50:39.825285Z",
+ "generated_at": "2026-09-08T16:12:55.489777Z",
  "last_sync": null,
+ "summary": {
+  "jurisdictions": 54,
+  "states_with_included_bills": 25,
+  "states_by_legislation_stage": {
+   "passed": 8,
+   "debated": 5,
+   "introduced": 10,
+   "failed": 2,
+   "none": 29
+  },
+  "states_researched": 9,
+  "states_with_guidance": 6,
+  "states_by_stance": {
+   "PROHIBIT": 1,
+   "RESTRICT": 0,
+   "REGULATE": 0,
+   "SUPPORT": 4,
+   "MANDATE": 1,
+   "ABSENT": 3
+  },
+  "bills": {
+   "total": 1197,
+   "included": 78,
+   "pending": 1180,
+   "excluded": 14
+  },
+  "local_actions": {
+   "total": 3,
+   "active": 3,
+   "states": 3
+  },
+  "states_by_local_leaning": {
+   "restrictive": 2,
+   "permissive": 1,
+   "mixed": 0,
+   "none": 51
+  },
+  "last_sync": null,
+  "recent_status_changes": []
+ },
  "states": [
   {
    "state_code": "AL",
@@ -21,6 +61,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -64,6 +105,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -114,6 +156,21 @@
      "introduced": 1,
      "failed": 1
     }
+   },
+   "headline_bill": {
+    "id": 84,
+    "legiscan_bill_id": 2109776,
+    "bill_number": "HB4040",
+    "bill_title": "Public schools; universities; AI policies",
+    "bill_url": "https://legiscan.com/AZ/bill/HB4040/2026",
+    "bill_text_url": "https://legiscan.com/AZ/text/HB4040/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Assigned to House RULES Committee",
+    "last_action_date": "2026-06-13",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -189,6 +246,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -231,6 +289,21 @@
      "introduced": 2,
      "failed": 1
     }
+   },
+   "headline_bill": {
+    "id": 450,
+    "legiscan_bill_id": 1848589,
+    "bill_number": "SB1288",
+    "bill_title": "Public schools: artificial intelligence working group.",
+    "bill_url": "https://legiscan.com/CA/bill/SB1288/2023",
+    "bill_text_url": "https://legiscan.com/CA/text/SB1288/2023",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Chaptered by Secretary of State. Chapter 893, Statutes of 2024.",
+    "last_action_date": "2024-09-28",
+    "match_confidence": "HIGH",
+    "decision": "INCLUDED",
+    "effective_included": true
    },
    "bills": [
     {
@@ -388,6 +461,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -430,6 +504,21 @@
      "introduced": 2,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 495,
+    "legiscan_bill_id": 1931737,
+    "bill_number": "HB05877",
+    "bill_title": "An Act Prohibiting The Use Of Artificial Intelligence To Replace Teachers.",
+    "bill_url": "https://legiscan.com/CT/bill/HB05877/2025",
+    "bill_text_url": "https://legiscan.com/CT/text/HB05877/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Referred to Joint Committee on Education",
+    "last_action_date": "2025-01-22",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -505,6 +594,21 @@
      "failed": 0
     }
    },
+   "headline_bill": {
+    "id": 119,
+    "legiscan_bill_id": 2148684,
+    "bill_number": "HB404",
+    "bill_title": "An Act To Amend Title 14 Of The Delaware Code Relating To The Artificial Intelligence And Extended Reality In Schools Pilot Program.",
+    "bill_url": "https://legiscan.com/DE/bill/HB404/2025",
+    "bill_text_url": "https://legiscan.com/DE/text/HB404/2025",
+    "bill_status": "Engrossed",
+    "bill_stage": "debated",
+    "last_action": "Passed By House. Votes: 36 YES 4 NO 1 ABSENT",
+    "last_action_date": "2026-06-30",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 119,
@@ -564,6 +668,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -607,6 +712,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -649,6 +755,21 @@
      "introduced": 2,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 582,
+    "legiscan_bill_id": 2133428,
+    "bill_number": "HR40",
+    "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
+    "bill_url": "https://legiscan.com/HI/bill/HR40/2026",
+    "bill_text_url": "https://legiscan.com/HI/text/HR40/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Resolution adopted in final form.",
+    "last_action_date": "2026-04-02",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -759,6 +880,21 @@
      "failed": 0
     }
    },
+   "headline_bill": {
+    "id": 621,
+    "legiscan_bill_id": 2090168,
+    "bill_number": "S1227",
+    "bill_title": "Adds to existing law to establish provisions regarding generative artificial intelligence in public education.",
+    "bill_url": "https://legiscan.com/ID/bill/S1227/2026",
+    "bill_text_url": "https://legiscan.com/ID/text/S1227/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Session Law Chapter 71 Effective: 07/01/2026",
+    "last_action_date": "2026-03-19",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 621,
@@ -817,6 +953,21 @@
      "introduced": 0,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 625,
+    "legiscan_bill_id": 2094456,
+    "bill_number": "SB2909",
+    "bill_title": "SCH CD-TEACHER EVALUATION-AI",
+    "bill_url": "https://legiscan.com/IL/bill/SB2909/2025",
+    "bill_text_url": "https://legiscan.com/IL/text/SB2909/2025",
+    "bill_status": "Enrolled",
+    "bill_stage": "debated",
+    "last_action": "Added as Co-Sponsor Sen. Mary Edly-Allen",
+    "last_action_date": "2026-06-30",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -877,6 +1028,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -919,6 +1071,21 @@
      "introduced": 2,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 189,
+    "legiscan_bill_id": 2117611,
+    "bill_number": "HF2540",
+    "bill_title": "A bill for an act relating to computer science and artificial intelligence education, including high school curricula and graduation requirements, and practitioner preparation programs, and including applicability provisions.(Formerly HSB 610.)",
+    "bill_url": "https://legiscan.com/IA/bill/HF2540/2025",
+    "bill_text_url": "https://legiscan.com/IA/text/HF2540/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Introduced, placed on calendar. H.J. 305.",
+    "last_action_date": "2026-02-16",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -994,6 +1161,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1037,6 +1205,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1079,6 +1248,21 @@
      "introduced": 1,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 417,
+    "legiscan_bill_id": 2148374,
+    "bill_number": "HR249",
+    "bill_title": "Requests the State Board of Elementary and Secondary Education to incorporate artificial intelligence into content standards",
+    "bill_url": "https://legiscan.com/LA/bill/HR249/2026",
+    "bill_text_url": "https://legiscan.com/LA/text/HR249/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Taken by the Clerk of the House and presented to the Secretary of State in accordance with the Rules of the House.",
+    "last_action_date": "2026-05-28",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -1154,6 +1338,21 @@
      "failed": 1
     }
    },
+   "headline_bill": {
+    "id": 671,
+    "legiscan_bill_id": 1903898,
+    "bill_number": "LD109",
+    "bill_title": "Resolve, Directing the Maine Arts Commission to Study Federal and National Efforts to Protect Artists from Copyright Infringement by Artificial Intelligence Companies and Users and to Monitor Educational Use",
+    "bill_url": "https://legiscan.com/ME/bill/LD109/2025",
+    "bill_text_url": "https://legiscan.com/ME/text/LD109/2025",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "HELD BY THE GOVERNOR.",
+    "last_action_date": "2025-07-08",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 671,
@@ -1227,6 +1426,21 @@
      "introduced": 4,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 456,
+    "legiscan_bill_id": 2112745,
+    "bill_number": "SB720",
+    "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)",
+    "bill_url": "https://legiscan.com/MD/bill/SB720/2026",
+    "bill_text_url": "https://legiscan.com/MD/text/SB720/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Approved by the Governor - Chapter 634",
+    "last_action_date": "2026-05-26",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -1377,6 +1591,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1426,6 +1641,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1469,6 +1685,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1511,6 +1728,21 @@
      "introduced": 0,
      "failed": 3
     }
+   },
+   "headline_bill": {
+    "id": 690,
+    "legiscan_bill_id": 1927333,
+    "bill_number": "SB2059",
+    "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
+    "bill_url": "https://legiscan.com/MS/bill/SB2059/2025",
+    "bill_text_url": "https://legiscan.com/MS/text/SB2059/2025",
+    "bill_status": "Failed / Dead",
+    "bill_stage": "failed",
+    "last_action": "Died In Committee",
+    "last_action_date": "2025-03-04",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -1601,6 +1833,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1644,6 +1877,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1687,6 +1921,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1730,6 +1965,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1773,6 +2009,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -1815,6 +2052,21 @@
      "introduced": 11,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 17,
+    "legiscan_bill_id": 2116148,
+    "bill_number": "A4352",
+    "bill_title": "Requires school districts to provide instruction on artificial intelligence; requires Secretary of Higher Education to develop artificial intelligence model curricula.",
+    "bill_url": "https://legiscan.com/NJ/bill/A4352/2026",
+    "bill_text_url": "https://legiscan.com/NJ/text/A4352/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
+    "last_action_date": "2026-02-19",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -2040,6 +2292,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2082,6 +2335,21 @@
      "introduced": 11,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 598,
+    "legiscan_bill_id": 2068608,
+    "bill_number": "S08831",
+    "bill_title": "Provides for the use of automated employment decision-making tools and artificial intelligence systems by a county, city, town, village, school district, board of cooperative educational services, county vocational education and extension board, district corporation, the state university of New York, the city university of New York, or community college; amends the effectiveness thereof.",
+    "bill_url": "https://legiscan.com/NY/bill/S08831/2025",
+    "bill_text_url": "https://legiscan.com/NY/text/S08831/2025",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "SIGNED CHAP.86",
+    "last_action_date": "2026-02-13",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -2351,6 +2619,21 @@
      "failed": 0
     }
    },
+   "headline_bill": {
+    "id": 264,
+    "legiscan_bill_id": 2146074,
+    "bill_number": "S864",
+    "bill_title": "Safe and Responsible AI in Schools Act",
+    "bill_url": "https://legiscan.com/NC/bill/S864/2025",
+    "bill_text_url": "https://legiscan.com/NC/text/S864/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Ref To Com On Rules and Operations of the Senate",
+    "last_action_date": "2026-04-29",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 264,
@@ -2440,6 +2723,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2483,6 +2767,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2525,6 +2810,21 @@
      "introduced": 1,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 288,
+    "legiscan_bill_id": 2049913,
+    "bill_number": "HB1782",
+    "bill_title": "Artificial intelligence education; creating the AI Education Innovation Act, the AI Education Innovation Revolving Fund and the AI Education Advisory Council; effective date.",
+    "bill_url": "https://legiscan.com/OK/bill/HB1782/2026",
+    "bill_text_url": "https://legiscan.com/OK/text/HB1782/2026",
+    "bill_status": "Engrossed",
+    "bill_stage": "debated",
+    "last_action": "Placed on General Order",
+    "last_action_date": "2026-04-21",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -2600,6 +2900,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2642,6 +2943,21 @@
      "introduced": 0,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 815,
+    "legiscan_bill_id": 2137415,
+    "bill_number": "HB2314",
+    "bill_title": "Providing for a public education campaign focused on educating the public about artificial intelligence and improving AI consumer literacy.",
+    "bill_url": "https://legiscan.com/PA/bill/HB2314/2025",
+    "bill_text_url": "https://legiscan.com/PA/text/HB2314/2025",
+    "bill_status": "Engrossed",
+    "bill_stage": "debated",
+    "last_action": "Referred to Communications & Technology",
+    "last_action_date": "2026-06-05",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -2702,6 +3018,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2748,6 +3065,21 @@
      "introduced": 1,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 13,
+    "legiscan_bill_id": 2123107,
+    "bill_number": "H5253",
+    "bill_title": "Ai in education",
+    "bill_url": "https://legiscan.com/SC/bill/H5253/2025",
+    "bill_text_url": "https://legiscan.com/SC/text/H5253/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Referred to Committee on Education and Public Works",
+    "last_action_date": "2026-02-24",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -2808,6 +3140,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2851,6 +3184,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -2893,6 +3227,21 @@
      "introduced": 6,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 226,
+    "legiscan_bill_id": 1954141,
+    "bill_number": "HB2400",
+    "bill_title": "Relating to a prohibition on the use of artificial intelligence technology for classroom instruction.",
+    "bill_url": "https://legiscan.com/TX/bill/HB2400/2025",
+    "bill_text_url": "https://legiscan.com/TX/text/HB2400/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Referred to Public Education",
+    "last_action_date": "2025-03-14",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -3055,6 +3404,21 @@
      "failed": 1
     }
    },
+   "headline_bill": {
+    "id": 115,
+    "legiscan_bill_id": 1911041,
+    "bill_number": "HB0168",
+    "bill_title": "Artificial Intelligence in Education",
+    "bill_url": "https://legiscan.com/UT/bill/HB0168/2025",
+    "bill_text_url": "https://legiscan.com/UT/text/HB0168/2025",
+    "bill_status": "Failed / Dead",
+    "bill_stage": "failed",
+    "last_action": "House/ filed in House file for bills not passed",
+    "last_action_date": "2025-03-07",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 115,
@@ -3113,6 +3477,21 @@
      "introduced": 2,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 277,
+    "legiscan_bill_id": 1332374,
+    "bill_number": "H0919",
+    "bill_title": "An act relating to funding a pilot program to increase technology and artificial intelligence education programs",
+    "bill_url": "https://legiscan.com/VT/bill/H0919/2019",
+    "bill_text_url": "https://legiscan.com/VT/text/H0919/2019",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Read First Time and Referred to the Committee on Education",
+    "last_action_date": "2020-02-07",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -3188,6 +3567,21 @@
      "failed": 0
     }
    },
+   "headline_bill": {
+    "id": 1150,
+    "legiscan_bill_id": 1808295,
+    "bill_number": "SB385",
+    "bill_title": "Artificial intelligence technology; use in education.",
+    "bill_url": "https://legiscan.com/VA/bill/SB385/2024",
+    "bill_text_url": "https://legiscan.com/VA/text/SB385/2024",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Stricken at request of Patron in Finance and Appropriations (15-Y 0-N)",
+    "last_action_date": "2024-02-07",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 1150,
@@ -3247,6 +3641,21 @@
      "failed": 0
     }
    },
+   "headline_bill": {
+    "id": 1172,
+    "legiscan_bill_id": 2071706,
+    "bill_number": "SB6082",
+    "bill_title": "Safeguarding student financial aid from fraud.",
+    "bill_url": "https://legiscan.com/WA/bill/SB6082/2025",
+    "bill_text_url": "https://legiscan.com/WA/text/SB6082/2025",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "Senate Rules \"X\" file.",
+    "last_action_date": "2026-02-26",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
+   },
    "bills": [
     {
      "id": 1172,
@@ -3305,6 +3714,21 @@
      "introduced": 2,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 1185,
+    "legiscan_bill_id": 2108811,
+    "bill_number": "HB5205",
+    "bill_title": "Requiring the State Board of Education to create model policies on the use of technology and artifical intelligence in a public school classroom",
+    "bill_url": "https://legiscan.com/WV/bill/HB5205/2026",
+    "bill_text_url": "https://legiscan.com/WV/text/HB5205/2026",
+    "bill_status": "Introduced",
+    "bill_stage": "introduced",
+    "last_action": "To House Education",
+    "last_action_date": "2026-02-05",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -3380,6 +3804,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -3422,6 +3847,21 @@
      "introduced": 0,
      "failed": 0
     }
+   },
+   "headline_bill": {
+    "id": 320,
+    "legiscan_bill_id": 2109993,
+    "bill_number": "HB0102",
+    "bill_title": "Protecting kids from deepfakes and exploitative images.",
+    "bill_url": "https://legiscan.com/WY/bill/HB0102/2026",
+    "bill_text_url": "https://legiscan.com/WY/text/HB0102/2026",
+    "bill_status": "Passed",
+    "bill_stage": "passed",
+    "last_action": "Assigned Chapter Number 91",
+    "last_action_date": "2026-03-07",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
+    "effective_included": true
    },
    "bills": [
     {
@@ -3482,6 +3922,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -3525,6 +3966,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -3572,6 +4014,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,
@@ -3621,6 +4064,7 @@
      "failed": 0
     }
    },
+   "headline_bill": null,
    "bills": [],
    "local_signal": {
     "count": 0,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './StateModal.css'
-import { api, STAGE_LABELS, STANCE_LABELS, stanceKey, LEANING_COLORS, ACTION_LABELS, DIRECTION_LABELS } from '../api'
+import { api, STATIC, STAGE_LABELS, STANCE_LABELS, stanceKey, LEANING_COLORS, ACTION_LABELS, DIRECTION_LABELS } from '../api'
 
 const fmtDate = (v) => (v ? new Date(v).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'N/A')
 
@@ -102,7 +102,7 @@ function Body({ state }) {
         {counts.held > 0 && (
           <p className="text-muted small">
             {counts.held} more bill{counts.held === 1 ? '' : 's'} held off the map
-            ({counts.pending} pending review, {counts.manually_excluded} excluded). Use the Review tab to change that.
+            ({counts.pending} pending review, {counts.manually_excluded} excluded).{STATIC ? '' : ' Use the Review tab to change that.'}
           </p>
         )}
       </div>
@@ -143,7 +143,11 @@ function Body({ state }) {
       ) : (
         <div className="info-section">
           <h3>State guidance</h3>
-          <p className="text-muted">Not researched yet. Add <code>backend/data/profiles/{state.state_code}.json</code> and run <code>python -m app.seed</code>.</p>
+          {STATIC ? (
+            <p className="text-muted">Not researched yet.</p>
+          ) : (
+            <p className="text-muted">Not researched yet. Add <code>backend/data/profiles/{state.state_code}.json</code> and run <code>python -m app.seed</code>.</p>
+          )}
         </div>
       )}
 
@@ -171,8 +175,8 @@ function LocalActions({ state }) {
       </h3>
       {actions.length === 0 ? (
         <p className="text-muted">
-          No notable district, city or county actions recorded. Add one to{' '}
-          <code>backend/data/local_actions/{state.state_code}.json</code> if it meets the inclusion rule.
+          No notable district, city or county actions recorded.
+          {!STATIC && <> Add one to <code>backend/data/local_actions/{state.state_code}.json</code> if it meets the inclusion rule.</>}
         </p>
       ) : (
         <ul className="action-list">
