@@ -1,12 +1,18 @@
 state_code,bill_number,legiscan_bill_id,decision,reviewed_by,reviewed_at,note
+AR,HB1283,1944017,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: K-12 library/digital media standards incl. AI (dead)
 AZ,HB2409,2080458,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
 AZ,HB4005,2107900,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 AZ,HB4040,2109776,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 CA,AB1018,1978553,EXCLUDED,review_ui,2026-06-30T22:38:21,
 CA,AB1064,1978599,INCLUDED,review_ui,2026-06-30T22:18:56,
+CA,AB1159,1978694,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: student personal information -- vendor/AI use of pupil data (enrolled 2026)
 CA,AB1979,2117138,EXCLUDED,review_ui,2026-07-01T19:45:30,
 CA,AB2058,1835452,EXCLUDED,review_ui,2026-07-01T13:38:55,
+CA,AB2071,2119598,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: digital wellness instruction incl. AI (enrolled 2026)
+CA,AB2298,2120772,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: CS content standards incl. AI (enrolled 2026)
+CA,AB2452,2121529,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: media literacy / instructional materials criteria incl. AI
 CA,AB2487,2121564,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,"kept, VERIFY: 'education and workforce development' may be higher-ed/workforce; hearing canceled"
+CA,AB2544,2121621,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: filmmaking education pilot with heavy AI-tool language"
 CA,AB2652,1847401,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 CA,AB2876,1848424,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 CA,AB2930,1848478,EXCLUDED,review_ui,2026-06-30T22:20:17,
@@ -15,13 +21,21 @@ CA,SB1235,1848536,INCLUDED,review_ui,2026-06-30T22:38:14,
 CA,SB1248,2120921,EXCLUDED,review_ui,2026-07-01T21:23:03,
 CA,SB1288,1848589,INCLUDED,review_ui,2026-06-30T22:19:40,
 CA,SB430,1974540,EXCLUDED,review_ui,2026-06-30T22:38:25,
+CA,SB539,1978772,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,school facilities bill; AI incidental
 CA,SB892,1796691,EXCLUDED,review_ui,2026-06-30T22:38:18,
 CT,HB05877,1931737,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 CT,HB06889,1179388,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"higher-ed / workforce subsidies for students studying AI, not K-12 policy"
 DC,B26-0491,2053226,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: AI Literacy in Education Act of 2025 -- first DC row
 DE,HB404,2148684,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+FL,H0483,1784035,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept: CS education incl. AI (2024, dead)"
+FL,H1213,1984764,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: AI route-optimization pilot -- AI in district operations (dead)
+FL,H1503,2069946,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: CS education & certification incl. AI (dead)
 FL,S1194,2065901,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
+FL,S1344,1797287,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept: CS education incl. AI (2024, dead)"
+FL,S1424,1985537,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: AI route-optimization pilot (dead)
+FL,S1694,2069728,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: technology education incl. AI
 HI,HB1887,2092749,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+HI,HB2466,2095373,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: education bill with substantial AI provisions (23 hits)
 HI,HCR44,2133332,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept as a resolution
 HI,HR40,2133428,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"kept as a resolution: adopted, does not color the map"
 HI,SB2212,2084760,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
@@ -32,7 +46,10 @@ IA,HF2528,2117721,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: du
 IA,HF2540,2117611,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 IA,HSB609,2090504,EXCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,study bill renumbered as HF2528 (same text); keep one
 ID,S1227,2090168,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+IL,HB0299,1635340,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: EDUCATION-TECH (dead)
+IL,SB0416,1940278,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept: EDUCATION-TECH, engrossed 2026"
 IL,SB2909,2094456,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: AI in teacher evaluation
+KY,SB52,1795473,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept: technology in education, 47 AI hits"
 LA,HB1149,2139727,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 LA,HR249,2148374,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"kept as a resolution: adopted, does not color the map"
 LA,HR320,2036152,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept as a resolution (adopted)
@@ -41,6 +58,7 @@ MA,S429,1998675,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12
 MD,HB1057,2112595,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 MD,HB1297,1842215,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
 MD,HB1391,1961326,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+MD,HB530,2093275,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: task force on AI review of special-ed bus recordings -- AI in school operations
 MD,HB981,1949746,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 MD,SB375,2095366,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 MD,SB704,1949835,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
@@ -48,17 +66,25 @@ MD,SB720,2112745,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12
 MD,SB906,1953218,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 MD,SB979,1838035,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
 ME,LD109,1903898,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,resolve about the Maine Arts Commission and AI copyright; 'educational use' is incidental
+ME,LD2052,2057501,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept as a resolve: study technology in classrooms (adopted)
 ME,LD643,1977885,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept as a resolve (dead)
+MO,HB3281,2114226,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: software accountability for education incl. AI
+MS,HB1035,2084187,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: Future Innovators Act -- CS/AI course requirement (dead)
 MS,HB1242,2087381,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
 MS,SB2059,1927333,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 MS,SB2062,1820844,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+MS,SB2294,2085758,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"literacy-initiatives omnibus (passed); AI only inside the CS section, 0.3 hits/1k -- flip if you disagree"
 MS,SB2429,2086185,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+MS,SB2535,1936069,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: Future Innovators Act (dead)
+NC,H97,1704591,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,education omnibus; AI incidental (0.3/1k)
+NC,S1006,2147041,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,K-12 omnibus; AI incidental (0.45/1k) -- VERIFY the AI section
 NC,S640,2014068,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NC,S787,2144441,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NC,S864,2146074,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,A1323,2100103,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,A2616,2097277,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"state OIT generative-AI program and adult courses via county governments, not K-12"
 NJ,A4352,2116148,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+NJ,A4637,2131165,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,agricultural technology school; not AI policy
 NJ,A4639,1883140,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,A4821,1887101,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,same as A2616 (prior session)
 NJ,A4936,1889335,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
@@ -69,6 +95,7 @@ NJ,S3876,1889719,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12
 NJ,S3883,2131656,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,S4469,2153682,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NM,HB330,2108223,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
+NV,AB531,2013451,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: education omnibus with 9 AI hits at 2/1k (dead)"
 NY,A00433,1901571,EXCLUDED,review_ui,2026-07-01T19:45:48,
 NY,A03308,1692524,EXCLUDED,review_ui,2026-07-01T19:46:09,
 NY,A04550,1954914,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,Dept of Labor workforce study; 'education requirements' is about jobs
@@ -80,6 +107,7 @@ NY,A08947,2039479,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-1
 NY,A09106,2045075,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,AI in therapy/psychotherapy; 'educational resources' is an exclusion clause
 NY,A09190,2051443,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NY,A09487,2067545,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,automated employment decision tools for public employers; school districts appear only as employers
+NY,A11599,2153206,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"algorithmic pricing (consumer), not education"
 NY,A11662,2157340,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: prohibits humanoid robots/AI systems in schools
 NY,S02277,1669010,EXCLUDED,review_ui,2026-07-01T19:46:10,
 NY,S07892,2030765,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
@@ -89,10 +117,21 @@ NY,S10049,2145794,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: ame
 NY,S10133,2147009,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NY,S10671,2157318,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: district policies on humanoid robots in schools
 OK,HB1782,2049913,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+OK,HB1983,2048638,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"media literacy/cybersecurity curriculum -- same class as TX SB2787, which David excluded"
+OK,HB2371,2048922,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: school mental-health pilot with 6 AI hits in 701 words"
 OK,HB3827,1820478,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 OK,SB1734,2079134,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,"kept: Responsible Technology in Schools Act, signed 2026-05-12 -- status refetch pending"
+PA,HB2153,2088929,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,data-center property tax; not AI policy
 PA,HB2314,2137415,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"'public education campaign' = consumer AI literacy for the general public, not schools"
+PA,HB2375,2142496,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: charter school bill -- AI instructor provisions
+PA,SB631,2023404,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: virtual mental health services consent -- AI-delivered services?"
+PA,SB913,1873862,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: same as SB631 (prior session)"
+RI,H8345,2138196,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept as a resolution: commission on digital technology in public education (adopted)
 SC,H5253,2123107,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+TN,HB0933,1955110,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: school safety incl. AI (weapons detection?)"
+TN,HB2416,2106214,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: Title 49 education amendment, 3 AI hits in 331 words"
+TN,SB0814,1953992,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: companion to HB0933"
+TN,SB2105,2090607,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: companion to HB2416"
 TX,HB148,2041986,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 TX,HB167,2040103,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 TX,HB2400,1954141,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
@@ -101,10 +140,15 @@ TX,HB5282,2007316,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-1
 TX,SB1700,1987235,EXCLUDED,review_ui,2026-07-01T21:24:39,
 TX,SB2787,2007449,EXCLUDED,review_ui,2026-09-04T19:41:05,
 TX,SB382,1892224,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+TX,SB747,1907668,EXCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,intimate visual material policy -- David's 2026-09-04 note treats this class as noise
+UT,HB0042,2060253,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: school cybersecurity incl. AI (engrossed)
 UT,HB0168,1911041,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+UT,HB0273,2084286,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept: Classroom Technology Amendments -- PASSED 2026, 55 AI hits"
+UT,SB0322,2122567,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept: Educational Technology Regulatory Sandbox (dead), 91 AI hits"
 VA,HB1186,2078302,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,"kept: enacted 2026 (Chap. 937), AI systems for student instruction"
 VA,SB385,1808295,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 VA,SB394,2085474,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,"kept: enacted 2026 (Chap. 943), companion to HB1186"
+VT,H0650,2071486,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,kept: educational technology products incl. AI (engrossed)
 VT,H0863,1854552,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"kept, VERIFY: study on deepfake education & harms -- confirm it is school-facing"
 VT,H0919,1332374,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 WA,SB5956,2064805,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)

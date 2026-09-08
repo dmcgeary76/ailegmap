@@ -77,15 +77,19 @@ STAGE_RANK = {"passed": 4, "debated": 3, "introduced": 2, "failed": 1}
 # when computing a state's stage. LegiScan's bill_type isn't stored (yet), so
 # this reads the bill number and, for Maine, the title.
 _RESOLUTION_NUMBER = re.compile(r"^(?:[HSAL]|HC|SC|AC|LC|HJ|SJ|AJ|LJ|HCJ|SCJ)?(?:R|M|JM|CM)\s?\d", re.I)
-_RESOLUTION_TITLE = re.compile(r"^\s*(?:resolve|(?:a\s+)?(?:concurrent|joint)?\s*resolution)\b", re.I)
+_RESOLUTION_TITLE = re.compile(
+    r"^\s*(?:resolve\b|(?:a\s+)?(?:house|senate|assembly|concurrent|joint)?\s*resolution\b)", re.I)
 
 
 def is_resolution(bill_number: str, title: str = "") -> bool:
     n = (bill_number or "").strip()
     if _RESOLUTION_NUMBER.match(n):
         return True
-    if n[:2].upper() == "LD" and _RESOLUTION_TITLE.match(title or ""):
-        return True   # Maine numbers bills and resolves alike as LD
+    # Maine numbers bills and resolves alike as LD; Rhode Island numbers House
+    # resolutions like bills (H8345, "HOUSE RESOLUTION CREATING ..."). The
+    # title tells.
+    if _RESOLUTION_TITLE.match(title or ""):
+        return True
     return False
 
 # Which automatic confidence levels put a PENDING bill on the map without a

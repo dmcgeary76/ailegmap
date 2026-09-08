@@ -151,6 +151,10 @@ def test_heading_needs_structure_not_just_a_short_line():
     # a wrapped PDF line that happens to be short is NOT a heading
     assert score_text("the district may use artificial intelligence\nfor threat detection. " + "x " * 300)["ai_in_heading"] is False
     assert score_text("SECTION 3. ARTIFICIAL INTELLIGENCE IN SCHOOLS\nbody text. " + "x " * 300)["ai_in_heading"] is True
+    # one hit, even in a heading, is not "dense" -- a single-line mention in a
+    # school-safety bill ("Sec. 4. ... artificial intelligence detection") is a passing one
+    one = score_text("Sec. 4. Use of artificial intelligence detection\n" + "body. " * 400)
+    assert one["ai_in_heading"] and one["ai_mentions"] == 1 and not one["dense"]
     assert score_text("Sec. 4. Use of artificial intelligence\nbody. " + "x " * 300)["ai_in_heading"] is True
 
 

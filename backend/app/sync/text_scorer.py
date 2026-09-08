@@ -34,7 +34,7 @@ MAX_TEXT_BYTES = 2_000_000
 
 # Thresholds -- first cut from docs/TEXT_DENSITY_SCORER.md; tune after the
 # first --score-text run prints the distribution.
-DENSE_MENTIONS = 3        # this many hits AND DENSE_DENSITY (or one in a heading) = about AI
+DENSE_MENTIONS = 3        # this many hits AND DENSE_DENSITY (or >= 2 with one in a heading) = about AI
 DENSE_DENSITY = 1.0       # hits per 1,000 words; keeps an 80k-word bond bill with 11 hits out
 THIN_MENTIONS = 2         # at most this many hits, and either all inside definitions ...
 THIN_DENSITY = 0.5        # ... or this sparse = a passing mention
@@ -185,7 +185,7 @@ def score_text(text: str) -> Dict:
         "ai_in_heading": in_heading,
         "ai_density": density,
         "definition_only": definition_only,
-        "dense": in_heading or (n >= DENSE_MENTIONS and density >= DENSE_DENSITY),
+        "dense": (in_heading and n >= 2) or (n >= DENSE_MENTIONS and density >= DENSE_DENSITY),
         "thin": n <= THIN_MENTIONS and (definition_only or density < THIN_DENSITY),
     }
 
@@ -234,7 +234,7 @@ def text_score_from_bill(bill) -> Optional[Dict]:
     return {
         "words": bill.text_words, "ai_mentions": n, "ai_in_heading": bool(bill.ai_in_heading),
         "ai_density": density, "definition_only": bool(bill.definition_only),
-        "dense": bool(bill.ai_in_heading) or (n >= DENSE_MENTIONS and density >= DENSE_DENSITY),
+        "dense": (bool(bill.ai_in_heading) and n >= 2) or (n >= DENSE_MENTIONS and density >= DENSE_DENSITY),
         "thin": n <= THIN_MENTIONS and (bool(bill.definition_only) or density < THIN_DENSITY),
         "readable": True,
     }
