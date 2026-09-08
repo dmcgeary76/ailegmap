@@ -122,9 +122,15 @@ NOISE_TITLE_TERMS = [
     "child sexual",
 ]
 
-# Full-text boolean query: must contain an AI concept AND an education concept,
-# and NOT be a purely ceremonial resolution (those crowd out real bills).
+# Full-text boolean query: must contain an AI concept AND an education concept.
 # Phrases are quoted; LegiScan applies NLP stemming for singular/plural variants.
+#
+# There is deliberately NO "NOT (congratulating OR recognizing OR ...)" clause.
+# Until 2026-09-08 there was one, meant to drop ceremonial resolutions -- but it
+# is a *full-text* exclusion, so any statute whose text says "recognizing" or
+# "honoring" anywhere vanished. Oklahoma SB1734 (a signed K-12 AI statute) was
+# one of them; the clause removed 17 of 39 Oklahoma hits. Ceremonial noise is
+# handled downstream by the title scorer (NOISE_TERMS) and by is_resolution().
 SEARCH_QUERY = (
     '('
     '("artificial intelligence" OR "artifical intelligence" OR "machine learning" OR "generative AI" '
@@ -133,8 +139,7 @@ SEARCH_QUERY = (
     '(school OR student OR pupil OR teacher OR educator OR classroom '
     'OR curriculum OR "K-12" OR kindergarten OR elementary '
     'OR "secondary education" OR "school district" OR "board of education")'
-    ') '
-    'NOT (congratulating OR commending OR recognizing OR honoring OR commemorating)'
+    ')'
 )
 
 # LegiScan numeric progress codes -> (label, stage for map color-coding)
@@ -304,10 +309,11 @@ class LegiScanSync:
     """Discover bills for a jurisdiction and upsert them into the bills table."""
 
     def __init__(self, db=None, api_key: Optional[str] = None, years: str = "1",
-                 fetch_status: bool = True, sleep: float = 0.4):
+                 fetch_status: bool = True, sleep: float = 0.4, query: str = SEARCH_QUERY):
         self.db = db
         self.fetch_status = fetch_status
         self.years = years  # 1=all sessions, 2=current, 3=recent, 4=prior, or YYYY
+        self.query = query  # SEARCH_QUERY unless overridden (--query) for diagnosis
         self.sleep = sleep
         self.api_key = api_key
         if self.api_key is None:
@@ -354,7 +360,7 @@ class LegiScanSync:
         max_pages = 20
         print(f"  🔍 Searching {state}...", end=" ", flush=True)
         while page <= max_pages:
-            data = self._get(op="getSearch", state=state, query=SEARCH_QUERY,
+            data = self._get(op="getSearch", state=state, query=self.query,
                              year=self.years, page=page)
             if data is None:
                 return bills
@@ -534,7 +540,7 @@ class LegiScanSync:
         print("=" * 70)
         print(f"Scope: {scope}   Years: {self.years} (1=all sessions)   "
               f"Status lookups: {'on' if self.fetch_status else 'off'}")
-        print(f"Query: {SEARCH_QUERY}\n")
+        print(f"Query: {self.query}\n")
 
         run = None
         if self.db is not None:
@@ -612,6 +618,9 @@ def main():
     parser.add_argument("--years", type=str, default="1",
                         help="1=all sessions, 2=current, 3=recent, 4=prior, or YYYY (default 1)")
     parser.add_argument("--no-status", action="store_true", help="Skip getBill lookups")
+    parser.add_argument("--query", type=str, default=None,
+                        help="Override the LegiScan search query for this run (diagnosis: e.g. --preview "
+                             "--query 'SB1734' to check whether the index knows a bill at all)")
     parser.add_argument("--rescore", action="store_true",
                         help="Re-run the title scorer over stored bills (no API calls); combine with --state or --all")
     args = parser.parse_args()
@@ -632,15 +641,17 @@ def main():
         print(f"\nRescored {r['rescored']} bills, {r['changed']} changed classification fields")
         return
 
+    query = args.query or SEARCH_QUERY
+
     if args.preview:
-        LegiScanSync(db=None, years=args.years, fetch_status=not args.no_status).run(scope)
+        LegiScanSync(db=None, years=args.years, fetch_status=not args.no_status, query=query).run(scope)
         return
 
     from app.database import SessionLocal, init_db
     init_db()
     db = SessionLocal()
     try:
-        LegiScanSync(db, years=args.years, fetch_status=not args.no_status).run(scope)
+        LegiScanSync(db, years=args.years, fetch_status=not args.no_status, query=query).run(scope)
     finally:
         db.close()
 
