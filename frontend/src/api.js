@@ -30,7 +30,9 @@ const liveApi = {
 let dataPromise = null
 const loadData = () => {
   if (!dataPromise) {
-    dataPromise = axios.get(DATA_URL).then((r) => r.data).catch((err) => {
+    // ?v=<build id> defeats the CDN/browser cache: a new deploy = a new URL.
+    const params = typeof __BUILD_ID__ !== 'undefined' ? { v: __BUILD_ID__ } : {}
+    dataPromise = axios.get(DATA_URL, { params }).then((r) => r.data).catch((err) => {
       dataPromise = null // let a reload retry
       throw err
     })
