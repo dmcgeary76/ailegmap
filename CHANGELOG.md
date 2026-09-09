@@ -12,6 +12,7 @@ Timestamps are in the project's local time.
 - **Removed** the PostgreSQL-era guides (`MACOS_SETUP.md`, `TESTING_GUIDE.md`, `docs/SETUP.md`, `docs/API_SPEC.md`) and the root `.env.example` (Postgres variables; `backend/.env.example` is the real one). Swagger at `/docs` is the API reference.
 - **Rewrote** `docs/DATA_SCHEMA.md` and `docs/SYNC_IMPLEMENTATION.md` for the current tables, scorers, flags and publishing loop; `backend/README.md` and `frontend/README.md` are now short module maps.
 - **Dockerfiles.** Backend image drops `postgresql-client`; the frontend image is a multi-stage build that serves the static map (with `data.json`) from `nginx:alpine`; `docker-compose.yml` builds those two production shapes instead of running dev servers.
+- **`./publish.sh`** runs the whole weekly loop (sync → score text → rescore → seed → export → commit → push); `--no-sync` and `--dry-run` variants.
 - **Project page** (`docs/index.html`, published at `/about/`): relevance table now shows the two-stage title + text rule, the run/publish commands match reality, and the changelog carries the September entries.
 
 ---

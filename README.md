@@ -91,6 +91,16 @@ So the publishing loop is **sync → review → export → commit → push**.
 Assets are built with relative paths (`base: './'`), so the same build works at the site root or under a
 subpath like `/ailegmap/`.
 
+## The weekly loop
+
+```bash
+./publish.sh              # sync -> score text -> rescore -> seed -> export -> commit -> push
+./publish.sh --no-sync    # re-export and push without touching LegiScan (after editing a profile or the CSV)
+./publish.sh --dry-run    # everything except commit + push
+```
+Review anything new in the Review Queue tab (`./start.sh`) between the sync and the push if you want to;
+the loop is safe to run unattended because only HIGH auto-includes and every human decision is pinned.
+
 ## Syncing legislation
 
 The LegiScan sync searches all sessions, scores each bill for K-12-AI relevance, fetches real status, and populates both the map records and the review queue.
