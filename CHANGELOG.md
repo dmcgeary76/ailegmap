@@ -5,6 +5,17 @@ Timestamps are in the project's local time.
 
 ---
 
+## 2026-09-09
+
+### Docs cleanup; static map cache-busting; Dockerfiles for production shapes
+- **Cache bug on the public map.** GitHub Pages serves files with a 10-minute cache and browsers reused the plain `./data.json` URL for far longer, so viewers saw last publish's numbers. The static build now requests `data.json?v=<build id>`; every push rebuilds, so every deploy is a new URL.
+- **Removed** the PostgreSQL-era guides (`MACOS_SETUP.md`, `TESTING_GUIDE.md`, `docs/SETUP.md`, `docs/API_SPEC.md`) and the root `.env.example` (Postgres variables; `backend/.env.example` is the real one). Swagger at `/docs` is the API reference.
+- **Rewrote** `docs/DATA_SCHEMA.md` and `docs/SYNC_IMPLEMENTATION.md` for the current tables, scorers, flags and publishing loop; `backend/README.md` and `frontend/README.md` are now short module maps.
+- **Dockerfiles.** Backend image drops `postgresql-client`; the frontend image is a multi-stage build that serves the static map (with `data.json`) from `nginx:alpine`; `docker-compose.yml` builds those two production shapes instead of running dev servers.
+- **Project page** (`docs/index.html`, published at `/about/`): relevance table now shows the two-stage title + text rule, the run/publish commands match reality, and the changelog carries the September entries.
+
+---
+
 ## 2026-09-08
 
 ### Local actions: 3 rows → 18 across 10 states

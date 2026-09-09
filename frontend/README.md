@@ -1,46 +1,25 @@
 # Frontend
 
-React + Vite application for K-12 AI Legislative Map dashboard.
+React 18 + Vite. Real state geometry (d3-geo Albers USA over us-atlas), two color layers, a
+local-actions overlay, a state modal, and the bill review queue.
 
-## Setup
-
-### With Docker
-```bash
-docker-compose up frontend
-```
-
-### Manual Setup
 ```bash
 npm install
-npm run dev
+npm run dev            # http://localhost:5173, talks to the API on :8000
+npm run build:static   # dist/ = map + docs/data.json, no backend needed (GitHub Pages / Vercel)
 ```
 
-App will be available at http://localhost:5173
-
-## Project Structure
+`src/api.js` is the one interface with two implementations: `live` (the FastAPI backend, used by
+`npm run dev`) and `static` (reads `data.json`, selected by `VITE_DATA_URL`, used by `build:static`).
+Components never know which one they are talking to; the review queue only exists in live mode.
 
 ```
 src/
-├── App.jsx              # Main app component
-├── App.css              # App styles
-├── main.jsx             # Entry point
-├── index.css            # Global styles
+├── App.jsx                 # layout, map/review tabs, layer + filter state
+├── api.js                  # live vs static data, shared color/label vocabulary
 └── components/
-    ├── Dashboard.jsx    # Summary stats & filters
-    ├── Map.jsx          # State grid (placeholder for SVG)
-    └── StateModal.jsx   # Detailed state info modal
+    ├── USMap.jsx           # the map: geometry, glyphs, tooltip, NE-state stack
+    ├── Dashboard.jsx       # overview stats, layer toggle, filters
+    ├── StateModal.jsx      # one state: bills, local actions, guidance profile
+    └── ReviewQueue.jsx     # include / exclude bills (live mode only)
 ```
-
-## Features
-
-- **Dashboard**: Summary statistics and filtering by stance/maturity
-- **State Grid**: Interactive grid showing all states with their regulatory stance
-- **State Modal**: Detailed legislation and guidance info when clicking a state
-- **Responsive**: Works on desktop, tablet, and mobile
-
-## Next Steps
-
-1. Replace state grid with interactive SVG map
-2. Add timeline view
-3. Add comparison feature
-4. Add export functionality

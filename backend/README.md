@@ -1,65 +1,29 @@
-> **Out of date (2026-09-02):** this document describes the PostgreSQL / `state_legislation` design. The current setup, data model and endpoints are in the top-level [README](../README.md) and `CHANGELOG.md`; the live API reference is at http://localhost:8000/docs.
+# Backend
 
-# Backend API
+FastAPI + SQLAlchemy on a single SQLite file (`k12_ai.db`). The top-level [README](../README.md) is the
+full guide; this is the short version.
 
-FastAPI application for K-12 AI Legislative Map.
-
-## Setup
-
-### With Docker
 ```bash
-docker-compose up backend
-```
-
-### Manual Setup
-```bash
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-
-# Set DATABASE_URL environment variable
-export DATABASE_URL=postgresql://user:password@localhost:5432/k12_ai_db
-
-# Run migrations (when needed)
-alembic upgrade head
-
-# Start dev server
-python -m uvicorn app.main:app --reload
+cp .env.example .env                 # add LEGISCAN_API_KEY
+python -m app.seed                   # profiles, local actions, review decisions -> DB
+uvicorn app.main:app --reload        # http://localhost:8000  (Swagger at /docs)
+pytest                               # ~2 s, in-memory SQLite, no API key
 ```
 
-API will be available at http://localhost:8000
+| Module | Does |
+|---|---|
+| `app/models/legislation.py` | `state_profiles`, `bills`, `local_actions`, `sync_runs`, `bill_status_changes`; `is_resolution()`; `AUTO_INCLUDE_CONFIDENCE` |
+| `app/derive.py` | read-time derivations: legislation stage, headline bill, review counts, local signal |
+| `app/api/routes.py`, `app/api/bill_review.py` | the map's read model; the review queue |
+| `app/sync/legiscan_sync.py` | LegiScan search + status sync, title scorer, `--rescore`, `--query`, carry-over linking |
+| `app/sync/text_scorer.py` | `--score-text`: reads bill text, counts AI-term density, folds into confidence |
+| `app/seed.py` / `app/export.py` | JSON + CSV in `data/` -> DB; DB -> `docs/data.json` for the static map |
+| `app/decisions.py` | `data/decisions.csv` is the source of truth for include/exclude calls |
 
-## Endpoints
+Everything a person curates lives in `data/` and is tracked in git; the `.db` is a cache you can delete
+and rebuild with a sync + `python -m app.seed`.
 
-### Get States
-- `GET /api/states` - List all states
-- `GET /api/states?stance=SUPPORT&maturity=ACTIVE` - Filter by stance/maturity
-- `GET /api/states/{state_code}` - Get specific state
-
-### Create State Record
-- `POST /api/states` - Create new state legislation record
-
-### Update State Record
-- `PUT /api/states/{state_code}` - Update state record
-
-### Dashboard
-- `GET /api/dashboard/summary` - Get summary statistics
-
-### Health
-- `GET /api/health` - Health check
-
-## Database
-
-PostgreSQL database with tables:
-- `state_legislation` - State records
-- `legislation_updates` - Audit trail
-
-See `docs/DATA_SCHEMA.md` for field definitions.
-
-## Environment Variables
-
-```
-DATABASE_URL=postgresql://user:password@host:port/dbname
-ENVIRONMENT=development
-DEBUG=True
-```
+Environment (`.env`): `LEGISCAN_API_KEY` (required for syncing), optional `DATABASE_URL` (any SQLAlchemy
+URL; defaults to the SQLite file next to this README).

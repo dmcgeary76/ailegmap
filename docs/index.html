@@ -107,7 +107,7 @@
         </div>
         <div class="card">
           <h3>State education agency guidance</h3>
-          <p class="muted">Many states act through department guidance rather than statute. 12 jurisdictions are researched manually today; an automated guidance scraper is planned so guidance-only states aren't shown as empty.</p>
+          <p class="muted">Many states act through department guidance rather than statute. 14 jurisdictions are researched by hand today (<code>backend/data/profiles/</code>); the rest render as "not yet assessed" rather than "no policy". A third, curated layer records notable <strong>district, city and county actions</strong> — NYC's PK-8 moratorium, Miami-Dade's Gemini rollout, Houston's AI-focused campuses — as the project's on-the-ground sentiment signal.</p>
         </div>
       </div>
     </section>
@@ -115,16 +115,18 @@
     <section>
       <h2>How relevance is decided</h2>
       <div class="card">
-        <p>A bill must reference both an <strong>AI concept</strong> and a <strong>K-12 education concept</strong> in its text to be considered. Each candidate is then scored for confidence from its title:</p>
+        <p>A bill must reference both an <strong>AI concept</strong> and a <strong>K-12 education concept</strong> in its text to be considered. Each candidate is scored from its title, then its <em>text</em> is read:</p>
         <table>
-          <thead><tr><th>Title contains</th><th>Confidence</th><th>On map by default</th></tr></thead>
+          <thead><tr><th>Title says</th><th>Text says</th><th>Result</th></tr></thead>
           <tbody>
-            <tr><td>AI term <em>and</em> education term</td><td>HIGH</td><td>Yes</td></tr>
-            <tr><td>Education term (AI in the body)</td><td>MEDIUM</td><td>Yes</td></tr>
-            <tr><td>AI only / higher-ed only / budget / ceremonial</td><td>LOW</td><td>No — held for review</td></tr>
+            <tr><td>AI term <em>and</em> education term</td><td>AI is really in there</td><td>HIGH — on the map</td></tr>
+            <tr><td>AI term <em>and</em> education term</td><td>no AI in the text</td><td>LOW, "title only"</td></tr>
+            <tr><td>Education term only</td><td>dense with AI (a heading, or 3+ hits at 1+ per 1,000 words)</td><td>MEDIUM, "dense" — reviewed first</td></tr>
+            <tr><td>Education term only</td><td>one definition and nothing else</td><td>LOW, "thin mention"</td></tr>
+            <tr><td>AI only / higher-ed / budget / ceremonial</td><td>—</td><td>LOW — held for review</td></tr>
           </tbody>
         </table>
-        <p class="muted" style="margin-top:.8rem">Bills like AI procurement, deepfake/CSAM crime, and elections legislation are deliberately routed to the review queue rather than shown automatically. A human can include or exclude any bill, and that decision survives every future sync.</p>
+        <p class="muted" style="margin-top:.8rem">Only HIGH goes on the map without a person looking at it, and every HIGH has in fact been reviewed. Resolutions are listed but never color a state — an adopted "urging the department to…" is not a law. Every include/exclude decision is a row in <code>backend/data/decisions.csv</code>, tracked in git, and survives every future sync.</p>
         <p style="margin-top:.8rem">Status color-coding:
           <span class="pill p-intro">Introduced</span>
           <span class="pill p-debated">Debated</span>
@@ -216,25 +218,18 @@ local actions · bills · guidance"]
       <h2>Using the tool</h2>
       <div class="card">
         <h3>Run locally</h3>
-        <pre><code>cp .env.example backend/.env   # add your LEGISCAN_API_KEY
-
-# Backend
-cd backend &amp;&amp; python -m venv venv &amp;&amp; source venv/bin/activate
-pip install -r requirements.txt
-python -m app.migrations.001_add_sync_tracking upgrade
-python -m app.migrations.002_add_bill_review_queue upgrade
-uvicorn app.main:app --reload --port 8000
-
-# Frontend
-cd frontend &amp;&amp; npm install &amp;&amp; npm run dev</code></pre>
-        <h3 style="margin-top:1rem">Sync &amp; curate</h3>
-        <pre><code># Preview ranked bills for a state (no DB writes)
-python -m app.sync.legiscan_sync --preview --state CA
-
-# Live sync, then curate in the Review Queue tab
-python -m app.sync.legiscan_sync --state CA
-python -m app.sync.legiscan_sync --all</code></pre>
-        <p class="muted">Full details in the <a href="https://github.com/dmcgeary76/ailegmap#readme">repository README</a> and <code>docs/SYNC_IMPLEMENTATION.md</code>.</p>
+        <p class="muted">The public map at <a href="../">the root of this site</a> is a static build that reads one exported file; it needs no server. Curation runs locally:</p>
+        <pre><code>./setup.sh      # venv, npm install, SQLite schema, seed profiles / local actions / decisions
+./start.sh      # API on :8000, app on :5173 (with the Review Queue tab)</code></pre>
+        <h3 style="margin-top:1rem">Sync, score, publish</h3>
+        <pre><code>cd backend &amp;&amp; source venv/bin/activate
+python -m app.sync.legiscan_sync --all               # LegiScan search + status
+python -m app.sync.legiscan_sync --all --score-text  # read new bills' text
+python -m app.sync.legiscan_sync --all --rescore     # fold it in, link carry-overs
+python -m app.seed                                   # replay decisions.csv
+python -m app.export                                 # -> docs/data.json
+git add -A &amp;&amp; git commit -m "Weekly sync" &amp;&amp; git push   # GitHub Action redeploys the map</code></pre>
+        <p class="muted">Full details in the <a href="https://github.com/dmcgeary76/ailegmap#readme">repository README</a> and <code>docs/SYNC_IMPLEMENTATION.md</code>; the data model is in <code>docs/DATA_SCHEMA.md</code>.</p>
       </div>
     </section>
 
@@ -242,6 +237,45 @@ python -m app.sync.legiscan_sync --all</code></pre>
       <h2>Changelog</h2>
       <p class="muted">Mirrors <code>CHANGELOG.md</code>. Newest first.</p>
       <div class="timeline">
+
+        <div class="entry">
+          <time>2026-09-09</time>
+          <strong>— Text-density scorer, local-actions layer, docs cleanup</strong>
+          <ul>
+            <li><strong>The text scorer is built and calibrated.</strong> <code>--score-text</code> reads each candidate bill's newest text and counts AI-term density. Three runs against 315 real documents taught it Iowa's one-word-per-line "HTML", Missouri's dropped spaces, PDF ligatures and hyphenation. 217 MEDIUM bills became 120; the 45 "dense" ones were reviewed (35 in, 9 out). Utah's Classroom Technology Amendments — passed in March, 55 AI mentions, MEDIUM by title — is the poster child.</li>
+            <li><strong>Local actions: 3 rows → 18 across 10 states</strong> under the inclusion rule, each sourced and dated. New York and California are now gray on the legislation layer and red on the local one; Florida is the most permissive state on the ground with no passed law.</li>
+            <li><strong>Static map cache-busts</strong> <code>data.json</code> per deploy — viewers were seeing week-old numbers.</li>
+            <li>Removed the PostgreSQL-era setup guides; rewrote the schema and sync docs for the current design; Dockerfiles now build the API and an nginx-served static map.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <time>2026-09-08</time>
+          <strong>— Public map, sync audit, decisions in git</strong>
+          <ul>
+            <li><strong>The map is public.</strong> A static build of the frontend reads <code>docs/data.json</code> instead of the API and deploys to GitHub Pages on every push; this page moved to <code>/about/</code>.</li>
+            <li><strong>Four sync bugs found by reading the results.</strong> A full-text <code>NOT (recognizing OR honoring …)</code> clause was hiding statutes (44% of Oklahoma's hits, including its signed Responsible Technology in Schools Act); the title scorer matched "school <em>ai</em>d"; re-syncs overwrote real statuses with Unknown; two-year sessions created duplicate rows. All fixed; full re-sync: 2,205 bills across 50 states + DC.</li>
+            <li><strong>Every HIGH bill audited.</strong> "Passed into law" went from 8 states (two on a deepfake bill and an arts-commission resolve) to 7 that earned it: CA, ID, IL, MD, OK, UT, VA.</li>
+            <li><strong>Resolutions never color the map.</strong> Detected from the bill number or a "Resolve" / "… Resolution" title.</li>
+            <li><strong><code>decisions.csv</code></strong> holds every include/exclude call; the review UI writes it, seed replays it, so a fresh clone reproduces the curated map. Five more researched state profiles (AR, CO, LA, NM, OK) — 14 of 54.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <time>2026-09-04</time>
+          <strong>— Real state outlines, local actions, MEDIUM no longer auto-includes</strong>
+          <ul>
+            <li>Actual state geometry (d3-geo Albers USA over us-atlas) with a stacked north-east; a curated <code>local_actions</code> layer with a derived per-state leaning; an audit found 0 of 126 MEDIUM bills had an AI term in the title, so only HIGH auto-includes now.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <time>2026-09-02</time>
+          <strong>— Rebuilt on one data model (v0.2)</strong>
+          <ul>
+            <li>SQLite replaces PostgreSQL; profiles, bills and local actions each have one source of truth and everything the map shows is derived on read; 45 never-researched jurisdictions stopped pretending to be "no policy".</li>
+          </ul>
+        </div>
 
         <div class="entry">
           <time>2026-07-02</time>

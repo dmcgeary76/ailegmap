@@ -45,7 +45,7 @@ Or by hand:
 cd backend
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env           # add LEGISCAN_API_KEY
+cp .env.example .env           # (backend/.env.example) add LEGISCAN_API_KEY
 python -c "from app.database import init_db; init_db()"
 python -m app.seed             # loads backend/data/profiles/*.json
 uvicorn app.main:app --reload
