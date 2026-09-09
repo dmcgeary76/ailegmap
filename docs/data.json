@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T21:17:36.667059Z",
+ "generated_at": "2026-09-09T14:13:41.211771Z",
  "last_sync": "2026-09-08T19:29:32.088207Z",
  "summary": {
   "jurisdictions": 54,
@@ -231,7 +231,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T21:17:32.994886"
+   "last_updated": "2026-09-09T14:13:40.782948"
   },
   {
    "state_code": "AZ",
@@ -449,7 +449,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-09-08T21:17:32.995750"
+   "last_updated": "2026-09-09T14:13:40.783450"
   },
   {
    "state_code": "CA",
@@ -745,7 +745,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-08T21:17:32.996338"
+   "last_updated": "2026-09-09T14:13:40.783879"
   },
   {
    "state_code": "CO",
@@ -807,7 +807,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-09-08T21:17:32.996891"
+   "last_updated": "2026-09-09T14:13:40.784235"
   },
   {
    "state_code": "CT",
@@ -1478,7 +1478,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-08T21:17:32.998009"
+   "last_updated": "2026-09-09T14:13:40.784849"
   },
   {
    "state_code": "ID",
@@ -2094,7 +2094,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-09-08T21:17:32.998538"
+   "last_updated": "2026-09-09T14:13:40.785324"
   },
   {
    "state_code": "ME",
@@ -2509,7 +2509,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-08T21:17:32.999170"
+   "last_updated": "2026-09-09T14:13:40.785606"
   },
   {
    "state_code": "MI",
@@ -3342,7 +3342,7 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-09-08T21:17:32.999663"
+   "last_updated": "2026-09-09T14:13:40.785870"
   },
   {
    "state_code": "NY",
@@ -3986,7 +3986,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-09-08T21:17:33.000184"
+   "last_updated": "2026-09-09T14:13:40.786189"
   },
   {
    "state_code": "OR",
@@ -4251,7 +4251,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-08T21:17:33.001153"
+   "last_updated": "2026-09-09T14:13:40.786610"
   },
   {
    "state_code": "SC",
@@ -4725,7 +4725,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-08T21:17:33.001654"
+   "last_updated": "2026-09-09T14:13:40.786889"
   },
   {
    "state_code": "UT",
@@ -5482,7 +5482,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-08T21:17:32.997418"
+   "last_updated": "2026-09-09T14:13:40.784531"
   },
   {
    "state_code": "PR",
@@ -5535,7 +5535,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-08T21:17:33.000642"
+   "last_updated": "2026-09-09T14:13:40.786363"
   },
   {
    "state_code": "VI",
@@ -5582,7 +5582,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-08T21:17:33.002167"
+   "last_updated": "2026-09-09T14:13:40.787053"
   }
  ]
 }
