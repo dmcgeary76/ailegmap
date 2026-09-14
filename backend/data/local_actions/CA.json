@@ -39,6 +39,23 @@
         "https://www.edweek.org/technology/los-angeles-unifieds-ai-meltdown-5-ways-districts-can-avoid-the-same-mistakes/2024/07",
         "https://www.govtech.com/education/k-12/lausd-shutters-new-ai-chatbot-when-developer-goes-out-of-business"
       ]
+    },
+    {
+      "jurisdiction": "San Francisco Unified School District",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 0,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "board ad hoc committee; vote scheduled 2027-03-09",
+      "lifecycle": "proposed",
+      "effective_from": "2026-06-01",
+      "enrollment": 49000,
+      "summary": "Deferred rather than decided: in June 2026 the board kept its existing off-and-away phone policy and formed an ad hoc committee instead of acting on AI. The technology policy now gets a February 2027 review and a 2027-03-09 vote, leaving AI decisions to individual schools and teachers in the meantime.",
+      "notes": "Included as a deliberate non-decision by a top-five California district while LAUSD and NYC moved the other way - the direction 0 is the point. No AI policy is in force at SFUSD as of 2026-09-14. Enrollment approximate.",
+      "sources": [
+        "https://hoodline.com/2026/09/while-nyc-and-la-restrict-classroom-ai-sfusd-punts-decision-to-march-2027/"
+      ]
     }
   ]
 }

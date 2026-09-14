@@ -26,15 +26,17 @@
       "action_type": "RESTRICT",
       "direction": -1,
       "applies_to": "students",
-      "grade_band": "K-12",
-      "authority": "school board policy; superintendent Howard Hepburn's administration",
+      "grade_band": "PK-5",
+      "authority": "school board vote 2026-07-29",
       "lifecycle": "adopted",
       "effective_from": "2026-08-11",
       "enrollment": 250000,
-      "summary": "For 2026-27, no district-approved student-facing AI tools in K-5; grades 6-12 get limited, teacher-directed access to Khanmigo and HMH Writable only. Copilot and MagicSchool are staff-facing.",
-      "notes": "Primary coverage was CBS Miami and Axios (2026-08-06); the cited write-up summarises them and notes an inconsistency about a limited Copilot student pilot. Verify the grade split against the district's AI hub. Enrollment figure is approximate.",
+      "summary": "Board voted 2026-07-29 to restrict most use of AI chatbots for all elementary students, cap PK-1 screen time to state-mandated testing and IEP/504 accommodations only, and direct the superintendent to put monitoring software on district devices district-wide with real-time alerts to the District Security Operations Center.",
+      "notes": "Corrected 2026-09-14: the earlier row dated this 2026-08-11 with a secondary source and no vote date. The board action was 2026-07-29; effective_from is the approximate first day of 2026-27. Chair Sarah Leonardi's motion originally covered PK-2 screen time; the adopted version stops at 1st grade. Enrollment approximate. AI chatbot restriction covers all elementary grades; the screen-time cap is PK-1 only.",
       "sources": [
-        "https://windowsforum.com/windows-news.4/broward-county-schools-limits-student-ai-to-grades-6-12.442183/?amp=1",
+        "https://pineapplereport.com/browards-youngest-students-face-new-limits-on-screen-time-and-ai/",
+        "https://www.tapinto.net/towns/parkland/sections/education/articles/broward-students-likely-to-have-restricted-technology-usage-in-2026-27",
+        "https://www.caribbeannationalweekly.com/posts/broward-schools-consider-screen-time-limits-for-youngest-students-ai-monitoring",
         "https://browardschools.ai/"
       ]
     },

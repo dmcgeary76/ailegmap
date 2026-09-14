@@ -1,0 +1,24 @@
+{
+  "state_code": "MD",
+  "actions": [
+    {
+      "jurisdiction": "Montgomery County Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "district AI framework; draft policy in board committee",
+      "lifecycle": "adopted",
+      "effective_from": "2026-07-06",
+      "enrollment": 160000,
+      "summary": "Draft emerging-technology policy covering AI advanced out of the board's policy committee after broad stakeholder outreach. The district's working framework points AI at teacher tasks - planning, feedback, administrative work - while student use stays more heavily monitored and is used mainly to teach transparency about AI.",
+      "notes": "Maryland's largest district. The operating framework is what this row records; a formal 'emerging technology' policy covering AI was advanced out of the board's policy committee after stakeholder outreach and has not had a board vote as of 2026-09-14. Driven by the Artificial Intelligence Ready Schools Act (signed May 2026), which gives every district 120 days from the state guidance issued after the February 2026 State Board presentation - a fall 2026 deadline. effective_from is the date the framework was described in press, not an adoption date. Prince George's County (pilots) and Frederick County (considering Gemini, forming a local AI advisory group) are candidate rows if dated sources turn up.",
+      "sources": [
+        "https://marylandmatters.org/2026/07/06/maryland-school-districts-face-fall-deadline-to-set-ai-policies/",
+        "https://wtop.com/montgomery-county/2026/07/maryland-school-districts-face-fall-deadline-to-set-ai-policies/",
+        "https://citizenportal.ai/articles/6555672/maryland/school-boards/montgomery-county-public-schools/mcps-policy-committee-advances-draft-emerging-technology-policy-to-address-ai-after-wide-stakeholder-outreach"
+      ]
+    }
+  ]
+}

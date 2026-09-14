@@ -1,0 +1,24 @@
+{
+  "state_code": "WA",
+  "actions": [
+    {
+      "jurisdiction": "Seattle Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "RESTRICT",
+      "direction": -1,
+      "applies_to": "both",
+      "grade_band": "PK-12",
+      "authority": "Superintendent Procedure 2022SP + SPS AI Handbook",
+      "lifecycle": "adopted",
+      "effective_from": "2025-02-01",
+      "enrollment": 49000,
+      "summary": "District AI Handbook sets eight principles - student-centered use, syllabus transparency, disclosure for academic integrity, ethical use, privacy, bias mitigation, equitable access and human accountability - and blocks several of the most common generative-AI tools for PreK-5 because platform content filtering and safety controls are not good enough for the youngest learners. AI is not to be used where the learning goal is critical thinking or original idea creation.",
+      "notes": "Washington's largest district and the first in the state with a district-wide AI handbook. effective_from is the handbook's published date; the PK-5 tool block is described on the district's current AI page and may post-date the handbook. Enrollment approximate. The tool block is PK-5; 6-12 use continues under the handbook.",
+      "sources": [
+        "https://www.seattleschools.org/departments/dots/ai/",
+        "https://www.seattleschools.org/wp-content/uploads/2025/02/AI-Handbook-ADA.pdf",
+        "https://www.seattleschools.org/departments/dots/ai/ai-faq/"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-14T16:11:50.037561Z",
- "last_sync": "2026-09-08T19:29:32.088207Z",
+ "generated_at": "2026-09-14T17:18:21.577002Z",
+ "last_sync": "2026-09-14T16:54:52.276344Z",
  "summary": {
   "jurisdictions": 54,
   "states_with_included_bills": 32,
@@ -22,24 +22,78 @@
    "ABSENT": 4
   },
   "bills": {
-   "total": 2205,
+   "total": 2206,
    "included": 119,
-   "pending": 2048,
+   "pending": 2049,
    "excluded": 38
   },
   "local_actions": {
-   "total": 18,
-   "active": 15,
-   "states": 10
+   "total": 29,
+   "active": 23,
+   "states": 16
   },
   "states_by_local_leaning": {
-   "restrictive": 4,
-   "permissive": 6,
-   "mixed": 0,
-   "none": 44
+   "restrictive": 6,
+   "permissive": 8,
+   "mixed": 1,
+   "none": 39
   },
-  "last_sync": "2026-09-08T19:29:32.088207",
+  "last_sync": "2026-09-14T16:54:52.276344",
   "recent_status_changes": [
+   {
+    "state_code": "CA",
+    "bill_number": "SB1276",
+    "bill_title": "Crimes: sexual exploitation of a child.",
+    "old_status": "Enrolled",
+    "new_status": "Passed",
+    "new_stage": "passed",
+    "changed_at": "2026-09-14T16:54:03.515481"
+   },
+   {
+    "state_code": "CA",
+    "bill_number": "SB813",
+    "bill_title": "Independent verification organizations.",
+    "old_status": "Enrolled",
+    "new_status": "Passed",
+    "new_stage": "passed",
+    "changed_at": "2026-09-14T16:54:03.515481"
+   },
+   {
+    "state_code": "CA",
+    "bill_number": "SB1119",
+    "bill_title": "Companion chatbots: children\u2019s safety.",
+    "old_status": "Enrolled",
+    "new_status": "Passed",
+    "new_stage": "passed",
+    "changed_at": "2026-09-14T16:54:03.515481"
+   },
+   {
+    "state_code": "CA",
+    "bill_number": "AB2298",
+    "bill_title": "Pupil instruction: computer science: content standards.",
+    "old_status": "Enrolled",
+    "new_status": "Passed",
+    "new_stage": "passed",
+    "changed_at": "2026-09-14T16:54:03.515481"
+   },
+   {
+    "state_code": "CA",
+    "bill_number": "AB1159",
+    "bill_title": "Student personal information.",
+    "old_status": "Enrolled",
+    "new_status": "Passed",
+    "new_stage": "passed",
+    "changed_at": "2026-09-14T16:54:03.515481"
+   },
+   {
+    "state_code": "CA",
+    "bill_number": "AB2071",
+    "bill_title": "Pupil instruction: digital wellness.",
+    "old_status": "Enrolled",
+    "new_status": "Passed",
+    "new_stage": "passed",
+    "changed_at": "2026-09-14T16:54:03.515481"
+   },
    {
     "state_code": "OK",
     "bill_number": "HB3186",
@@ -74,60 +128,6 @@
     "old_status": "Unknown",
     "new_status": "Introduced",
     "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "SB1241",
-    "bill_title": "Ticket sales; Oklahoma Fraud and Ticketing Accountability Act; defining terms; prohibiting use of certain bots; requiring disclosures; prohibiting sales; requiring refunds; establishing violations of the Oklahoma Consumer Protection Act. Effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB3007",
-    "bill_title": "Motor vehicles; directing the Department of Public Safety to establish certain endorsement; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB3865",
-    "bill_title": "Crimes and punishments; expanding scope of crime to include materials and pornography generated via artificial intelligence; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB2016",
-    "bill_title": "Evidence; artificial intelligence expert testimony; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "SB1751",
-    "bill_title": "Human trafficking; creating the Human Trafficking Identification and Reporting Act. Effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB3380",
-    "bill_title": "Children; Fostering the Future for Oklahoman Children and Families Act; Department of Human Services; tasks; time period; authority or functions; departments or agencies; applicable laws; report; codification; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Engrossed",
-    "new_stage": "debated",
     "changed_at": "2026-09-08T19:29:31.657084"
    }
   ]
@@ -231,7 +231,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-14T16:11:49.558269"
+   "last_updated": "2026-09-14T17:18:21.047130"
   },
   {
    "state_code": "AZ",
@@ -449,7 +449,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-09-14T16:11:49.558767"
+   "last_updated": "2026-09-14T17:18:21.047682"
   },
   {
    "state_code": "CA",
@@ -465,8 +465,8 @@
     "manually_excluded": 9,
     "held": 189,
     "by_stage": {
-     "passed": 2,
-     "debated": 3,
+     "passed": 5,
+     "debated": 0,
      "introduced": 5,
      "failed": 1
     }
@@ -575,10 +575,10 @@
      "bill_title": "Pupil instruction: digital wellness.",
      "bill_url": "https://legiscan.com/CA/bill/AB2071/2025",
      "bill_text_url": "https://legiscan.com/CA/text/AB2071/2025",
-     "bill_status": "Enrolled",
-     "bill_stage": "debated",
-     "last_action": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 77. Noes 0.).",
-     "last_action_date": "2026-08-31",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Chaptered by Secretary of State - Chapter 186, Statutes of 2026.",
+     "last_action_date": "2026-09-10",
      "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -591,10 +591,10 @@
      "bill_title": "Student personal information.",
      "bill_url": "https://legiscan.com/CA/bill/AB1159/2025",
      "bill_text_url": "https://legiscan.com/CA/text/AB1159/2025",
-     "bill_status": "Enrolled",
-     "bill_stage": "debated",
-     "last_action": "Senate amendments concurred in. To Engrossing and Enrolling. (Ayes 70. Noes 4.).",
-     "last_action_date": "2026-08-31",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Chaptered by Secretary of State - Chapter 182, Statutes of 2026.",
+     "last_action_date": "2026-09-10",
      "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -607,10 +607,10 @@
      "bill_title": "Pupil instruction: computer science: content standards.",
      "bill_url": "https://legiscan.com/CA/bill/AB2298/2025",
      "bill_text_url": "https://legiscan.com/CA/text/AB2298/2025",
-     "bill_status": "Enrolled",
-     "bill_stage": "debated",
-     "last_action": "Enrolled and presented to the Governor at 4 p.m.",
-     "last_action_date": "2026-09-04",
+     "bill_status": "Passed",
+     "bill_stage": "passed",
+     "last_action": "Chaptered by Secretary of State - Chapter 188, Statutes of 2026.",
+     "last_action_date": "2026-09-10",
      "match_confidence": "MEDIUM",
      "decision": "INCLUDED",
      "effective_included": true,
@@ -666,7 +666,7 @@
     }
    ],
    "local_signal": {
-    "count": 2,
+    "count": 3,
     "active": 1,
     "leaning": "restrictive",
     "score": -2.0,
@@ -700,6 +700,26 @@
       "https://www.edweek.org/technology/lausd-adopts-moratorium-on-student-ai-use-another-big-move-to-limit-tech-use/2026/09"
      ],
      "status": "active"
+    },
+    {
+     "state_code": "CA",
+     "jurisdiction": "San Francisco Unified School District",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 0,
+     "applies_to": "students",
+     "grade_band": "K-12",
+     "authority": "board ad hoc committee; vote scheduled 2027-03-09",
+     "lifecycle": "proposed",
+     "effective_from": "2026-06-01",
+     "effective_until": null,
+     "enrollment": 49000,
+     "summary": "Deferred rather than decided: in June 2026 the board kept its existing off-and-away phone policy and formed an ad hoc committee instead of acting on AI. The technology policy now gets a February 2027 review and a 2027-03-09 vote, leaving AI decisions to individual schools and teachers in the meantime.",
+     "notes": "Included as a deliberate non-decision by a top-five California district while LAUSD and NYC moved the other way - the direction 0 is the point. No AI policy is in force at SFUSD as of 2026-09-14. Enrollment approximate.",
+     "sources": [
+      "https://hoodline.com/2026/09/while-nyc-and-la-restrict-classroom-ai-sfusd-punts-decision-to-march-2027/"
+     ],
+     "status": "proposed"
     },
     {
      "state_code": "CA",
@@ -745,7 +765,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-14T16:11:49.559242"
+   "last_updated": "2026-09-14T17:18:21.048085"
   },
   {
    "state_code": "CO",
@@ -770,14 +790,102 @@
    "headline_bill": null,
    "bills": [],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 4,
+    "active": 4,
+    "leaning": "mixed",
+    "score": 0.29,
+    "latest": "2026-08-13",
+    "headline": {
+     "jurisdiction": "Denver Public Schools",
+     "action_type": "PERMIT",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "Gave students monitored access to Gemini, NotebookLM and MagicSchool - the approved-platform side of the same posture that blocks ChatGPT."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "CO",
+     "jurisdiction": "Denver Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "PERMIT",
+     "direction": 1,
+     "applies_to": "students",
+     "grade_band": "K-12",
+     "authority": "district technology office",
+     "lifecycle": "adopted",
+     "effective_from": "2026-03-01",
+     "effective_until": null,
+     "enrollment": 89000,
+     "summary": "Gave students monitored access to Gemini, NotebookLM and MagicSchool - the approved-platform side of the same posture that blocks ChatGPT.",
+     "notes": "Reported as 'last spring' in an Axios roundup dated 2026-08-13; effective_from is approximate. Paired with the January ChatGPT block above, which is why Colorado reads as mixed rather than restrictive.",
+     "sources": [
+      "https://www.axios.com/local/douglas/2026/08/13/colorado-schools-classroom-ai-rules"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "CO",
+     "jurisdiction": "Denver Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "students",
+     "grade_band": "K-12",
+     "authority": "chief information officer directive",
+     "lifecycle": "adopted",
+     "effective_from": "2026-01-13",
+     "effective_until": null,
+     "enrollment": 89000,
+     "summary": "Blocked ChatGPT on school-issued devices and the district network for students, citing the new 20-person group-chat feature and planned adult content as things that could facilitate harmful interaction or content about self-harm, violence and bullying. Google Gemini and MagicSchool stayed available.",
+     "notes": "Announced by CIO Richard Charles in a 2026-01-10 email to families, effective the following week. A district AI committee was to consider extending the block to staff. Colorado's largest district; the first big-district ChatGPT block of 2026.",
+     "sources": [
+      "https://www.chalkbeat.org/colorado/2026/01/13/denver-schools-blocking-chatgpt-over-concerns-about-new-features/",
+      "https://denverite.com/2026/01/14/denver-public-schools-chat-gpt-blocked/"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "CO",
+     "jurisdiction": "Douglas County School District",
+     "jurisdiction_type": "district",
+     "action_type": "ADOPT",
+     "direction": 2,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "district administration",
+     "lifecycle": "adopted",
+     "effective_from": "2026-08-13",
+     "effective_until": null,
+     "enrollment": 62000,
+     "summary": "Going the other way from its neighbors: rolling AI in, with Gemini certification offered to older students and staff by 2027 and K-5 digital-citizenship lessons underneath it.",
+     "notes": "Colorado's third-largest district. Single source (Axios local, 2026-08-13), describing the 2026-27 posture rather than a dated vote; effective_from is the reporting date. Cherry Creek's 'safe, smart, social' guidelines are in the same article and are a candidate row if a primary source turns up.",
+     "sources": [
+      "https://www.axios.com/local/douglas/2026/08/13/colorado-schools-classroom-ai-rules"
+     ],
+     "status": "active"
+    },
+    {
+     "state_code": "CO",
+     "jurisdiction": "Littleton Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "students",
+     "grade_band": "K-8 / 9-12",
+     "authority": "district administration",
+     "lifecycle": "adopted",
+     "effective_from": "2026-08-13",
+     "effective_until": null,
+     "enrollment": 13000,
+     "summary": "Blocks district AI access outright for K-8 students and allows only approved Google tools in high school; the district's AI task force is being replaced by a standing steering committee to keep the guidelines current.",
+     "notes": "Included as the first K-8 AI block by a Colorado district, not on size. Single source (Axios local, 2026-08-13) which describes the posture heading into 2026-27 rather than a dated board vote; effective_from is the reporting date. Worth a second source. K-8 blocked entirely; 9-12 limited to approved Google tools.",
+     "sources": [
+      "https://www.axios.com/local/douglas/2026/08/13/colorado-schools-classroom-ai-rules"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": true,
    "guidance_type": "ADVISORY",
    "guidance_issued_by": "Colorado Education Initiative (nonprofit), linked and supplemented by the Colorado Department of Education",
@@ -807,7 +915,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-09-14T16:11:49.559599"
+   "last_updated": "2026-09-14T17:18:21.048361"
   },
   {
    "state_code": "CT",
@@ -1157,16 +1265,18 @@
      "action_type": "RESTRICT",
      "direction": -1,
      "applies_to": "students",
-     "grade_band": "K-12",
-     "authority": "school board policy; superintendent Howard Hepburn's administration",
+     "grade_band": "PK-5",
+     "authority": "school board vote 2026-07-29",
      "lifecycle": "adopted",
      "effective_from": "2026-08-11",
      "effective_until": null,
      "enrollment": 250000,
-     "summary": "For 2026-27, no district-approved student-facing AI tools in K-5; grades 6-12 get limited, teacher-directed access to Khanmigo and HMH Writable only. Copilot and MagicSchool are staff-facing.",
-     "notes": "Primary coverage was CBS Miami and Axios (2026-08-06); the cited write-up summarises them and notes an inconsistency about a limited Copilot student pilot. Verify the grade split against the district's AI hub. Enrollment figure is approximate.",
+     "summary": "Board voted 2026-07-29 to restrict most use of AI chatbots for all elementary students, cap PK-1 screen time to state-mandated testing and IEP/504 accommodations only, and direct the superintendent to put monitoring software on district devices district-wide with real-time alerts to the District Security Operations Center.",
+     "notes": "Corrected 2026-09-14: the earlier row dated this 2026-08-11 with a secondary source and no vote date. The board action was 2026-07-29; effective_from is the approximate first day of 2026-27. Chair Sarah Leonardi's motion originally covered PK-2 screen time; the adopted version stops at 1st grade. Enrollment approximate. AI chatbot restriction covers all elementary grades; the screen-time cap is PK-1 only.",
      "sources": [
-      "https://windowsforum.com/windows-news.4/broward-county-schools-limits-student-ai-to-grades-6-12.442183/?amp=1",
+      "https://pineapplereport.com/browards-youngest-students-face-new-limits-on-screen-time-and-ai/",
+      "https://www.tapinto.net/towns/parkland/sections/education/articles/broward-students-likely-to-have-restricted-technology-usage-in-2026-27",
+      "https://www.caribbeannationalweekly.com/posts/broward-schools-consider-screen-time-limits-for-youngest-students-ai-monitoring",
       "https://browardschools.ai/"
      ],
      "status": "active"
@@ -1478,7 +1588,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-14T16:11:49.560445"
+   "last_updated": "2026-09-14T17:18:21.049015"
   },
   {
    "state_code": "ID",
@@ -1644,11 +1754,11 @@
     }
    ],
    "local_signal": {
-    "count": 1,
+    "count": 2,
     "active": 1,
     "leaning": "permissive",
     "score": 1.0,
-    "latest": "2024-08-12",
+    "latest": "2026-09-01",
     "headline": {
      "jurisdiction": "Chicago Public Schools",
      "action_type": "GUIDANCE",
@@ -1679,6 +1789,28 @@
       "https://www.fox32chicago.com/weather/ai-cps-chicago-public-schools.amp"
      ],
      "status": "active"
+    },
+    {
+     "state_code": "IL",
+     "jurisdiction": "Chicago Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "MORATORIUM",
+     "direction": -2,
+     "applies_to": "students",
+     "grade_band": "K-12",
+     "authority": "school board candidate pledge ahead of the November 2026 election",
+     "lifecycle": "proposed",
+     "effective_from": "2026-09-01",
+     "effective_until": null,
+     "enrollment": 325000,
+     "summary": "A majority of candidates for the Chicago Board of Education have signed an advocacy pledge to push for a three-year pause on generative AI in CPS classrooms, organized by Illinois Families for Public Schools alongside a parent campaign for tighter limits.",
+     "notes": "NOT a district action - this is a candidate pledge before the November 2026 board election, filed as proposed because it is the live proposal in the country's fourth-largest district and cuts against the district's own 2024 permissive guidance (the other CPS row). Drop or re-date it after the election. Enrollment approximate.",
+     "sources": [
+      "https://www.chalkbeat.org/chicago/2026/09/01/chicago-school-board-candidates-pledge-three-year-ai-ban/",
+      "https://chicago.suntimes.com/education/2026/09/10/chicago-school-board-candidates-sign-pledge-to-ban-ai-use-in-schools",
+      "https://www.govtech.com/education/k-12/majority-of-chicago-school-board-candidates-back-3-year-pause-on-ai"
+     ],
+     "status": "proposed"
     }
    ],
    "guidance_exists": false,
@@ -2094,7 +2226,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-09-14T16:11:49.561425"
+   "last_updated": "2026-09-14T17:18:21.049770"
   },
   {
    "state_code": "ME",
@@ -2388,14 +2520,43 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "permissive",
+    "score": 1.0,
+    "latest": "2026-07-06",
+    "headline": {
+     "jurisdiction": "Montgomery County Public Schools",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "Draft emerging-technology policy covering AI advanced out of the board's policy committee after broad stakeholder outreach. The district's working framework points AI at teacher tasks - planning, feedback, administrative work - while student use stays more heavily monitored and is used mainly to teach transparency about AI."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "MD",
+     "jurisdiction": "Montgomery County Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "district AI framework; draft policy in board committee",
+     "lifecycle": "adopted",
+     "effective_from": "2026-07-06",
+     "effective_until": null,
+     "enrollment": 160000,
+     "summary": "Draft emerging-technology policy covering AI advanced out of the board's policy committee after broad stakeholder outreach. The district's working framework points AI at teacher tasks - planning, feedback, administrative work - while student use stays more heavily monitored and is used mainly to teach transparency about AI.",
+     "notes": "Maryland's largest district. The operating framework is what this row records; a formal 'emerging technology' policy covering AI was advanced out of the board's policy committee after stakeholder outreach and has not had a board vote as of 2026-09-14. Driven by the Artificial Intelligence Ready Schools Act (signed May 2026), which gives every district 120 days from the state guidance issued after the February 2026 State Board presentation - a fall 2026 deadline. effective_from is the date the framework was described in press, not an adoption date. Prince George's County (pilots) and Frederick County (considering Gemini, forming a local AI advisory group) are candidate rows if dated sources turn up.",
+     "sources": [
+      "https://marylandmatters.org/2026/07/06/maryland-school-districts-face-fall-deadline-to-set-ai-policies/",
+      "https://wtop.com/montgomery-county/2026/07/maryland-school-districts-face-fall-deadline-to-set-ai-policies/",
+      "https://citizenportal.ai/articles/6555672/maryland/school-boards/montgomery-county-public-schools/mcps-policy-committee-advances-draft-emerging-technology-policy-to-address-ai-after-wide-stakeholder-outreach"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -2481,14 +2642,43 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "restrictive",
+    "score": -1.0,
+    "latest": "2026-06-01",
+    "headline": {
+     "jurisdiction": "Boston Public Schools",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "grade_band": "K-12",
+     "summary": "District AI policy bars any non-school-sanctioned AI use: no student PII in unapproved tools, no personal tools for district work, no deepfakes or manipulated media of real people, no AI as the sole basis for grading or discipline, and no AI during assessments unless explicitly authorized. Students may use district-approved tools only when a teacher directs it; staff and families get AI-literacy training."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "MA",
+     "jurisdiction": "Boston Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "district policy TECH-06, School Committee spring 2026",
+     "lifecycle": "adopted",
+     "effective_from": "2026-06-01",
+     "effective_until": null,
+     "enrollment": 48000,
+     "summary": "District AI policy bars any non-school-sanctioned AI use: no student PII in unapproved tools, no personal tools for district work, no deepfakes or manipulated media of real people, no AI as the sole basis for grading or discipline, and no AI during assessments unless explicitly authorized. Students may use district-approved tools only when a teacher directs it; staff and families get AI-literacy training.",
+     "notes": "Presented to the School Committee 2026-05-08 with a vote expected that June; the district now publishes it as policy TECH-06 with the final PDF, but no approval date is posted, so effective_from is approximate. Paired with Mayor Wu's separate high-school AI-fluency curriculum. Enrollment approximate. Policy sets differentiated expectations for elementary vs secondary students.",
+     "sources": [
+      "https://resources.finalsite.net/images/v1781118968/bostonpublicschoolsorg/n10whyxn8axn0urvgidh/FINALAIPolicy.pdf",
+      "https://www.bostonpublicschools.org/about-bps/technology/policies",
+      "https://www.govtech.com/education/k-12/boston-schools-prohibit-any-non-sanctioned-uses-of-ai"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": true,
    "guidance_type": "ADVISORY",
    "guidance_issued_by": "Massachusetts DESE",
@@ -2509,7 +2699,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-14T16:11:49.561836"
+   "last_updated": "2026-09-14T17:18:21.050137"
   },
   {
    "state_code": "MI",
@@ -2980,14 +3170,36 @@
     }
    ],
    "local_signal": {
-    "count": 0,
+    "count": 1,
     "active": 0,
     "leaning": null,
     "score": null,
-    "latest": null,
+    "latest": "2025-08-01",
     "headline": null
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "NV",
+     "jurisdiction": "Clark County School District",
+     "jurisdiction_type": "district",
+     "action_type": "PROCUREMENT",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "superintendent / district technology pilot",
+     "lifecycle": "adopted",
+     "effective_from": "2025-08-01",
+     "effective_until": "2026-06-30",
+     "enrollment": 300000,
+     "summary": "One-year pilot putting Canva, Gemini for Education and NotebookLM in front of students at roughly a dozen schools, with all staff given access district-wide. Gemini and NotebookLM ride the district's existing Google Workspace license; Superintendent Jhone Ebert framed it as a measured, safety-first approach to emerging tech.",
+     "notes": "Fifth-largest district in the country and the only notable AI action found in Nevada. Explicitly a one-year pilot for 2025-26; whether it continued or expanded into 2026-27 is unconfirmed as of 2026-09-14, so effective_until is set to the end of that pilot year and the row reads as expired. Nevada also has state-level DOE guidance. Enrollment approximate. Student access was limited to roughly a dozen pilot schools; staff access was district-wide.",
+     "sources": [
+      "https://www.reviewjournal.com/local/education/ccsd-is-introducing-ai-into-classrooms-will-it-be-here-to-stay-3534636/",
+      "https://www.ktnv.com/news/education/clark-county-school-district-pilots-new-artificial-intelligence-program-inside-classrooms"
+     ],
+     "status": "expired"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -3053,13 +3265,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "debated",
    "bill_counts": {
-    "total": 122,
+    "total": 123,
     "included": 9,
     "resolutions": 0,
-    "pending": 109,
+    "pending": 110,
     "manually_included": 9,
     "manually_excluded": 4,
-    "held": 113,
+    "held": 114,
     "by_stage": {
      "passed": 0,
      "debated": 1,
@@ -3342,7 +3554,7 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-09-14T16:11:49.562093"
+   "last_updated": "2026-09-14T17:18:21.050388"
   },
   {
    "state_code": "NY",
@@ -3690,7 +3902,7 @@
     "active": 1,
     "leaning": "permissive",
     "score": 1.0,
-    "latest": "2026-08-24",
+    "latest": "2026-06-18",
     "headline": {
      "jurisdiction": "Charlotte-Mecklenburg Schools",
      "action_type": "PERMIT",
@@ -3729,15 +3941,17 @@
      "direction": 1,
      "applies_to": "both",
      "grade_band": "K-12",
-     "authority": "school board (draft; adoption targeted for the start of 2026-27)",
+     "authority": "board policy committee (no board vote yet)",
      "lifecycle": "proposed",
-     "effective_from": "2026-08-24",
+     "effective_from": "2026-06-18",
      "effective_until": null,
      "enrollment": 160000,
-     "summary": "Draft AI policy centred on ethics, access and 'humans at the center of learning'; students 13+ and staff may use Gemini, Canva and Adobe Express, staff-only NotebookLM, MagicSchool and Khanmigo Teacher. Board members asked for grade-band specifics before adopting.",
-     "notes": "Lifecycle proposed, so it does not count toward the state's leaning until adopted. Flip to adopted with the vote date when the board acts. Enrollment figure is approximate.",
+     "summary": "Draft district AI policy: teachers may not use AI-detection software (the district calls it unreliable and biased), students must disclose authorized AI use and may not paste AI-generated text, and the policy names bias, misinformation, privacy erosion and overreliance as risks.",
+     "notes": "Verified 2026-09-14: still PROPOSED. Went to the board's policy committee 2026-06-18 and came back for revisions; administrators had targeted August 2026 but no board vote has been reported as of 2026-09-14. effective_from is the committee review date, not an effective date. Corrected from an earlier row that dated it 2026-08-24.",
      "sources": [
-      "https://www.wral.com/news/education/wake-schools-revisits-proposed-ai-policy-before-fall-launch-may-2026/"
+      "https://www.wral.com/news/education/whats-in-wake-schools-new-ai-policy-draft-june-2026/",
+      "https://www.govtech.com/education/k-12/wake-county-n-c-schools-revise-ai-policy-with-more-caution",
+      "https://www.wunc.org/education/2026-06-18/wake-county-school-board-raises-meal-prices-discusses-ai-policy"
      ],
      "status": "proposed"
     }
@@ -3824,14 +4038,43 @@
    "headline_bill": null,
    "bills": [],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "permissive",
+    "score": 1.0,
+    "latest": "2026-03-31",
+    "headline": {
+     "jurisdiction": "Columbus City Schools",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "grade_band": "K-12",
+     "summary": "Board adopted an AI policy that leaves the call to teachers: an educator may authorize AI for brainstorming, review or open-ended problem solving, or bar it. Unauthorized use is treated as plagiarism, AI-generated fake or derogatory images of real people are prohibited, and the district must give age-appropriate instruction on responsible use, digital citizenship and privacy risk."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "OH",
+     "jurisdiction": "Columbus City Schools",
+     "jurisdiction_type": "district",
+     "action_type": "GUIDANCE",
+     "direction": 1,
+     "applies_to": "both",
+     "grade_band": "K-12",
+     "authority": "unanimous school board vote 2026-03-31",
+     "lifecycle": "adopted",
+     "effective_from": "2026-03-31",
+     "effective_until": null,
+     "enrollment": 45000,
+     "summary": "Board adopted an AI policy that leaves the call to teachers: an educator may authorize AI for brainstorming, review or open-ended problem solving, or bar it. Unauthorized use is treated as plagiarism, AI-generated fake or derogatory images of real people are prohibited, and the district must give age-appropriate instruction on responsible use, digital citizenship and privacy risk.",
+     "notes": "Adopted ahead of Ohio's statutory July 2026 deadline for every district to have an AI policy; built on the Ohio Department of Education and Workforce model policy. Ohio's largest district. Enrollment approximate.",
+     "sources": [
+      "https://www.wosu.org/politics-government/2026-03-31/columbus-city-schools-to-consider-new-ai-policy-giving-teachers-discretion-on-student-use",
+      "https://www.10tv.com/article/news/local/columbus-city-schools-approves-artificial-intelligence-policy/530-535bbb16-f556-406e-9b50-d52360cf7d1e",
+      "https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -3986,7 +4229,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-09-14T16:11:49.562343"
+   "last_updated": "2026-09-14T17:18:21.050780"
   },
   {
    "state_code": "OR",
@@ -4251,7 +4494,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-14T16:11:49.562804"
+   "last_updated": "2026-09-14T17:18:21.051284"
   },
   {
    "state_code": "SC",
@@ -4725,7 +4968,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-14T16:11:49.563080"
+   "last_updated": "2026-09-14T17:18:21.051562"
   },
   {
    "state_code": "UT",
@@ -5153,14 +5396,43 @@
     }
    ],
    "local_signal": {
-    "count": 0,
-    "active": 0,
-    "leaning": null,
-    "score": null,
-    "latest": null,
-    "headline": null
+    "count": 1,
+    "active": 1,
+    "leaning": "restrictive",
+    "score": -1.0,
+    "latest": "2025-02-01",
+    "headline": {
+     "jurisdiction": "Seattle Public Schools",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "grade_band": "PK-12",
+     "summary": "District AI Handbook sets eight principles - student-centered use, syllabus transparency, disclosure for academic integrity, ethical use, privacy, bias mitigation, equitable access and human accountability - and blocks several of the most common generative-AI tools for PreK-5 because platform content filtering and safety controls are not good enough for the youngest learners. AI is not to be used where the learning goal is critical thinking or original idea creation."
+    }
    },
-   "local_actions": [],
+   "local_actions": [
+    {
+     "state_code": "WA",
+     "jurisdiction": "Seattle Public Schools",
+     "jurisdiction_type": "district",
+     "action_type": "RESTRICT",
+     "direction": -1,
+     "applies_to": "both",
+     "grade_band": "PK-12",
+     "authority": "Superintendent Procedure 2022SP + SPS AI Handbook",
+     "lifecycle": "adopted",
+     "effective_from": "2025-02-01",
+     "effective_until": null,
+     "enrollment": 49000,
+     "summary": "District AI Handbook sets eight principles - student-centered use, syllabus transparency, disclosure for academic integrity, ethical use, privacy, bias mitigation, equitable access and human accountability - and blocks several of the most common generative-AI tools for PreK-5 because platform content filtering and safety controls are not good enough for the youngest learners. AI is not to be used where the learning goal is critical thinking or original idea creation.",
+     "notes": "Washington's largest district and the first in the state with a district-wide AI handbook. effective_from is the handbook's published date; the PK-5 tool block is described on the district's current AI page and may post-date the handbook. Enrollment approximate. The tool block is PK-5; 6-12 use continues under the handbook.",
+     "sources": [
+      "https://www.seattleschools.org/departments/dots/ai/",
+      "https://www.seattleschools.org/wp-content/uploads/2025/02/AI-Handbook-ADA.pdf",
+      "https://www.seattleschools.org/departments/dots/ai/ai-faq/"
+     ],
+     "status": "active"
+    }
+   ],
    "guidance_exists": false,
    "guidance_type": "NONE",
    "guidance_issued_by": null,
@@ -5482,7 +5754,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-14T16:11:49.559985"
+   "last_updated": "2026-09-14T17:18:21.048689"
   },
   {
    "state_code": "PR",
@@ -5535,7 +5807,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-14T16:11:49.562541"
+   "last_updated": "2026-09-14T17:18:21.051011"
   },
   {
    "state_code": "VI",
@@ -5582,7 +5854,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-14T16:11:49.563258"
+   "last_updated": "2026-09-14T17:18:21.051820"
   }
  ]
 }

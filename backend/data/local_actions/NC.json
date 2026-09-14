@@ -26,14 +26,16 @@
       "direction": 1,
       "applies_to": "both",
       "grade_band": "K-12",
-      "authority": "school board (draft; adoption targeted for the start of 2026-27)",
+      "authority": "board policy committee (no board vote yet)",
       "lifecycle": "proposed",
-      "effective_from": "2026-08-24",
+      "effective_from": "2026-06-18",
       "enrollment": 160000,
-      "summary": "Draft AI policy centred on ethics, access and 'humans at the center of learning'; students 13+ and staff may use Gemini, Canva and Adobe Express, staff-only NotebookLM, MagicSchool and Khanmigo Teacher. Board members asked for grade-band specifics before adopting.",
-      "notes": "Lifecycle proposed, so it does not count toward the state's leaning until adopted. Flip to adopted with the vote date when the board acts. Enrollment figure is approximate.",
+      "summary": "Draft district AI policy: teachers may not use AI-detection software (the district calls it unreliable and biased), students must disclose authorized AI use and may not paste AI-generated text, and the policy names bias, misinformation, privacy erosion and overreliance as risks.",
+      "notes": "Verified 2026-09-14: still PROPOSED. Went to the board's policy committee 2026-06-18 and came back for revisions; administrators had targeted August 2026 but no board vote has been reported as of 2026-09-14. effective_from is the committee review date, not an effective date. Corrected from an earlier row that dated it 2026-08-24.",
       "sources": [
-        "https://www.wral.com/news/education/wake-schools-revisits-proposed-ai-policy-before-fall-launch-may-2026/"
+        "https://www.wral.com/news/education/whats-in-wake-schools-new-ai-policy-draft-june-2026/",
+        "https://www.govtech.com/education/k-12/wake-county-n-c-schools-revise-ai-policy-with-more-caution",
+        "https://www.wunc.org/education/2026-06-18/wake-county-school-board-raises-meal-prices-discusses-ai-policy"
       ]
     }
   ]

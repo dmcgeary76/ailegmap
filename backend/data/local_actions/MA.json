@@ -1,0 +1,24 @@
+{
+  "state_code": "MA",
+  "actions": [
+    {
+      "jurisdiction": "Boston Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "RESTRICT",
+      "direction": -1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "district policy TECH-06, School Committee spring 2026",
+      "lifecycle": "adopted",
+      "effective_from": "2026-06-01",
+      "enrollment": 48000,
+      "summary": "District AI policy bars any non-school-sanctioned AI use: no student PII in unapproved tools, no personal tools for district work, no deepfakes or manipulated media of real people, no AI as the sole basis for grading or discipline, and no AI during assessments unless explicitly authorized. Students may use district-approved tools only when a teacher directs it; staff and families get AI-literacy training.",
+      "notes": "Presented to the School Committee 2026-05-08 with a vote expected that June; the district now publishes it as policy TECH-06 with the final PDF, but no approval date is posted, so effective_from is approximate. Paired with Mayor Wu's separate high-school AI-fluency curriculum. Enrollment approximate. Policy sets differentiated expectations for elementary vs secondary students.",
+      "sources": [
+        "https://resources.finalsite.net/images/v1781118968/bostonpublicschoolsorg/n10whyxn8axn0urvgidh/FINALAIPolicy.pdf",
+        "https://www.bostonpublicschools.org/about-bps/technology/policies",
+        "https://www.govtech.com/education/k-12/boston-schools-prohibit-any-non-sanctioned-uses-of-ai"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "state_code": "NV",
+  "actions": [
+    {
+      "jurisdiction": "Clark County School District",
+      "jurisdiction_type": "district",
+      "action_type": "PROCUREMENT",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "superintendent / district technology pilot",
+      "lifecycle": "adopted",
+      "effective_from": "2025-08-01",
+      "effective_until": "2026-06-30",
+      "enrollment": 300000,
+      "summary": "One-year pilot putting Canva, Gemini for Education and NotebookLM in front of students at roughly a dozen schools, with all staff given access district-wide. Gemini and NotebookLM ride the district's existing Google Workspace license; Superintendent Jhone Ebert framed it as a measured, safety-first approach to emerging tech.",
+      "notes": "Fifth-largest district in the country and the only notable AI action found in Nevada. Explicitly a one-year pilot for 2025-26; whether it continued or expanded into 2026-27 is unconfirmed as of 2026-09-14, so effective_until is set to the end of that pilot year and the row reads as expired. Nevada also has state-level DOE guidance. Enrollment approximate. Student access was limited to roughly a dozen pilot schools; staff access was district-wide.",
+      "sources": [
+        "https://www.reviewjournal.com/local/education/ccsd-is-introducing-ai-into-classrooms-will-it-be-here-to-stay-3534636/",
+        "https://www.ktnv.com/news/education/clark-county-school-district-pilots-new-artificial-intelligence-program-inside-classrooms"
+      ]
+    }
+  ]
+}

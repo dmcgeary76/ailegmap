@@ -1,0 +1,74 @@
+{
+  "state_code": "CO",
+  "actions": [
+    {
+      "jurisdiction": "Denver Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "RESTRICT",
+      "direction": -1,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "chief information officer directive",
+      "lifecycle": "adopted",
+      "effective_from": "2026-01-13",
+      "enrollment": 89000,
+      "summary": "Blocked ChatGPT on school-issued devices and the district network for students, citing the new 20-person group-chat feature and planned adult content as things that could facilitate harmful interaction or content about self-harm, violence and bullying. Google Gemini and MagicSchool stayed available.",
+      "notes": "Announced by CIO Richard Charles in a 2026-01-10 email to families, effective the following week. A district AI committee was to consider extending the block to staff. Colorado's largest district; the first big-district ChatGPT block of 2026.",
+      "sources": [
+        "https://www.chalkbeat.org/colorado/2026/01/13/denver-schools-blocking-chatgpt-over-concerns-about-new-features/",
+        "https://denverite.com/2026/01/14/denver-public-schools-chat-gpt-blocked/"
+      ]
+    },
+    {
+      "jurisdiction": "Denver Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "PERMIT",
+      "direction": 1,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "district technology office",
+      "lifecycle": "adopted",
+      "effective_from": "2026-03-01",
+      "enrollment": 89000,
+      "summary": "Gave students monitored access to Gemini, NotebookLM and MagicSchool - the approved-platform side of the same posture that blocks ChatGPT.",
+      "notes": "Reported as 'last spring' in an Axios roundup dated 2026-08-13; effective_from is approximate. Paired with the January ChatGPT block above, which is why Colorado reads as mixed rather than restrictive.",
+      "sources": [
+        "https://www.axios.com/local/douglas/2026/08/13/colorado-schools-classroom-ai-rules"
+      ]
+    },
+    {
+      "jurisdiction": "Littleton Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "RESTRICT",
+      "direction": -1,
+      "applies_to": "students",
+      "grade_band": "K-8 / 9-12",
+      "authority": "district administration",
+      "lifecycle": "adopted",
+      "effective_from": "2026-08-13",
+      "enrollment": 13000,
+      "summary": "Blocks district AI access outright for K-8 students and allows only approved Google tools in high school; the district's AI task force is being replaced by a standing steering committee to keep the guidelines current.",
+      "notes": "Included as the first K-8 AI block by a Colorado district, not on size. Single source (Axios local, 2026-08-13) which describes the posture heading into 2026-27 rather than a dated board vote; effective_from is the reporting date. Worth a second source. K-8 blocked entirely; 9-12 limited to approved Google tools.",
+      "sources": [
+        "https://www.axios.com/local/douglas/2026/08/13/colorado-schools-classroom-ai-rules"
+      ]
+    },
+    {
+      "jurisdiction": "Douglas County School District",
+      "jurisdiction_type": "district",
+      "action_type": "ADOPT",
+      "direction": 2,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "district administration",
+      "lifecycle": "adopted",
+      "effective_from": "2026-08-13",
+      "enrollment": 62000,
+      "summary": "Going the other way from its neighbors: rolling AI in, with Gemini certification offered to older students and staff by 2027 and K-5 digital-citizenship lessons underneath it.",
+      "notes": "Colorado's third-largest district. Single source (Axios local, 2026-08-13), describing the 2026-27 posture rather than a dated vote; effective_from is the reporting date. Cherry Creek's 'safe, smart, social' guidelines are in the same article and are a candidate row if a primary source turns up.",
+      "sources": [
+        "https://www.axios.com/local/douglas/2026/08/13/colorado-schools-classroom-ai-rules"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "state_code": "OH",
+  "actions": [
+    {
+      "jurisdiction": "Columbus City Schools",
+      "jurisdiction_type": "district",
+      "action_type": "GUIDANCE",
+      "direction": 1,
+      "applies_to": "both",
+      "grade_band": "K-12",
+      "authority": "unanimous school board vote 2026-03-31",
+      "lifecycle": "adopted",
+      "effective_from": "2026-03-31",
+      "enrollment": 45000,
+      "summary": "Board adopted an AI policy that leaves the call to teachers: an educator may authorize AI for brainstorming, review or open-ended problem solving, or bar it. Unauthorized use is treated as plagiarism, AI-generated fake or derogatory images of real people are prohibited, and the district must give age-appropriate instruction on responsible use, digital citizenship and privacy risk.",
+      "notes": "Adopted ahead of Ohio's statutory July 2026 deadline for every district to have an AI policy; built on the Ohio Department of Education and Workforce model policy. Ohio's largest district. Enrollment approximate.",
+      "sources": [
+        "https://www.wosu.org/politics-government/2026-03-31/columbus-city-schools-to-consider-new-ai-policy-giving-teachers-discretion-on-student-use",
+        "https://www.10tv.com/article/news/local/columbus-city-schools-approves-artificial-intelligence-policy/530-535bbb16-f556-406e-9b50-d52360cf7d1e",
+        "https://education.ohio.gov/Topics/AI-in-Ohio-s-Education/Model-Policy"
+      ]
+    }
+  ]
+}

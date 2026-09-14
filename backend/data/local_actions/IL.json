@@ -19,6 +19,25 @@
         "https://www.aiforeducation.io/blog/chicago-public-schools-ai-guidance",
         "https://www.fox32chicago.com/weather/ai-cps-chicago-public-schools.amp"
       ]
+    },
+    {
+      "jurisdiction": "Chicago Public Schools",
+      "jurisdiction_type": "district",
+      "action_type": "MORATORIUM",
+      "direction": -2,
+      "applies_to": "students",
+      "grade_band": "K-12",
+      "authority": "school board candidate pledge ahead of the November 2026 election",
+      "lifecycle": "proposed",
+      "effective_from": "2026-09-01",
+      "enrollment": 325000,
+      "summary": "A majority of candidates for the Chicago Board of Education have signed an advocacy pledge to push for a three-year pause on generative AI in CPS classrooms, organized by Illinois Families for Public Schools alongside a parent campaign for tighter limits.",
+      "notes": "NOT a district action - this is a candidate pledge before the November 2026 board election, filed as proposed because it is the live proposal in the country's fourth-largest district and cuts against the district's own 2024 permissive guidance (the other CPS row). Drop or re-date it after the election. Enrollment approximate.",
+      "sources": [
+        "https://www.chalkbeat.org/chicago/2026/09/01/chicago-school-board-candidates-pledge-three-year-ai-ban/",
+        "https://chicago.suntimes.com/education/2026/09/10/chicago-school-board-candidates-sign-pledge-to-ban-ai-use-in-schools",
+        "https://www.govtech.com/education/k-12/majority-of-chicago-school-board-candidates-back-3-year-pause-on-ai"
+      ]
     }
   ]
 }
