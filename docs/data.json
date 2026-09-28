@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-09-14T17:18:21.577002Z",
- "last_sync": "2026-09-14T16:54:52.276344Z",
+ "generated_at": "2026-09-28T15:43:20.639111Z",
+ "last_sync": "2026-09-28T15:37:03.609751Z",
  "summary": {
   "jurisdictions": 54,
-  "states_with_included_bills": 32,
+  "states_with_included_bills": 31,
   "states_by_legislation_stage": {
    "passed": 7,
-   "debated": 7,
+   "debated": 6,
    "introduced": 15,
    "failed": 3,
-   "none": 22
+   "none": 23
   },
   "states_researched": 14,
   "states_with_guidance": 10,
@@ -22,10 +22,10 @@
    "ABSENT": 4
   },
   "bills": {
-   "total": 2206,
-   "included": 119,
-   "pending": 2049,
-   "excluded": 38
+   "total": 2067,
+   "included": 113,
+   "pending": 1930,
+   "excluded": 27
   },
   "local_actions": {
    "total": 29,
@@ -38,99 +38,8 @@
    "mixed": 1,
    "none": 39
   },
-  "last_sync": "2026-09-14T16:54:52.276344",
-  "recent_status_changes": [
-   {
-    "state_code": "CA",
-    "bill_number": "SB1276",
-    "bill_title": "Crimes: sexual exploitation of a child.",
-    "old_status": "Enrolled",
-    "new_status": "Passed",
-    "new_stage": "passed",
-    "changed_at": "2026-09-14T16:54:03.515481"
-   },
-   {
-    "state_code": "CA",
-    "bill_number": "SB813",
-    "bill_title": "Independent verification organizations.",
-    "old_status": "Enrolled",
-    "new_status": "Passed",
-    "new_stage": "passed",
-    "changed_at": "2026-09-14T16:54:03.515481"
-   },
-   {
-    "state_code": "CA",
-    "bill_number": "SB1119",
-    "bill_title": "Companion chatbots: children\u2019s safety.",
-    "old_status": "Enrolled",
-    "new_status": "Passed",
-    "new_stage": "passed",
-    "changed_at": "2026-09-14T16:54:03.515481"
-   },
-   {
-    "state_code": "CA",
-    "bill_number": "AB2298",
-    "bill_title": "Pupil instruction: computer science: content standards.",
-    "old_status": "Enrolled",
-    "new_status": "Passed",
-    "new_stage": "passed",
-    "changed_at": "2026-09-14T16:54:03.515481"
-   },
-   {
-    "state_code": "CA",
-    "bill_number": "AB1159",
-    "bill_title": "Student personal information.",
-    "old_status": "Enrolled",
-    "new_status": "Passed",
-    "new_stage": "passed",
-    "changed_at": "2026-09-14T16:54:03.515481"
-   },
-   {
-    "state_code": "CA",
-    "bill_number": "AB2071",
-    "bill_title": "Pupil instruction: digital wellness.",
-    "old_status": "Enrolled",
-    "new_status": "Passed",
-    "new_stage": "passed",
-    "changed_at": "2026-09-14T16:54:03.515481"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB3186",
-    "bill_title": "Insurance; Insurance Consumer Rights Act; algorithms; discrimination; Insurance Commissioner; investigations; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB1537",
-    "bill_title": "Amusements and sports; Supporting Affordability and Fairness with Every Bet Act of 2025; SAFE Bet Act; terms; prohibition; exceptions; Attorney General; civil action; jury; civil penalties; jurisdiction; application; information; notice; renew; standards; Indian Tribe; severability; codification; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB1537",
-    "bill_title": "Amusements and sports; Supporting Affordability and Fairness with Every Bet Act of 2025; SAFE Bet Act; terms; prohibition; exceptions; Attorney General; civil action; jury; civil penalties; jurisdiction; application; information; notice; renew; standards; Indian Tribe; severability; codification; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   },
-   {
-    "state_code": "OK",
-    "bill_number": "HB2016",
-    "bill_title": "Evidence; artificial intelligence expert testimony; effective date.",
-    "old_status": "Unknown",
-    "new_status": "Introduced",
-    "new_stage": "introduced",
-    "changed_at": "2026-09-08T19:29:31.657084"
-   }
-  ]
+  "last_sync": "2026-09-28T15:37:03.609751",
+  "recent_status_changes": []
  },
  "states": [
   {
@@ -176,7 +85,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.194870"
+   "last_updated": "2026-09-28T15:16:55.909774"
   },
   {
    "state_code": "AK",
@@ -231,7 +140,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-14T17:18:21.047130"
+   "last_updated": "2026-09-28T15:43:19.595852"
   },
   {
    "state_code": "AZ",
@@ -254,7 +163,7 @@
     }
    },
    "headline_bill": {
-    "id": 84,
+    "id": 38,
     "legiscan_bill_id": 2109776,
     "bill_number": "HB4040",
     "bill_title": "Public schools; universities; AI policies",
@@ -271,7 +180,7 @@
    },
    "bills": [
     {
-     "id": 84,
+     "id": 38,
      "legiscan_bill_id": 2109776,
      "bill_number": "HB4040",
      "bill_title": "Public schools; universities; AI policies",
@@ -287,7 +196,7 @@
      "is_resolution": false
     },
     {
-     "id": 428,
+     "id": 39,
      "legiscan_bill_id": 2107900,
      "bill_number": "HB4005",
      "bill_title": "Artificial intelligence; course; public schools",
@@ -303,7 +212,7 @@
      "is_resolution": false
     },
     {
-     "id": 1234,
+     "id": 40,
      "legiscan_bill_id": 2080458,
      "bill_number": "HB2409",
      "bill_title": "Artificial intelligence; statewide education program",
@@ -367,7 +276,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.191112"
+   "last_updated": "2026-09-28T15:17:13.567939"
   },
   {
    "state_code": "AR",
@@ -390,7 +299,7 @@
     }
    },
    "headline_bill": {
-    "id": 1241,
+    "id": 60,
     "legiscan_bill_id": 1944017,
     "bill_number": "HB1283",
     "bill_title": "To Require The Division Of Elementary And Secondary Education To Include Digital Media Standards In Kindergarten Through Grade Twelve Library Media Standards.",
@@ -407,7 +316,7 @@
    },
    "bills": [
     {
-     "id": 1241,
+     "id": 60,
      "legiscan_bill_id": 1944017,
      "bill_number": "HB1283",
      "bill_title": "To Require The Division Of Elementary And Secondary Education To Include Digital Media Standards In Kindergarten Through Grade Twelve Library Media Standards.",
@@ -449,7 +358,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-09-14T17:18:21.047682"
+   "last_updated": "2026-09-28T15:43:19.596700"
   },
   {
    "state_code": "CA",
@@ -472,7 +381,7 @@
     }
    },
    "headline_bill": {
-    "id": 450,
+    "id": 70,
     "legiscan_bill_id": 1848589,
     "bill_number": "SB1288",
     "bill_title": "Public schools: artificial intelligence working group.",
@@ -489,7 +398,7 @@
    },
    "bills": [
     {
-     "id": 450,
+     "id": 70,
      "legiscan_bill_id": 1848589,
      "bill_number": "SB1288",
      "bill_title": "Public schools: artificial intelligence working group.",
@@ -505,7 +414,7 @@
      "is_resolution": false
     },
     {
-     "id": 512,
+     "id": 72,
      "legiscan_bill_id": 1848424,
      "bill_number": "AB2876",
      "bill_title": "Pupil instruction: media literacy: artificial intelligence literacy: curriculum frameworks: instructional materials.",
@@ -521,7 +430,7 @@
      "is_resolution": false
     },
     {
-     "id": 1243,
+     "id": 68,
      "legiscan_bill_id": 2121564,
      "bill_number": "AB2487",
      "bill_title": "Artificial intelligence: education and workforce development.",
@@ -537,7 +446,7 @@
      "is_resolution": false
     },
     {
-     "id": 451,
+     "id": 69,
      "legiscan_bill_id": 1978599,
      "bill_number": "AB1064",
      "bill_title": "Leading Ethical AI Development (LEAD) for Kids Act.",
@@ -553,7 +462,7 @@
      "is_resolution": false
     },
     {
-     "id": 513,
+     "id": 71,
      "legiscan_bill_id": 1847401,
      "bill_number": "AB2652",
      "bill_title": "State Department of Education: artificial intelligence working group.",
@@ -569,7 +478,7 @@
      "is_resolution": false
     },
     {
-     "id": 1246,
+     "id": 76,
      "legiscan_bill_id": 2119598,
      "bill_number": "AB2071",
      "bill_title": "Pupil instruction: digital wellness.",
@@ -585,7 +494,7 @@
      "is_resolution": false
     },
     {
-     "id": 1247,
+     "id": 77,
      "legiscan_bill_id": 1978694,
      "bill_number": "AB1159",
      "bill_title": "Student personal information.",
@@ -601,7 +510,7 @@
      "is_resolution": false
     },
     {
-     "id": 517,
+     "id": 80,
      "legiscan_bill_id": 2120772,
      "bill_number": "AB2298",
      "bill_title": "Pupil instruction: computer science: content standards.",
@@ -617,7 +526,7 @@
      "is_resolution": false
     },
     {
-     "id": 516,
+     "id": 81,
      "legiscan_bill_id": 2121621,
      "bill_number": "AB2544",
      "bill_title": "Education for Filmmakers Pilot Program.",
@@ -633,7 +542,7 @@
      "is_resolution": false
     },
     {
-     "id": 527,
+     "id": 85,
      "legiscan_bill_id": 2121529,
      "bill_number": "AB2452",
      "bill_title": "Curriculum frameworks: instructional materials evaluation criteria: media literacy.",
@@ -649,7 +558,7 @@
      "is_resolution": false
     },
     {
-     "id": 817,
+     "id": 128,
      "legiscan_bill_id": 1848536,
      "bill_number": "SB1235",
      "bill_title": "Public postsecondary education: Artificial Intelligence and Deepfake Working Group.",
@@ -765,7 +674,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-09-14T17:18:21.048085"
+   "last_updated": "2026-09-28T15:43:19.597271"
   },
   {
    "state_code": "CO",
@@ -915,7 +824,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-09-14T17:18:21.048361"
+   "last_updated": "2026-09-28T15:43:19.597748"
   },
   {
    "state_code": "CT",
@@ -938,7 +847,7 @@
     }
    },
    "headline_bill": {
-    "id": 495,
+    "id": 290,
     "legiscan_bill_id": 1931737,
     "bill_number": "HB05877",
     "bill_title": "An Act Prohibiting The Use Of Artificial Intelligence To Replace Teachers.",
@@ -955,7 +864,7 @@
    },
    "bills": [
     {
-     "id": 495,
+     "id": 290,
      "legiscan_bill_id": 1931737,
      "bill_number": "HB05877",
      "bill_title": "An Act Prohibiting The Use Of Artificial Intelligence To Replace Teachers.",
@@ -992,7 +901,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.195289"
+   "last_updated": "2026-09-28T15:19:34.965536"
   },
   {
    "state_code": "DE",
@@ -1015,7 +924,7 @@
     }
    },
    "headline_bill": {
-    "id": 119,
+    "id": 319,
     "legiscan_bill_id": 2148684,
     "bill_number": "HB404",
     "bill_title": "An Act To Amend Title 14 Of The Delaware Code Relating To The Artificial Intelligence And Extended Reality In Schools Pilot Program.",
@@ -1032,7 +941,7 @@
    },
    "bills": [
     {
-     "id": 119,
+     "id": 319,
      "legiscan_bill_id": 2148684,
      "bill_number": "HB404",
      "bill_title": "An Act To Amend Title 14 Of The Delaware Code Relating To The Artificial Intelligence And Extended Reality In Schools Pilot Program.",
@@ -1069,7 +978,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.195417"
+   "last_updated": "2026-09-28T15:19:37.684306"
   },
   {
    "state_code": "FL",
@@ -1092,7 +1001,7 @@
     }
    },
    "headline_bill": {
-    "id": 1349,
+    "id": 323,
     "legiscan_bill_id": 2065901,
     "bill_number": "S1194",
     "bill_title": "Artificial Intelligence in Education",
@@ -1109,7 +1018,7 @@
    },
    "bills": [
     {
-     "id": 1349,
+     "id": 323,
      "legiscan_bill_id": 2065901,
      "bill_number": "S1194",
      "bill_title": "Artificial Intelligence in Education",
@@ -1125,7 +1034,7 @@
      "is_resolution": false
     },
     {
-     "id": 1350,
+     "id": 324,
      "legiscan_bill_id": 1797287,
      "bill_number": "S1344",
      "bill_title": "Computer Science Education",
@@ -1141,7 +1050,7 @@
      "is_resolution": false
     },
     {
-     "id": 1351,
+     "id": 325,
      "legiscan_bill_id": 1784035,
      "bill_number": "H0483",
      "bill_title": "Computer Science Education",
@@ -1157,7 +1066,7 @@
      "is_resolution": false
     },
     {
-     "id": 534,
+     "id": 329,
      "legiscan_bill_id": 1984764,
      "bill_number": "H1213",
      "bill_title": "K-12 School Route Optimization Pilot Program",
@@ -1173,7 +1082,7 @@
      "is_resolution": false
     },
     {
-     "id": 933,
+     "id": 333,
      "legiscan_bill_id": 1985537,
      "bill_number": "S1424",
      "bill_title": "K-12 School Transportation",
@@ -1189,7 +1098,7 @@
      "is_resolution": false
     },
     {
-     "id": 131,
+     "id": 341,
      "legiscan_bill_id": 2069946,
      "bill_number": "H1503",
      "bill_title": "Computer Science Education and Certification",
@@ -1205,7 +1114,7 @@
      "is_resolution": false
     },
     {
-     "id": 1362,
+     "id": 342,
      "legiscan_bill_id": 2069728,
      "bill_number": "S1694",
      "bill_title": "Technology Education",
@@ -1335,7 +1244,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.196072"
+   "last_updated": "2026-09-28T15:20:25.588238"
   },
   {
    "state_code": "GA",
@@ -1408,7 +1317,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.196462"
+   "last_updated": "2026-09-28T15:20:47.416462"
   },
   {
    "state_code": "HI",
@@ -1431,7 +1340,7 @@
     }
    },
    "headline_bill": {
-    "id": 584,
+    "id": 453,
     "legiscan_bill_id": 2092749,
     "bill_number": "HB1887",
     "bill_title": "Relating To Artificial Intelligence Literacy Education.",
@@ -1448,7 +1357,7 @@
    },
    "bills": [
     {
-     "id": 584,
+     "id": 453,
      "legiscan_bill_id": 2092749,
      "bill_number": "HB1887",
      "bill_title": "Relating To Artificial Intelligence Literacy Education.",
@@ -1464,7 +1373,7 @@
      "is_resolution": false
     },
     {
-     "id": 75,
+     "id": 454,
      "legiscan_bill_id": 2084760,
      "bill_number": "SB2212",
      "bill_title": "Relating To Artificial Intelligence Literacy Education.",
@@ -1480,7 +1389,7 @@
      "is_resolution": false
     },
     {
-     "id": 1424,
+     "id": 457,
      "legiscan_bill_id": 2095373,
      "bill_number": "HB2466",
      "bill_title": "Relating To Education.",
@@ -1496,7 +1405,7 @@
      "is_resolution": false
     },
     {
-     "id": 582,
+     "id": 452,
      "legiscan_bill_id": 2133428,
      "bill_number": "HR40",
      "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
@@ -1512,7 +1421,7 @@
      "is_resolution": true
     },
     {
-     "id": 583,
+     "id": 451,
      "legiscan_bill_id": 2133332,
      "bill_number": "HCR44",
      "bill_title": "Urging The Department Of Education To Co-develop A Sixth To Twelfth Grade Artificial Intelligence Literacy And Usage Curriculum With Teachers.",
@@ -1528,7 +1437,7 @@
      "is_resolution": true
     },
     {
-     "id": 1422,
+     "id": 455,
      "legiscan_bill_id": 2130891,
      "bill_number": "SCR33",
      "bill_title": "Requesting The Department Of Education To Develop Artificial Intelligence Literacy Curricula Plans And Programs For Use In Public Schools.",
@@ -1544,7 +1453,7 @@
      "is_resolution": true
     },
     {
-     "id": 1423,
+     "id": 456,
      "legiscan_bill_id": 2130662,
      "bill_number": "SR32",
      "bill_title": "Requesting The Department Of Education To Develop Artificial Intelligence Literacy Curricula Plans And Programs For Use In Public Schools.",
@@ -1588,7 +1497,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-09-14T17:18:21.049015"
+   "last_updated": "2026-09-28T15:43:19.598630"
   },
   {
    "state_code": "ID",
@@ -1611,7 +1520,7 @@
     }
    },
    "headline_bill": {
-    "id": 621,
+    "id": 569,
     "legiscan_bill_id": 2090168,
     "bill_number": "S1227",
     "bill_title": "Adds to existing law to establish provisions regarding generative artificial intelligence in public education.",
@@ -1628,7 +1537,7 @@
    },
    "bills": [
     {
-     "id": 621,
+     "id": 569,
      "legiscan_bill_id": 2090168,
      "bill_number": "S1227",
      "bill_title": "Adds to existing law to establish provisions regarding generative artificial intelligence in public education.",
@@ -1665,7 +1574,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.196598"
+   "last_updated": "2026-09-28T15:21:55.594519"
   },
   {
    "state_code": "IL",
@@ -1688,7 +1597,7 @@
     }
    },
    "headline_bill": {
-    "id": 625,
+    "id": 575,
     "legiscan_bill_id": 2094456,
     "bill_number": "SB2909",
     "bill_title": "SCH CD-TEACHER EVALUATION-AI",
@@ -1705,7 +1614,7 @@
    },
    "bills": [
     {
-     "id": 625,
+     "id": 575,
      "legiscan_bill_id": 2094456,
      "bill_number": "SB2909",
      "bill_title": "SCH CD-TEACHER EVALUATION-AI",
@@ -1721,7 +1630,7 @@
      "is_resolution": false
     },
     {
-     "id": 276,
+     "id": 576,
      "legiscan_bill_id": 1635340,
      "bill_number": "HB0299",
      "bill_title": "EDUCATION-TECH",
@@ -1737,7 +1646,7 @@
      "is_resolution": false
     },
     {
-     "id": 282,
+     "id": 580,
      "legiscan_bill_id": 1940278,
      "bill_number": "SB0416",
      "bill_title": "EDUCATION-TECH",
@@ -1825,7 +1734,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.196291"
+   "last_updated": "2026-09-28T15:22:52.926220"
   },
   {
    "state_code": "IN",
@@ -1870,7 +1779,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.197001"
+   "last_updated": "2026-09-28T15:22:59.493274"
   },
   {
    "state_code": "IA",
@@ -1893,7 +1802,7 @@
     }
    },
    "headline_bill": {
-    "id": 189,
+    "id": 690,
     "legiscan_bill_id": 2117611,
     "bill_number": "HF2540",
     "bill_title": "A bill for an act relating to computer science and artificial intelligence education, including high school curricula and graduation requirements, and practitioner preparation programs, and including applicability provisions.(Formerly HSB 610.)",
@@ -1910,7 +1819,7 @@
    },
    "bills": [
     {
-     "id": 189,
+     "id": 690,
      "legiscan_bill_id": 2117611,
      "bill_number": "HF2540",
      "bill_title": "A bill for an act relating to computer science and artificial intelligence education, including high school curricula and graduation requirements, and practitioner preparation programs, and including applicability provisions.(Formerly HSB 610.)",
@@ -1926,7 +1835,7 @@
      "is_resolution": false
     },
     {
-     "id": 1488,
+     "id": 691,
      "legiscan_bill_id": 2117721,
      "bill_number": "HF2528",
      "bill_title": "A bill for an act modifying the duties of the workforce development board, state board of education, and department of education related to cyber and artificial intelligence.(Formerly HSB 609.)",
@@ -1942,7 +1851,7 @@
      "is_resolution": false
     },
     {
-     "id": 407,
+     "id": 693,
      "legiscan_bill_id": 2093438,
      "bill_number": "HF2153",
      "bill_title": "A bill for an act requiring community colleges, school districts, and institutions under the control of the state board of regents to adopt policies related to the use of artificial intelligence by students and employees.",
@@ -1979,7 +1888,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.197289"
+   "last_updated": "2026-09-28T15:23:08.014701"
   },
   {
    "state_code": "KS",
@@ -2024,7 +1933,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.188816"
+   "last_updated": "2026-09-28T15:23:16.523222"
   },
   {
    "state_code": "KY",
@@ -2047,7 +1956,7 @@
     }
    },
    "headline_bill": {
-    "id": 1499,
+    "id": 720,
     "legiscan_bill_id": 1795473,
     "bill_number": "SB52",
     "bill_title": "AN ACT relating to technology in education and declaring an emergency.",
@@ -2064,7 +1973,7 @@
    },
    "bills": [
     {
-     "id": 1499,
+     "id": 720,
      "legiscan_bill_id": 1795473,
      "bill_number": "SB52",
      "bill_title": "AN ACT relating to technology in education and declaring an emergency.",
@@ -2101,7 +2010,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.188151"
+   "last_updated": "2026-09-28T15:23:26.706221"
   },
   {
    "state_code": "LA",
@@ -2124,7 +2033,7 @@
     }
    },
    "headline_bill": {
-    "id": 665,
+    "id": 740,
     "legiscan_bill_id": 2139727,
     "bill_number": "HB1149",
     "bill_title": "Requires each public school to incorporate instruction on artificial intelligence into an existing course of study for each student in grades six through twelve (OR NO IMPACT See Note)",
@@ -2141,7 +2050,7 @@
    },
    "bills": [
     {
-     "id": 665,
+     "id": 740,
      "legiscan_bill_id": 2139727,
      "bill_number": "HB1149",
      "bill_title": "Requires each public school to incorporate instruction on artificial intelligence into an existing course of study for each student in grades six through twelve (OR NO IMPACT See Note)",
@@ -2157,7 +2066,7 @@
      "is_resolution": false
     },
     {
-     "id": 1507,
+     "id": 738,
      "legiscan_bill_id": 2036152,
      "bill_number": "HR320",
      "bill_title": "Requests the state Department of Education, the State Board of Elementary and Secondary Education, the Board of Regents, and postsecondary education management boards to promote artificial intelligence education for students and to encourage professional development relative to artificial intelligence for faculty and staff",
@@ -2173,7 +2082,7 @@
      "is_resolution": true
     },
     {
-     "id": 417,
+     "id": 739,
      "legiscan_bill_id": 2148374,
      "bill_number": "HR249",
      "bill_title": "Requests the State Board of Elementary and Secondary Education to incorporate artificial intelligence into content standards",
@@ -2226,7 +2135,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-09-14T17:18:21.049770"
+   "last_updated": "2026-09-28T15:43:19.599080"
   },
   {
    "state_code": "ME",
@@ -2249,7 +2158,7 @@
     }
    },
    "headline_bill": {
-    "id": 443,
+    "id": 763,
     "legiscan_bill_id": 1977885,
     "bill_number": "LD643",
     "bill_title": "Resolve, to Study the Effects of Artificial Intelligence, Cellular Telephones and Social Media on Public Education",
@@ -2266,7 +2175,7 @@
    },
    "bills": [
     {
-     "id": 443,
+     "id": 763,
      "legiscan_bill_id": 1977885,
      "bill_number": "LD643",
      "bill_title": "Resolve, to Study the Effects of Artificial Intelligence, Cellular Telephones and Social Media on Public Education",
@@ -2282,7 +2191,7 @@
      "is_resolution": true
     },
     {
-     "id": 444,
+     "id": 765,
      "legiscan_bill_id": 2057501,
      "bill_number": "LD2052",
      "bill_title": "Resolve, to Study the Use of Technology in Classrooms and Study Safeguards Related to Its Use",
@@ -2319,7 +2228,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.193585"
+   "last_updated": "2026-09-28T15:23:46.952032"
   },
   {
    "state_code": "MD",
@@ -2342,7 +2251,7 @@
     }
    },
    "headline_bill": {
-    "id": 456,
+    "id": 774,
     "legiscan_bill_id": 2112745,
     "bill_number": "SB720",
     "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)",
@@ -2359,7 +2268,7 @@
    },
    "bills": [
     {
-     "id": 456,
+     "id": 774,
      "legiscan_bill_id": 2112745,
      "bill_number": "SB720",
      "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)",
@@ -2375,7 +2284,7 @@
      "is_resolution": false
     },
     {
-     "id": 97,
+     "id": 775,
      "legiscan_bill_id": 1961326,
      "bill_number": "HB1391",
      "bill_title": "Education - Artificial Intelligence - Guidelines and Professional Development",
@@ -2391,7 +2300,7 @@
      "is_resolution": false
     },
     {
-     "id": 457,
+     "id": 776,
      "legiscan_bill_id": 2112595,
      "bill_number": "HB1057",
      "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Collaborative (Artificial Intelligence Ready Schools Act)",
@@ -2407,7 +2316,7 @@
      "is_resolution": false
     },
     {
-     "id": 458,
+     "id": 777,
      "legiscan_bill_id": 1953218,
      "bill_number": "SB906",
      "bill_title": "Education - Artificial Intelligence - Guidelines, Professional Development, and Task Force",
@@ -2423,7 +2332,7 @@
      "is_resolution": false
     },
     {
-     "id": 1517,
+     "id": 778,
      "legiscan_bill_id": 1842215,
      "bill_number": "HB1297",
      "bill_title": "Education - Artificial Intelligence - Study and Regulations",
@@ -2439,7 +2348,7 @@
      "is_resolution": false
     },
     {
-     "id": 1518,
+     "id": 779,
      "legiscan_bill_id": 1838035,
      "bill_number": "SB979",
      "bill_title": "Education - Artificial Intelligence - Guidelines and Pilot Program",
@@ -2455,7 +2364,7 @@
      "is_resolution": false
     },
     {
-     "id": 459,
+     "id": 780,
      "legiscan_bill_id": 2095366,
      "bill_number": "SB375",
      "bill_title": "County Boards of Education - Artificial Intelligence Training Program - Requirement",
@@ -2471,7 +2380,7 @@
      "is_resolution": false
     },
     {
-     "id": 25,
+     "id": 781,
      "legiscan_bill_id": 1949835,
      "bill_number": "SB704",
      "bill_title": "State Department of Education and Department of Information Technology - Evaluation on Artificial Intelligence in Public Schools",
@@ -2487,7 +2396,7 @@
      "is_resolution": false
     },
     {
-     "id": 26,
+     "id": 782,
      "legiscan_bill_id": 1949746,
      "bill_number": "HB981",
      "bill_title": "State Department of Education and Department of Information Technology - Evaluation on Artificial Intelligence in Public Schools",
@@ -2503,7 +2412,7 @@
      "is_resolution": false
     },
     {
-     "id": 45,
+     "id": 789,
      "legiscan_bill_id": 2093275,
      "bill_number": "HB530",
      "bill_title": "Task Force on Proactive Review of Audio and Video Recordings on Special Education Buses",
@@ -2569,7 +2478,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.189438"
+   "last_updated": "2026-09-28T15:24:44.400265"
   },
   {
    "state_code": "MA",
@@ -2592,7 +2501,7 @@
     }
    },
    "headline_bill": {
-    "id": 1542,
+    "id": 879,
     "legiscan_bill_id": 1998675,
     "bill_number": "S429",
     "bill_title": "To establish a commission to investigate AI in education",
@@ -2609,7 +2518,7 @@
    },
    "bills": [
     {
-     "id": 1542,
+     "id": 879,
      "legiscan_bill_id": 1998675,
      "bill_number": "S429",
      "bill_title": "To establish a commission to investigate AI in education",
@@ -2625,7 +2534,7 @@
      "is_resolution": false
     },
     {
-     "id": 1543,
+     "id": 880,
      "legiscan_bill_id": 2001175,
      "bill_number": "H614",
      "bill_title": "Relative to issuing guidance regarding setting policies for the use of AI in schools",
@@ -2699,7 +2608,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-09-14T17:18:21.050137"
+   "last_updated": "2026-09-28T15:43:19.599509"
   },
   {
    "state_code": "MI",
@@ -2707,13 +2616,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": null,
    "bill_counts": {
-    "total": 25,
+    "total": 29,
     "included": 0,
     "resolutions": 0,
-    "pending": 25,
+    "pending": 29,
     "manually_included": 0,
     "manually_excluded": 0,
-    "held": 25,
+    "held": 29,
     "by_stage": {
      "passed": 0,
      "debated": 0,
@@ -2744,7 +2653,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.193716"
+   "last_updated": "2026-09-28T15:25:56.891719"
   },
   {
    "state_code": "MN",
@@ -2789,7 +2698,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190054"
+   "last_updated": "2026-09-28T15:26:28.166970"
   },
   {
    "state_code": "MS",
@@ -2812,7 +2721,7 @@
     }
    },
    "headline_bill": {
-    "id": 1668,
+    "id": 1069,
     "legiscan_bill_id": 2087381,
     "bill_number": "HB1242",
     "bill_title": "Mississippi Dyslexia Generative Artificial Intelligence Education and Workforce Development Act; create.",
@@ -2829,7 +2738,7 @@
    },
    "bills": [
     {
-     "id": 1668,
+     "id": 1069,
      "legiscan_bill_id": 2087381,
      "bill_number": "HB1242",
      "bill_title": "Mississippi Dyslexia Generative Artificial Intelligence Education and Workforce Development Act; create.",
@@ -2845,7 +2754,7 @@
      "is_resolution": false
     },
     {
-     "id": 181,
+     "id": 1070,
      "legiscan_bill_id": 1820844,
      "bill_number": "SB2062",
      "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
@@ -2861,7 +2770,7 @@
      "is_resolution": false
     },
     {
-     "id": 691,
+     "id": 1071,
      "legiscan_bill_id": 2086185,
      "bill_number": "SB2429",
      "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
@@ -2877,7 +2786,7 @@
      "is_resolution": false
     },
     {
-     "id": 690,
+     "id": 1072,
      "legiscan_bill_id": 1927333,
      "bill_number": "SB2059",
      "bill_title": "Artificial Intelligence in Education Task Force Act; enact.",
@@ -2893,7 +2802,7 @@
      "is_resolution": false
     },
     {
-     "id": 694,
+     "id": 1080,
      "legiscan_bill_id": 2084187,
      "bill_number": "HB1035",
      "bill_title": "MS Future Innovators Act; enact to require high school computer science or CTE with embedded computer science course.",
@@ -2909,7 +2818,7 @@
      "is_resolution": false
     },
     {
-     "id": 695,
+     "id": 1081,
      "legiscan_bill_id": 1936069,
      "bill_number": "SB2535",
      "bill_title": "MS Future Innovators Act; enact to require high-school computer science or CTE with embedded computer science course.",
@@ -2946,7 +2855,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190228"
+   "last_updated": "2026-09-28T15:26:54.165185"
   },
   {
    "state_code": "MO",
@@ -2969,7 +2878,7 @@
     }
    },
    "headline_bill": {
-    "id": 974,
+    "id": 1122,
     "legiscan_bill_id": 2114226,
     "bill_number": "HB3281",
     "bill_title": "Establishes provisions relating to software accountability for education",
@@ -2986,7 +2895,7 @@
    },
    "bills": [
     {
-     "id": 974,
+     "id": 1122,
      "legiscan_bill_id": 2114226,
      "bill_number": "HB3281",
      "bill_title": "Establishes provisions relating to software accountability for education",
@@ -3023,7 +2932,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190377"
+   "last_updated": "2026-09-28T15:27:09.042295"
   },
   {
    "state_code": "MT",
@@ -3068,7 +2977,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.189747"
+   "last_updated": "2026-09-28T15:27:12.244248"
   },
   {
    "state_code": "NE",
@@ -3113,7 +3022,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.189879"
+   "last_updated": "2026-09-28T15:27:18.068527"
   },
   {
    "state_code": "NV",
@@ -3136,7 +3045,7 @@
     }
    },
    "headline_bill": {
-    "id": 1697,
+    "id": 1160,
     "legiscan_bill_id": 2013451,
     "bill_number": "AB531",
     "bill_title": "Revises provisions relating to education. (BDR 34-525)",
@@ -3153,7 +3062,7 @@
    },
    "bills": [
     {
-     "id": 1697,
+     "id": 1160,
      "legiscan_bill_id": 2013451,
      "bill_number": "AB531",
      "bill_title": "Revises provisions relating to education. (BDR 34-525)",
@@ -3212,7 +3121,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.193858"
+   "last_updated": "2026-09-28T15:27:29.750214"
   },
   {
    "state_code": "NH",
@@ -3257,7 +3166,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.193978"
+   "last_updated": "2026-09-28T15:27:31.929706"
   },
   {
    "state_code": "NJ",
@@ -3265,13 +3174,13 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "debated",
    "bill_counts": {
-    "total": 123,
+    "total": 125,
     "included": 9,
     "resolutions": 0,
-    "pending": 110,
+    "pending": 112,
     "manually_included": 9,
     "manually_excluded": 4,
-    "held": 114,
+    "held": 116,
     "by_stage": {
      "passed": 0,
      "debated": 1,
@@ -3280,7 +3189,7 @@
     }
    },
    "headline_bill": {
-    "id": 17,
+    "id": 1183,
     "legiscan_bill_id": 2116148,
     "bill_number": "A4352",
     "bill_title": "Requires school districts to provide instruction on artificial intelligence; requires Secretary of Higher Education to develop artificial intelligence model curricula.",
@@ -3297,7 +3206,7 @@
    },
    "bills": [
     {
-     "id": 17,
+     "id": 1183,
      "legiscan_bill_id": 2116148,
      "bill_number": "A4352",
      "bill_title": "Requires school districts to provide instruction on artificial intelligence; requires Secretary of Higher Education to develop artificial intelligence model curricula.",
@@ -3313,7 +3222,7 @@
      "is_resolution": false
     },
     {
-     "id": 18,
+     "id": 1184,
      "legiscan_bill_id": 2075250,
      "bill_number": "S2862",
      "bill_title": "Requires school districts to provide instruction on artificial intelligence; requires Secretary of Higher Education to develop artificial intelligence model curricula.",
@@ -3329,7 +3238,7 @@
      "is_resolution": false
     },
     {
-     "id": 19,
+     "id": 1185,
      "legiscan_bill_id": 1889719,
      "bill_number": "S3876",
      "bill_title": "Requires school districts to provide instruction on artificial intelligence; requires Secretary of Higher Education to develop artificial intelligence model curricula.",
@@ -3345,7 +3254,7 @@
      "is_resolution": false
     },
     {
-     "id": 20,
+     "id": 1186,
      "legiscan_bill_id": 1889335,
      "bill_number": "A4936",
      "bill_title": "Requires school districts to provide instruction on artificial intelligence; requires Secretary of Higher Education to develop artificial intelligence model curricula.",
@@ -3361,7 +3270,7 @@
      "is_resolution": false
     },
     {
-     "id": 33,
+     "id": 1189,
      "legiscan_bill_id": 2153682,
      "bill_number": "S4469",
      "bill_title": "Requires boards of education to adopt policy on use of artificial intelligence; requires DOE to establish model policy.",
@@ -3377,7 +3286,7 @@
      "is_resolution": false
     },
     {
-     "id": 39,
+     "id": 1190,
      "legiscan_bill_id": 2152107,
      "bill_number": "A5184",
      "bill_title": "Requires boards of education to adopt policy on use of artificial intelligence; requires DOE to establish model policy.",
@@ -3393,7 +3302,7 @@
      "is_resolution": false
     },
     {
-     "id": 62,
+     "id": 1191,
      "legiscan_bill_id": 2131656,
      "bill_number": "S3883",
      "bill_title": "Requires boards of education to adopt policy on use of surveillance systems with artificial intelligence capabilities.",
@@ -3409,7 +3318,7 @@
      "is_resolution": false
     },
     {
-     "id": 63,
+     "id": 1192,
      "legiscan_bill_id": 2100103,
      "bill_number": "A1323",
      "bill_title": "Requires boards of education and boards of trustees to adopt policy on use of surveillance systems with artificial intelligence capabilities.",
@@ -3425,7 +3334,7 @@
      "is_resolution": false
     },
     {
-     "id": 64,
+     "id": 1193,
      "legiscan_bill_id": 1883140,
      "bill_number": "A4639",
      "bill_title": "Requires boards of education to adopt policy on use of surveillance systems with artificial intelligence capabilities.",
@@ -3462,7 +3371,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.191368"
+   "last_updated": "2026-09-28T15:28:39.571368"
   },
   {
    "state_code": "NM",
@@ -3485,7 +3394,7 @@
     }
    },
    "headline_bill": {
-    "id": 1736,
+    "id": 1308,
     "legiscan_bill_id": 2108223,
     "bill_number": "HB330",
     "bill_title": "Ai Ethics As School Science Elective",
@@ -3502,7 +3411,7 @@
    },
    "bills": [
     {
-     "id": 1736,
+     "id": 1308,
      "legiscan_bill_id": 2108223,
      "bill_number": "HB330",
      "bill_title": "Ai Ethics As School Science Elective",
@@ -3554,190 +3463,30 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-09-14T17:18:21.050388"
+   "last_updated": "2026-09-28T15:43:19.599947"
   },
   {
    "state_code": "NY",
    "state_name": "New York",
    "research_status": "NOT_RESEARCHED",
-   "legislation_stage": "debated",
+   "legislation_stage": null,
    "bill_counts": {
-    "total": 149,
-    "included": 9,
+    "total": 0,
+    "included": 0,
     "resolutions": 0,
-    "pending": 129,
-    "manually_included": 9,
-    "manually_excluded": 11,
-    "held": 140,
+    "pending": 0,
+    "manually_included": 0,
+    "manually_excluded": 0,
+    "held": 0,
     "by_stage": {
      "passed": 0,
-     "debated": 1,
-     "introduced": 8,
+     "debated": 0,
+     "introduced": 0,
      "failed": 0
     }
    },
-   "headline_bill": {
-    "id": 1746,
-    "legiscan_bill_id": 2157318,
-    "bill_number": "S10671",
-    "bill_title": "Provides that each school district, charter school, and board of cooperative educational services shall adopt and implement a written policy governing the use of humanoid robots in schools and that such policy shall prohibit the use of an artificial intelligence-enabled humanoid robot in an instructional capacity; defines terms.",
-    "bill_url": "https://legiscan.com/NY/bill/S10671/2025",
-    "bill_text_url": "https://legiscan.com/NY/text/S10671/2025",
-    "bill_status": "Introduced",
-    "bill_stage": "introduced",
-    "last_action": "REFERRED TO RULES",
-    "last_action_date": "2026-07-29",
-    "match_confidence": "HIGH",
-    "decision": "INCLUDED",
-    "effective_included": true,
-    "is_resolution": false
-   },
-   "bills": [
-    {
-     "id": 1746,
-     "legiscan_bill_id": 2157318,
-     "bill_number": "S10671",
-     "bill_title": "Provides that each school district, charter school, and board of cooperative educational services shall adopt and implement a written policy governing the use of humanoid robots in schools and that such policy shall prohibit the use of an artificial intelligence-enabled humanoid robot in an instructional capacity; defines terms.",
-     "bill_url": "https://legiscan.com/NY/bill/S10671/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/S10671/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "REFERRED TO RULES",
-     "last_action_date": "2026-07-29",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 1747,
-     "legiscan_bill_id": 2157340,
-     "bill_number": "A11662",
-     "bill_title": "Prohibits humanoid robots and AI systems from being used in schools; provides limited exceptions; provides for student privacy protections; makes related provisions.",
-     "bill_url": "https://legiscan.com/NY/bill/A11662/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A11662/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to education",
-     "last_action_date": "2026-07-31",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 749,
-     "legiscan_bill_id": 2010242,
-     "bill_number": "A07029",
-     "bill_title": "Directs the commissioner of education to make recommendations to the board of regents regarding the incorporation of instruction in artificial intelligence system literacy into the school curriculum at the elementary, junior high and senior high levels; directs the board of regents to adopt guidelines if the curriculum is adopted.",
-     "bill_url": "https://legiscan.com/NY/bill/A07029/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A07029/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to education",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 759,
-     "legiscan_bill_id": 2030765,
-     "bill_number": "S07892",
-     "bill_title": "Directs the commissioner of education to make recommendations to the board of regents regarding the incorporation of instruction in artificial intelligence system literacy into the school curriculum at the elementary, junior high and senior high levels; directs the board of regents to adopt guidelines if the curriculum is adopted.",
-     "bill_url": "https://legiscan.com/NY/bill/S07892/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/S07892/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "REFERRED TO EDUCATION",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 760,
-     "legiscan_bill_id": 2147009,
-     "bill_number": "S10133",
-     "bill_title": "Prohibits the use of most artificial intelligence in classrooms prior to high school except for AI used for diagnostic purposes or explicit instruction interventions for students with disabilities.",
-     "bill_url": "https://legiscan.com/NY/bill/S10133/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/S10133/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "REFERRED TO EDUCATION",
-     "last_action_date": "2026-04-30",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 599,
-     "legiscan_bill_id": 2051443,
-     "bill_number": "A09190",
-     "bill_title": "Prohibits the use of most artificial intelligence in classrooms prior to high school except for AI used for diagnostic purposes or explicit instruction interventions for students with disabilities.",
-     "bill_url": "https://legiscan.com/NY/bill/A09190/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A09190/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to education",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 601,
-     "legiscan_bill_id": 2010112,
-     "bill_number": "A06972",
-     "bill_title": "Creates an artificial intelligence working group within the department of education for the purpose of developing guidance and a model policy on the safe and effective use of artificial intelligence in ways that benefit, and do not harm, pupils and educators.",
-     "bill_url": "https://legiscan.com/NY/bill/A06972/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A06972/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to education",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 602,
-     "legiscan_bill_id": 2039479,
-     "bill_number": "A08947",
-     "bill_title": "Enacts the \"youth & teen internet safety and social media literacy act\"; directs the commissioner of education to provide technical assistance to school districts for the development of curricula for such study of courses which shall be age appropriate and developed according to the needs and abilities of pupils at successive grade levels in order to provide awareness, skills, information, and support to aid in the safe usage of the internet, social media, and artificial intelligence.",
-     "bill_url": "https://legiscan.com/NY/bill/A08947/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/A08947/2025",
-     "bill_status": "Introduced",
-     "bill_stage": "introduced",
-     "last_action": "referred to education",
-     "last_action_date": "2026-01-07",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    },
-    {
-     "id": 603,
-     "legiscan_bill_id": 2145794,
-     "bill_number": "S10049",
-     "bill_title": "Updates the definition of cyberbullying in the dignity for all students act to include intentionally using artificial intelligence to mimic or alter a person's likeness or voice without their consent.",
-     "bill_url": "https://legiscan.com/NY/bill/S10049/2025",
-     "bill_text_url": "https://legiscan.com/NY/text/S10049/2025",
-     "bill_status": "Engrossed",
-     "bill_stage": "debated",
-     "last_action": "referred to education",
-     "last_action_date": "2026-05-28",
-     "match_confidence": "HIGH",
-     "decision": "INCLUDED",
-     "effective_included": true,
-     "is_resolution": false
-    }
-   ],
+   "headline_bill": null,
+   "bills": [],
    "local_signal": {
     "count": 2,
     "active": 1,
@@ -3809,7 +3558,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.191645"
+   "last_updated": "2026-09-28T15:30:18.927761"
   },
   {
    "state_code": "NC",
@@ -3832,7 +3581,7 @@
     }
    },
    "headline_bill": {
-    "id": 264,
+    "id": 1337,
     "legiscan_bill_id": 2146074,
     "bill_number": "S864",
     "bill_title": "Safe and Responsible AI in Schools Act",
@@ -3849,7 +3598,7 @@
    },
    "bills": [
     {
-     "id": 264,
+     "id": 1337,
      "legiscan_bill_id": 2146074,
      "bill_number": "S864",
      "bill_title": "Safe and Responsible AI in Schools Act",
@@ -3865,7 +3614,7 @@
      "is_resolution": false
     },
     {
-     "id": 265,
+     "id": 1338,
      "legiscan_bill_id": 2144441,
      "bill_number": "S787",
      "bill_title": "AI Ethics and Literacy Across Education",
@@ -3881,7 +3630,7 @@
      "is_resolution": false
     },
     {
-     "id": 1001,
+     "id": 1339,
      "legiscan_bill_id": 2014068,
      "bill_number": "S640",
      "bill_title": "AI Ethics and Literacy Across Education",
@@ -3968,7 +3717,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190801"
+   "last_updated": "2026-09-28T15:30:43.748028"
   },
   {
    "state_code": "ND",
@@ -4013,7 +3762,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190510"
+   "last_updated": "2026-09-28T15:30:48.079674"
   },
   {
    "state_code": "OH",
@@ -4087,7 +3836,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.190647"
+   "last_updated": "2026-09-28T15:30:58.989231"
   },
   {
    "state_code": "OK",
@@ -4110,7 +3859,7 @@
     }
    },
    "headline_bill": {
-    "id": 1198,
+    "id": 1410,
     "legiscan_bill_id": 2079134,
     "bill_number": "SB1734",
     "bill_title": "Schools; creating the Oklahoma Responsible Technology in Schools Act; requiring development of guidance for use of artificial intelligence and emerging technologies. Effective date. Emergency.",
@@ -4127,7 +3876,7 @@
    },
    "bills": [
     {
-     "id": 1198,
+     "id": 1410,
      "legiscan_bill_id": 2079134,
      "bill_number": "SB1734",
      "bill_title": "Schools; creating the Oklahoma Responsible Technology in Schools Act; requiring development of guidance for use of artificial intelligence and emerging technologies. Effective date. Emergency.",
@@ -4143,7 +3892,7 @@
      "is_resolution": false
     },
     {
-     "id": 288,
+     "id": 1409,
      "legiscan_bill_id": 2049913,
      "bill_number": "HB1782",
      "bill_title": "Artificial intelligence education; creating the AI Education Innovation Act, the AI Education Innovation Revolving Fund and the AI Education Advisory Council; effective date.",
@@ -4159,7 +3908,7 @@
      "is_resolution": false
     },
     {
-     "id": 304,
+     "id": 1411,
      "legiscan_bill_id": 1820478,
      "bill_number": "HB3827",
      "bill_title": "Schools; State Department of Education; artificial intelligence; training; curriculum; revolving fund.",
@@ -4175,7 +3924,7 @@
      "is_resolution": false
     },
     {
-     "id": 1021,
+     "id": 1425,
      "legiscan_bill_id": 2048922,
      "bill_number": "HB2371",
      "bill_title": "Schools; mental health; pilot programs; revolving fund; effective date.",
@@ -4229,7 +3978,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-09-14T17:18:21.050780"
+   "last_updated": "2026-09-28T15:43:19.600341"
   },
   {
    "state_code": "OR",
@@ -4274,7 +4023,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.191788"
+   "last_updated": "2026-09-28T15:31:26.894359"
   },
   {
    "state_code": "PA",
@@ -4282,39 +4031,87 @@
    "research_status": "NOT_RESEARCHED",
    "legislation_stage": "debated",
    "bill_counts": {
-    "total": 40,
-    "included": 3,
+    "total": 44,
+    "included": 6,
     "resolutions": 0,
-    "pending": 35,
+    "pending": 39,
     "manually_included": 3,
     "manually_excluded": 2,
-    "held": 37,
+    "held": 38,
     "by_stage": {
      "passed": 0,
      "debated": 1,
-     "introduced": 2,
+     "introduced": 5,
      "failed": 0
     }
    },
    "headline_bill": {
-    "id": 1037,
-    "legiscan_bill_id": 2142496,
-    "bill_number": "HB2375",
-    "bill_title": "In charter schools, further providing for definitions, for charter school requirements, for establishment of charter school, for causes for nonrenewal or termination, for powers and duties of department, for cyber charter school requirements and prohibitions and for establishment of cyber charter school; and, in the State Board of Education, further providing for powers and duties of the board.",
-    "bill_url": "https://legiscan.com/PA/bill/HB2375/2025",
-    "bill_text_url": "https://legiscan.com/PA/text/HB2375/2025",
+    "id": 1459,
+    "legiscan_bill_id": 2158920,
+    "bill_number": "HB2787",
+    "bill_title": "In school safety and security, providing for prohibition of artificial intelligence for school-based mental health and counseling.",
+    "bill_url": "https://legiscan.com/PA/bill/HB2787/2025",
+    "bill_text_url": "https://legiscan.com/PA/text/HB2787/2025",
     "bill_status": "Introduced",
     "bill_stage": "introduced",
     "last_action": "Referred to Education",
-    "last_action_date": "2026-04-14",
-    "match_confidence": "MEDIUM",
-    "decision": "INCLUDED",
+    "last_action_date": "2026-09-24",
+    "match_confidence": "HIGH",
+    "decision": "PENDING",
     "effective_included": true,
     "is_resolution": false
    },
    "bills": [
     {
-     "id": 1037,
+     "id": 1459,
+     "legiscan_bill_id": 2158920,
+     "bill_number": "HB2787",
+     "bill_title": "In school safety and security, providing for prohibition of artificial intelligence for school-based mental health and counseling.",
+     "bill_url": "https://legiscan.com/PA/bill/HB2787/2025",
+     "bill_text_url": "https://legiscan.com/PA/text/HB2787/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Education",
+     "last_action_date": "2026-09-24",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1460,
+     "legiscan_bill_id": 2158817,
+     "bill_number": "HB2788",
+     "bill_title": "In certification of teachers, providing for use of artificial intelligence in education.",
+     "bill_url": "https://legiscan.com/PA/bill/HB2788/2025",
+     "bill_text_url": "https://legiscan.com/PA/text/HB2788/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Education",
+     "last_action_date": "2026-09-24",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1462,
+     "legiscan_bill_id": 2159259,
+     "bill_number": "HB2786",
+     "bill_title": "In student supports, providing for artificial intelligence policy.",
+     "bill_url": "https://legiscan.com/PA/bill/HB2786/2025",
+     "bill_text_url": "https://legiscan.com/PA/text/HB2786/2025",
+     "bill_status": "Introduced",
+     "bill_stage": "introduced",
+     "last_action": "Referred to Education",
+     "last_action_date": "2026-09-25",
+     "match_confidence": "HIGH",
+     "decision": "PENDING",
+     "effective_included": true,
+     "is_resolution": false
+    },
+    {
+     "id": 1466,
      "legiscan_bill_id": 2142496,
      "bill_number": "HB2375",
      "bill_title": "In charter schools, further providing for definitions, for charter school requirements, for establishment of charter school, for causes for nonrenewal or termination, for powers and duties of department, for cyber charter school requirements and prohibitions and for establishment of cyber charter school; and, in the State Board of Education, further providing for powers and duties of the board.",
@@ -4330,7 +4127,7 @@
      "is_resolution": false
     },
     {
-     "id": 1038,
+     "id": 1468,
      "legiscan_bill_id": 2023404,
      "bill_number": "SB631",
      "bill_title": "Providing for parental consent for virtual mental health services provided by a school entity.",
@@ -4346,7 +4143,7 @@
      "is_resolution": false
     },
     {
-     "id": 1039,
+     "id": 1469,
      "legiscan_bill_id": 1873862,
      "bill_number": "SB913",
      "bill_title": "Providing for parental consent for virtual mental health services provided by a school entity.",
@@ -4411,7 +4208,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.194480"
+   "last_updated": "2026-09-28T15:31:51.106270"
   },
   {
    "state_code": "RI",
@@ -4434,7 +4231,7 @@
     }
    },
    "headline_bill": {
-    "id": 4,
+    "id": 1505,
     "legiscan_bill_id": 2138196,
     "bill_number": "H8345",
     "bill_title": "HOUSE RESOLUTION CREATING A SPECIAL LEGISLATIVE COMMISSION TO STUDY THE USE AND IMPACT OF DIGITAL AND ELECTRONIC TECHNOLOGY IN PUBLIC EDUCATION AND ON MENTAL HEALTH (Creates a fourteen (14) member special legislative study commission to study the use and impact of digital and electronic technology in public education and on mental health.)",
@@ -4451,7 +4248,7 @@
    },
    "bills": [
     {
-     "id": 4,
+     "id": 1505,
      "legiscan_bill_id": 2138196,
      "bill_number": "H8345",
      "bill_title": "HOUSE RESOLUTION CREATING A SPECIAL LEGISLATIVE COMMISSION TO STUDY THE USE AND IMPACT OF DIGITAL AND ELECTRONIC TECHNOLOGY IN PUBLIC EDUCATION AND ON MENTAL HEALTH (Creates a fourteen (14) member special legislative study commission to study the use and impact of digital and electronic technology in public education and on mental health.)",
@@ -4494,7 +4291,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-09-14T17:18:21.051284"
+   "last_updated": "2026-09-28T15:43:19.601254"
   },
   {
    "state_code": "SC",
@@ -4517,7 +4314,7 @@
     }
    },
    "headline_bill": {
-    "id": 13,
+    "id": 1553,
     "legiscan_bill_id": 2123107,
     "bill_number": "H5253",
     "bill_title": "Ai in education",
@@ -4534,7 +4331,7 @@
    },
    "bills": [
     {
-     "id": 13,
+     "id": 1553,
      "legiscan_bill_id": 2123107,
      "bill_number": "H5253",
      "bill_title": "Ai in education",
@@ -4571,7 +4368,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.194607"
+   "last_updated": "2026-09-28T15:32:28.232413"
   },
   {
    "state_code": "SD",
@@ -4616,7 +4413,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.194733"
+   "last_updated": "2026-09-28T15:32:32.022369"
   },
   {
    "state_code": "TN",
@@ -4639,7 +4436,7 @@
     }
    },
    "headline_bill": {
-    "id": 624,
+    "id": 1576,
     "legiscan_bill_id": 2090607,
     "bill_number": "SB2105",
     "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to education.",
@@ -4656,7 +4453,7 @@
    },
    "bills": [
     {
-     "id": 624,
+     "id": 1576,
      "legiscan_bill_id": 2090607,
      "bill_number": "SB2105",
      "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to education.",
@@ -4672,7 +4469,7 @@
      "is_resolution": false
     },
     {
-     "id": 622,
+     "id": 1577,
      "legiscan_bill_id": 1955110,
      "bill_number": "HB0933",
      "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to school safety.",
@@ -4688,7 +4485,7 @@
      "is_resolution": false
     },
     {
-     "id": 623,
+     "id": 1578,
      "legiscan_bill_id": 1953992,
      "bill_number": "SB0814",
      "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to school safety.",
@@ -4704,7 +4501,7 @@
      "is_resolution": false
     },
     {
-     "id": 1083,
+     "id": 1579,
      "legiscan_bill_id": 2106214,
      "bill_number": "HB2416",
      "bill_title": "AN ACT to amend Tennessee Code Annotated, Title 49, relative to education.",
@@ -4741,7 +4538,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.191946"
+   "last_updated": "2026-09-28T15:32:51.069462"
   },
   {
    "state_code": "TX",
@@ -4764,7 +4561,7 @@
     }
    },
    "headline_bill": {
-    "id": 226,
+    "id": 1611,
     "legiscan_bill_id": 1954141,
     "bill_number": "HB2400",
     "bill_title": "Relating to a prohibition on the use of artificial intelligence technology for classroom instruction.",
@@ -4781,7 +4578,7 @@
    },
    "bills": [
     {
-     "id": 226,
+     "id": 1611,
      "legiscan_bill_id": 1954141,
      "bill_number": "HB2400",
      "bill_title": "Relating to a prohibition on the use of artificial intelligence technology for classroom instruction.",
@@ -4797,7 +4594,7 @@
      "is_resolution": false
     },
     {
-     "id": 235,
+     "id": 1612,
      "legiscan_bill_id": 1892224,
      "bill_number": "SB382",
      "bill_title": "Relating to a prohibition on the use of artificial intelligence technology for classroom instruction.",
@@ -4813,7 +4610,7 @@
      "is_resolution": false
     },
     {
-     "id": 1104,
+     "id": 1613,
      "legiscan_bill_id": 2000200,
      "bill_number": "HB4448",
      "bill_title": "Relating to an automated artificial intelligence review of library material purchased by public schools; providing an administrative penalty.",
@@ -4829,7 +4626,7 @@
      "is_resolution": false
     },
     {
-     "id": 90,
+     "id": 1614,
      "legiscan_bill_id": 2007316,
      "bill_number": "HB5282",
      "bill_title": "Relating to the use of artificial intelligence to score certain portions of assessment instruments administered to public school students.",
@@ -4845,7 +4642,7 @@
      "is_resolution": false
     },
     {
-     "id": 30,
+     "id": 1615,
      "legiscan_bill_id": 2041986,
      "bill_number": "HB148",
      "bill_title": "Relating to the use of artificial intelligence to score constructed responses on assessment instruments administered to public school students.",
@@ -4861,7 +4658,7 @@
      "is_resolution": false
     },
     {
-     "id": 88,
+     "id": 1616,
      "legiscan_bill_id": 2040103,
      "bill_number": "HB167",
      "bill_title": "Relating to the use of artificial intelligence to score constructed responses on assessment instruments administered to public school students.",
@@ -4881,7 +4678,7 @@
     "count": 3,
     "active": 3,
     "leaning": "permissive",
-    "score": 1.35,
+    "score": 1.36,
     "latest": "2026-08-10",
     "headline": {
      "jurisdiction": "Houston Independent School District",
@@ -4968,7 +4765,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-14T17:18:21.051562"
+   "last_updated": "2026-09-28T15:43:19.601662"
   },
   {
    "state_code": "UT",
@@ -4991,7 +4788,7 @@
     }
    },
    "headline_bill": {
-    "id": 115,
+    "id": 1660,
     "legiscan_bill_id": 1911041,
     "bill_number": "HB0168",
     "bill_title": "Artificial Intelligence in Education",
@@ -5008,7 +4805,7 @@
    },
    "bills": [
     {
-     "id": 115,
+     "id": 1660,
      "legiscan_bill_id": 1911041,
      "bill_number": "HB0168",
      "bill_title": "Artificial Intelligence in Education",
@@ -5024,7 +4821,7 @@
      "is_resolution": false
     },
     {
-     "id": 116,
+     "id": 1661,
      "legiscan_bill_id": 2084286,
      "bill_number": "HB0273",
      "bill_title": "Classroom Technology Amendments",
@@ -5040,7 +4837,7 @@
      "is_resolution": false
     },
     {
-     "id": 1921,
+     "id": 1662,
      "legiscan_bill_id": 2060253,
      "bill_number": "HB0042",
      "bill_title": "School Cybersecurity Amendments",
@@ -5056,7 +4853,7 @@
      "is_resolution": false
     },
     {
-     "id": 1930,
+     "id": 1674,
      "legiscan_bill_id": 2122567,
      "bill_number": "SB0322",
      "bill_title": "Educational Technology Regulatory Sandbox",
@@ -5093,7 +4890,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.192114"
+   "last_updated": "2026-09-28T15:33:59.665874"
   },
   {
    "state_code": "VT",
@@ -5116,7 +4913,7 @@
     }
    },
    "headline_bill": {
-    "id": 277,
+    "id": 1736,
     "legiscan_bill_id": 1332374,
     "bill_number": "H0919",
     "bill_title": "An act relating to funding a pilot program to increase technology and artificial intelligence education programs",
@@ -5133,7 +4930,7 @@
    },
    "bills": [
     {
-     "id": 277,
+     "id": 1736,
      "legiscan_bill_id": 1332374,
      "bill_number": "H0919",
      "bill_title": "An act relating to funding a pilot program to increase technology and artificial intelligence education programs",
@@ -5149,7 +4946,7 @@
      "is_resolution": false
     },
     {
-     "id": 278,
+     "id": 1737,
      "legiscan_bill_id": 1854552,
      "bill_number": "H0863",
      "bill_title": "An act relating to recommendations on the education and potential harms of deepfake technology",
@@ -5165,7 +4962,7 @@
      "is_resolution": false
     },
     {
-     "id": 279,
+     "id": 1738,
      "legiscan_bill_id": 2071486,
      "bill_number": "H0650",
      "bill_title": "An act relating to educational technology products",
@@ -5202,7 +4999,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.192261"
+   "last_updated": "2026-09-28T15:34:14.850369"
   },
   {
    "state_code": "VA",
@@ -5225,7 +5022,7 @@
     }
    },
    "headline_bill": {
-    "id": 1971,
+    "id": 1763,
     "legiscan_bill_id": 2078302,
     "bill_number": "HB1186",
     "bill_title": "Artificial intelligence; use of systems for student instruction.",
@@ -5242,7 +5039,7 @@
    },
    "bills": [
     {
-     "id": 1971,
+     "id": 1763,
      "legiscan_bill_id": 2078302,
      "bill_number": "HB1186",
      "bill_title": "Artificial intelligence; use of systems for student instruction.",
@@ -5258,7 +5055,7 @@
      "is_resolution": false
     },
     {
-     "id": 1972,
+     "id": 1764,
      "legiscan_bill_id": 2085474,
      "bill_number": "SB394",
      "bill_title": "Artificial intelligence; use of systems for student instruction.",
@@ -5274,7 +5071,7 @@
      "is_resolution": false
     },
     {
-     "id": 1150,
+     "id": 1765,
      "legiscan_bill_id": 1808295,
      "bill_number": "SB385",
      "bill_title": "Artificial intelligence technology; use in education.",
@@ -5339,7 +5136,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.192421"
+   "last_updated": "2026-09-28T15:35:32.479098"
   },
   {
    "state_code": "WA",
@@ -5362,7 +5159,7 @@
     }
    },
    "headline_bill": {
-    "id": 2089,
+    "id": 1905,
     "legiscan_bill_id": 2064805,
     "bill_number": "SB5956",
     "bill_title": "Addressing artificial intelligence, student discipline, and surveillance in public schools.",
@@ -5379,7 +5176,7 @@
    },
    "bills": [
     {
-     "id": 2089,
+     "id": 1905,
      "legiscan_bill_id": 2064805,
      "bill_number": "SB5956",
      "bill_title": "Addressing artificial intelligence, student discipline, and surveillance in public schools.",
@@ -5445,7 +5242,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.192633"
+   "last_updated": "2026-09-28T15:36:14.132627"
   },
   {
    "state_code": "WV",
@@ -5468,7 +5265,7 @@
     }
    },
    "headline_bill": {
-    "id": 1185,
+    "id": 1980,
     "legiscan_bill_id": 2108811,
     "bill_number": "HB5205",
     "bill_title": "Requiring the State Board of Education to create model policies on the use of technology and artifical intelligence in a public school classroom",
@@ -5485,7 +5282,7 @@
    },
    "bills": [
     {
-     "id": 1185,
+     "id": 1980,
      "legiscan_bill_id": 2108811,
      "bill_number": "HB5205",
      "bill_title": "Requiring the State Board of Education to create model policies on the use of technology and artifical intelligence in a public school classroom",
@@ -5501,7 +5298,7 @@
      "is_resolution": false
     },
     {
-     "id": 1184,
+     "id": 1981,
      "legiscan_bill_id": 2009723,
      "bill_number": "HCR94",
      "bill_title": "Requesting a study regarding the creating of an artificial intelligence elective course to be offered in high schools",
@@ -5538,7 +5335,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.192797"
+   "last_updated": "2026-09-28T15:36:30.721445"
   },
   {
    "state_code": "WI",
@@ -5583,7 +5380,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.192939"
+   "last_updated": "2026-09-28T15:36:36.743936"
   },
   {
    "state_code": "WY",
@@ -5628,7 +5425,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:03:11.193066"
+   "last_updated": "2026-09-28T15:36:40.584015"
   },
   {
    "state_code": "DC",
@@ -5651,7 +5448,7 @@
     }
    },
    "headline_bill": {
-    "id": 2164,
+    "id": 2026,
     "legiscan_bill_id": 2053226,
     "bill_number": "B26-0491",
     "bill_title": "Artificial Intelligence Literacy in Education Act of 2025",
@@ -5668,7 +5465,7 @@
    },
    "bills": [
     {
-     "id": 2164,
+     "id": 2026,
      "legiscan_bill_id": 2053226,
      "bill_number": "B26-0491",
      "bill_title": "Artificial Intelligence Literacy in Education Act of 2025",
@@ -5705,7 +5502,7 @@
    "unique_context": null,
    "notes": null,
    "sources": [],
-   "last_updated": "2026-09-03T13:04:13.499701"
+   "last_updated": "2026-09-28T15:37:03.188135"
   },
   {
    "state_code": "GU",
@@ -5754,7 +5551,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-09-14T17:18:21.048689"
+   "last_updated": "2026-09-28T15:43:19.598212"
   },
   {
    "state_code": "PR",
@@ -5807,7 +5604,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-09-14T17:18:21.051011"
+   "last_updated": "2026-09-28T15:43:19.600747"
   },
   {
    "state_code": "VI",
@@ -5854,7 +5651,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-09-14T17:18:21.051820"
+   "last_updated": "2026-09-28T15:43:19.602084"
   }
  ]
 }
