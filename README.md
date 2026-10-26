@@ -87,10 +87,11 @@ So the publishing loop is **sync → review → export → commit → push**.
   project page and changelog at `/about/`.
 - **Vercel:** import the repo; `vercel.json` already sets the build command and output directory.
 - **Anything else** (a VPS behind nginx/Traefik, S3, a USB stick): copy `frontend/dist/` there.
-- **A VPS running the compose `map` service:** `deploy/vps-refresh.sh` fast-forwards the checkout to
-  `origin/main` and rebuilds the image only when main moved (or the container is down). Install the
-  systemd units next to it (`deploy/ailegmap-refresh.{service,timer}`, hourly, path `/docker/ailegmap`)
-  so a merge to `main` reaches the VPS within the hour. Nothing on the VPS updates by itself otherwise:
+- **The VPS behind Traefik (map.edtecharchitect.com):** a separate compose project (`/docker/ailegmap-deploy`)
+  runs the locally built image `ailegmap:static` on the `proxy` network. `deploy/vps-refresh.sh` fast-forwards
+  this checkout to `origin/main` and, only when main moved or the service is down, rebuilds that image from
+  `frontend/Dockerfile` and recreates the service. Install `deploy/ailegmap-refresh.{service,timer}` (hourly)
+  so a merge to `main` reaches the public site within the hour. Nothing on the VPS updates by itself otherwise:
   `data.json` is copied into the image at build time.
 
 Assets are built with relative paths (`base: './'`), so the same build works at the site root or under a
