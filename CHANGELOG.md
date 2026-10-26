@@ -7,6 +7,13 @@ Timestamps are in the project's local time.
 
 ## 2026-10-26
 
+### Weekly publish: sync 2026-10-26 (four missed weeks caught up)
+- **Numbers.** 2,243 bills found across 50 states + DC (2,242 unique), 22 more than the September 28 publish (2,220 → 2,242); 2,243 `getBill` calls on the full pass. Run from a fresh clone with no database, so every bill was re-fetched and re-scored, `decisions.csv` was replayed (157 decisions) and the "recent status changes" history starts empty. Growth was in MA (+2), NJ (+9), OH (+1), PA (+5) and VA (+6). 62 carry-over duplicates linked.
+- **Text pass.** 312 candidates, 311 texts read (one bill has no text yet), 128 reclassified: 59 MEDIUM → LOW `thin_mention`, 22 MEDIUM → LOW `no_mention`, 47 MEDIUM → MEDIUM `dense`. Distribution after the pass: HIGH 104 · MEDIUM dense 47 / review 79 · LOW thin 59 / no_mention 22.
+- **Map.** 127 bills on the map (was 125). Two new HIGH auto-includes, both New Jersey, both on topic: **NJ A5643** (Division of Artificial Intelligence Learning in DOE; prohibits AI in the curriculum for preschool through 10th grade; introduced 2026-10-19) and **NJ S4888** (Artificial Intelligence in Education Youth Advisory Council in DOE; prefiled). No on-map bill changed status since September 28 and no state changed stage: passed 7, debated 7, introduced 15, failed 3, none 22.
+- **Sync bug: New York rolled back.** LegiScan's `getSearch` page boundaries shift between calls, so NY A06540 came back on two consecutive pages; with the session's autoflush off the second copy was a second `INSERT`, the UNIQUE constraint fired and all 153 NY rows rolled back. `search_bills()` now drops a bill id it has already seen (NY re-run: 152 unique of 153 in the index). Test added (60 total).
+- One transient `502` from LegiScan on `getBill` for MN SF3901 (MEDIUM, not on the map); its status stays Unknown until the next sync.
+
 ### Dashboard filter; dependency refresh
 - **"Recent status changes" now lists only on-map bills.** The dashboard card took the ten newest status changes across every tracked bill, so after the September 28 sync it showed California vote-by-mail, CEQA and budget bills that were never on the map. The query now joins through the same on-map rule the review API uses (`on_map_clause()` in `app/models/legislation.py`, shared by both). Test added.
 - **Backend installs on Python 3.13.** `pydantic` 2.5.0 and `sqlalchemy` 2.0.23 had no 3.13 support (pydantic-core failed to build; SQLAlchemy raised at import). Bumped to `pydantic` 2.9.2, `pydantic-settings` 2.5.2, `sqlalchemy` 2.0.36. Suite passes on 3.11 (the Dockerfile's version) and 3.13.

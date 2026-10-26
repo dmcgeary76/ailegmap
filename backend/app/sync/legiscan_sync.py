@@ -364,6 +364,7 @@ class LegiScanSync:
             return []
 
         bills: List[Dict] = []
+        seen: set = set()
         total_count = 0
         page = 1
         max_pages = 20
@@ -378,8 +379,17 @@ class LegiScanSync:
             page_bills = [b for k, b in sr.items() if k != "summary" and isinstance(b, dict)]
             if not page_bills:
                 break
-            bills.extend(page_bills)
-            if len(bills) >= total_count or len(page_bills) < PAGE_SIZE:
+            # Page boundaries shift between calls (ties in LegiScan's relevance
+            # order), so a bill can come back on two consecutive pages. The
+            # session has autoflush off, so a repeated id would be INSERTed
+            # twice and the whole state would roll back (NY, 2026-10-26).
+            fetched = len(page_bills)
+            for b in page_bills:
+                if b.get("bill_id") in seen:
+                    continue
+                seen.add(b.get("bill_id"))
+                bills.append(b)
+            if len(bills) >= total_count or fetched < PAGE_SIZE:
                 break
             page += 1
             time.sleep(self.sleep)
