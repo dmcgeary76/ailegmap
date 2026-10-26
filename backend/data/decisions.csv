@@ -90,10 +90,12 @@ NJ,A4821,1887101,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,same as A2
 NJ,A4936,1889335,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,A5034,1889758,EXCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,"public awareness campaign about AI, not K-12"
 NJ,A5184,2152107,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+NJ,A5643,2160247,INCLUDED,claude-review-2026-10-26,2026-10-26T20:17:00,"kept: Division of Artificial Intelligence Learning in DOE; bars student AI use in the PreK-10 curriculum, requires an AI curriculum in grades 11-12 (text read: 29 hits / 705 words)"
 NJ,S2862,2075250,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,S3876,1889719,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,S3883,2131656,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
 NJ,S4469,2153682,INCLUDED,claude-audit-2026-09-08,2026-09-08T17:00:00,kept: K-12 AI policy bill (title audit)
+NJ,S4888,2161055,INCLUDED,claude-review-2026-10-26,2026-10-26T20:17:00,"kept, VERIFY: AI in Education Youth Advisory Council in DOE; prefiled, no text on LegiScan yet -- confirm K-12 scope when the text posts"
 NM,HB330,2108223,INCLUDED,claude-audit-2026-09-08b,2026-09-08T19:40:00,kept: K-12 AI policy bill (title audit)
 NV,AB531,2013451,INCLUDED,claude-audit-2026-09-08c,2026-09-08T21:10:00,"kept, VERIFY: education omnibus with 9 AI hits at 2/1k (dead)"
 NY,A00433,1901571,EXCLUDED,review_ui,2026-07-01T19:45:48,
