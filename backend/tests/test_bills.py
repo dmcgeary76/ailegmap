@@ -128,3 +128,20 @@ def test_rescore_reclassifies_stored_rows_without_touching_decisions(db):
     a, b = db.query(Bill).order_by(Bill.legiscan_bill_id).all()
     assert a.match_confidence == "HIGH" and a.flag_reason == "" and "artifical intelligence" in a.matched_ai_terms
     assert b.match_confidence == "MEDIUM" and b.flag_reason == "review" and b.decision == "EXCLUDED"
+
+
+def test_search_bills_dedupes_across_pages(db, monkeypatch):
+    """LegiScan's page boundaries shift between calls, so one bill can appear on
+    two consecutive pages; a repeated id must not reach the upsert (NY, 2026-10-26)."""
+    from app.sync import legiscan_sync as ls
+    monkeypatch.setattr(ls, "PAGE_SIZE", 2)
+    pages = {
+        1: {"searchresult": {"summary": {"count": 3},
+                             "0": {"bill_id": 1, "bill_number": "A1"}, "1": {"bill_id": 2, "bill_number": "A2"}}},
+        2: {"searchresult": {"summary": {"count": 3},
+                             "0": {"bill_id": 2, "bill_number": "A2"}, "1": {"bill_id": 3, "bill_number": "A3"}}},
+    }
+    sync = ls.LegiScanSync(db=db, fetch_status=False, api_key="x", sleep=0)
+    monkeypatch.setattr(sync, "_get", lambda **params: pages[params["page"]])
+    bills = sync.search_bills("NY")
+    assert [b["bill_id"] for b in bills] == [1, 2, 3]
