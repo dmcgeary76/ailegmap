@@ -58,3 +58,29 @@ def test_profile_update(client):
     support = client.get("/api/states", params={"stance": "SUPPORT"}).json()
     assert [s["state_code"] for s in support] == ["AK"]
     assert client.get("/api/dashboard/summary").json()["states_by_stance"]["SUPPORT"] == 1
+
+
+def test_dashboard_recent_changes_only_list_on_map_bills(client, db, raw_ca):
+    """A sync logs a status change for every tracked bill; the dashboard card
+    must show only the ones that are actually on the map."""
+    from datetime import datetime, timedelta
+    from app.models.legislation import Bill, BillStatusChange
+    _seed(client, db, raw_ca)
+    bills = {b.bill_number: b for b in db.query(Bill).all()}
+    assert bills["SB1288"].effective_included and not bills["SB1381"].effective_included
+    t0 = datetime(2026, 1, 1)
+    db.add_all([
+        BillStatusChange(bill=bills["SB1381"], old_status="Enrolled", new_status="Passed",
+                         new_stage="passed", changed_at=t0 + timedelta(days=2)),   # off-map, newest
+        BillStatusChange(bill=bills["SB1288"], old_status="Introduced", new_status="Passed",
+                         new_stage="passed", changed_at=t0 + timedelta(days=1)),
+        BillStatusChange(bill=bills["AB1979"], old_status="Introduced", new_status="Failed",
+                         new_stage="failed", changed_at=t0),                       # off-map
+    ])
+    db.commit()
+    recent = client.get("/api/dashboard/summary").json()["recent_status_changes"]
+    assert [(c["state_code"], c["bill_number"]) for c in recent] == [("CA", "SB1288")]
+
+    # Excluding the bill drops its change from the card too.
+    client.post(f"/api/bills/review/{bills['SB1288'].id}/decision", json={"decision": "EXCLUDED"})
+    assert client.get("/api/dashboard/summary").json()["recent_status_changes"] == []
