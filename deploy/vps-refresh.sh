@@ -1,9 +1,15 @@
 #!/bin/bash
-# Keep a VPS copy of the map in step with GitHub main.
+# Keep the VPS copy of the map in step with GitHub main.
 #
-# Fast-forwards the checkout to origin/main and, when it moved (or the map
-# container is not running), rebuilds the `map` image and restarts it. Quiet
-# and a no-op when nothing changed, so it is safe to run from a timer:
+# The public map (map.edtecharchitect.com) is the `ailegmap` service of a
+# separate compose project (DEPLOY_DIR, default /docker/ailegmap-deploy) that
+# runs the locally built image `ailegmap:static` behind Traefik. That image
+# copies docs/data.json in at build time, so every publish needs a rebuild.
+#
+# This script fast-forwards the repo checkout to origin/main and, when it
+# moved (or the container is not running), rebuilds the image from this
+# checkout and recreates the service. Quiet no-op otherwise, so it is safe on
+# a timer:
 #
 #   sudo cp deploy/ailegmap-refresh.service deploy/ailegmap-refresh.timer /etc/systemd/system/
 #   sudo systemctl daemon-reload
@@ -11,15 +17,19 @@
 #   systemctl list-timers ailegmap-refresh.timer      # next run
 #   journalctl -u ailegmap-refresh.service -n 20      # what the last run did
 #
-# The units assume the checkout lives at /docker/ailegmap; edit WorkingDirectory
-# and ExecStart if yours is elsewhere. Run it by hand any time: ./deploy/vps-refresh.sh
+# Paths: the units assume this checkout is /docker/ailegmap; override the
+# deploy project with DEPLOY_DIR=... and the image tag with IMAGE=....
 set -euo pipefail
 cd "$(dirname "$0")/.."
+
+DEPLOY_DIR=${DEPLOY_DIR:-/docker/ailegmap-deploy}
+SERVICE=${SERVICE:-ailegmap}
+IMAGE=${IMAGE:-ailegmap:static}
 
 git fetch -q origin main
 current=$(git rev-parse HEAD)
 target=$(git rev-parse origin/main)
-running=$(docker compose ps --status running -q map 2>/dev/null || true)
+running=$(docker compose --project-directory "$DEPLOY_DIR" ps --status running -q "$SERVICE" 2>/dev/null || true)
 
 if [ "$current" = "$target" ] && [ -n "$running" ]; then
   exit 0
@@ -31,8 +41,8 @@ if [ "$current" != "$target" ]; then
   git merge -q --ff-only origin/main
 fi
 
-docker compose build --pull -q map
-docker compose up -d map
+docker build --pull -q -f frontend/Dockerfile -t "$IMAGE" . >/dev/null
+docker compose --project-directory "$DEPLOY_DIR" up -d --force-recreate "$SERVICE"
 
 sync=$(grep -o '"last_sync": "[^"]*"' docs/data.json | cut -d'"' -f4)
-echo "ailegmap map refreshed: $(git rev-parse --short HEAD), data.json last_sync ${sync:-unknown}"
+echo "ailegmap refreshed: $(git rev-parse --short HEAD), image $IMAGE, data.json last_sync ${sync:-unknown}"
