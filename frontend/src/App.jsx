@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import './App.css'
 import { api, STATIC } from './api'
+import { track } from './analytics'
 import Dashboard from './components/Dashboard'
 import USMap from './components/USMap'
 import StateModal from './components/StateModal'
@@ -19,6 +20,19 @@ function App() {
   const [error, setError] = useState(null)
   const [filter, setFilter] = useState(null) // {legislation_stage} | {stance} | null
   const [meta, setMeta] = useState(null) // static build: {generated_at, last_sync}
+
+  const openState = useCallback((code) => {
+    setSelectedCode(code)
+    if (code) track('state-open', { state: code, layer })
+  }, [layer])
+  const changeLayer = useCallback((next) => {
+    setLayer(next)
+    track('layer', { layer: next })
+  }, [])
+  const changeFilter = useCallback((next) => {
+    setFilter(next)
+    if (next) track('filter', { layer, ...next })
+  }, [layer])
 
   const fetchData = useCallback(async () => {
     try {
@@ -84,14 +98,14 @@ function App() {
                   <Dashboard
                     summary={summary}
                     layer={layer}
-                    onLayerChange={setLayer}
+                    onLayerChange={changeLayer}
                     filter={filter}
-                    onFilterChange={setFilter}
+                    onFilterChange={changeFilter}
                   />
                 )}
               </aside>
               <main className="main-content">
-                <USMap states={states} layer={layer} onStateClick={setSelectedCode} />
+                <USMap states={states} layer={layer} onStateClick={openState} />
               </main>
             </div>
           )}

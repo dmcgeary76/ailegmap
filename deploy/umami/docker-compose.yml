@@ -1,0 +1,52 @@
+# Self-hosted Umami for the map's visit analytics, behind the same Traefik as
+# the map. One-time setup on the VPS:
+#
+#   mkdir -p /docker/umami && cp docker-compose.yml .env.example /docker/umami/
+#   cd /docker/umami && cp .env.example .env    # then fill in the two secrets
+#   docker compose up -d
+#
+# DNS: an A record for analytics.edtecharchitect.com pointing at the VPS, so
+# Traefik can issue the certificate. First login is admin / umami -- change it
+# at once (Settings -> Profile). Then Settings -> Websites -> Add website, and
+# put the website id in frontend/.env.production (see README.md, "Visit analytics").
+services:
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    environment:
+      DATABASE_URL: postgresql://umami:${POSTGRES_PASSWORD}@umami-db:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: ${APP_SECRET}
+    depends_on:
+      umami-db:
+        condition: service_healthy
+    networks: [default, proxy]
+    restart: unless-stopped
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: proxy
+      traefik.http.routers.umami.entrypoints: websecure
+      traefik.http.routers.umami.rule: Host(`analytics.edtecharchitect.com`)
+      traefik.http.routers.umami.tls.certresolver: letsencrypt
+      traefik.http.services.umami.loadbalancer.server.port: "3000"
+
+  umami-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - umami-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U umami -d umami"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  umami-db:

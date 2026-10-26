@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './StateModal.css'
 import { api, STATIC, STAGE_LABELS, STANCE_LABELS, stanceKey, LEANING_COLORS, ACTION_LABELS, DIRECTION_LABELS } from '../api'
+import { track } from '../analytics'
 
 const fmtDate = (v) => (v ? new Date(v).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : 'N/A')
 
@@ -92,7 +93,8 @@ function Body({ state }) {
           {state.bills.map((b, i) => (
             <li key={b.id} className={i === 0 ? 'headline' : ''}>
               <div className="bill-row">
-                <a href={b.bill_url} target="_blank" rel="noopener noreferrer" className="bill-number">{b.bill_number}</a>
+                <a href={b.bill_url} target="_blank" rel="noopener noreferrer" className="bill-number"
+                   onClick={() => track('bill-link', { state: state.state_code, bill: b.bill_number })}>{b.bill_number}</a>
                 <span className={`stage-chip stage-${b.bill_stage || 'none'}`}>{b.bill_status || 'Unknown'}</span>
                 {b.is_resolution && <span className="chip-muted" title="A resolution is not a law; it does not set the map color">resolution</span>}
                 {b.decision === 'INCLUDED' && <span className="chip-muted" title="Included by a reviewer">reviewed</span>}

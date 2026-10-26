@@ -97,6 +97,24 @@ So the publishing loop is **sync → review → export → commit → push**.
 Assets are built with relative paths (`base: './'`), so the same build works at the site root or under a
 subpath like `/ailegmap/`.
 
+## Visit analytics (optional)
+
+The map can report visits to a self-hosted [Umami](https://umami.is) instance: cookieless, no personal
+data, honours Do Not Track, no consent banner needed. It is off unless the build carries both variables,
+so `npm run dev` and plain builds report nothing.
+
+1. Run Umami on the VPS: `deploy/umami/` has a compose file wired for Traefik (see its README). Add the
+   site in the Umami dashboard and copy its website id.
+2. Put the two values in `frontend/.env.production` (committed; the id is public in the page anyway):
+   ```
+   VITE_UMAMI_SRC=https://analytics.example.com/script.js
+   VITE_UMAMI_WEBSITE_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+   ```
+3. Push. Pages and the VPS pick it up on their next build.
+
+Besides page views, the map sends four events: `state-open` (state, layer), `layer`, `filter`
+(layer + stage or stance) and `bill-link` (state, bill number). See `frontend/src/analytics.js`.
+
 ## The weekly loop
 
 ```bash
