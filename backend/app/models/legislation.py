@@ -100,6 +100,17 @@ def is_resolution(bill_number: str, title: str = "") -> bool:
 # (2026-09-04 audit), so they wait in the review queue like LOW does.
 AUTO_INCLUDE_CONFIDENCE = ("HIGH",)
 
+
+def on_map_clause():
+    """SQL form of ``Bill.effective_included``: a reviewer's INCLUDED decision, or a
+    PENDING bill at auto-include confidence that no newer carry-over copy supersedes.
+    Use it wherever a query must respect limit/offset (the Python property can't)."""
+    from sqlalchemy import and_, or_
+    auto = and_(Bill.decision == "PENDING", Bill.superseded_by.is_(None),
+                Bill.match_confidence.in_(AUTO_INCLUDE_CONFIDENCE))
+    return or_(Bill.decision == "INCLUDED", auto)
+
+
 JURISDICTIONS = {
     "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
     "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",

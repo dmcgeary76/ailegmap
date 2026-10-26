@@ -17,7 +17,7 @@ from sqlalchemy.orm import Session
 
 from app import decisions
 from app.database import get_db
-from app.models.legislation import Bill, AUTO_INCLUDE_CONFIDENCE
+from app.models.legislation import Bill, AUTO_INCLUDE_CONFIDENCE, on_map_clause
 from app.schemas.legislation import BillOut
 
 router = APIRouter(prefix="/api/bills/review", tags=["bill-review"])
@@ -71,13 +71,8 @@ def list_bills(
     if included is not None:
         # effective inclusion is decision-or-confidence; express it in SQL so
         # limit/offset stay correct.
-        from sqlalchemy import or_, and_
-        auto = and_(Bill.decision == "PENDING", Bill.superseded_by.is_(None),
-                    Bill.match_confidence.in_(AUTO_INCLUDE_CONFIDENCE))
-        if included:
-            q = q.filter(or_(Bill.decision == "INCLUDED", auto))
-        else:
-            q = q.filter(Bill.decision != "INCLUDED", ~auto)
+        on_map = on_map_clause()
+        q = q.filter(on_map if included else ~on_map)
     return q.order_by(Bill.last_seen.desc(), Bill.id.desc()).offset(offset).limit(limit).all()
 
 

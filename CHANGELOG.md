@@ -5,6 +5,15 @@ Timestamps are in the project's local time.
 
 ---
 
+## 2026-10-26
+
+### Dashboard filter; dependency refresh
+- **"Recent status changes" now lists only on-map bills.** The dashboard card took the ten newest status changes across every tracked bill, so after the September 28 sync it showed California vote-by-mail, CEQA and budget bills that were never on the map. The query now joins through the same on-map rule the review API uses (`on_map_clause()` in `app/models/legislation.py`, shared by both). Test added.
+- **Backend installs on Python 3.13.** `pydantic` 2.5.0 and `sqlalchemy` 2.0.23 had no 3.13 support (pydantic-core failed to build; SQLAlchemy raised at import). Bumped to `pydantic` 2.9.2, `pydantic-settings` 2.5.2, `sqlalchemy` 2.0.36. Suite passes on 3.11 (the Dockerfile's version) and 3.13.
+- **Frontend audit clean.** `npm audit` reported 9 findings (7 high) in `axios`, `follow-redirects`, `esbuild` and `vite`. `npm audit fix` cleared the runtime ones; the `esbuild` dev-server advisory needed Vite 8 (`vite` 8.3.5, `@vitejs/plugin-react` 6.1.2). Static build verified in a headless browser: 50 state paths, no console errors. Vite 8 needs Node 20.19+; the CI workflow and Dockerfile both resolve to current Node 20.
+
+---
+
 ## 2026-09-09
 
 ### Docs cleanup; static map cache-busting; Dockerfiles for production shapes

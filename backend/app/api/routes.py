@@ -10,7 +10,7 @@ from app import derive
 from app.database import get_db
 from app.models.legislation import (
     StateProfile, Bill, BillStatusChange, SyncRun, LocalAction, JURISDICTIONS,
-    RegulatoryStance, ResearchStatus, STAGE_RANK,
+    RegulatoryStance, ResearchStatus, STAGE_RANK, on_map_clause,
 )
 from app.schemas.legislation import (
     StateSummary, StateDetail, StateProfileUpdate, DashboardSummary, StatusChangeOut, BillBrief,
@@ -163,8 +163,12 @@ def build_dashboard_summary(db: Session) -> DashboardSummary:
     last_run = db.query(SyncRun).filter(SyncRun.finished_at.isnot(None)) \
         .order_by(desc(SyncRun.finished_at)).first()
 
+    # Only bills that are actually on the map: a sync records status changes for
+    # every tracked bill, and most of those are pending or off-topic.
     changes = (
         db.query(BillStatusChange)
+        .join(BillStatusChange.bill)
+        .filter(on_map_clause())
         .options(selectinload(BillStatusChange.bill))
         .order_by(desc(BillStatusChange.changed_at))
         .limit(10).all()
