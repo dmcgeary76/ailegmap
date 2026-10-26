@@ -1,0 +1,15 @@
+# Keep local build output and environments out of the Docker build context.
+# frontend/Dockerfile runs `npm ci` and then `COPY frontend/ ./`; without this
+# file a stale frontend/node_modules from a local build overlays the fresh
+# install (the VPS rebuild on 2026-10-26 failed on an old rollup that way).
+.git
+**/node_modules
+frontend/dist
+backend/venv
+backend/.env
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+**/__pycache__
+**/.pytest_cache
