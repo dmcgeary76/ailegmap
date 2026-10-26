@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T19:24:27.975449Z",
+ "generated_at": "2026-10-26T20:17:45.034003Z",
  "last_sync": "2026-10-26T19:12:01.817659Z",
  "summary": {
   "jurisdictions": 54,
@@ -24,7 +24,7 @@
   "bills": {
    "total": 2242,
    "included": 127,
-   "pending": 2085,
+   "pending": 2083,
    "excluded": 38
   },
   "local_actions": {
@@ -140,7 +140,7 @@
    "sources": [
     "https://education.alaska.gov/artificial-intelligence/"
    ],
-   "last_updated": "2026-10-26T19:24:26.863242"
+   "last_updated": "2026-10-26T20:17:43.772597"
   },
   {
    "state_code": "AZ",
@@ -358,7 +358,7 @@
     "https://www.ecs.org/artificial-intelligence-ai-education-task-forces/",
     "https://ballotpedia.org/AI_guidance_issued_by_state_departments_of_education"
    ],
-   "last_updated": "2026-10-26T19:24:26.864370"
+   "last_updated": "2026-10-26T20:17:43.774517"
   },
   {
    "state_code": "CA",
@@ -674,7 +674,7 @@
    "sources": [
     "https://www.cde.ca.gov/ci/pl/aiincalifornia.asp"
    ],
-   "last_updated": "2026-10-26T19:24:26.865050"
+   "last_updated": "2026-10-26T20:17:43.777601"
   },
   {
    "state_code": "CO",
@@ -824,7 +824,7 @@
     "https://marketbrief.edweek.org/product-development/how-colorados-educator-focused-ai-roadmap-for-k-12-is-guiding-pilots-professional-development-and-classroom-use/2026/02",
     "https://leg.colorado.gov/initiative_files/323/download"
    ],
-   "last_updated": "2026-10-26T19:24:26.865600"
+   "last_updated": "2026-10-26T20:17:43.778905"
   },
   {
    "state_code": "CT",
@@ -1497,7 +1497,7 @@
    "sources": [
     "https://hawaiipublicschools.org/student-programs/artificial-intelligence/"
    ],
-   "last_updated": "2026-10-26T19:24:26.866996"
+   "last_updated": "2026-10-26T20:17:43.781073"
   },
   {
    "state_code": "ID",
@@ -2135,7 +2135,7 @@
     "https://doe.louisiana.gov/docs/default-source/school-system-support/ai-for-leaders.pdf",
     "https://www.billtrack50.com/billdetail/1972291"
    ],
-   "last_updated": "2026-10-26T19:24:26.867718"
+   "last_updated": "2026-10-26T20:17:43.782208"
   },
   {
    "state_code": "ME",
@@ -2608,7 +2608,7 @@
    "sources": [
     "https://www.doe.mass.edu/edtech/ai/default.html"
    ],
-   "last_updated": "2026-10-26T19:24:26.868274"
+   "last_updated": "2026-10-26T20:17:43.783269"
   },
   {
    "state_code": "MI",
@@ -3177,8 +3177,8 @@
     "total": 134,
     "included": 11,
     "resolutions": 0,
-    "pending": 121,
-    "manually_included": 9,
+    "pending": 119,
+    "manually_included": 11,
     "manually_excluded": 4,
     "held": 123,
     "by_stage": {
@@ -3281,7 +3281,7 @@
      "last_action": "Introduced, Referred to Assembly Science, Innovation and Technology Committee",
      "last_action_date": "2026-10-19",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     },
@@ -3377,7 +3377,7 @@
      "last_action": null,
      "last_action_date": "",
      "match_confidence": "HIGH",
-     "decision": "PENDING",
+     "decision": "INCLUDED",
      "effective_included": true,
      "is_resolution": false
     }
@@ -3495,7 +3495,7 @@
     "https://www.nmlegis.gov/handouts/ALESC%20072325%20Item%203%20.1%20%20-%20Report;%20LESC%20Artificial%20Intelligence%20Working%20Group.pdf",
     "https://www.govtech.com/education/k-12/new-mexico-education-committee-recommends-ai-oversight-body"
    ],
-   "last_updated": "2026-10-26T19:24:26.868774"
+   "last_updated": "2026-10-26T20:17:43.784466"
   },
   {
    "state_code": "NY",
@@ -4218,7 +4218,7 @@
     "https://www.kgou.org/politics-and-government/2026-06-18/oklahoma-holding-back-on-ai-regulations-amid-trumps-order-for-states-not-to-stifle-the-new-technology",
     "https://www.aiforeducation.io/ai-resources/state-ai-guidance"
    ],
-   "last_updated": "2026-10-26T19:24:26.869325"
+   "last_updated": "2026-10-26T20:17:43.785478"
   },
   {
    "state_code": "OR",
@@ -4531,7 +4531,7 @@
    "sources": [
     "https://ride.ri.gov/sites/g/files/xkgbur806/files/2025-12/RIDE%20AI%20Guidance%208.15.25.pdf"
    ],
-   "last_updated": "2026-10-26T19:24:26.870326"
+   "last_updated": "2026-10-26T20:17:43.787672"
   },
   {
    "state_code": "SC",
@@ -5005,7 +5005,7 @@
    "unique_context": "No state guidance; districts are writing their own policies (e.g. El Paso ISD) and adopting tools such as PowerBuddy and MagicSchool AI.",
    "notes": null,
    "sources": [],
-   "last_updated": "2026-10-26T19:24:26.871318"
+   "last_updated": "2026-10-26T20:17:43.788821"
   },
   {
    "state_code": "UT",
@@ -5791,7 +5791,7 @@
     "https://www.postguam.com/news/local/early-progress-for-ai-task-force/article_2a7680d4-43a3-472e-8a58-daf4f6d7d0c2.html",
     "https://otech.guam.gov/wp-otech-content/uploads/2025/01/OTECH-POL2025-001-AI-Use-Policy-for-GovGuam-Line-Agencies.pdf"
    ],
-   "last_updated": "2026-10-26T19:24:26.866145"
+   "last_updated": "2026-10-26T20:17:43.780056"
   },
   {
    "state_code": "PR",
@@ -5844,7 +5844,7 @@
    "sources": [
     "https://de.pr.gov"
    ],
-   "last_updated": "2026-10-26T19:24:26.869798"
+   "last_updated": "2026-10-26T20:17:43.786598"
   },
   {
    "state_code": "VI",
@@ -5891,7 +5891,7 @@
    "sources": [
     "http://viconsortium.com/vi-government/virgin-islands-bryan-calls-for-education-overhaul-as-ai-redefines-the-future-of-work"
    ],
-   "last_updated": "2026-10-26T19:24:26.871880"
+   "last_updated": "2026-10-26T20:17:43.791733"
   }
  ]
 }
