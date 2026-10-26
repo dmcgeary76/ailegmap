@@ -1,0 +1,10 @@
+[Unit]
+Description=Refresh the K-12 AI Legislative Map container from GitHub main
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/docker/ailegmap
+ExecStart=/docker/ailegmap/deploy/vps-refresh.sh
