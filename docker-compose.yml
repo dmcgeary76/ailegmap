@@ -11,3 +11,4 @@ services:
       context: .
       dockerfile: frontend/Dockerfile
     ports: ["8080:80"]
+    restart: unless-stopped
