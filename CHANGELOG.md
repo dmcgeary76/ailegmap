@@ -7,6 +7,10 @@ Timestamps are in the project's local time.
 
 ## 2026-10-26
 
+### Visit analytics via self-hosted Umami
+- `frontend/src/analytics.js` injects the Umami script only when `VITE_UMAMI_SRC` and `VITE_UMAMI_WEBSITE_ID` are set at build time (`frontend/.env.production`), so dev and un-configured builds report nothing. Cookieless, Do Not Track honoured. Four events: `state-open`, `layer`, `filter`, `bill-link`.
+- `deploy/umami/`: compose file (Umami + Postgres) on the Traefik `proxy` network at `analytics.edtecharchitect.com`, with `.env.example` and a README covering first login and adding the site.
+
 ### Weekly publish: sync 2026-10-26 (four missed weeks caught up)
 - **Numbers.** 2,243 bills found across 50 states + DC (2,242 unique), 22 more than the September 28 publish (2,220 → 2,242); 2,243 `getBill` calls on the full pass. Run from a fresh clone with no database, so every bill was re-fetched and re-scored, `decisions.csv` was replayed (157 decisions) and the "recent status changes" history starts empty. Growth was in MA (+2), NJ (+9), OH (+1), PA (+5) and VA (+6). 62 carry-over duplicates linked.
 - **Text pass.** 312 candidates, 311 texts read (one bill has no text yet), 128 reclassified: 59 MEDIUM → LOW `thin_mention`, 22 MEDIUM → LOW `no_mention`, 47 MEDIUM → MEDIUM `dense`. Distribution after the pass: HIGH 104 · MEDIUM dense 47 / review 79 · LOW thin 59 / no_mention 22.
